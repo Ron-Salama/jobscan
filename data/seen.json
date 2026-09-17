@@ -1661,6 +1661,51 @@
 },
 "palo alto networks|principal principal software engineer data platform": {
 "seen": "2026-09-17"
+},
+"linkedin:4395487160": {
+"t": "Senior SONiC Software Engineer - Python",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"nvidia|sonic software engineer python": {
+"seen": "2026-09-17"
+},
+"paloalto:99507999984": {
+"t": "Senior Angular Frontend Engineer - Email Security (Cortex)",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"palo alto networks|angular frontend engineer email security": {
+"seen": "2026-09-17"
+},
+"paloalto:100733422304": {
+"t": "Sr Staff Engineer Software (Directory Services)",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"palo alto networks|sr staff engineer software": {
+"seen": "2026-09-17"
+},
+"paloalto:98783444176": {
+"t": "Principal Software Engineer (Directory Services)",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"palo alto networks|principal software engineer": {
+"seen": "2026-09-17"
+},
+"paloalto:96174879344": {
+"t": "Principal Engineer Software- Identity User Management (Idira",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"palo alto networks|principal engineer software identity user management": {
+"seen": "2026-09-17"
 }
 }
 }
