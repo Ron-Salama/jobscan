@@ -230,11 +230,15 @@ def classify(j):
     elif student:
         lane, why = "skip", "student"
     elif referral or giant:
-        # referral broadens acceptable quals: a same-lane senior/unclear role -> tailorable reach, not skip
-        if is_jr and not senior:
+        # a referral broadens quals to junior-mid, but NOT to senior/4y+ (not a reach even with a referral)
+        if senior_title or (ymin is not None and ymin >= 4):
+            lane, why = "skip", "too-senior-even-w-referral"
+        elif ymin == 3:
+            lane, why, tailor = "reach", "3y-referral-tailor", True
+        elif is_jr:
             lane, why = "apply", "junior"
         else:
-            lane, why, tailor = "reach", ("broaden-referral" if senior else "unclear"), True
+            lane, why, tailor = "reach", "unclear-referral", True
     else:
         if is_jr and not senior:
             lane, why = "apply", "junior"
