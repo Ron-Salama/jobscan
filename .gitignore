@@ -1,0 +1,10 @@
+# secrets — NEVER commit
+notify_config.py
+
+# local-only state (cloud uses data/seen.json instead)
+/seen.json
+daily/
+
+# python
+__pycache__/
+*.pyc
