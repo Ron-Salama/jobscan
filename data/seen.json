@@ -1145,6 +1145,78 @@
 },
 "apple|icloud drive software test automation infrastructure engineer": {
 "seen": "2026-09-18"
+},
+"hiremetech:148374147": {
+"t": "Software Configuration Management (SCM) Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-17"
+},
+"|software configuration management engineer": {
+"seen": "2026-09-17"
+},
+"workday:/job/Israel-Raanana/Software-Engineer--SONiC_JR2023435": {
+"t": "Software Engineer, SONiC",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"nvidia|software engineer sonic": {
+"seen": "2026-09-17"
+},
+"workday:/job/Israel-Yokneam/Software-Performance-Engineer_JR2024413": {
+"t": "Software Performance Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"nvidia|software performance engineer": {
+"seen": "2026-09-17"
+},
+"workday:/job/Israel-Yokneam/Software-Developer---Networking_JR2024804": {
+"t": "Software Developer - Networking",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-17"
+},
+"nvidia|software developer networking": {
+"seen": "2026-09-17"
+},
+"workday:/job/Israel-Yokneam/Software-Validation-Engineer_JR2011195": {
+"t": "Software Validation Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"nvidia|software validation engineer": {
+"seen": "2026-09-17"
+},
+"workday:/job/Israel-Yokneam/Advanced-Software-Development-Engineer_JR2020678": {
+"t": "Advanced Software Development Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"nvidia|advanced software development engineer": {
+"seen": "2026-09-17"
+},
+"workday:/job/Israel-Raanana/Software-Engineer---SONiC-Verification_JR2022775": {
+"t": "Software Engineer - SONiC Verification",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"nvidia|software engineer sonic verification": {
+"seen": "2026-09-17"
+},
+"workday:/job/Israel-Yokneam/Software-Verification-Engineer--Networking_JR2022969-1": {
+"t": "Software Verification Engineer, Networking",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-17"
+},
+"nvidia|software verification engineer networking": {
+"seen": "2026-09-17"
 }
 }
 }
