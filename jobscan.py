@@ -156,15 +156,16 @@ def _catlist(jc):
 def src_greenhouse():
     out=[]
     for slug in C.GREENHOUSE_SLUGS:
-        try: d=get_json("https://boards-api.greenhouse.io/v1/boards/%s/jobs?content=false"%slug)
+        try: d=get_json("https://boards-api.greenhouse.io/v1/boards/%s/jobs?content=true"%slug)
         except Exception: continue
         for j in d.get("jobs",[]):
             loc=(j.get("location",{}) or {}).get("name","")
             if "israel" not in loc.lower() and not any(k in loc.lower() for k in
                 ("tel aviv","haifa","herzliya","yokneam","jerusalem","ramat","netanya","petah","raanana","beer")):
                 continue
+            desc=re.sub("<[^>]+>"," ", __import__("html").unescape(j.get("content") or ""))
             out.append(job("greenhouse:"+slug, j.get("id"), j.get("title"),
-                slug, loc, j.get("absolute_url"), "", None, None, [], ""))
+                slug, loc, j.get("absolute_url"), "", None, None, [], desc))
         time.sleep(0.1)
     return out
 
@@ -261,7 +262,11 @@ def classify(j):
     elif lane in ("reach","review"): fit = 4 if (referral or giant) else 3
     else: fit = 1
     if referral and lane != "skip": fit = 5
-    return {"lane":lane,"why":why,"cv":cv,"fit":fit,"referral":referral,"giant":giant,"tailor":tailor}
+    # honesty gate: only claim "worth tailoring" if we actually READ enough of the JD to judge it
+    verified = len((j.get("desc") or "").strip()) > 60
+    tailor = tailor and verified
+    return {"lane":lane,"why":why,"cv":cv,"fit":fit,"referral":referral,"giant":giant,
+            "tailor":tailor,"verified":verified}
 
 # ---------------- dedup ----------------
 def norm(s):
@@ -344,7 +349,10 @@ def select(raw, reg):
     rows=[]
     for i,j in enumerate(fresh):
         c=j["_c"]
-        flag=("🔔REFERRAL " if c["referral"] else "")+("★giant " if c["giant"] else "")+("✎TAILOR " if c.get("tailor") else "")
+        # alert ONLY on read-and-judged roles: referral/giant that are apply, or verified-tailor
+        alertok = (c["referral"] or c["giant"]) and (c["lane"]=="apply" or c.get("tailor"))
+        unread = "" if c.get("verified") else "·unread "
+        flag=("🔔REFERRAL " if c["referral"] else "")+("★giant " if c["giant"] else "")+("✎TAILOR " if c.get("tailor") else "")+unread
         srcs="+".join(sorted(j["_sources"]))
         rows.append({
             "id":"auto-%s-%s-%d"%(TODAY,j["source"].split(":")[0],i),
@@ -354,15 +362,15 @@ def select(raw, reg):
             "blurb":"%s[%s%s · via %s] %s"%(flag,c["lane"].upper(),(" "+c["why"]) if c["why"] else "",srcs,(j["desc"][:180])),
             "careers":j["url"],
             "openings":{"status":"live","roles":[{"title":j["title"],"url":j["url"]}],
-                "note":"auto-scan %s | sources:%s | lane:%s | %s%s%s"%(TODAY,srcs,c["lane"],
-                    "REFERRAL " if c["referral"] else "","GIANT " if c["giant"] else "","TAILOR" if c.get("tailor") else "")}
+                "note":"auto-scan %s | sources:%s | lane:%s | %s%s%s%s"%(TODAY,srcs,c["lane"],
+                    "REFERRAL " if c["referral"] else "","GIANT " if c["giant"] else "","TAILOR " if c.get("tailor") else "","ALERT" if alertok else "")}
         })
         seen["%s:%s"%(j["source"],j["sid"])]={"t":j["title"][:60],"lane":c["lane"],"tailor":bool(c.get("tailor")),"seen":TODAY}
         seen[norm(j["company"])+"|"+norm(j["title"])]={"seen":TODAY}
     return rows
 
 def alerts_for(rows):
-    return [r for r in rows if ("REFERRAL" in r["openings"]["note"] or "GIANT" in r["openings"]["note"])]
+    return [r for r in rows if "ALERT" in r["openings"]["note"]]
 
 ALERT_BATCH_MAX = 12   # above this = backfill/re-scan, not real new-openings -> don't spam
 def send_alerts(rows):

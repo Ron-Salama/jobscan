@@ -24,6 +24,7 @@ def slim(r):
         "company": r["company"], "role": r["role"], "loc": r["location"], "url": r["url"],
         "cv": r["cv"].replace("Ron Salama - CV (", "").replace(").pdf", ""),
         "ref": "REFERRAL" in note, "giant": "GIANT" in note, "tailor": "TAILOR" in note,
+        "unread": "·unread" in r["blurb"], "alert": "ALERT" in note,
         "src": note.split("sources:")[1].split("|")[0].strip() if "sources:" in note else "",
     }
 
@@ -48,6 +49,7 @@ tr.done td{opacity:.4}
 a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 .pill{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:600;white-space:nowrap}
 .ref{background:#3a1d2b;color:#ff9ec4}.giant{background:#20344a;color:#8fc7ff}.tailor{background:#3a331a;color:#ffd98f}
+.unread{background:#2a2f3a;color:#9aa6bb}
 .n{background:#1c3a2a;color:#8ff0b8}.c{background:#2a2340;color:#c4b0ff}
 .fit5{color:#8ff0b8;font-weight:700}.fit4{color:#c9e69a}.fit3{color:#e6c78a}
 .muted{color:#8792a6;font-size:12px}
@@ -83,7 +85,7 @@ const el=id=>document.getElementById(id);
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{return localStorage.getItem("st:"+u)||"New";}catch(e){return "New";}}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
-function pills(j){let s="";if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';return s;}
+function pills(j){let s="";if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 // populate the pull/date dropdown
 [...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;el("date").appendChild(o);});
 function stChange(sel){setSt(sel.dataset.u, sel.value);render();}
