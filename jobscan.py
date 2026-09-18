@@ -364,10 +364,13 @@ def select(raw, reg):
 def alerts_for(rows):
     return [r for r in rows if ("REFERRAL" in r["openings"]["note"] or "GIANT" in r["openings"]["note"])]
 
+ALERT_BATCH_MAX = 12   # above this = backfill/re-scan, not real new-openings -> don't spam
 def send_alerts(rows):
     if os.environ.get("JOBSCAN_NO_ALERT"):
         print("(alerts suppressed via JOBSCAN_NO_ALERT)"); return []
     a=alerts_for(rows)
+    if len(a) > ALERT_BATCH_MAX:
+        print("large batch (%d giant/referral) — alerts suppressed (backfill, not new-openings)"%len(a)); return []
     if a:
         try:
             import notify; notify.notify_jobs(a); print("alerted %d giant/referral roles"%len(a))

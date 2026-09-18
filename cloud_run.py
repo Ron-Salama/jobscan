@@ -132,7 +132,12 @@ def main():
         existing = json.load(open(JOBS_JSON, encoding="utf-8"))
     except Exception:
         existing = []
-    alljobs = (new + existing)[:CAP]
+    seenu = set(); alljobs = []
+    for x in (new + existing):                 # newest first, dedup by url so nothing shows twice
+        u = x.get("url", "")
+        if u and u in seenu: continue
+        seenu.add(u); alljobs.append(x)
+    alljobs = alljobs[:CAP]
     json.dump(alljobs, open(JOBS_JSON, "w", encoding="utf-8"), ensure_ascii=False)
     J.save_reg(reg, SEEN_JSON)
     build_page(alljobs, J.TODAY)
