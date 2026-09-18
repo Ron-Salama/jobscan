@@ -21,6 +21,7 @@ def retain(job):
     a=job['analysis']
     if a['bucket'] in ('other','outside'): return False
     if re.search(SENIOR,job['title'],re.I) or job.get('level','').lower() in ('senior','lead','principal','staff','manager'): return False
+    if re.search(r'\b(tl|team leader|text validation|software tester|dsp|phy|serdes|practical engineer)\b',job['title'],re.I): return False
     # Reject specialist titles, not incidental hardware context in software JDs.
     if re.search(r'\b(rtl|asic|vlsi|physical design|analog|rf|design verification|research scientist|mechanical|electrical|process)\b',job['title'],re.I): return False
     required=[e['min'] for e in a.get('experience',[]) if e['kind']=='stated' and not e.get('alternative')]
@@ -38,14 +39,19 @@ def parsed_date(value):
     try:
         dt=datetime.fromisoformat(value.replace('Z','+00:00'))
         return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
-    except (ValueError,TypeError,AttributeError): return None
+    except (ValueError,TypeError,AttributeError):
+        if not isinstance(value,str): return None
+        for fmt in ('%B %d, %Y','%b %d, %Y','%d/%m/%Y'):
+            try: return datetime.strptime(value,fmt).replace(tzinfo=timezone.utc)
+            except ValueError: pass
+        return None
 
 def recent_basis(job, now, prefs):
     """Don't pretend a calendar date or first discovery is a precise posting time."""
     raw=job.get('reported_posted','').strip()
     cutoff=now-timedelta(hours=24)
     dt=parsed_date(raw)
-    if dt and len(raw)>10:
+    if dt and re.search(r'[T ]\d{2}:\d{2}',raw):
         return 'Posted in the last 24 hours' if cutoff<=dt<=now else None
     local=now.astimezone(ZoneInfo(prefs.get('timezone','Asia/Jerusalem')))
     if dt:

@@ -22,6 +22,7 @@ class Rules(unittest.TestCase):
   now=datetime(2026,9,19,14,tzinfo=timezone.utc)
   j=job();self.assertIn('unverified',recent_basis(j,now,P))
   j['reported_posted']='2026-09-01';self.assertIsNone(recent_basis(j,now,P))
+  j['reported_posted']='September 1, 2026';self.assertIsNone(recent_basis(j,now,P))
   j['reported_posted']='2026-09-19T10:00:00Z';self.assertEqual(recent_basis(j,now,P),'Posted in the last 24 hours')
  def test_daily_and_giants(self):
   j=job(company='Startup');d={'jobs':[j],'updated_at':'2026-09-19T14:00:00+00:00','discovered':{}}

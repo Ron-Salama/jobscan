@@ -63,6 +63,7 @@ def src_hiremetech():
                 _co(j), city, "https://hiremetech.com/job/%s"%j["id"],
                 j.get("job_level"), None, None, _tech(j),
                 _txt(j.get("requirements"))+" "+_txt(j.get("description")), j.get("is_active",True)))
+            out[-1]["posted_at"]=j.get("posted_date","")
         if not (d.get("pagination",{}) or {}).get("has_more"): break
         time.sleep(0.15)
     return out
@@ -162,6 +163,7 @@ def src_amazon():
             "Amazon", j.get("normalized_location") or j.get("city"),
             "https://www.amazon.jobs"+(j.get("job_path") or ""), "",
             None, None, [], _txt(j.get("basic_qualifications"))))
+        out[-1]["posted_at"]=j.get("posted_date","")
     return out
 
 SOURCES = [("hiremetech",src_hiremetech),("experis",src_experis),("drushim",src_drushim),
