@@ -1,35 +1,56 @@
-name: JobScan
-
+name: Job Radar
 on:
   schedule:
-    - cron: "0 */2 * * *"   # every 2 hours (UTC). GitHub may delay under load.
-  workflow_dispatch: {}      # lets you run it manually from the Actions tab
-
+    # Every two hours, plus winter 17:00 Israel (15:00 UTC).
+    # Python selects daily runs using Asia/Jerusalem, including DST.
+    - cron: '0 0,2,4,6,8,10,12,14,15,16,18,20,22 * * *'
+  workflow_dispatch: {}
 permissions:
-  contents: write            # allow committing data/ + docs/ back
-
+  contents: write
 concurrency:
   group: jobscan
   cancel-in-progress: false
-
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
       - run: pip install -r requirements.txt
-      - name: Run scan
+      - name: Regression checks
+        run: python -m unittest discover -s tests -v
+      - name: Scan and notify new relevant giants
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python cloud_run.py
-      - name: Commit results
+      - name: Save scan results and alert receipts
+        if: always()
         run: |
-          git config user.name "jobscan-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data docs
-          git commit -m "scan $(date -u +%FT%TZ)" || echo "no changes to commit"
-          git push
+          git config user.name 'jobscan-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/radar.json docs/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "scan $(date -u +%FT%TZ)"
+            git push
+          fi
+      - name: Upload tracker
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+  deploy:
+    needs: scan
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
