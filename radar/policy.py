@@ -61,6 +61,8 @@ def recent_basis(job, now, prefs):
     if relative:
         days=0 if relative[1] else 1 if relative[2] else int(relative[3])
         if days>1: return None
+        observed=parsed_date(job.get('last_seen'))
+        if not observed or observed-timedelta(days=days)<cutoff: return None
         return 'Source reports today/yesterday; exact time unverified'
     first=parsed_date(job.get('first_seen'))
     if prefs.get('include_undated_new',True) and first and cutoff<=first<=now:
