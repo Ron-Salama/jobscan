@@ -50,51 +50,6 @@
       }
     },
     {
-      "id": "b7f13594ee9f58509578d48c",
-      "title": "Embedded Software TL",
-      "company": "Undisclosed employer",
-      "location": "Center",
-      "regions": [
-        "Center"
-      ],
-      "url": "https://ethosia.co.il/content/embedded-software-tl",
-      "sources": [
-        "ethosia"
-      ],
-      "source_ids": [
-        "ethosia:76850"
-      ],
-      "description": "Key Responsibilities: • Develop and maintain firmware and embedded software for satellite systems. • Managing offshore team (India) and local team. • Perform hardware bring-up, including board-level debugging, bootloader development, and peripheral integration. • Collaborate with hardware engineers to validate and optimize system functionality. • Ensure the software is highly reliable, fault-tolerant, and resilient to",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
-      },
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
-      }
-    },
-    {
       "id": "3e5c65442ce2378906cf7329",
       "title": "System Integration & Validation Engineer",
       "company": "Undisclosed employer",
@@ -281,147 +236,6 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
-      },
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
-      }
-    },
-    {
-      "id": "3fd1c92bc067e4288bd55206",
-      "title": "PHY/Radio Validation Engineer",
-      "company": "Undisclosed employer",
-      "location": "",
-      "regions": [
-        "Unknown"
-      ],
-      "url": "https://ethosia.co.il/content/phy-radio-validation-engineer",
-      "sources": [
-        "ethosia"
-      ],
-      "source_ids": [
-        "ethosia:76680"
-      ],
-      "description": "About the role PHY/Radio Validation Engineer will take part in achieving the compliance milestones and shape the infrastructure needed for that. The compliance is defined according to the various wireless standards supported in Qualcomm cutting edge chipsets, augmented by internal requirements. The position includes deep diving into system and standard requirements, having end to end responsibility",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [
-          "Location or eligibility to work from Israel needs confirmation."
-        ],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
-      },
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
-      }
-    },
-    {
-      "id": "16ec1bd3fd3ab39e43fc5e6f",
-      "title": "3093375 Next-gen Communications DSP & AI Software Development Engineer – Hod Hasharon",
-      "company": "Undisclosed employer",
-      "location": "",
-      "regions": [
-        "Unknown"
-      ],
-      "url": "https://ethosia.co.il/content/3093375-next-gen-communications-dsp-ai-software-development-engineer-hod-hasharon",
-      "sources": [
-        "ethosia"
-      ],
-      "source_ids": [
-        "ethosia:76672"
-      ],
-      "description": "Responsibilities Design and develop high-performance DSP software and optimized vector-processing kernels for wireless communications and AI workloads. Implement low‑level DSP software with strong focus on performance, accuracy, and real‑time constraints. Deliver high-quality, maintainable, and well-tested code while meeting project milestones. Collaborate with team members and peer teams across multiple engineering disciplines. Required Qualifications 2 –",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [
-          "Location or eligibility to work from Israel needs confirmation."
-        ],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
-      },
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
-      }
-    },
-    {
-      "id": "1fc7ac110a1832ec04997282",
-      "title": "Experienced DSP & AI Development Engineer",
-      "company": "Undisclosed employer",
-      "location": "",
-      "regions": [
-        "Unknown"
-      ],
-      "url": "https://ethosia.co.il/content/experienced-dsp-ai-development-engineer",
-      "sources": [
-        "ethosia"
-      ],
-      "source_ids": [
-        "ethosia:76666"
-      ],
-      "description": "Responsibilities Design and develop high‑performance DSP software, including highly efficient kernels for different applications, such as communication algorithms and machine learning inference workloads Implement optimized, low‑level DSP solutions with a strong focus on performance, accuracy, and real‑time constraints Deliver high‑quality, efficient, and well‑tested code according to project schedules Collaborate closely with team members and peer",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [
-          "Location or eligibility to work from Israel needs confirmation."
-        ],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Software_AI.pdf",
         "description_available": true
       },
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1210,71 +1024,6 @@
       }
     },
     {
-      "id": "6d70584f9845f48134d5cfb3",
-      "title": "Embedded DSP Engineer",
-      "company": "Undisclosed employer",
-      "location": "ת\"א והמרכז",
-      "regions": [
-        "Center"
-      ],
-      "url": "https://www.dialog.co.il/high-tech/jobs/jobpage?positionId=95155",
-      "sources": [
-        "dialog"
-      ],
-      "source_ids": [
-        "dialog:95155"
-      ],
-      "description": "לחברה ישראלית המפתחת טכנולוגיה מתקדמת למיקוד קולי (Beamforming) המיועדת לסביבות רועשות במיוחד דרוש/ה Embedded DSP Engineer | · תואר ראשון או שני בהנדסת חשמל, הנדסת מחשבים, מדעי המחשב או תחום קשור · 5+ שנות ניסיון מקצועי בפיתוח embedded firmware עם דגש משמעותי על יישום DSP · ניסיון מעשי עם פונקציונליות DSP נפוצות (FFT, מסננים וכו') · רקורד מוכח בפיתוח ויישום אלגוריתמי DSP בזמן אמת בשיתוף פעולה עם צוותי אלגוריתמים · כישורי תכנות חזקים ב-C/C++ עבור מערכות embedded · ניסיון מעשי נרחב עם מיקרו-בקרים ומעבדי embedded · ניסיון מוכח עם מערכות הפעלה בזמן אמת (RTOS) · מומחיות מוכחת בטכניקות תכנון ואופטימיזציה בצריכת אנרגיה נמוכה · ניסיון עם מתודולוגיות פיתוח agile",
-      "level": "",
-      "reported_years_min": 5,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
-          "Your profile includes: C."
-        ],
-        "warnings": [
-          "Alternative qualification paths found; read the experience excerpts."
-        ],
-        "experience": [
-          {
-            "min": 5,
-            "max": null,
-            "plus": true,
-            "kind": "stated",
-            "alternative": true,
-            "quote": "ואר ראשון או שני בהנדסת חשמל, הנדסת מחשבים, מדעי המחשב או תחום קשור · 5+ שנות ניסיון מקצועי בפיתוח embedded firmware עם דגש משמעותי על יישום DSP · ניסיון מעשי עם פונקציונליות DSP נפוצות ("
-          }
-        ],
-        "matched": [
-          "C"
-        ],
-        "learning": [
-          "C++"
-        ],
-        "unconfirmed": [
-          "RTOS"
-        ],
-        "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-18T22:34:37+00:00",
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "legacy_url": "https://www.dialog.co.il/high-tech/jobs/jobpage?positionId=95155",
-      "daily_basis": null,
-      "last_seen": "2026-09-18T22:34:37+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": true
-      }
-    },
-    {
       "id": "8432d0f28c6dd61e03629950",
       "title": "מפתח/ת Embedded",
       "company": "Undisclosed employer",
@@ -2044,53 +1793,6 @@
         "giant": false,
         "referral": false,
         "tailor": true
-      }
-    },
-    {
-      "id": "77254e27839d75b44b88ddbb",
-      "title": "HW Integration Practical Engineer",
-      "company": "Undisclosed employer",
-      "location": "חיפה והצפון",
-      "regions": [
-        "North"
-      ],
-      "url": "https://www.dialog.co.il/high-tech/jobs/jobpage?positionId=94736",
-      "sources": [
-        "dialog"
-      ],
-      "source_ids": [
-        "dialog:94736"
-      ],
-      "description": "בחברה ותיקה המפתחת ומייצרת מערכות בקרה לתנועה מדויקת, ברמה של אלפית המילימטר, עבור תעשיית בדיקת השבבים. | מהנדס/ת מעשי ניסיון של שנתיים ומעלה כמהנדס אימות מחקר ופיתוח ידע טוב בכלי CAD רלוונטיים (ORCAD, Allegro) ניסיון וידע בתקני בטיחות ותהליכי הסמכה, כולל ניסיון מעשי - יתרון ניסיון עם מערכות תנועה ובקרה - יתרון",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-18T22:34:37+00:00",
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "legacy_url": "https://www.dialog.co.il/high-tech/jobs/jobpage?positionId=94736",
-      "daily_basis": null,
-      "last_seen": "2026-09-18T22:34:37+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
       }
     },
     {
@@ -4633,53 +4335,6 @@
       "description_seen_at": "2026-09-18T22:34:37+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
       "legacy_url": "https://jobs.apple.com/en-il/details/200611225/embedded-fw-engineer",
-      "daily_basis": null,
-      "last_seen": "2026-09-18T22:34:37+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": true,
-        "referral": true,
-        "tailor": false
-      }
-    },
-    {
-      "id": "6224ca525c1bae07c81140ef",
-      "title": "DSP Real-time Embedded Engineer",
-      "company": "Apple",
-      "location": "Herzliya",
-      "regions": [
-        "Center"
-      ],
-      "url": "https://jobs.apple.com/en-il/details/200665695/dsp-real-time-embedded-engineer",
-      "sources": [
-        "apple"
-      ],
-      "source_ids": [
-        "apple:200665695"
-      ],
-      "description": "We are seeking a highly skilled and motivated DSP real-time embedded Engineer to join our firmware team. In this role, you will be responsible for implementing cutting-edge digital signal processing algorithms for our next-generation products.",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-18T22:34:37+00:00",
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "legacy_url": "https://jobs.apple.com/en-il/details/200665695/dsp-real-time-embedded-engineer",
       "daily_basis": null,
       "last_seen": "2026-09-18T22:34:37+00:00",
       "availability": "observed",
@@ -9579,56 +9234,6 @@
       }
     },
     {
-      "id": "dadf346a942de765c6587536",
-      "title": "DSP/PHY Firmware Engineer",
-      "company": "Undisclosed employer",
-      "location": "",
-      "regions": [
-        "Unknown"
-      ],
-      "url": "https://www.cps.co.il/job/dsp-phy-firmware-engineer",
-      "sources": [
-        "cps"
-      ],
-      "source_ids": [
-        "cps:dsp-phy-firmware-engineer"
-      ],
-      "description": "",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [
-          "Description unavailable. Skills and requirements have not been checked.",
-          "Location or eligibility to work from Israel needs confirmation."
-        ],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
-      },
-      "description_seen_at": null,
-      "first_seen": "2026-09-18T17:42:19+00:00",
-      "legacy_url": "https://www.cps.co.il/job/dsp-phy-firmware-engineer",
-      "daily_basis": null,
-      "last_seen": "2026-09-18T22:34:37+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
-      }
-    },
-    {
       "id": "d82c32a78691546420b495cb",
       "title": "Software Development Engineer",
       "company": "Undisclosed employer",
@@ -10809,71 +10414,6 @@
         "giant": true,
         "referral": true,
         "tailor": true
-      }
-    },
-    {
-      "id": "0aa48a0e080017b356eb9415",
-      "title": "System Integration Engineer, SERDES",
-      "company": "Amazon",
-      "location": "Haifa, Haifa, ISR",
-      "regions": [
-        "North"
-      ],
-      "url": "https://www.amazon.jobs/en/jobs/10506530/system-integration-engineer-serdes",
-      "sources": [
-        "amazon"
-      ],
-      "source_ids": [
-        "amazon:10506530"
-      ],
-      "description": "- B.Sc. in Electrical / Computer Engineering or equivalent.\n- 5+ years of HW Design Experience or in Functional or Electrical Integration/Validation/Debug\n- 2+ years’ experience working with SERDES design/Integration/Debug\n- Knowledge on High speed interfaces such as PCIe/Multi gig Ethernet /USB 4 etc",
-      "level": "",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [
-          "Alternative qualification paths found; read the experience excerpts."
-        ],
-        "experience": [
-          {
-            "min": 5,
-            "max": null,
-            "plus": true,
-            "kind": "stated",
-            "alternative": true,
-            "quote": "- 5+ years of HW Design Experience or in Functional or Electrical Integration/Validation/Debug"
-          },
-          {
-            "min": 2,
-            "max": null,
-            "plus": true,
-            "kind": "stated",
-            "alternative": false,
-            "quote": "- 2+ years’ experience working with SERDES design/Integration/Debug"
-          }
-        ],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "first_seen": "2026-09-18T17:38:51+00:00",
-      "legacy_url": "https://www.amazon.jobs/en/jobs/10506530/system-integration-engineer-serdes",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": true,
-        "referral": false,
-        "tailor": false
       }
     },
     {
@@ -15778,54 +15318,6 @@
       }
     },
     {
-      "id": "cb04d0aad962f6a2a13fb8de",
-      "title": "Freelance Software Tester With Apple Vision Pro",
-      "company": "Undisclosed employer",
-      "location": "Brussels, Belgium",
-      "regions": [
-        "Unknown"
-      ],
-      "url": "https://hiremetech.com/job/148004631",
-      "sources": [
-        "hiremetech"
-      ],
-      "source_ids": [
-        "hiremetech:148004631"
-      ],
-      "description": "This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for a Freelance Software Tester With Apple Vision Pro based in Israel.\n\nThis freelance opportunity is ideal for Apple Vision Pro owners interested in testing immersive digital experiences.\n\nYou will evaluate a sporting application during live events, focusing on the functionality and accuracy of its AR/VR elements.\n\nYour testing will help identify technical issues and ensure a smooth, engaging experience for sports fans.\n\nThe work is short-term and project-based, with testing tasks assigned according to client needs rather than a fixed schedule.\n\nYou will use an online platform to access assignments, follow testing guidance, and report defects clearly.\n\nPrevious software testing experience is helpful but not required, with training resources available for those new to the field.\n\nThe role offers the flexibility to work remotely while gaining practical experience testing technology used in global-scale digital products.\n\nAccountabilities\n\nAs a freelance tester, you will perform functional testing of a sporting application using your Apple Vision Pro and provide clear, accurate feedback on the user experience and any technical issues identified.\n\nAccess live sporting events through the application using an Apple Vision Pro.\n\nTest AR/VR elements to verify that they display and function correctly.\n\nIdentify technical glitches, defects, and unexpected behavior during testing.\n\nDocument and report defects through the designated online tracking platform.\n\nFollow provided testing instructions, preparation materials, and project requirements.\n\nComplete assigned testing sessions according to client requests and project availability.\n\nCommunicate testing findings clearly and effectively in English.\n\nDedicate approximately 2–3 hours to individual testing tasks on an ad-hoc basis.\n\nComplete the initial platform account setup and review relevant preparation materials before participating in testing.\n\nRequirements\n\nThe ideal candidate is comfortable using Apple Vision Pro, able to navigate a streaming application in their local language, and capable of providing clear feedback in English. Testing experience is a plus, but motivated newcomers can also be considered.\n\nMust be at least 18 years old.\n\nMust be physically located in one of the eligible countries: Australia, Singapore, UAE, Hong Kong, United Kingdom, France, Japan, South Korea, Taiwan, Germany, or China.\n\nMust personally own an Apple Vision Pro device and already be familiar with using it.\n\nMust be willing to provide proof of Apple Vision Pro ownership.\n\nMust be comfortable navigating a streaming application in the local language.\n\nMust be able to communicate effectively in English.\n\nPrevious software testing experience is an advantage but is not mandatory.\n\nWillingness to complete available testing preparation or training is expected for candidates new to software testing.\n\nMust be able to dedicate approximately 30 minutes to initial account setup.\n\nMust have flexibility to complete testing assignments on an ad-hoc basis, typically requiring 2–3 hours per task.\n\nStrong attention to detail and the ability to identify and clearly describe technical issues.\n\nReliable, organized, and comfortable working independently in a remote freelance environment.\n\nBenefits\n\nStarting pay rate of $18 USD per hour, with rates open to negotiation.\n\nPaid weekly through PayPal or Payoneer.\n\nPaid by the hour rather than by the number of bugs discovered.\n\nFully remote freelance work with flexible scheduling.\n\nFreedom to choose testing tasks that fit your availability and interests.\n\nShort-term, ad-hoc assignments without a fixed testing schedule.\n\nOpportunity to test global-scale mobile and immersive applications.\n\nPractical experience developing and strengthening software testing skills.\n\nFree testing courses and preparation resources available for freelancers who are new to software testing.\n\nWork from home, a coffee shop, or another suitable location while maintaining flexibility.\n\nHow Jobgether Works\n\nWe use an \nAI-powered matching process\n to ensure your application is reviewed quickly, objectively, and fairly against the role's core requirements. Our system identifies the top-fitting candidates, and this shortlist is then shared directly with the hiring company. The final decision and next steps (interviews, assessments) are managed by their internal team.\n\nWe appreciate your interest and wish you the best!\n\n Why Apply Through Jobgether?\n\nData Privacy Notice:\n By submitting your application, you acknowledge that Jobgether will process your personal data to evaluate your candidacy and share relevant information with the hiring employer. This processing is based on legitimate interest and pre-contractual measures under applicable data protection laws (including GDPR). You may exercise your rights (access, rectification, erasure, objection) at any time.\n\nWe may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses and identifying potential inconsistencies or verification signals in application materials based on available information. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.",
-      "level": "junior / entry level",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [
-          "Location or eligibility to work from Israel needs confirmation."
-        ],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "first_seen": "2026-09-18T17:38:51+00:00",
-      "legacy_url": "https://hiremetech.com/job/148004631",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
-      }
-    },
-    {
       "id": "9a4e867c2f4ef25a018bbb54",
       "title": "בודק/ת תוכנה ג'וניור",
       "company": "Undisclosed employer",
@@ -16962,54 +16454,6 @@
       "description_seen_at": "2026-09-18T17:42:19+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
       "legacy_url": "https://hiremetech.com/job/143939062",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": false
-      }
-    },
-    {
-      "id": "17024d8eb23299880d66dd14",
-      "title": "AI Text Validation Specialist (Hebrew language)",
-      "company": "Undisclosed employer",
-      "location": "Israel",
-      "regions": [
-        "Unknown"
-      ],
-      "url": "https://hiremetech.com/job/144846369",
-      "sources": [
-        "hiremetech"
-      ],
-      "source_ids": [
-        "hiremetech:144846369"
-      ],
-      "description": "Excellent written skills in the target language.\n\nStrong attention to detail.\n\nAbility to follow detailed instructions consistently.\n\nBasic computer skills and a reliable internet connection.\n\nAbility to work independently and meet productivity targets.\n\nPrevious experience in transcription, annotation, or linguistic projects is a plus but not required.\n\nTraining will be provided before the project starts.\n\n\n\n About the Project\nTSMG is looking for contributors to support an AI language project focused on improving speech recognition systems.\nYou will review AI-generated transcripts and convert them into a natural, readable text format by applying punctuation, capitalization, and formatting rules. This is not a traditional transcription project—you will not transcribe audio or rewrite the content.",
-      "level": "mid-level / intermediate",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently."
-        ],
-        "warnings": [
-          "Location or eligibility to work from Israel needs confirmation."
-        ],
-        "experience": [],
-        "matched": [],
-        "learning": [],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "first_seen": "2026-09-18T17:38:51+00:00",
-      "legacy_url": "https://hiremetech.com/job/144846369",
       "last_seen": "2026-09-18T17:42:19+00:00",
       "availability": "observed",
       "availability_note": "Seen in a source response; check the original before applying.",
@@ -19118,79 +18562,6 @@
       "description_seen_at": "2026-09-18T17:42:19+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
       "legacy_url": "https://hiremetech.com/job/143192483",
-      "last_seen": "2026-09-18T17:42:19+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": true
-      }
-    },
-    {
-      "id": "efe01114cf1111047a8652f5",
-      "title": "Firmware SerDes Verification Engineer",
-      "company": "Undisclosed employer",
-      "location": "Yokneam, Israel",
-      "regions": [
-        "North"
-      ],
-      "url": "https://hiremetech.com/job/141409417",
-      "sources": [
-        "hiremetech"
-      ],
-      "source_ids": [
-        "hiremetech:141409417"
-      ],
-      "description": "B.Sc. in Computer Science / Computer Engineering / Electrical Engineering / Communication Engineering or equivalent experience 1+ year of relevant experience Programming Knowledge in C and C ++, python Experience with Verification and Automation Experience with C/CPP Knowledge in Linux, Git Creative, motivated and value-driven person Background with CI methodology & tools (Gerrit, Jenkins etc.) NVIDIA is widely considered to be one of the technology world’s most desirable employers. We have some of the most forward-thinking and hardworking people in the world working for us. Are you a creative and autonomous engineer who loves a challenge? Are you ready to become the engineer you always wanted to be? Come and be part of the best chip design team in the industry! We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. We will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation. NVIDIA is looking for an excellent Firmware Verification Engineer for NVIDIA FW SerDes verification Group. The person will be part of FW SerDes verification of NVIDIA Products. Will closely work with NVIDIA FW SerDes development, architecture teams and gain deep understanding of NVIDIA's products and technologies. What you'll be doing: Own the responsibility for delivering Networking features and their verification aspects. Define, develop and maintain verification infrastructure and regression tests suites - make test suites robust, maintainable and easy portable. Work with continuous integration system, regression tools, automate builds, run test suites and analyzing results. Innovate! Bring NVIDIA product to next quality level What we need to see: B.Sc. in Computer Science / Computer Engineering / Electrical Engineering / Communication Engineering or equivalent experience 1+ year of relevant experience Programming Knowledge in C and C ++, python Experience with Verification and Automation Experience with C/CPP Knowledge in Linux, Git Creative, motivated and value-driven person Background with CI methodology & tools (Gerrit, Jenkins etc.) NVIDIA is widely considered to be one of the technology world’s most desirable employers. We have some of the most forward-thinking and hardworking people in the world working for us. Are you a creative and autonomous engineer who loves a challenge? Are you ready to become the engineer you always wanted to be? Come and be part of the best chip design team in the industry! We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. We will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation.",
-      "level": "mid-level / intermediate",
-      "reported_years_min": null,
-      "reported_posted": "",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
-          "Your profile includes: Python, C, Git."
-        ],
-        "warnings": [
-          "Alternative qualification paths found; read the experience excerpts."
-        ],
-        "experience": [
-          {
-            "min": 1,
-            "max": null,
-            "plus": true,
-            "kind": "stated",
-            "alternative": true,
-            "quote": "ical Engineering / Communication Engineering or equivalent experience 1+ year of relevant experience Programming Knowledge in C and C ++, python Experience with Verification and Automatio"
-          },
-          {
-            "min": 1,
-            "max": null,
-            "plus": true,
-            "kind": "stated",
-            "alternative": true,
-            "quote": "ical Engineering / Communication Engineering or equivalent experience 1+ year of relevant experience Programming Knowledge in C and C ++, python Experience with Verification and Automatio"
-          }
-        ],
-        "matched": [
-          "Python",
-          "C",
-          "Git"
-        ],
-        "learning": [
-          "CI/CD",
-          "Linux"
-        ],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-18T17:42:19+00:00",
-      "first_seen": "2026-09-18T17:38:51+00:00",
-      "legacy_url": "https://hiremetech.com/job/141409417",
       "last_seen": "2026-09-18T17:42:19+00:00",
       "availability": "observed",
       "availability_note": "Seen in a source response; check the original before applying.",
