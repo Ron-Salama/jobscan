@@ -20,15 +20,8 @@ def post_json(url, payload, headers=None):
 
 # ---------------- model ----------------
 def region_of(city):
-    c = (city or "").lower()
-    for k in C.SOUTH:
-        if k in c: return "South"
-    for k in C.JERUSALEM:
-        if k in c: return "Jerusalem"
-    for k in C.NORTH:
-        if k in c: return "North"
-    if not c or c in ("israel","ישראל"): return "Unknown"
-    return "Center"
+    from radar.engine import regions_of
+    return regions_of(city)[0]
 
 def normalize(d):
     """Ensure any adapter's dict has all keys + a computed region."""

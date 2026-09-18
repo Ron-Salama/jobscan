@@ -10,6 +10,9 @@ def job(**kw):
  d={'title':'Junior Software Engineer','company':'Intel','city':'Haifa','url':'https://example.com/1','desc':'Python software development. '+('Build tools. '*20),'level':'junior'};d.update(kw)
  j=normalize(d,P);j.update(first_seen='2026-09-19T12:00:00+00:00',last_seen='2026-09-19T14:00:00+00:00',availability='observed');return j
 class Rules(unittest.TestCase):
+ def test_compatibility_adapter_constructs_jobs(self):
+  from legacy_sources import job as legacy_job
+  self.assertEqual(legacy_job('test','1','Software Engineer',city='Haifa')['region'],'North')
  def test_referral_subsidiary(self):
   self.assertTrue(company_matches('PwC Next Israel',P['referral_companies']))
   self.assertFalse(company_matches('PwC',P['referral_companies']))
