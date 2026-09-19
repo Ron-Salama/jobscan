@@ -38,7 +38,7 @@ class Rules(unittest.TestCase):
   self.assertEqual(due(datetime(2026,9,19,14,tzinfo=timezone.utc),{}),'daily')
   self.assertEqual(due(datetime(2026,12,19,15,tzinfo=timezone.utc),{}),'daily')
   self.assertEqual(due(datetime(2026,12,19,14,tzinfo=timezone.utc),{}),'giants')
-  self.assertIsNone(due(datetime(2026,9,19,15,tzinfo=timezone.utc),{'schedule':{'daily_date':'2026-09-19'}}))
+  self.assertIsNone(due(datetime(2026,9,19,15,tzinfo=timezone.utc),{'schedule':{'daily_date':'2026-09-19','daily_at':'2026-09-19T14:10:00+00:00'}}))
  def test_alert_only_giants_and_no_duplicates(self):
   a=job();b=job(company='Startup',url='https://example.com/2');d={'jobs':[a,b],'updated_at':'2026-09-19T14:00:00+00:00'};prepare(d,P)
   self.assertTrue(eligible(a));self.assertFalse(eligible(b))
@@ -50,3 +50,28 @@ class Rules(unittest.TestCase):
   self.assertEqual(d['alerts']['pending'],[j['id']])
   with patch('radar.alerts.atomic_json'),patch('radar.alerts.send',return_value=True):deliver(d,P,[])
   self.assertEqual(d['alerts']['pending'],[])
+
+class Fixes(unittest.TestCase):
+ def test_hebrew_junior_variants(self):
+  for title in ["מפתח גוניור", "מפתח ג'וניור", "מפתח ג׳וניור", "מפתח ג’וניור", "מתכנת/ת מתחיל/ה", "מפתח ללא ניסיון", "מפתח ללא נסיון", "מפתח בוגר תואר", "מפתח למשרה התחלתית", "מפתח בתחילת הדרך"]:
+   with self.subTest(title=title): self.assertEqual(job(title=title,level='')['analysis']['bucket'],'consider')
+ def test_developer_alone_is_not_junior(self):
+  self.assertEqual(job(title='מפתח/ת',level='')['analysis']['bucket'],'review')
+  self.assertEqual(job(title="מפתח ג'וניור",level='',desc='5 years of software development experience.')['analysis']['bucket'],'stretch')
+ def test_ibi_exact_title(self):
+  j=job(title="מתכנת/ת ג'וניור ל- IBI קפיטל – מספר משרה 1726",level='junior / entry level',desc='תואר ראשון במדעי המחשב. SQL ו- #C או Java.');self.assertEqual(j['analysis']['bucket'],'consider');self.assertTrue(retain(j))
+ def test_location_conflict(self):
+  j=job(title='מפתח/ת Python',city='אזור השפלה',desc='לנס דרוש/ה מפתח/ת Python. משרה מלאה וזמנית, בירושלים. דרישות התפקיד: ניסיון של שנה.')
+  self.assertEqual(j['analysis']['bucket'],'outside');self.assertFalse(retain(j));self.assertTrue(j['analysis']['location_evidence'])
+ def test_location_footer_does_not_disqualify(self):
+  j=job(city='Tel Aviv',desc='Junior Python developer. City selector: ירושלים באר שבע חיפה. Our customers work in Jerusalem.')
+  self.assertEqual(j['analysis']['bucket'],'consider');self.assertEqual(j['analysis']['location_evidence'],[])
+ def test_late_giant_not_skipped_in_odd_hour(self):
+  d={'schedule':{'giants_at':'2026-09-19T06:05:00+00:00'}}
+  self.assertEqual(due(datetime(2026,9,19,9,20,tzinfo=timezone.utc),d),'giants')
+ def test_recovery_checks_do_not_duplicate_runs(self):
+  d={'schedule':{'daily_date':'2026-09-19','daily_at':'2026-09-19T14:08:00+00:00'}}
+  self.assertIsNone(due(datetime(2026,9,19,14,17,tzinfo=timezone.utc),d))
+ def test_daily_missed_until_after_midnight(self):
+  d={'schedule':{'daily_date':'2026-09-18','giants_at':'2026-09-19T19:00:00+00:00'}}
+  self.assertEqual(due(datetime(2026,9,19,22,20,tzinfo=timezone.utc),d),'daily')

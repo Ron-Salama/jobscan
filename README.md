@@ -100,3 +100,10 @@ Source labels: **ok** = request/parser completed within that reader's stated sco
 Regression suite covers the Intel post-silicon case, ranges and optional experience, senior titles, unknown/foreign locations, source failures, exact deduplication, freshness, migration, atomic writes and embedded-script safety.
 
 Optional browser checks: install Playwright separately, run a local server, then `node tests/browser.cjs`. Set `PLAYWRIGHT_MODULE` to an existing Playwright module path and `PLAYWRIGHT_CHANNEL` if using a browser other than Edge. Tests use an isolated browser context, never your personal notes.
+
+
+### September 19 audit fixes
+
+Hebrew developer titles (including מתכנת/ת) and junior spelling variants are recognized. Explicit work-location sentences are checked against source location fields; an excluded location in the actual job description prevents admission. City selectors and incidental office/customer mentions do not count as job locations.
+
+Cloud wake-ups target minute 0 and additionally 17, 37, and 53 each hour. Lightweight due checks skip unnecessary scans. Giant scans use two hours elapsed since the last successful giant/daily scan, rather than even-hour arithmetic. Daily runs catch up if their 17:00 slot was missed, including after midnight, and record target time, actual start, and delay. GitHub still does not guarantee punctual scheduling. Recovered previously filtered Hebrew roles keep their original discovery dates and do not trigger new-job alerts.

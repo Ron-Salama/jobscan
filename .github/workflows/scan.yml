@@ -1,9 +1,8 @@
 name: Job Radar
 on:
   schedule:
-    # Every two hours, plus winter 17:00 Israel (15:00 UTC).
-    # Python selects daily runs using Asia/Jerusalem, including DST.
-    - cron: '0 0,2,4,6,8,10,12,14,15,16,18,20,22 * * *'
+    # 17:00 target plus off-peak recovery checks. Only due scans fetch jobs.
+    - cron: '0,17,37,53 * * * *'
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -14,21 +13,29 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    outputs:
+      ran: ${{ steps.check.outputs.due }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install -r requirements.txt
+      - name: Check whether a scan is due
+        id: check
+        run: python cloud_run.py --check
+      - if: steps.check.outputs.due == 'true'
+        run: pip install -r requirements.txt
       - name: Regression checks
+        if: steps.check.outputs.due == 'true'
         run: python -m unittest discover -s tests -v
       - name: Scan and notify new relevant giants
+        if: steps.check.outputs.due == 'true'
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python cloud_run.py
       - name: Save scan results and alert receipts
-        if: always()
+        if: always() && steps.check.outputs.due == 'true'
         run: |
           git config user.name 'jobscan-bot'
           git config user.email 'actions@users.noreply.github.com'
@@ -38,10 +45,12 @@ jobs:
             git push
           fi
       - name: Upload tracker
+        if: steps.check.outputs.due == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs
   deploy:
+    if: needs.scan.outputs.ran == 'true'
     needs: scan
     runs-on: ubuntu-latest
     permissions:

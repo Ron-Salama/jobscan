@@ -9,11 +9,11 @@ CENTER = ('tel aviv','tel-aviv','תל אביב','ת"א','השרון','sharon','h
 SOUTH = ('beer sheva',"be'er sheva",'beersheba','באר שבע','ashdod','אשדוד','ashkelon','אשקלון','kiryat gat','קריית גת','eilat','אילת','south','דרום')
 JERUSALEM = ('jerusalem','ירושלים','har hotzvim','הר חוצבים')
 FOREIGN = ('india','gurugram','bangalore','bengaluru','united states','usa','california','santa clara','new york','germany','berlin','london','united kingdom','poland','warsaw','canada','china','taiwan','singapore')
-JUNIOR = r'\b(junior|jr\.?|graduate|entry[ -]level|college grad|new grad)\b|גוניור|ג׳וניור|ללא ניסיון|בוגר'
+JUNIOR = r'\b(junior|jr\.?|graduate|entry[ -]level|college grad|new grad)\b|ג[׳’\x27]?וניור|מתחיל|גוניור|ג׳וניור|ללא ני?סי?ון|בוגר|משרה התחלתית|תפקיד התחלתי|בתחילת הדרך'
 SENIOR = r'\b(senior|sr\.?|principal|staff|architect|director|manager|head of|team lead(?:er)?|tech lead|lead developer|lead engineer|lead software)\b|בכיר|ראש צוות|מנהל'
-DEV = r'\b(software|developer|development engineer|programmer|firmware|embedded|backend|frontend|full[ -]?stack|devops|sdet|automation|validation|integration|data engineer|ai engineer|application engineer|applications engineer|technical artist|gameplay|unity)\b|תוכנה|מפתח|אוטומציה|אינטגרציה'
+DEV = r'\b(software|developer|development engineer|programmer|firmware|embedded|backend|frontend|full[ -]?stack|devops|sdet|automation|validation|integration|data engineer|ai engineer|application engineer|applications engineer|technical artist|gameplay|unity)\b|תוכנה|מפתח|מתכנת|תכנת|אוטומציה|אינטגרציה'
 SKILLS = {
-    'Python': r'\bpython\b', 'C#': r'(?<!\w)c#|\.net\b', 'C': r'(?<![\w+])c(?![\w+#])',
+    'Python': r'\bpython\b', 'C#': r'(?<!\w)c#|#c\b|\.net\b', 'C': r'(?<![\w+])c(?![\w+#])',
     'C++': r'(?<!\w)c\+\+', 'TypeScript': r'\btypescript\b', 'JavaScript': r'\bjavascript\b',
     'Java': r'\bjava\b', 'SQL': r'\bsql\b|mysql|postgres', 'React': r'\breact\b',
     'Next.js': r'\bnext\.?js\b', 'Firebase': r'firebase|firestore', 'Git': r'\bgit\b|github',
@@ -80,6 +80,19 @@ def experience_evidence(description):
             result.append({'min':lo,'max':hi,'plus':bool(m[3]),'kind':'preferred' if preferred else 'stated', 'alternative':alternative,'quote':quote})
     return result
 
+def location_evidence(description):
+    # Only explicit work-location statements. Never scan footer city pickers.
+    sentences=re.split(r'[.!?\n]+',description)
+    evidence=[]
+    for sentence in sentences:
+        match=re.search(r"(?:המשרה|התפקיד|מקום העבודה|מיקום המשרה|משרה (?:מלאה|חלקית|זמנית))[^.!?\n]{0,65}?(?:בירושלים|בחיפה|בתל אביב|בבאר שבע|באשדוד|באשקלון)",sentence)
+        if not match:
+            match=re.search(r'(?:(?:position|role|job) (?:is )?(?:based|located) in|work location\s*:)\s*(?:Jerusalem|Haifa|Tel Aviv|Beer Sheva|Ashdod|Ashkelon)',sentence,re.I)
+        if match:
+            quote=match.group(0)
+            evidence.append({'quote':quote,'regions':regions_of(quote)})
+    return evidence
+
 def analyze(job, profile):
     title=job['title']; desc=job['description']; blob=title+'\n'+desc
     reasons=[]; warnings=[]
@@ -87,7 +100,7 @@ def analyze(job, profile):
     required=[e['min'] for e in evidence if e['kind']=='stated']
     alternatives=any(e['alternative'] for e in evidence if e['kind']=='stated')
     minimum=max(required) if required and not alternatives else None
-    junior=bool(re.search(JUNIOR,title,re.I)) or job.get('level','').lower() in ('junior','entry','entry level','associate') or bool(re.search(r'job type\s*:?\s*college grad|recent graduates? welcome|new graduate role',desc,re.I))
+    junior=bool(re.search(JUNIOR,title,re.I)) or bool(re.search(JUNIOR,job.get('level',''),re.I)) or job.get('level','').lower() in ('entry','associate') or bool(re.search(r'job type\s*:?\s*college grad|recent graduates? welcome|new graduate role',desc,re.I))
     senior=bool(re.search(SENIOR,title,re.I)) or job.get('level','').lower() in ('senior','lead','principal','staff','manager')
     student=bool(re.search(r'\b(intern|internship|student)\b|סטודנט',title,re.I))
     relevant=bool(re.search(DEV,title,re.I))
@@ -121,6 +134,13 @@ def analyze(job, profile):
     if job['regions']==['Unknown']: warnings.append('Location or eligibility to work from Israel needs confirmation.')
     if all(r in profile.get('excluded_regions',[]) or r=='Outside Israel' for r in job['regions']):
         bucket='outside'; reasons.append('Location is outside your current search preferences. Listing retained.')
+    location_quotes=location_evidence(desc)
+    described={r for e in location_quotes for r in e['regions'] if r!='Unknown'}
+    if described:
+        if described!=set(job['regions']):
+            warnings.append('Location fields conflict with the description: '+ '; '.join(e['quote'] for e in location_quotes))
+        if described.issubset(set(profile.get('excluded_regions',[]))|{'Outside Israel'}):
+            bucket='outside'; reasons.append('The description explicitly locates this role outside your selected regions.')
     if matched: reasons.append('Your profile includes: '+', '.join(matched)+'.')
     # Choose by title first, not incidental words in a long company description.
     target=title.lower()
@@ -132,7 +152,7 @@ def analyze(job, profile):
     else: cv='Ron_Salama_Backend_FullStack.pdf'
     return {'bucket':bucket,'reasons':reasons,'warnings':warnings,'experience':evidence,
             'matched':matched,'learning':learning_mentions,'unconfirmed':unconfirmed,'cv':cv,
-            'description_available':bool(desc)}
+            'description_available':bool(desc),'location_evidence':location_quotes}
 
 def normalize(raw, profile):
     title=clean(raw.get('title') or raw.get('role'))

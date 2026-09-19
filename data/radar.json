@@ -41,7 +41,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "first_seen": "2026-09-19T08:26:12+00:00",
       "description_seen_at": "2026-09-19T16:57:13+00:00",
@@ -94,7 +95,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18T22:34:37+00:00",
       "description_seen_at": "2026-09-19T16:57:13+00:00",
@@ -143,7 +145,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18T22:34:37+00:00",
       "description_seen_at": null,
@@ -194,7 +197,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18T22:34:37+00:00",
       "description_seen_at": null,
@@ -259,7 +263,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-19T08:26:12+00:00",
@@ -308,7 +313,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -360,7 +366,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -413,7 +420,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -467,7 +475,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -516,7 +525,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -567,7 +577,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -616,7 +627,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -667,7 +679,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -716,7 +729,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -769,7 +783,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -827,7 +842,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -885,7 +901,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -932,7 +949,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -981,7 +999,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1032,7 +1051,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1083,7 +1103,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1135,7 +1156,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1196,7 +1218,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1252,7 +1275,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1314,7 +1338,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1367,7 +1392,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1414,7 +1440,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1461,7 +1488,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1523,7 +1551,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1575,7 +1604,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1628,7 +1658,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1675,7 +1706,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1735,7 +1767,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1804,7 +1837,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1865,7 +1899,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1912,7 +1947,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -1959,7 +1995,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2022,7 +2059,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2086,7 +2124,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2156,7 +2195,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2225,7 +2265,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2300,7 +2341,8 @@
           "RTOS"
         ],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2361,7 +2403,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2437,7 +2480,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2507,7 +2551,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2560,7 +2605,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2613,7 +2659,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2662,7 +2709,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2712,7 +2760,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2762,7 +2811,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2812,7 +2862,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2862,7 +2913,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2912,7 +2964,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -2962,7 +3015,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3012,7 +3066,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3062,7 +3117,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3112,7 +3168,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3162,7 +3219,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3212,7 +3270,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3262,7 +3321,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3315,7 +3375,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3365,7 +3426,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3415,7 +3477,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3465,7 +3528,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3515,7 +3579,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3565,7 +3630,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3615,7 +3681,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3665,7 +3732,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3715,7 +3783,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3765,7 +3834,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3815,7 +3885,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3865,7 +3936,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3915,7 +3987,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -3979,7 +4052,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4029,7 +4103,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4081,7 +4156,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4142,7 +4218,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4205,7 +4282,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4267,7 +4345,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4332,7 +4411,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18T17:42:19+00:00",
       "description_seen_at": "2026-09-18T17:42:19+00:00",
@@ -4391,7 +4471,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18T17:42:19+00:00",
       "description_seen_at": "2026-09-18T17:42:19+00:00",
@@ -4459,7 +4540,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18T17:42:19+00:00",
       "description_seen_at": "2026-09-18T17:42:19+00:00",
@@ -4505,7 +4587,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4552,7 +4635,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4604,7 +4688,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4651,7 +4736,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4698,7 +4784,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4745,7 +4832,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4807,7 +4895,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4869,7 +4958,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -4936,7 +5026,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5004,7 +5095,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5073,7 +5165,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5139,7 +5232,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5200,7 +5294,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T02:16:52+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5254,7 +5349,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5305,7 +5401,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5358,7 +5455,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5416,7 +5514,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5475,7 +5574,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5530,7 +5630,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5594,7 +5695,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5648,7 +5750,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5700,7 +5803,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5768,7 +5872,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5825,7 +5930,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5872,7 +5978,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5939,7 +6046,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -5991,7 +6099,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6052,7 +6161,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6111,7 +6221,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6168,7 +6279,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6215,7 +6327,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6262,7 +6375,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6328,7 +6442,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6389,7 +6504,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6454,7 +6570,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6509,7 +6626,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6562,7 +6680,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6614,7 +6733,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6664,7 +6784,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6714,7 +6835,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6764,7 +6886,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6814,7 +6937,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6866,7 +6990,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6916,7 +7041,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -6966,7 +7092,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7019,7 +7146,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7069,7 +7197,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7119,7 +7248,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7172,7 +7302,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7225,7 +7356,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7275,7 +7407,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7325,7 +7458,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7375,7 +7509,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7428,7 +7563,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7478,7 +7614,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7528,7 +7665,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7578,7 +7716,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7628,7 +7767,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7678,7 +7818,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7728,7 +7869,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7778,7 +7920,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7828,7 +7971,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7878,7 +8022,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7931,7 +8076,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -7981,7 +8127,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8031,7 +8178,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8081,7 +8229,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8131,7 +8280,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8181,7 +8331,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8231,7 +8382,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8281,7 +8433,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8331,7 +8484,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8381,7 +8535,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8431,7 +8586,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8481,7 +8637,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8531,7 +8688,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8581,7 +8739,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8631,7 +8790,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8681,7 +8841,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8731,7 +8892,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8781,7 +8943,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8831,7 +8994,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8883,7 +9047,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8923,7 +9088,7 @@
         "bucket": "review",
         "reasons": [
           "Seniority is not explicit enough to classify confidently.",
-          "Your profile includes: C."
+          "Your profile includes: C#, C."
         ],
         "warnings": [
           "Description unavailable. Skills and requirements have not been checked.",
@@ -8931,12 +9096,14 @@
         ],
         "experience": [],
         "matched": [
+          "C#",
           "C"
         ],
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -8986,7 +9153,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9036,7 +9204,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9086,7 +9255,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9136,7 +9306,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9186,7 +9357,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9236,7 +9408,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9289,7 +9462,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9339,7 +9513,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9389,7 +9564,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9439,7 +9615,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9489,7 +9666,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9539,7 +9717,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9589,7 +9768,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9641,7 +9821,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9691,7 +9872,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9741,7 +9923,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "description_seen_at": null,
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9791,7 +9974,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18T17:42:19+00:00",
       "description_seen_at": null,
@@ -9860,7 +10044,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9924,7 +10109,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -9989,7 +10175,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10057,7 +10244,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10120,7 +10308,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10186,7 +10375,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10252,7 +10442,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10319,7 +10510,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10369,7 +10561,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10416,7 +10609,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10466,7 +10660,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10530,7 +10725,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T02:16:52+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10602,7 +10798,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10663,7 +10860,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10729,7 +10927,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:42:19+00:00",
@@ -10784,7 +10983,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -10837,7 +11037,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -10896,7 +11097,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -10945,7 +11147,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -10994,7 +11197,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11043,7 +11247,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11096,7 +11301,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11145,7 +11351,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11197,7 +11404,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11246,7 +11454,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11299,7 +11508,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11348,7 +11558,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11397,7 +11608,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11446,7 +11658,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11495,7 +11708,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11544,7 +11758,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11593,7 +11808,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11642,7 +11858,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11691,7 +11908,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11740,7 +11958,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11789,7 +12008,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11838,7 +12058,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11887,7 +12108,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11940,7 +12162,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -11992,7 +12215,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12041,7 +12265,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12091,7 +12316,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12140,7 +12366,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12189,7 +12416,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12240,7 +12468,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12289,7 +12518,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12339,7 +12569,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12388,7 +12619,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12438,7 +12670,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12487,7 +12720,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12536,7 +12770,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12585,7 +12820,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12634,7 +12870,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12684,7 +12921,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12733,7 +12971,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12786,7 +13025,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12826,19 +13066,21 @@
         "bucket": "review",
         "reasons": [
           "Seniority is not explicit enough to classify confidently.",
-          "Your profile includes: C."
+          "Your profile includes: C#, C."
         ],
         "warnings": [
           "Only a short description was collected; verify the full posting."
         ],
         "experience": [],
         "matched": [
+          "C#",
           "C"
         ],
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12887,7 +13129,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12936,7 +13179,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -12986,7 +13230,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13036,7 +13281,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13085,7 +13331,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13134,7 +13381,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13183,7 +13431,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13232,7 +13481,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13282,7 +13532,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13332,7 +13583,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13381,7 +13633,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13430,7 +13683,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13480,7 +13734,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13530,7 +13785,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13579,7 +13835,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13630,7 +13887,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13680,7 +13938,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13730,7 +13989,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13783,7 +14043,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13833,7 +14094,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13882,7 +14144,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13931,7 +14194,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -13971,19 +14235,21 @@
         "bucket": "review",
         "reasons": [
           "Seniority is not explicit enough to classify confidently.",
-          "Your profile includes: C."
+          "Your profile includes: C#, C."
         ],
         "warnings": [
           "Only a short description was collected; verify the full posting."
         ],
         "experience": [],
         "matched": [
+          "C#",
           "C"
         ],
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14033,7 +14299,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14083,7 +14350,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14133,7 +14401,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14182,7 +14451,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14231,7 +14501,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14281,7 +14552,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14331,7 +14603,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14381,7 +14654,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14431,7 +14705,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14480,7 +14755,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14529,7 +14805,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14579,7 +14856,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14632,7 +14910,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14682,7 +14961,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14732,7 +15012,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14782,7 +15063,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14832,7 +15114,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14881,7 +15164,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14933,7 +15217,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -14983,7 +15268,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15034,7 +15320,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15083,7 +15370,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15133,7 +15421,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15183,7 +15472,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15233,7 +15523,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15296,7 +15587,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15352,7 +15644,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15423,7 +15716,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15481,7 +15775,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15538,7 +15833,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15603,7 +15899,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15640,9 +15937,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Python, TypeScript, Git."
         ],
         "warnings": [
@@ -15659,7 +15956,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15728,7 +16026,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15765,9 +16064,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [],
         "experience": [],
@@ -15775,7 +16074,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15812,9 +16112,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Java, REST APIs."
         ],
         "warnings": [
@@ -15839,7 +16139,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15876,9 +16177,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Python, Git, LLM APIs."
         ],
         "warnings": [],
@@ -15898,7 +16199,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -15967,7 +16269,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16030,7 +16333,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16067,9 +16371,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: C."
         ],
         "warnings": [],
@@ -16083,7 +16387,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16147,7 +16452,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16208,7 +16514,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16245,9 +16552,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: C."
         ],
         "warnings": [],
@@ -16262,7 +16569,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16326,7 +16634,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16363,9 +16672,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: C."
         ],
         "warnings": [],
@@ -16378,7 +16687,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16415,9 +16725,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Git, REST APIs."
         ],
         "warnings": [],
@@ -16429,7 +16739,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16481,7 +16792,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16559,7 +16871,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16619,7 +16932,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16675,7 +16989,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16712,9 +17027,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Python, SQL."
         ],
         "warnings": [],
@@ -16730,7 +17045,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16790,7 +17106,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16845,7 +17162,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16899,7 +17217,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -16960,7 +17279,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17023,7 +17343,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17084,7 +17405,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17157,7 +17479,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17210,7 +17533,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17247,9 +17571,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Python."
         ],
         "warnings": [
@@ -17272,66 +17596,12 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
       "legacy_url": "https://hiremetech.com/job/146399029",
-      "daily_basis": null,
-      "last_seen": "2026-09-19T16:57:13+00:00",
-      "availability": "observed",
-      "availability_note": "Seen in a source response; check the original before applying.",
-      "flags": {
-        "giant": false,
-        "referral": false,
-        "tailor": true
-      }
-    },
-    {
-      "id": "6e89b09453f466bde3ad8ee5",
-      "title": "מפתח/ת Python",
-      "company": "Undisclosed employer",
-      "location": "אזור השפלה, Israel",
-      "regions": [
-        "Unknown"
-      ],
-      "url": "https://hiremetech.com/job/147461124",
-      "sources": [
-        "hiremetech"
-      ],
-      "source_ids": [
-        "hiremetech:147461124"
-      ],
-      "description": "לנס (NESS) דרוש/ה מפתח/ת Python. במסגרת התפקיד: פיתוח ותחזוקה של מערכות ותהליכים באמצעות Python ו-JavaScript, עבודה על פיתוחים חדשים ושיפור מערכות קיימות, פתרון תקלות ועוד. משרה מלאה וזמנית, בירושלים. דרישות התפקיד: הנדסאי/ת תוכנה/ מהנדס/ת - חובה. ניסיון של שנה ומעלה בשפת Python - חובה. ניסיון של שנה ומעלה בJava Script - חובה. ניסיון עם מערכות הפעלה LINUX ,WIN - יתרון.",
-      "level": "mid-level / intermediate",
-      "reported_years_min": null,
-      "reported_posted": "2026-09-09",
-      "active_signal": true,
-      "imported": false,
-      "analysis": {
-        "bucket": "review",
-        "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
-          "Your profile includes: Python, JavaScript."
-        ],
-        "warnings": [
-          "Location or eligibility to work from Israel needs confirmation."
-        ],
-        "experience": [],
-        "matched": [
-          "Python",
-          "JavaScript"
-        ],
-        "learning": [
-          "Linux"
-        ],
-        "unconfirmed": [],
-        "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
-      },
-      "description_seen_at": "2026-09-19T16:57:13+00:00",
-      "first_seen": "2026-09-18T17:38:51+00:00",
-      "legacy_url": "https://hiremetech.com/job/147461124",
       "daily_basis": null,
       "last_seen": "2026-09-19T16:57:13+00:00",
       "availability": "observed",
@@ -17377,7 +17647,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17414,9 +17685,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [
           "Location or eligibility to work from Israel needs confirmation."
@@ -17426,7 +17697,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17476,7 +17748,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17518,7 +17791,9 @@
           "Description states 3+ years of experience; inspect the quoted requirements.",
           "Your profile includes: Git."
         ],
-        "warnings": [],
+        "warnings": [
+          "Junior label conflicts with the title or stated experience requirement."
+        ],
         "experience": [
           {
             "min": 3,
@@ -17538,7 +17813,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17595,7 +17871,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17648,7 +17925,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17699,7 +17977,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17751,7 +18030,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17798,7 +18078,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17835,9 +18116,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Git."
         ],
         "warnings": [],
@@ -17848,7 +18129,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17898,7 +18180,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -17935,9 +18218,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Python."
         ],
         "warnings": [],
@@ -17964,7 +18247,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18015,7 +18299,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18091,7 +18376,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18144,7 +18430,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18211,7 +18498,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18248,9 +18536,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [],
         "experience": [],
@@ -18258,7 +18546,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18322,7 +18611,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18382,7 +18672,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18433,7 +18724,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18484,7 +18776,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18534,7 +18827,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18571,9 +18865,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [],
         "experience": [],
@@ -18581,7 +18875,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18618,9 +18913,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [
           "Only a short description was collected; verify the full posting."
@@ -18630,7 +18925,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18680,7 +18976,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18727,7 +19024,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18800,7 +19098,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18847,7 +19146,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18884,9 +19184,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: SQL, LLM APIs, REST APIs."
         ],
         "warnings": [],
@@ -18916,7 +19216,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -18969,7 +19270,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -19034,7 +19336,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -19099,7 +19402,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -19151,7 +19455,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18T17:38:51+00:00",
@@ -19206,7 +19511,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19259,7 +19565,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19312,7 +19619,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19349,9 +19657,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Git, REST APIs."
         ],
         "warnings": [],
@@ -19363,7 +19671,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19400,9 +19709,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [],
         "experience": [],
@@ -19412,7 +19721,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19449,9 +19759,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: C, JavaScript, Java."
         ],
         "warnings": [
@@ -19485,7 +19795,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19546,7 +19857,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19583,9 +19895,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: SQL, REST APIs."
         ],
         "warnings": [],
@@ -19597,7 +19909,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19653,7 +19966,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19708,7 +20022,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19761,7 +20076,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T02:16:52+00:00",
       "first_seen": "2026-09-18",
@@ -19798,9 +20114,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [],
         "experience": [],
@@ -19808,7 +20124,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19845,9 +20162,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [],
         "experience": [],
@@ -19855,7 +20172,15 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": [
+          {
+            "quote": "משרה מלאה בתל אביב",
+            "regions": [
+              "Center"
+            ]
+          }
+        ]
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19924,7 +20249,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -19977,7 +20303,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T02:16:52+00:00",
       "first_seen": "2026-09-18",
@@ -20031,7 +20358,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20090,7 +20418,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20127,9 +20456,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: C#, TypeScript, SQL, Git."
         ],
         "warnings": [],
@@ -20143,7 +20472,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20180,9 +20510,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Python, Java, LLM APIs."
         ],
         "warnings": [],
@@ -20208,7 +20538,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20257,7 +20588,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20327,7 +20659,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20364,9 +20697,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: Python."
         ],
         "warnings": [
@@ -20388,7 +20721,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20447,7 +20781,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20484,9 +20819,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: C#, TypeScript, SQL, Git."
         ],
         "warnings": [],
@@ -20500,7 +20835,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20552,7 +20888,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20604,7 +20941,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20657,7 +20995,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20718,7 +21057,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20770,7 +21110,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20807,9 +21148,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: TypeScript, React."
         ],
         "warnings": [],
@@ -20821,7 +21162,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20858,9 +21200,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [
           "Only a short description was collected; verify the full posting."
@@ -20870,7 +21212,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20924,7 +21267,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -20985,7 +21329,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21039,7 +21384,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21098,7 +21444,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21172,7 +21519,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21223,7 +21571,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21278,7 +21627,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21328,7 +21678,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21378,7 +21729,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21452,7 +21804,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21533,7 +21886,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21587,7 +21941,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21634,7 +21989,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21684,7 +22040,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21721,9 +22078,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently.",
+          "Explicit early-career signal or experience requirement within your target range.",
           "Your profile includes: SQL."
         ],
         "warnings": [],
@@ -21734,7 +22091,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21781,7 +22139,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21845,7 +22204,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21917,7 +22277,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -21954,9 +22315,9 @@
       "active_signal": true,
       "imported": false,
       "analysis": {
-        "bucket": "review",
+        "bucket": "consider",
         "reasons": [
-          "Seniority is not explicit enough to classify confidently."
+          "Explicit early-career signal or experience requirement within your target range."
         ],
         "warnings": [],
         "experience": [],
@@ -21964,7 +22325,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22014,7 +22376,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22061,7 +22424,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22108,7 +22472,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22163,7 +22528,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22230,7 +22596,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22297,7 +22664,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22358,7 +22726,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22410,7 +22779,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22472,7 +22842,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22526,7 +22897,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22588,7 +22960,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22649,7 +23022,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22705,7 +23079,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22767,7 +23142,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22829,7 +23205,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22889,7 +23266,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -22950,7 +23328,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -23011,7 +23390,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -23076,7 +23456,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -23123,7 +23504,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23169,7 +23551,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23218,7 +23601,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23264,7 +23648,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23310,7 +23695,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23356,7 +23742,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23402,7 +23789,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23448,7 +23836,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23494,7 +23883,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23540,7 +23930,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23589,7 +23980,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23638,7 +24030,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_C_Systems.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23687,7 +24080,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23733,7 +24127,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23782,7 +24177,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23828,7 +24224,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -23892,7 +24289,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -23942,7 +24340,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24001,7 +24400,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24062,7 +24462,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24127,7 +24528,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24192,7 +24594,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Software_AI.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24251,7 +24654,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24312,7 +24716,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24364,7 +24769,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24429,7 +24835,8 @@
           "AWS"
         ],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24476,7 +24883,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": false
+        "description_available": false,
+        "location_evidence": []
       },
       "first_seen": "2026-09-18",
       "last_seen": null,
@@ -24537,7 +24945,8 @@
         ],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24584,7 +24993,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24631,7 +25041,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24678,7 +25089,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24725,7 +25137,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24772,7 +25185,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24819,7 +25233,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24866,7 +25281,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Backend_FullStack.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24915,7 +25331,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Firmware_Embedded.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24962,7 +25379,8 @@
         "learning": [],
         "unconfirmed": [],
         "cv": "Ron_Salama_Hardware_Test_Integration.pdf",
-        "description_available": true
+        "description_available": true,
+        "location_evidence": []
       },
       "description_seen_at": "2026-09-19T16:57:13+00:00",
       "first_seen": "2026-09-18",
@@ -24975,6 +25393,60 @@
         "giant": true,
         "referral": true,
         "tailor": false
+      }
+    },
+    {
+      "id": "359859f47a1bc312b55650e6",
+      "title": "מתכנת/ת ג'וניור ל- IBI קפיטל – מספר משרה 1726",
+      "company": "Undisclosed employer",
+      "location": "Tel Aviv, Israel",
+      "regions": [
+        "Center"
+      ],
+      "url": "https://hiremetech.com/job/143751831",
+      "sources": [
+        "hiremetech"
+      ],
+      "source_ids": [
+        "hiremetech:143751831"
+      ],
+      "description": "מתכנת/ת ג'וניור ל- IBI קפיטל - מספר משרה 1726 - IBI הפתרונות שלנו ניהול תיקי השקעות קפיטל שירותים פיננסיים ותוכניות הטבה לעובדים לכל השירותים הפיננסיים תוכניות הטבה הוניות נאמנויות פיננסיות מיזוגים ורכישות SmartForm ניהול הון מימון לחברות טכנולוגיה הערכות שווי ניהול נאמנויות והעברת הון בין דורי IBI International Funds שירותי הוצאה חשבונאית אודות MY CAPITAL אופציות לעובדים IBI SMART נאמנות הגנת נמל מבטחים שירות לקוחות קפיטל השקעות אלטרנטיביות לכל קרנות ההשקעה האלטרנטיביות קרן ATLANTIS קרן DATACOM 2 קרן FALCON קרן IBI Secured קרן DATACOM IBI Volcano IBI אסטרטגיות CLO קרן comRit קרן IBI TEVEL קרן QCL קרן IBI LION קרן IBI CCF קרן IBI QCF מימון לחברות סטארטאפ מוצרים מובנים מסחר עצמאי לכל השירותים במסחר עצמאי פתיחת חשבון אונליין מערכות המסחר שלנו הפקדת כסף בקליק הטבת 0 ₪ קרנות נאמנות נבחרות הוראת קבע למסחר בארה\"ב חבר מביא חבר IBI SMART פעולות דיגיטליות מידע שימושי IBI SMART SUPER APP שירותי בורסה מסחר עצמאי ברוקראז’ מוסדי השקעות נדל\"ן IBI PIILLAR השקעות נדל\"ן בארץ ובחו\"ל EVO קרן המלונאות הגדולה בישראל IBI LION קרן ריט בספרד קרנות גידור IBI Silver Castle IBI קוואלטי קרנות נאמנות קרנות נאמנות המרות מט\"ח CFX חיתום והנפקות תשקיעי בעצמך – פורום פיננסי לנשים עמותות וארגונים חברתיים פתרונות לפמילי אופיס ומתכננים פיננסיים הסיפור שלנו אודות IBI הנהלה קריירה אחריות תאגידית אחריות חברתית תמיכה בספורט הישראלי משקיעים באומנות קוד אתי נגישות גילוי נאות תנאי שימוש מדיניות פרטיות קשרי משקיעים מגזין IBI לכל הכתבות שלנו שוק ההון השקעות מסחר אופציות והייטק השקעות אלטרנטיביות שוק הנדל\"ן שווקים בחו\"ל תכנון פיננסי פודקאסט השקעות מילון מונחים שוק ההון VOD השקעות דברו איתנו קריירה אזור אישי IBI SMART SUPER APP להורדת האפליקצייה בנייד IBI CAPITAL כניסה למערכת My Capital Capital Expert IBI TRADE מסחר עצמאי להורדת אפליקציית IBI SMART מערכת המסחר SPARK מערכת המסחר NextGen מסחר עצמאי – מידע שימושי פעולות בשירות עצמי פתיחת חשבון Online IBI PILLAR כניסת משקיעים 6212* Hebrew English عربي IBI בית השקעות | דרושים | מתכנת/ת ג'וניור ל- IBI קפיטל – מספר משרה 1726 משרה מספר 1726 מתכנת/ת ג'וניור ל- IBI קפיטל – מספר משרה 1726 קפיטל איך ייראה היומיום שלכם בתפקיד? ליחידה הטכנולוגית ב-IBI קפיטל דרוש/ה מתכנת/ת מתחיל/ה. השתלבות בצוות העוסק בפיתוח ותחזוקת מערכות פנים ארגוניות (CRM, אתרי חברה, מערכות תומכות נוספות ועוד). שפות הפיתוח שתעבדו איתן בתפקיד כוללות: #C ו-SQL וה-Frameworks של angular ו- asp.net. המשרה היא 80% Backend ו- 20% Frontend. שעות עבודה: ראשון – חמישי, 09:00-18:00. מה חשוב לנו? תואר ראשון במדעי המחשב – חובה היכרות עם SQL – חובה היכרות עם #C או Java – חובה היכרות עם כלי בינה מלאכותית – חובה היכרות עם asp.net, angular – יתרון היכרות עם מערכות CRM – יתרון צריך שתביאו אתכם גם... תודעת שירות גבוהה יכולת למידה מהירה יחסי אנוש טובים להגשת מועמדות שם פרטי שם משפחה כתובת אימייל טלפון עיר מגורים עיר מגורים אבו ג'ווייעד (שבט) אבו גוש אבו סנאן אבו סריחאן (שבט) אבו עבדון (שבט) אבו עמאר (שבט) אבו עמרה (שבט) אבו קורינאת (שבט) אבו קרינאת (יישוב) אבו רובייעה (שבט) אבו רוקייק (שבט) אבו תלול אבטין אבטליון אביאל אביבים אביגדור אביחיל אביטל אביעזר אבירים אבן יהודה אבן מנחם אבן ספיר אבן שמואל אבני איתן אבני חפץ אבנת אבשלום אדורה אדירים אדמית אדרת אודים אודם אוהד אום אל-פחם אום אל-קוטוף אום בטין אומן אומץ אופקים אור הגנוז אור הנר אור יהודה אור עקיבא אורה אורות אורטל אורים אורנים אורנית אושה אזור אחווה אחוזם אחוזת ברק אחיהוד אחיטוב אחיסמך אחיעזר אטרש (שבט) איבים אייל איילת השחר אילון אילות אילניה אילת אירוס איתמר איתן איתנים אכסאל אל סייד אל-עזי אל-עריאן אל-רום אלומה אלומות אלון הגליל אלון מורה אלון שבות אלוני אבא אלוני הבשן אלוני יצחק אלונים אלי-עד אליאב אליכין אליפז אליפלט אליקים אלישיב אלישמע אלמגור אלמוג אלעד אלעזר אלפי מנשה אלקוש אלקנה אמונים אמירים אמנון אמציה אניעם אסד (שבט) אספר אעבלין אעצם (שבט) אפיניש (שבט) אפיק אפיקים אפק אפרת ארבל ארגמן ארז אריאל ארסוף אשבול אשבל אשדוד אשדות יעקב (איחוד) אשדות יעקב (מאוחד) אשחר אשכולות אשל הנשיא אשלים אשקלון אשרת אשתאול אתגר באקה אל-גרביה באר אורה באר גנים באר טוביה באר יעקב באר מילכה באר שבע בארות יצחק בארותיים בארי בוסתן הגליל בועיינה-נוג'ידאת בוקעאתא בורגתה בחן בטחה ביצרון ביר אל-מכסור ביר הדאג' ביריה בית אורן בית אל בית אלעזרי בית אלפא בית אריה בית ברל בית ג'ן בית גוברין בית גמליאל בית דגן בית הגדי בית הלוי בית הלל בית העמק בית הערבה בית השיטה בית זיד בית זית בית זרע בית חורון בית חירות בית חלקיה בית חנן בית חנניה בית חשמונאי בית יהושע בית יוסף בית ינאי בית יצחק-שער חפר בית לחם הגלילית בית מאיר בית נחמיה בית ניר בית נקופה בית עובד בית עוזיאל בית עזרא בית עריף בית צבי בית קמה בית קשת בית רבן בית רימון בית שאן בית שמש בית שערים בית שקמה ביתן אהרן ביתר עילית בלפוריה בן זכאי בן עמי בן שמן (כפר נוער) בן שמן (מושב) בני ברק בני דקלים בני דרום בני דרור בני יהודה בני נצרים בני עטרות בני עי\"ש בני ציון בני ראם בניה בנימינה-גבעת עדה בסמ\"ה בסמת טבעון בענה בצרה בצת בקוע בקעות בר גיורא בר יוחאי ברוכין ברור חיל ברוש ברכה ברכיה ברעם ברק ברקאי ברקן ברקת בת הדר בת חן בת חפר בת חצור בת ים בת עין בת שלמה ג'דיידה-מכר ג'ולס ג'לג'וליה ג'נאביב (שבט) ג'סר א-זרקא ג'ש (גוש חלב) ג'ת גאולי תימן גאולים גאליה גבולות גבים גבע גבע בנימין גבע כרמל גבעולים גבעון החדשה גבעות בר גבעת אבני גבעת אלה גבעת ברנר גבעת השלושה גבעת זאב גבעת ח\"ן גבעת חיים (איחוד) גבעת חיים (מאוחד) גבעת יואב גבעת יערים גבעת ישעיהו גבעת כ\"ח גבעת ניל\"י גבעת עוז גבעת שמואל גבעת שמש גבעת שפירא גבעתי גבעתיים גברעם גבת גדות גדיש גדעונה גדרה גונן גורן גורנות הגליל גזית גזר גיאה גיבתון גיזו גילון גילת גינוסר גיניגר גינתון גיתה גיתית גלאון גלגל גליל ים גלעד (אבן יצחק) גמזו גן הדרום גן השומרון גן חיים גן יאשיה גן יבנה גן נר גן שורק גן שלמה גן שמואל גנות גנות הדר גני הדר גני טל גני יוחנן גני מודיעין גני עם גני תקווה געש געתון גפן גרופית גשור גשר גשר הזיו גת (קיבוץ) גת רימון דאלית אל-כרמל דבורה דבוריה דבירה דברת דגניה א' דגניה ב' דוב\"ב דולב דור דורות דחי דייר אל-אסד דייר חנא דייר ראפאת דימונה דישון דליה דלתון דמיידה דן דפנה דקל דריג'את האון הבונים הגושרים הדר עם הוד השרון הודיה הודיות הוואשלה (שבט) הוזייל (שבט) הושעיה הזורע הזורעים החותרים היוגב הילה המעפיל הסוללים העוגן הר אדר הר גילה הר עמשא הראל הרדוף הרצליה הררית ורד יריחו ורדון זבארגה (שבט) זבדיאל זוהר זיקים זיתן זכרון יעקב זכריה זמר זמרת זנוח זרועה זרזיר זרחיה ח'ואלד ח'ואלד (שבט) חבצלת השרון חבר חברון חגור חגי חגלה חד-נס חדיד חדרה חוג'ייראת (ד'הרה) חולדה חולון חולית חולתה חוסן חוסנייה חופית חוקוק חורה חורפיש חורשים חזון חיבת ציון חיננית חיפה חירות חלוץ חלץ חמאם חמד חמדיה חמדת חמרה חניאל חניתה חנתון חספין חפץ חיים חפצי-בה חצב חצבה חצור הגלילית חצור-אשדוד חצר בארותיים חצרות חולדה חצרות יסף חצרות כ\"ח חצרים חרב לאת חרוצים חריש חרמש חרשים חשמונאים טבריה טובא-זנגריה טורעאן טייבה טייבה (בעמק) טירה טירת יהודה טירת כרמל טירת צבי טל שחר טל-אל טללים טלמון טמרה טמרה (יזרעאל) טנא טפחות יאנוח-ג'ת יבול יבנאל יבנה יגור יגל יד בנימין יד השמונה יד חנה יד מרדכי יד נתן יד רמב\"ם ידידה יהוד-מונוסון יהל יובל יובלים יודפת יונתן יושיביה יזרעאל יחיעם יטבתה ייט\"ב יכיני ינוב ינון יסוד המעלה יסודות יסעור יעד יעל יעף יערה יפיע יפית יפעת יפתח יצהר יציץ יקום יקיר יקנעם (מושבה) יקנעם עילית יראון ירדנה ירוחם ירושלים ירחיב ירכא ירקונה ישע ישעי ישרש יתד יתיר כאבול כאוכב אבו אל-היג'א כברי כדורי כדיתה כוכב השחר כוכב יאיר כוכב יעקב כוכב מיכאל כורזים כחל כחלה כיסופים כישור כליל כלנית כמאנה כמהין כמון כנות כנף כנרת (מושבה) כנרת (קבוצה) כסיפה כסלון כסרא-סמיע כעביה-טבאש-חג'אג'רה כפר אביב כפר אדומים כפר אוריה כפר אחים כפר ביאליק כפר ביל\"ו כפר בלום כפר בן נון כפר ברא כפר ברוך כפר גדעון כפר גלים כפר גליקסון כפר גלעדי כפר דניאל כפר האורנים כפר החורש כפר המכבי כפר הנגיד כפר הנוער הדתי כפר הנשיא כפר הס כפר הרא\"ה כפר הרי\"ף כפר ויתקין כפר ורבורג כפר ורדים כפר זוהרים כפר זיתים כפר חב\"ד כפר חושן כפר חיטים כפר חיים כפר חנניה כפר חסידים א' כפר חסידים ב' כפר חרוב כפר טרומן כפר יאסיף כפר ידידיה כפר יהושע כפר יונה כפר יחזקאל כפר יעבץ כפר כמא כפר כנא כפר מונש כפר מימון כפר מל\"ל כפר מנדא כפר מנחם כפר מסריק כפר מצר כפר מרדכי כפר נטר כפר סאלד כפר סבא כפר סילבר כפר סירקין כפר עבודה כפר עזה כפר עציון כפר פינס כפר קאסם כפר קיש כפר קרע כפר ראש הנקרה כפר רוזנואלד (זרעית) כפר רופין כפר רות כפר שמאי כפר שמואל כפר שמריהו כפר תבור כפר תפוח כרי דשא כרכום כרם בן זמרה כרם בן שמן כרם יבנה (ישיבה) כרם מהר\"ל כרם שלום כרמי יוסף כרמי צור כרמי קטיף כרמיאל כרמיה כרמים כרמל לא רשום לבון לביא לבנים להב להבות הבשן להבות חביבה להבים לוד לוזית לוחמי הגיטאות לוטם",
+      "level": "junior / entry level",
+      "reported_years_min": null,
+      "reported_posted": "",
+      "active_signal": true,
+      "imported": false,
+      "analysis": {
+        "bucket": "consider",
+        "reasons": [
+          "Explicit early-career signal or experience requirement within your target range.",
+          "Your profile includes: C#, C, Java, SQL."
+        ],
+        "warnings": [],
+        "experience": [],
+        "matched": [
+          "C#",
+          "C",
+          "Java",
+          "SQL"
+        ],
+        "learning": [],
+        "unconfirmed": [],
+        "cv": "Ron_Salama_Backend_FullStack.pdf",
+        "description_available": true,
+        "location_evidence": []
+      },
+      "description_seen_at": "2026-09-18T17:42:19+00:00",
+      "first_seen": "2026-09-18T17:38:51+00:00",
+      "legacy_url": "https://hiremetech.com/job/143751831",
+      "last_seen": "2026-09-18T17:42:19+00:00",
+      "availability": "observed",
+      "availability_note": "Seen in a source response; check the original before applying.",
+      "recovery_note": "Restored after fixing Hebrew developer-title recognition; original discovery date preserved.",
+      "flags": {
+        "giant": false,
+        "referral": false,
+        "tailor": true
       }
     }
   ],
