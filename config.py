@@ -43,7 +43,14 @@ TITLE_DEV = ["developer","software","full stack","fullstack","full-stack","backe
  "frontend","front end","front-end",".net","c#","c sharp","c++","python","java","javascript","typescript",
  "node","react","angular","vue","devops","automation","sdet","embedded","firmware","ai engineer",
  "ai developer","ai native","ai-native","llm","genai","data engineer","programmer","validation",
- "מפתח","תוכנה","אוטומציה","הנדסת תוכנה","full-stack"]
+ "מפתח","מפתחת","מתכנת","תוכנה","אוטומציה","הנדסת תוכנה","full-stack"]
+
+# ---- junior / early-career title signals (EN + HE), recognized from the TITLE ----
+# These mark a role as junior even when the source gives no level field and the JD
+# states no year range. Hebrew apostrophe comes in several code points (' ׳ ’).
+JUNIOR_MARK = ["junior","jr.","jr ","entry level","entry-level","entry_level","early career",
+ "early-career","new grad","new-grad","new graduate","graduate","grad ","recent graduate",
+ "ג'וניור","ג׳וניור","ג’וניור","גוניור","בוגר","בוגרת","משרה התחלתית","תחילת דרך","ללא ניסיון"]
 
 DEV_KEYWORDS = ["developer","develop","software","engineer","engineering","programmer",
  "full stack","fullstack","full-stack","backend","back end","back-end","frontend","front end","front-end",

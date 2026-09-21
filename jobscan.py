@@ -232,7 +232,8 @@ def classify(j):
     senior_title = _has(tl, C.SENIOR_TITLE)
     senior = senior_title or (ymin is not None and ymin >= 3)
     student = _has(tl, C.STUDENT_MARK) or j["level"] in ("student","student / intern","intern")
-    is_jr = (j["level"] in ("junior","entry","entry level","junior / entry level","associate")
+    is_jr = (_has(tl, C.JUNIOR_MARK)                              # junior/grad word in the title (EN+HE)
+             or j["level"] in ("junior","entry","entry level","junior / entry level","associate")
              or (ymin is not None and ymin <= 2))
 
     if _has(tl, MANUAL_QA) and "automation" not in tl:
