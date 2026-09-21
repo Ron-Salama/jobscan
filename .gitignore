@@ -8,3 +8,8 @@ daily/
 # python
 __pycache__/
 *.pyc
+
+# local dev env + scratch
+.venv/
+work/
+*.tmp.*
