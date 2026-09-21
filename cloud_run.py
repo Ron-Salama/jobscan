@@ -166,7 +166,11 @@ def main():
         seenu.add(u); alljobs.append(x)
     alljobs = alljobs[:CAP]
     J.atomic_write(JOBS_JSON, json.dumps(alljobs, ensure_ascii=False))
-    # invisible review bucket: filtered/uncertain roles + their JD text, for on-demand review
+    # invisible review bucket: filtered/uncertain roles + their JD text, for on-demand review.
+    # Order by how likely a real miss hides there, so the cap never drops the best leads first:
+    # review-lane roles, then mis-titled giants, then foundation-gap, then the rest.
+    _pri = {"review": 0, "not-dev-title": 1, "foundation-gap": 2, "too-senior-even-w-referral": 3}
+    bucket.sort(key=lambda b: _pri.get(b["reason"].split(":")[0], 4))
     J.atomic_write(BUCKET_JSON, json.dumps(
         {"generated": J.TODAY, "count": len(bucket), "roles": bucket[:BUCKET_CAP]}, ensure_ascii=False))
     check_sources_dark(reg, counts)
