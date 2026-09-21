@@ -4,835 +4,1043 @@
 "verdicts": {
 "https://hiremetech.com/job/143751831": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.dialog.co.il/high-tech/jobs/jobpage?positionId=94951": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://hiremetech.com/job/148336333": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148185057": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148296683": {
-"v": "REACH",
-"why": "realistic stretch"
+"v": "YES",
+"why": "JD: actually 1-3y junior, JS/TS/React/Node/Python (despite 'III' title)",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148028934": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147889393": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/146457770": {
-"v": "YES",
-"why": "good fit"
+"v": "NO",
+"why": "JD: KLA R&D = 40y semiconductor / research scientist / lead",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147397756": {
 "v": "NO",
-"why": "algorithms/CV research"
+"why": "algorithms/CV research",
+"basis": "jd"
 },
 "https://hiremetech.com/job/144846369": {
 "v": "NO",
-"why": "data annotation, not dev"
+"why": "data annotation, not dev",
+"basis": "jd"
 },
 "https://hiremetech.com/job/141409417": {
 "v": "NO",
-"why": "SerDes hardware verif"
+"why": "SerDes hardware verif",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10481131/chip-validation-software-engineer": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/system-integration-validation-engineer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/ai-npu-simulator-software-developer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/mid-level-backend-software-engineer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/phy-radio-validation-engineer/": {
 "v": "NO",
-"why": "PHY/RF hardware"
+"why": "PHY/RF hardware",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/experienced-linux-test-automation-develope/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/software-engineer-real-time-systems/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/embedded-software-developer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://ethosia.co.il/content/embedded-sw-engineer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.nisha.co.il/job/12541/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://www.nisha.co.il/job/12533/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://www.nisha.co.il/job/8469/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.nisha.co.il/job/11088/": {
 "v": "NO",
-"why": "team lead (senior)"
+"why": "team lead (senior)",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/python-software-engineer-at-cybord-4449084615": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-devops/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/junior-hw-embedded-engineer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/ios-mobile-developer/": {
 "v": "NO",
-"why": "native iOS (no Swift)"
+"why": "native iOS (no Swift)",
+"basis": "title"
 },
 "https://www.cps.co.il/job/php-developer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/python-developer-2/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%95%d7%9e%d7%97%d7%94-c-%d7%9c%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%90%d7%a4%d7%9c%d7%99%d7%a7%d7%a6%d7%99%d7%95%d7%aa-%d7%9c%d7%a2%d7%99%d7%91%d7%95%d7%93-%d7%aa%d7%9e%d7%95%d7%a0%d7%94/": {
 "v": "NO",
-"why": "C++ expert, medical imaging"
+"why": "C++ expert, medical imaging",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-low-level/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/c-developer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/full-stack-java-engineer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/real-time-embedded-developer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-c/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/java-software-engineer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/rt-embedded-engineer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/junior-full-stack-web-developer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-embedded/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/full-stack-software-engineer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/digital-back-end-engineer/": {
 "v": "NO",
-"why": "digital back-end = chip design"
+"why": "digital back-end = chip design",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/fullstack-developer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/java-developer-2/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-gis/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/machine-learning-system-software-developer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/embedded-engineer-2/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/priority-erp-developer/": {
 "v": "NO",
-"why": "Priority ERP niche"
+"why": "Priority ERP niche",
+"basis": "title"
 },
 "https://www.cps.co.il/job/web-developer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%a6%d7%93-%d7%a9%d7%a8%d7%aa/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-fullstack-%d7%91-c/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/backend-c-developer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/ios-sdk-developer/": {
 "v": "NO",
-"why": "iOS SDK (no Swift)"
+"why": "iOS SDK (no Swift)",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-%d7%90%d7%a4%d7%9c%d7%99%d7%a7%d7%a6%d7%99%d7%99%d7%aa-web/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/net-backend-developer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/validation-software-engineer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-rt-embedded/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/junior-debugger-software-engineer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/software-application-engineer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/software-development-engineer/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.cps.co.il/job/c-software-engineer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/experienced-firmware-engineer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.cps.co.il/job/dsp-phy-firmware-engineer/": {
 "v": "NO",
-"why": "DSP/PHY firmware"
+"why": "DSP/PHY firmware",
+"basis": "title"
 },
 "https://www.cps.co.il/job/c-backend-developer/": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=696e0a42dd7c427ad9acbe2e": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=671f8624762a7b7f163ad2c3": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=68737e8df43d15d3ff8da25b": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=68737825f43d15d3ff8d9654": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=682ee944db560edc53c9ed1c": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=6873766ddb560edc53dc721d": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=6a981748ec73bb7a321d16cd": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=61ae319a0fb8a4001fb00752": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=62a19fbca0e1130024fa3130": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=621cf09a4f62ed002579fc8d": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=624af8f24f62ed00257a309c": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=6565aa57a6bd1a893225a564": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=6565c4090c626c5869889bf1": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=6666f244d860f71a230b7a52": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=660d1ef0d95f0259508bcd4e": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=6565c57a0c626c5869889de1": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=6565c4e80c626c5869889d10": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=625664e24f62ed00257a3d74": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.techjob.co.il/jobs-lobby?job=5fe49e83c031ab0021df0653": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/System-Software-Engineer_JR2016510": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 3+y, leads development (NVIDIA referral)",
+"basis": "jd"
 },
 "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Software-Developer---Networking_JR2024804": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Software-Validation-Engineer_JR2011195": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 3+y validation (NVIDIA referral)",
+"basis": "jd"
 },
 "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Advanced-Software-Development-Engineer_JR2020678": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Software-Verification-Engineer--Networking_JR2022969-1": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 3+y + leadership (NVIDIA referral)",
+"basis": "jd"
 },
 "https://intel.wd1.myworkdayjobs.com/External/job/Israel-Haifa/Security-Software-Development-Engineer_JR0285317": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 3-5y (Intel, not referral)",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200674773/full-stack-developer-agentic-ai": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/140200619": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/143194017": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148437258": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148435480": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148144724": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148309885": {
 "v": "NO",
-"why": "native iOS (no Swift)"
+"why": "native iOS (no Swift)",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148374147": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148298764": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148021066": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148150120": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148103662": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148001919": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147857411": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147887909": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147694044": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148192803": {
 "v": "NO",
-"why": "industrial control & automation"
+"why": "industrial control & automation",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148149820": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/148007168": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147686728": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147565312": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147288445": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147286082": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147182089": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142710329": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/146690932": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/146436218": {
-"v": "REACH",
-"why": "realistic stretch"
+"v": "NO",
+"why": "JD: Medtronic medical-device V&V, MATLAB, mid-senior",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147149787": {
 "v": "NO",
-"why": "Power Platform/SharePoint niche"
+"why": "Power Platform/SharePoint niche",
+"basis": "jd"
 },
 "https://hiremetech.com/job/147446381": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/6387742": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/140492834": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/143471773": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/143384246": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/143364665": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142860792": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142581504": {
 "v": "NO",
-"why": "Salesforce niche"
+"why": "Salesforce niche",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142566564": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/141075324": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/140346653": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/136491163": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/136490854": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/134684234": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/6369189": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/143181397": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142711047": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/136490436": {
 "v": "NO",
-"why": "location Ukraine"
+"why": "location Ukraine",
+"basis": "jd"
 },
 "https://hiremetech.com/job/135656739": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/134749066": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/106872978": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142711046": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142520690": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/141190002": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/136611917": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/142860777": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/140568085": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://hiremetech.com/job/136316963": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://hiremetech.com/job/143610571": {
 "v": "NO",
-"why": "recruiter, not dev"
+"why": "recruiter, not dev",
+"basis": "jd"
 },
 "https://www.drushim.co.il/job/38441335/345e7d2e/": {
 "v": "NO",
-"why": "systems implementer, not dev"
+"why": "systems implementer, not dev",
+"basis": "jd"
 },
 "https://join.jfrog.com/job/?job=7939091&gh_jid=7939091": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://join.jfrog.com/job/?job=8152802&gh_jid=8152802": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.taboola.com/careers/job/8073783?gh_jid=8073783": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://www.taboola.com/careers/job/8176684?gh_jid=8176684": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10541334/junior-embedded-software-engineer-graviton": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10538439/embedded-software-engineer-annapurna-labs": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10534007/software-engineer-linux-kernel-efa": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10533899/software-engineer-in-test-graviton-team": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10521270/software-development-engineer-aws-ml-machine-learning-israel-mlil-flow-sub-team-fleet-lifecycle-operational-workflows": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10521736/embedded-software-engineer-nitro-annapurna-labs": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10503595/ethernet-validation-engineer": {
-"v": "REACH",
-"why": "realistic stretch"
+"v": "NO",
+"why": "JD: 5+y hardware Ethernet validation",
+"basis": "jd"
 },
 "https://www.amazon.jobs/en/jobs/10492675/software-development-engineer-annapurna-labs": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.dialog.co.il/high-tech/jobs/jobpage?positionId=95064": {
 "v": "NO",
-"why": "hardware V&V"
+"why": "hardware V&V",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/java-developer/151062/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/python-developer/154863/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/python-developer/154468/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/python-developer/153760/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/frontend-developer/153957/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/frontend-developer/152553/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/frontend-developer/152229/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/backend-developer/154926/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.gotfriends.co.il/jobslobby/software/backend-developer/154854-1/": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://il.linkedin.com/jobs/view/software-engineer-iii-waze-mobile-android-at-google-4458662012": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/software-development-engineer-elastic-block-storage-server-durability-engine-at-amazon-web-services-aws-4455903010": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: senior-level AWS EBS data plane",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/java-software-engineer-at-applied-materials-israel-4461858207": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/core-backend-engineer-at-aidoc-4439798199": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/junior-level-fullstack-engineer-at-tomax-think-academy-4412464414": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/full-stack-software-engineer-at-unframe-4468654724": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 5+y",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/software-engineer-full-stack-at-shopic-4437432497": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 4+y",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/software-engineer-at-iscar-israel-4445675230": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/junior-fullstack-developer-at-glassix-4466323118": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/full-stack-developer-at-gini-apps-4416284127": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/net-developer-wpf-at-bagira-4429308684": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 5y + 3y WPF, lead (but .NET core)",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/experienced-backend-developer-net-c%23-582-at-utron-4461817525": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/backend-net-software-engineer-at-landa-4449051662": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 4+y, lead",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/backend-developer-at-black-rabbit-4437392354": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: senior/architect",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/python-software-engineer-at-infinidat-4435663163": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 3+y Python",
+"basis": "jd"
 },
 "https://il.linkedin.com/jobs/view/software-development-engineer-at-fortinet-4440973256": {
-"v": "YES",
-"why": "good fit"
+"v": "NO",
+"why": "JD: 6+y senior/lead/architect",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8819743": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8736771": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8825917": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8823261": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8656406": {
 "v": "NO",
-"why": "relocation Cyprus"
+"why": "relocation Cyprus",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8801901": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 3+y LLM",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8821010": {
-"v": "REACH",
-"why": "realistic stretch"
+"v": "NO",
+"why": "JD: 3+y Manual QA (not dev)",
+"basis": "jd"
 },
 "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8815243": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://www.comeet.com/jobs/vastdata/43.001/graduate-qa-automation-engineer/8F.946": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://www.comeet.com/jobs/oligosecurity/5A.00B/devops-engineer-u_s-citizen/0A.C67": {
 "v": "NO",
-"why": "requires US citizenship"
+"why": "requires US citizenship",
+"basis": "title"
 },
 "https://www.comeet.com/jobs/israeltechguard/29.009/full-stack-engineer/FD.A51": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "title"
 },
 "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Software-Performance-Engineer_JR2024413": {
-"v": "YES",
-"why": "good fit"
+"v": "REACH",
+"why": "JD: 3+y + lead, kernel drivers (NVIDIA referral)",
+"basis": "jd"
 },
 "https://intel.wd1.myworkdayjobs.com/External/job/Israel-Haifa/Software-Engineer_JR0283723": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200627584/backend-sw-engineer": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200682345/ios-software-engineer-location-technologies": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200623409/firmware-wifi-engineer-wireless-technologies-ecosystems": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200623639/sw-developer-for-validation-ssd": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200672340/embedded-platform-engineer": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200666549/software-engineer-test-automation-infrastructure": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200666053/software-data-engineer": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200665701/real-time-embedded-engineer": {
 "v": "REACH",
-"why": "realistic stretch"
+"why": "realistic stretch",
+"basis": "jd"
 },
 "https://jobs.apple.com/en-il/details/200648117/icloud-drive-software-test-automation-infrastructure-engineer": {
 "v": "YES",
-"why": "good fit"
+"why": "good fit",
+"basis": "jd"
 }
 },
 "jobify": {

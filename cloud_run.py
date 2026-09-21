@@ -96,7 +96,7 @@ function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replac
 function getSt(u){try{return localStorage.getItem("st:"+u)||"New";}catch(e){return "New";}}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
-function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";return '<span class="pill '+cls+'" title="'+esc(j.vwhy||"")+'">'+v+'</span>';}
+function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 [...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;el("date").appendChild(o);});
 function stChange(sel){setSt(sel.dataset.u, sel.value);render();}
@@ -173,7 +173,7 @@ def apply_curation(alljobs):
         u = r.get("url", ""); have.add(u)
         vd = verdicts.get(u) or jobify.get(u)
         if vd:
-            r["verdict"] = vd.get("v", ""); r["vwhy"] = vd.get("why", "")
+            r["verdict"] = vd.get("v", ""); r["vwhy"] = vd.get("why", ""); r["vbasis"] = vd.get("basis", "")
         if u in jobify:
             r["jobify"] = True
     # Jobify roles not already in the tracker -> add as rows tagged jobify
