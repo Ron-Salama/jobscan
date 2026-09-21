@@ -14,6 +14,7 @@ DATA = "data"; DOCS = "docs"
 JOBS_JSON = os.path.join(DATA, "jobs.json")
 SEEN_JSON = os.path.join(DATA, "seen.json")
 BUCKET_JSON = os.path.join(DATA, "review-bucket.json")   # filtered/uncertain roles for later manual/AI review
+CURATION_JSON = os.path.join(DATA, "curation.json")   # Claude's persistent judgment overlay (verdicts + jobify roles)
 INDEX_HTML = os.path.join(DOCS, "index.html")
 CAP = 1200
 BUCKET_CAP = 500          # newest filtered roles kept for review
@@ -53,6 +54,9 @@ a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 .pill{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:600;white-space:nowrap}
 .ref{background:#3a1d2b;color:#ff9ec4}.giant{background:#20344a;color:#8fc7ff}.tailor{background:#3a331a;color:#ffd98f}
 .unread{background:#2a2f3a;color:#9aa6bb}
+.v-yes{background:#1c3a2a;color:#8ff0b8}.v-reach{background:#3a331a;color:#ffd98f}.v-no{background:#3a1d1d;color:#ff9e9e}
+.jbf{background:#20344a;color:#8fc7ff}
+tr.filtered td{opacity:.45}
 .n{background:#1c3a2a;color:#8ff0b8}.c{background:#2a2340;color:#c4b0ff}
 .fit5{color:#8ff0b8;font-weight:700}.fit4{color:#c9e69a}.fit3{color:#e6c78a}
 .muted{color:#8792a6;font-size:12px}
@@ -69,14 +73,17 @@ select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
     <select id="date"><option value="">all pulls</option></select>
     <select id="region"><option value="">all regions</option><option>North</option><option>Center</option></select>
     <select id="fit"><option value="0">fit ≥ any</option><option value="5">fit 5</option><option value="4">fit ≥ 4</option><option value="3">fit ≥ 3</option></select>
+    <select id="verdict"><option value="">any verdict</option><option>YES</option><option>REACH</option><option>NO</option><option value="_none">unrated</option></select>
     <select id="status"><option value="">any status</option><option>New</option><option>Sent</option><option>Interview</option><option>Skip</option></select>
     <label><input type="checkbox" id="refonly"> 🔔 referral</label>
     <label><input type="checkbox" id="tailoronly"> ✎ tailor</label>
+    <label><input type="checkbox" id="jobifyonly"> Jobify</label>
+    <label><input type="checkbox" id="hidefiltered" checked> hide NO</label>
     <label><input type="checkbox" id="hidedone" checked> hide sent/skip</label>
   </div>
 </header>
 <main><table id="t"><thead><tr>
-<th data-k="date">Pull</th><th data-k="fit">Fit</th><th data-k="region">Region</th>
+<th data-k="date">Pull</th><th data-k="fit">Fit</th><th data-k="verdict">Verdict</th><th data-k="region">Region</th>
 <th data-k="flags">Flags</th><th data-k="company">Company</th><th data-k="role">Role</th>
 <th data-k="cv">CV</th><th data-k="src">Src</th><th>Status</th><th>Open</th>
 </tr></thead><tbody id="b"></tbody></table></main>
@@ -88,25 +95,29 @@ const el=id=>document.getElementById(id);
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{return localStorage.getItem("st:"+u)||"New";}catch(e){return "New";}}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
-function pills(j){let s="";if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";return '<span class="pill '+cls+'" title="'+esc(j.vwhy||"")+'">'+v+'</span>';}
 // populate the pull/date dropdown
 [...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;el("date").appendChild(o);});
 function stChange(sel){setSt(sel.dataset.u, sel.value);render();}
 window.stChange=stChange;
 function render(){
   const q=el("q").value.toLowerCase(),dt=el("date").value,rg=el("region").value,mf=+el("fit").value,
-        st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked;
+        st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,
+        vd=el("verdict").value,jo=el("jobifyonly").checked,hf=el("hidefiltered").checked;
   let rows=JOBS.filter(j=>{
     const s=getSt(j.url);
+    const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||(j.company+" "+j.role).toLowerCase().includes(q))&&(!dt||j.date===dt)&&(!rg||j.region===rg)
-      &&(j.fit>=mf)&&(!st||s===st)&&(!ro||j.ref)&&(!to||j.tailor)&&(!hd||(s!=="Sent"&&s!=="Skip"));
+      &&(j.fit>=mf)&&vmatch&&(!jo||j.jobify)&&(!hf||j.verdict!=="NO")&&(!st||s===st)&&(!ro||j.ref)&&(!to||j.tailor)&&(!hd||(s!=="Sent"&&s!=="Skip"));
   });
   rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
   el("b").innerHTML=rows.map(j=>{const s=getSt(j.url);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
-    return `<tr class="${(s==='Sent'||s==='Skip')?'done':''}">
+    return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'?'filtered':''}">
     <td class="muted">${esc(j.date)}</td>
     <td class="fit${j.fit}">${j.fit}</td>
+    <td>${vpill(j)}</td>
     <td><span class="pill ${j.region==='North'?'n':'c'}">${esc(j.region)}</span></td>
     <td>${pills(j)}</td>
     <td>${esc(j.company)}</td>
@@ -117,7 +128,7 @@ function render(){
     <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}</td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
-["q","date","region","fit","status","refonly","tailoronly","hidedone"].forEach(id=>el(id).addEventListener("input",render));
+["q","date","region","fit","verdict","status","refonly","tailoronly","jobifyonly","hidefiltered","hidedone"].forEach(id=>el(id).addEventListener("input",render));
 render();
 </script></body></html>"""
 
@@ -148,6 +159,34 @@ def check_sources_dark(reg, counts):
             except Exception as e: print("notify err", e)
     return dark
 
+def apply_curation(alljobs):
+    """Overlay Claude's persistent verdicts (data/curation.json) onto the scanned rows,
+    and inject Jobify roles that aren't already present. Runs every scan so a manual
+    judgment pass is never wiped by the auto-refresh."""
+    try:
+        cur = json.load(open(CURATION_JSON, encoding="utf-8"))
+    except Exception:
+        return
+    verdicts = cur.get("verdicts", {}); jobify = cur.get("jobify", {})
+    have = set()
+    for r in alljobs:
+        u = r.get("url", ""); have.add(u)
+        vd = verdicts.get(u) or jobify.get(u)
+        if vd:
+            r["verdict"] = vd.get("v", ""); r["vwhy"] = vd.get("why", "")
+        if u in jobify:
+            r["jobify"] = True
+    # Jobify roles not already in the tracker -> add as rows tagged jobify
+    for u, v in jobify.items():
+        if u in have: continue
+        alljobs.append({
+            "date": v.get("date", cur.get("updated", J.TODAY)), "region": v.get("region", "Unknown"),
+            "fit": {"YES": 5, "REACH": 4}.get(v.get("v"), 4),
+            "company": v.get("company", ""), "role": v.get("role", ""), "loc": v.get("loc", ""),
+            "url": u, "cv": v.get("cv", ""), "ref": bool(v.get("ref")), "giant": bool(v.get("giant")),
+            "tailor": False, "unread": False, "alert": False, "src": "jobify",
+            "verdict": v.get("v", ""), "vwhy": v.get("why", ""), "jobify": True})
+
 def main():
     os.makedirs(DATA, exist_ok=True)
     print("JobScan CLOUD run %s" % J.TODAY)
@@ -165,6 +204,7 @@ def main():
         if u and u in seenu: continue
         seenu.add(u); alljobs.append(x)
     alljobs = alljobs[:CAP]
+    apply_curation(alljobs)   # overlay Claude's verdicts + inject Jobify roles (survives every scan)
     J.atomic_write(JOBS_JSON, json.dumps(alljobs, ensure_ascii=False))
     # invisible review bucket: filtered/uncertain roles + their JD text, for on-demand review.
     # Order by how likely a real miss hides there, so the cap never drops the best leads first:
