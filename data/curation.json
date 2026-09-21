@@ -835,5 +835,226 @@
 "why": "good fit"
 }
 },
-"jobify": {}
+"jobify": {
+"https://jobify360.co.il/jobs/154_81.A34-emp": {
+"v": "YES",
+"company": "Vast DATA",
+"role": "Software Engineer- New college Grad",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/466_920073-emp": {
+"v": "YES",
+"company": "סינרגיה אקלימית צפונית",
+"role": "Junior Software Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/2758956-jk": {
+"v": "YES",
+"company": "אקווהשילד",
+"role": "software engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/21_7133-emp": {
+"v": "YES",
+"company": "Elbit Systems",
+"role": "Full Stack Developer (Temporary Position)",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": true
+},
+"https://jobify360.co.il/jobs/237_801990-emp": {
+"v": "YES",
+"company": "Digital Hunters",
+"role": "Software Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/34_0D.274-emp": {
+"v": "YES",
+"company": "Deloitte",
+"role": "Full Stack Developer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": true
+},
+"https://jobify360.co.il/jobs/656_D3.274-emp": {
+"v": "YES",
+"company": "Nanox",
+"role": "Junior Software Developer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/156_5E.E6E-emp": {
+"v": "YES",
+"company": "CommIT",
+"role": "Software Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/418_4C.173-emp": {
+"v": "REACH",
+"company": "Fullpath",
+"role": "Mid-Level Backend Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/473_3D.17E-emp": {
+"v": "REACH",
+"company": "CEVA Inc",
+"role": "C++ Software Engineer – AI & DSP Processor Simulators",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Software & AI",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/575_6C.D5D-emp": {
+"v": "YES",
+"company": "Friends",
+"role": "Software Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/2758711-jk": {
+"v": "YES",
+"company": "Amazon",
+"role": "Software Development Engineer (AWS ML), MLIL",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Software & AI",
+"ref": false,
+"giant": true
+},
+"https://jobify360.co.il/jobs/4464782967-in": {
+"v": "REACH",
+"company": "KLA",
+"role": "Software Developer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": true
+},
+"https://jobify360.co.il/jobs/4465762693-in": {
+"v": "REACH",
+"company": "Mobileye",
+"role": "C++ Software Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "C & Low-Level",
+"ref": false,
+"giant": true
+},
+"https://jobify360.co.il/jobs/4467736120-in": {
+"v": "YES",
+"company": "Shop Circle",
+"role": "Software Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/4467976012-in": {
+"v": "YES",
+"company": "Yael Korentec Technologies",
+"role": "Junior Software Engineer",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/d1f227ffcf1958dc-id": {
+"v": "REACH",
+"company": "Palo Alto Networks",
+"role": "Experienced Backend Engineer (Cortex XSOAR)",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": true,
+"giant": true
+},
+"https://jobify360.co.il/jobs/2758792-jk": {
+"v": "REACH",
+"company": "מיקרוסופט ישראל",
+"role": "Software Engineer - WSSI (Windows Silicon System Integration)",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": true
+},
+"https://jobify360.co.il/jobs/38413994-dr": {
+"v": "YES",
+"company": "Panda tech",
+"role": "מהנדס פיתוח תוכנה",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+},
+"https://jobify360.co.il/jobs/38422734-dr": {
+"v": "YES",
+"company": "דאטה וויי - Dataway",
+"role": "מהנדס/ת תוכנה Linux (מוסד בטחוני)",
+"loc": "",
+"region": "Unknown",
+"why": "jobify match",
+"cv": "Backend & Full-Stack",
+"ref": false,
+"giant": false
+}
+}
 }
