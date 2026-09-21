@@ -1866,5 +1866,79 @@
 "|בוגר ת תואר הנדסת חשמל למשרת מהנדס ת ולידציה ואוטומציה": {
 "seen": "2026-09-21"
 }
+},
+"source_stats": {
+"hiremetech": {
+"max": 2551,
+"last": 2551
+},
+"experis": {
+"max": 600,
+"last": 600
+},
+"drushim": {
+"max": 137,
+"last": 137
+},
+"greenhouse": {
+"max": 136,
+"last": 136
+},
+"amazon": {
+"max": 100,
+"last": 100
+},
+"ethosia": {
+"max": 120,
+"last": 120
+},
+"dialog": {
+"max": 120,
+"last": 120
+},
+"nisha": {
+"max": 52,
+"last": 52
+},
+"gotfriends": {
+"max": 120,
+"last": 120
+},
+"builtin": {
+"max": 41,
+"last": 41
+},
+"linkedin": {
+"max": 48,
+"last": 48
+},
+"cps": {
+"max": 120,
+"last": 120
+},
+"techjob": {
+"max": 92,
+"last": 92
+},
+"alljobs": {
+"max": 120,
+"last": 120
+},
+"comeet": {
+"max": 111,
+"last": 111
+},
+"workday": {
+"max": 28,
+"last": 28
+},
+"apple": {
+"max": 79,
+"last": 79
+},
+"camtek": {
+"max": 40,
+"last": 40
+}
 }
 }
