@@ -195,8 +195,14 @@ def _has(text, words):
     t=text.lower(); return any(w in t for w in words)
 
 def parse_years(desc):
-    m=re.findall(r'(\d+)\s*\+?\s*(?:years|year|yrs|שנ)', (desc or "").lower())
-    return min(int(x) for x in m) if m else None
+    # Return the LOWEST experience floor stated. Ranges like "0-3 years" must
+    # contribute their lower bound (0), not the number touching "years" (3) —
+    # otherwise grad-friendly "0-3y" roles get misread as a 3-year minimum.
+    t=(desc or "").lower()
+    yrs=r'(?:years|year|yrs|שנ)'
+    lows=[int(a) for a,_ in re.findall(r'(\d+)\s*(?:-|–|—|to|עד)\s*(\d+)\s*'+yrs, t)]  # range low
+    lows+=[int(x) for x in re.findall(r'(\d+)\s*\+?\s*'+yrs, t)]                        # singles / N+
+    return min(lows) if lows else None
 
 def is_junior(j):
     title=j["title"].lower()
@@ -215,6 +221,11 @@ def classify(j):
     referral = _has(j["company"].lower(), C.REFERRAL_COMPANIES)  # company only
     giant    = _has(j["company"].lower(), C.GIANTS)
     if not _has(tl, C.TITLE_DEV): return None                    # dev role by TITLE only
+    # A hardware discipline in the TITLE = genuinely not his lane -> skip.
+    # The same term only in the JD BODY (e.g. a SW-tools role that supports a
+    # post-silicon team) is the team's domain, not a missing qualification -> review.
+    hw_in_title = _has(" "+tl+" ", C.FOUNDATION_SKIP)
+    hw_in_body  = _has((" ".join(j["tech"])+" "+(j["desc"] or "")).lower(), C.FOUNDATION_SKIP)
 
     tailor = False
     ymin = j["years_min"] if j["years_min"] is not None else parse_years(j["desc"])
@@ -226,8 +237,8 @@ def classify(j):
 
     if _has(tl, MANUAL_QA) and "automation" not in tl:
         lane, why = "skip", "manual-QA"
-    elif _has(blob, C.FOUNDATION_SKIP):
-        lane, why = "skip", "foundation-gap"          # not tailorable (RTL/silicon/etc.)
+    elif hw_in_title:
+        lane, why = "skip", "foundation-gap"          # hardware discipline in the TITLE itself
     elif student:
         lane, why = "skip", "student"
     elif referral or giant:
@@ -249,6 +260,10 @@ def classify(j):
             lane, why, tailor = "reach", "3y-worth-tailoring", True   # almost a match
         else:
             lane, why = "review", "unclear"      # seniority unknown, non-giant -> kept North-only
+    # SW-title role that only mentions a hardware domain in the JD body: don't hide it,
+    # surface it for a look (the domain is the team's, not a qualification he's missing).
+    if hw_in_body and lane != "skip":
+        lane, why, tailor = "review", "silicon-in-jd", False
     # CV pick
     t=blob.lower()
     if _has(t,["ai ","llm","genai","ai engineer","ai developer"]): cv=C.CV["ai"]
@@ -336,9 +351,10 @@ def select(raw, reg):
     for j in raw:
         c=classify(j)
         if not c: continue
-        if j["region"]=="Unknown": continue
+        # Location filter is Jerusalem+South EXCLUSION only (done above via DROP_REGIONS).
+        # "Israel"/no-city -> Unknown is kept: it's Israel and not positively Jer/South.
         if c["lane"]=="skip": continue          # curated out (senior/foundation/manual-QA/student)
-        if c["lane"]=="review" and j["region"]!="North": continue   # unknown-seniority non-giant: North-only
+        if c["lane"]=="review" and j["region"] not in ("North","Unknown"): continue  # Center unclear-seniority = noise
         j["_c"]=c; keep.append(j)
     print("after filter:", len(keep))
     keep=dedup(keep); print("after dedup:", len(keep))
