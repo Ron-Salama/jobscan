@@ -18,7 +18,7 @@ def _get(url):
         with urllib.request.urlopen(req, timeout=20) as r:
             return r.status == 200
     except Exception as e:
-        print("  notify send err:", type(e).__name__); return False
+        print("  notify send err:", e); return False
 
 def _send(text):
     ok = False
@@ -46,16 +46,3 @@ def notify_jobs(rows):
     if len(rows) > 12:
         lines.append("...and %d more (see tracker)" % (len(rows) - 12))
     _send("\n\n".join(lines))
-
-
-def send_radar(jobs):
-    """V2 explicit opt-in. No company-prestige filter and no dropped large batches."""
-    if not jobs:
-        print('No new early-career listings to notify.'); return
-    sent=0
-    for start in range(0,len(jobs),6):
-        batch=jobs[start:start+6]
-        text='Job Radar: new roles worth considering\n\n'+'\n\n'.join(
-            '%s — %s\n%s' % (j['company'],j['title'][:130],j['url']) for j in batch)
-        if _send(text): sent+=len(batch)
-    print('Notification delivery confirmed for %d of %d listings.' % (sent,len(jobs)))

@@ -8,9 +8,3 @@ daily/
 # python
 __pycache__/
 *.pyc
-
-# Local synchronization / temporary files
-data/scan.lock
-*.tmp
-work/
-.venv/
