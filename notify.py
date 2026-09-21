@@ -32,6 +32,12 @@ def _send(text):
               {"phone": phone, "text": text, "apikey": key})) or ok
     return ok
 
+def notify_text(text):
+    """Send one plain message (batch-summary nudge, source-dark warning). No-op if unconfigured."""
+    if not (_cfg("TELEGRAM_TOKEN") or _cfg("CALLMEBOT_APIKEY")):
+        print("  (notify: no channel configured — message skipped)"); return False
+    return _send(text)
+
 def notify_jobs(rows):
     """rows = tracker-row dicts already filtered to giants/referrals. Sends ONE batched message."""
     if not rows:

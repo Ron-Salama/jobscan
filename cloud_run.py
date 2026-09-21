@@ -13,8 +13,11 @@ import jobscan as J   # sets utf-8 stdout via reconfigure
 DATA = "data"; DOCS = "docs"
 JOBS_JSON = os.path.join(DATA, "jobs.json")
 SEEN_JSON = os.path.join(DATA, "seen.json")
+BUCKET_JSON = os.path.join(DATA, "review-bucket.json")   # filtered/uncertain roles for later manual/AI review
 INDEX_HTML = os.path.join(DOCS, "index.html")
 CAP = 1200
+BUCKET_CAP = 500          # newest filtered roles kept for review
+SOURCE_DARK_MIN = 5       # a source that once returned >= this, now 0/error = "went dark"
 
 def slim(r):
     note = r["openings"]["note"]
@@ -121,14 +124,36 @@ render();
 def build_page(jobs, updated):
     os.makedirs(DOCS, exist_ok=True)
     html = PAGE.replace("__DATA__", json.dumps(jobs, ensure_ascii=False)).replace("__UPDATED__", updated)
-    with open(INDEX_HTML, "w", encoding="utf-8") as f:
-        f.write(html)
+    J.atomic_write(INDEX_HTML, html)
+
+def check_sources_dark(reg, counts):
+    """Compare each source's yield to its historical best; warn (and Telegram) when a
+    source that used to return jobs now returns 0 or errored — a silent mass-miss."""
+    stats = reg.setdefault("source_stats", {})
+    dark = []
+    for name, n in counts.items():
+        s = stats.setdefault(name, {"max": 0})
+        prev_max = s.get("max", 0)
+        if n is not None and n > prev_max: s["max"] = n
+        s["last"] = n
+        if prev_max >= SOURCE_DARK_MIN and (n is None or n <= 0):
+            dark.append((name, prev_max, n))
+    if dark:
+        msg = "⚠️ JobScan: source(s) went dark — " + ", ".join(
+            "%s (usually ~%d, now %s)" % (nm, mx, "error" if n == -1 else n) for nm, mx, n in dark)
+        print(msg)
+        if not os.environ.get("JOBSCAN_NO_ALERT"):
+            try:
+                import notify; notify.notify_text(msg)
+            except Exception as e: print("notify err", e)
+    return dark
 
 def main():
     os.makedirs(DATA, exist_ok=True)
     print("JobScan CLOUD run %s" % J.TODAY)
     reg = J.load_reg(SEEN_JSON)
-    rows = J.select(J.collect(), reg)
+    counts = {}; bucket = []
+    rows = J.select(J.collect(counts), reg, bucket)
     new = [slim(r) for r in rows]
     try:
         existing = json.load(open(JOBS_JSON, encoding="utf-8"))
@@ -140,10 +165,14 @@ def main():
         if u and u in seenu: continue
         seenu.add(u); alljobs.append(x)
     alljobs = alljobs[:CAP]
-    json.dump(alljobs, open(JOBS_JSON, "w", encoding="utf-8"), ensure_ascii=False)
+    J.atomic_write(JOBS_JSON, json.dumps(alljobs, ensure_ascii=False))
+    # invisible review bucket: filtered/uncertain roles + their JD text, for on-demand review
+    J.atomic_write(BUCKET_JSON, json.dumps(
+        {"generated": J.TODAY, "count": len(bucket), "roles": bucket[:BUCKET_CAP]}, ensure_ascii=False))
+    check_sources_dark(reg, counts)
     J.save_reg(reg, SEEN_JSON)
     build_page(alljobs, J.TODAY)
-    print("new:%d  total_on_page:%d" % (len(new), len(alljobs)))
+    print("new:%d  total_on_page:%d  bucket:%d" % (len(new), len(alljobs), len(bucket)))
     J.send_alerts(rows)
 
 if __name__ == "__main__":

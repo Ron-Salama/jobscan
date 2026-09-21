@@ -291,6 +291,20 @@ def norm(s):
         s=re.sub(r"\b"+re.escape(w)+r"\b"," ",s)
     return re.sub(r"\s+"," ",s).strip()
 
+SUPPRESS_DAYS = 30   # a company+title stays deduped for this long, then may resurface (new req)
+def _key_is_fresh(seen, key):
+    """True = this company|title may be admitted. Exact-URL/sid dedup is permanent
+    (handled separately); this softer company|title key EXPIRES so a genuinely new
+    opening at a known company isn't hidden forever."""
+    v = seen.get(key)
+    if not v: return True
+    d = v.get("seen") if isinstance(v, dict) else None
+    if not d: return False
+    try:
+        return (datetime.date.today() - datetime.date.fromisoformat(d)).days > SUPPRESS_DAYS
+    except Exception:
+        return False
+
 def dedup(jobs):
     by={}
     for j in jobs:
@@ -305,9 +319,17 @@ def load_reg(path=None):
     try:
         with open(path,encoding="utf-8") as f: return json.load(f)
     except Exception: return {"seen":{}}
+def atomic_write(path, text):
+    """Write via a temp file + os.replace so a crash mid-write can never leave a
+    truncated/corrupt tracker or registry behind."""
+    tmp = "%s.tmp.%d" % (path, os.getpid())
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(text); f.flush(); os.fsync(f.fileno())
+    os.replace(tmp, path)
+
 def save_reg(r, path=None):
     path = path or C.REGISTRY
-    with open(path,"w",encoding="utf-8") as f: json.dump(r,f,ensure_ascii=False,indent=0)
+    atomic_write(path, json.dumps(r, ensure_ascii=False, indent=0))
 
 # ---------------- tracker writer ----------------
 def append_tracker(rows):
@@ -333,35 +355,55 @@ def append_tracker(rows):
     return len(arr)
 
 # ---------------- pipeline (shared by local + cloud) ----------------
-def collect():
+def collect(counts=None):
+    """counts (optional dict) is filled name->rows, or -1 when the source errored,
+    so the caller can spot a source that silently went dark."""
     raw=[]
     for name,fn in (SOURCES + _EXT_FNS):
         try:
             got=fn() or []
             got=[normalize(dict(x)) for x in got if isinstance(x,dict)]
-            raw+=got; print("  %-12s %d" % (name,len(got)))
+            raw+=got; n=len(got); print("  %-12s %d" % (name,n))
         except Exception as e:
-            print("  %-12s ERROR %s"%(name,e))
+            n=-1; print("  %-12s ERROR %s"%(name,e))
+        if counts is not None: counts[name]=n
     print("raw total:", len(raw))
     return raw
 
-def select(raw, reg):
-    """Region-drop + classify + dedup vs registry -> NEW rows. Mutates reg['seen']."""
+def _bucket(j, reason):
+    """A filtered/uncertain role kept aside (with its JD text) for later manual/AI
+    review, so the keyword rules never silently bury a real fit."""
+    return {"reason":reason,"company":j.get("company",""),"role":j.get("title",""),
+            "url":j.get("url",""),"region":j.get("region",""),"loc":j.get("city",""),
+            "src":j.get("source",""),"desc":(j.get("desc") or "")[:700]}
+
+def select(raw, reg, filtered=None):
+    """Region-drop + classify + dedup vs registry -> NEW rows. Mutates reg['seen'].
+    If `filtered` is a list, roles the rules set aside (skip / review / a giant whose
+    title missed the dev gate) are appended to it with their JD text for later review."""
     raw=[j for j in raw if j["region"] not in C.DROP_REGIONS and j.get("active",True)]
     keep=[]
     for j in raw:
         c=classify(j)
-        if not c: continue
+        if not c:
+            # non-dev TITLE: only worth a second look when it's a giant/referral company
+            if filtered is not None and _has(j["company"].lower(), C.GIANTS+C.REFERRAL_COMPANIES):
+                filtered.append(_bucket(j,"not-dev-title"))
+            continue
         # Location filter is Jerusalem+South EXCLUSION only (done above via DROP_REGIONS).
         # "Israel"/no-city -> Unknown is kept: it's Israel and not positively Jer/South.
-        if c["lane"]=="skip": continue          # curated out (senior/foundation/manual-QA/student)
-        if c["lane"]=="review" and j["region"] not in ("North","Unknown"): continue  # Center unclear-seniority = noise
+        if c["lane"]=="skip":
+            if filtered is not None: filtered.append(_bucket(j,c["why"]))  # senior/foundation/student/...
+            continue
+        if c["lane"]=="review":
+            if filtered is not None: filtered.append(_bucket(j,"review:"+c["why"]))
+            if j["region"] not in ("North","Unknown"): continue  # Center unclear-seniority: off page, but in bucket
         j["_c"]=c; keep.append(j)
-    print("after filter:", len(keep))
+    print("after filter:", len(keep), "| bucket:", len(filtered) if filtered is not None else 0)
     keep=dedup(keep); print("after dedup:", len(keep))
     seen=reg.setdefault("seen",{})
     fresh=[j for j in keep if ("%s:%s"%(j["source"],j["sid"])) not in seen
-           and norm(j["company"])+"|"+norm(j["title"]) not in seen]
+           and _key_is_fresh(seen, norm(j["company"])+"|"+norm(j["title"]))]
     print("fresh (new):", len(fresh))
     rows=[]
     for i,j in enumerate(fresh):
@@ -389,13 +431,17 @@ def select(raw, reg):
 def alerts_for(rows):
     return [r for r in rows if "ALERT" in r["openings"]["note"]]
 
-ALERT_BATCH_MAX = 12   # above this = backfill/re-scan, not real new-openings -> don't spam
+ALERT_BATCH_MAX = 25   # above this = backfill/re-scan, not real new-openings -> don't spam
 def send_alerts(rows):
     if os.environ.get("JOBSCAN_NO_ALERT"):
         print("(alerts suppressed via JOBSCAN_NO_ALERT)"); return []
     a=alerts_for(rows)
     if len(a) > ALERT_BATCH_MAX:
-        print("large batch (%d giant/referral) — alerts suppressed (backfill, not new-openings)"%len(a)); return []
+        print("large batch (%d giant/referral) — per-role alerts suppressed (backfill)"%len(a))
+        try:   # still send ONE nudge so a big real burst is never fully silent
+            import notify; notify.notify_text("🔔 JobScan: %d new giant/referral roles this run (large batch — see the tracker)"%len(a))
+        except Exception as e: print("notify err", e)
+        return []
     if a:
         try:
             import notify; notify.notify_jobs(a); print("alerted %d giant/referral roles"%len(a))
