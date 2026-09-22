@@ -63,6 +63,8 @@ tr.filtered td{opacity:.45}
 .mbar{flex:1;height:7px;border-radius:4px;background:#20262f;overflow:hidden}
 .mfill{height:100%;border-radius:4px}
 .mnum{font-variant-numeric:tabular-nums;font-weight:700;font-size:12px;width:26px;text-align:right}
+.tbtn{background:#20344a;color:#8fc7ff;border:1px solid #2b3240;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer}
+.tbtn:hover{background:#274058}
 .muted{color:#8792a6;font-size:12px}
 select.st{background:#0f1115;color:#e7e9ee;border:1px solid #2b3240;border-radius:6px;padding:3px 5px;font-size:12px}
 select.st[data-v="Sent"]{border-color:#3a7d52;color:#8ff0b8}
@@ -84,6 +86,8 @@ select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
     <label><input type="checkbox" id="jobifyonly"> Jobify</label>
     <label><input type="checkbox" id="hidefiltered" checked> hide NO</label>
     <label><input type="checkbox" id="hidedone" checked> hide sent/skip</label>
+    <button type="button" id="expBtn" class="tbtn" title="Download your applied/status marks (this browser) as a file">⬇ export status</button>
+    <label class="tbtn" title="Load a status file exported from another device">⬆ import status<input type="file" id="impFile" accept="application/json" hidden></label>
   </div>
 </header>
 <main><table id="t"><thead><tr>
@@ -105,6 +109,25 @@ function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> 
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 [...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;el("date").appendChild(o);});
+function exportStatuses(){
+  const data={}; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k&&k.indexOf("st:")===0) data[k.slice(3)]=localStorage.getItem(k);}
+  const n=Object.keys(data).length;
+  const blob=new Blob([JSON.stringify({version:1,exported:new Date().toISOString(),count:n,statuses:data})],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="jobscan-status-"+new Date().toISOString().slice(0,10)+".json"; a.click();
+}
+function importStatuses(file){
+  const r=new FileReader();
+  r.onload=e=>{try{
+    const d=JSON.parse(e.target.result); const st=d.statuses||d.by_url||d; let n=0,skip=0;
+    for(const u in st){const v=st[u]; if(!v) continue;
+      const cur=localStorage.getItem("st:"+u);
+      if(cur&&cur!=="New"&&cur!==v){skip++;continue;}   // don't overwrite an existing decision on this device
+      if(v!=="New"){localStorage.setItem("st:"+u,v); n++;}}
+    render(); alert("Imported "+n+" status marks"+(skip?"; kept "+skip+" you'd already set here":"")+".");
+  }catch(err){alert("Import failed: "+err.message);}};
+  r.readAsText(file);
+}
 function stChange(sel){setSt(sel.dataset.u, sel.value);render();}
 window.stChange=stChange;
 function render(){
@@ -135,6 +158,8 @@ function render(){
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
 ["q","date","region","fit","verdict","status","refonly","tailoronly","jobifyonly","hidefiltered","hidedone"].forEach(id=>el(id).addEventListener("input",render));
+el("expBtn").onclick=exportStatuses;
+el("impFile").onchange=e=>{if(e.target.files[0]){importStatuses(e.target.files[0]); e.target.value="";}};
 render();
 </script></body></html>"""
 
