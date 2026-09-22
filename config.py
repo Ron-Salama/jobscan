@@ -43,7 +43,27 @@ TITLE_DEV = ["developer","software","full stack","fullstack","full-stack","backe
  "frontend","front end","front-end",".net","c#","c sharp","c++","python","java","javascript","typescript",
  "node","react","angular","vue","devops","automation","sdet","embedded","firmware","ai engineer",
  "ai developer","ai native","ai-native","llm","genai","data engineer","programmer","validation",
- "מפתח","מפתחת","מתכנת","תוכנה","אוטומציה","הנדסת תוכנה","full-stack"]
+ "מפתח","מפתחת","מתכנת","תוכנה","אוטומציה","הנדסת תוכנה","full-stack",
+ # added 2026-09-22 from real dropped-role analysis:
+ "prompt engineer","ml engineer","machine learning engineer","sre","site reliability",
+ "sdk","react native","platform engineer","cloud engineer","integration engineer","data platform",
+ "mobile developer","founding engineer","software architect"]
+
+# JD-content safety net: if a TITLE misses TITLE_DEV but the JD contains this many of these
+# programming/framework signals, the role is put in the REVIEW BUCKET (not dropped, not on the
+# tracker) so Claude can catch oddly-titled/typo'd/Hebrew dev roles by content, not just title.
+DEVSIG = ["python","java","c++","c#","c sharp",".net","javascript","typescript","react","node.js",
+ "node ","angular","vue","backend","back-end","back end","frontend","front-end","full stack","fullstack",
+ "rest api","restful","microservice","sql","nosql","docker","kubernetes","linux","ci/cd","embedded",
+ "firmware","oop","object-oriented","spring","django","flask","golang"," go ","kotlin","git ","גיט",
+ "שפת תכנות","פיתוח תוכנה","אלגוריתמ","כתיבת קוד","מיקרו-שירות","ווב"]
+DEVSIG_MIN = 3
+# but never rescue these clearly-non-dev titles even if their JD name-drops tools:
+DEVSIG_NONDEV = ["analyst","manager","student","intern","support","sales","marketing","recruit","hr ",
+ "mechanical","chemical","physicist","physics","biolog","account","finance","operations","logistics",
+ "procurement","customer success","teacher","technician","pre-sale","presale","field engineer",
+ "process engineer","quality engineer","application engineer","mechanic","optic","pcb"," rf ",
+ "network administrator","noc","help desk","helpdesk","tier 1","system administrator","sysadmin"]
 
 # ---- junior / early-career title signals (EN + HE), recognized from the TITLE ----
 # These mark a role as junior even when the source gives no level field and the JD

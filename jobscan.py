@@ -386,9 +386,17 @@ def select(raw, reg, filtered=None):
     for j in raw:
         c=classify(j)
         if not c:
-            # non-dev TITLE: only worth a second look when it's a giant/referral company
-            if filtered is not None and _has(j["company"].lower(), C.GIANTS+C.REFERRAL_COMPANIES):
-                filtered.append(_bucket(j,"not-dev-title"))
+            # Title missed the dev gate. Still bucket it (for Claude to review, NOT on the
+            # tracker) when it's a giant/referral OR its JD content looks like a real dev role
+            # (catches typos, unusual titles, Hebrew phrasings the keyword gate can't).
+            if filtered is not None:
+                tl=(j.get("title") or "").lower()
+                desc=(j.get("desc") or "").lower()
+                if _has(j["company"].lower(), C.GIANTS+C.REFERRAL_COMPANIES):
+                    filtered.append(_bucket(j,"not-dev-title"))
+                elif (not _has(tl, C.DEVSIG_NONDEV)
+                      and sum(1 for w in C.DEVSIG if w in desc) >= C.DEVSIG_MIN):
+                    filtered.append(_bucket(j,"jd-signal"))   # oddly-titled but JD reads as dev
             continue
         # Location filter is Jerusalem+South EXCLUSION only (done above via DROP_REGIONS).
         # "Israel"/no-city -> Unknown is kept: it's Israel and not positively Jer/South.
