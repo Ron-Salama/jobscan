@@ -1937,12 +1937,21 @@
 },
 "apple|machine learning engineer speech": {
 "seen": "2026-09-22"
+},
+"cps:tools-development-software-engineer": {
+"t": "Tools Development Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|tools development software engineer": {
+"seen": "2026-09-22"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2552,
-"last": 2552
+"last": 2489
 },
 "experis": {
 "max": 600,
@@ -1950,7 +1959,7 @@
 },
 "drushim": {
 "max": 137,
-"last": 137
+"last": 135
 },
 "greenhouse": {
 "max": 136,
@@ -1969,16 +1978,16 @@
 "last": 120
 },
 "nisha": {
-"max": 52,
-"last": 52
+"max": 55,
+"last": 55
 },
 "gotfriends": {
 "max": 120,
 "last": 120
 },
 "builtin": {
-"max": 41,
-"last": 41
+"max": 42,
+"last": 42
 },
 "linkedin": {
 "max": 48,
@@ -2002,7 +2011,7 @@
 },
 "workday": {
 "max": 28,
-"last": 28
+"last": 27
 },
 "apple": {
 "max": 79,
@@ -2010,7 +2019,7 @@
 },
 "camtek": {
 "max": 40,
-"last": 39
+"last": 35
 }
 }
 }
