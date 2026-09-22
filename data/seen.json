@@ -1987,7 +1987,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2552,
-"last": 2542
+"last": 2546
 },
 "experis": {
 "max": 600,
@@ -2022,8 +2022,8 @@
 "last": 120
 },
 "builtin": {
-"max": 45,
-"last": 45
+"max": 48,
+"last": 48
 },
 "linkedin": {
 "max": 48,
@@ -2055,7 +2055,7 @@
 },
 "camtek": {
 "max": 40,
-"last": 33
+"last": 37
 }
 }
 }
