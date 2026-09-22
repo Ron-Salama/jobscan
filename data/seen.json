@@ -1865,6 +1865,78 @@
 },
 "|בוגר ת תואר הנדסת חשמל למשרת מהנדס ת ולידציה ואוטומציה": {
 "seen": "2026-09-21"
+},
+"hiremetech:141138110": {
+"t": "Integration Technician / Integration Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|integration technician integration engineer": {
+"seen": "2026-09-22"
+},
+"greenhouse:jfrog:8156071": {
+"t": "IS Integration Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"jfrog|is integration engineer": {
+"seen": "2026-09-22"
+},
+"greenhouse:appsflyer:8781235002": {
+"t": "Mobile SDK Engineer ",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"appsflyer|mobile sdk engineer": {
+"seen": "2026-09-22"
+},
+"amazon:10506530": {
+"t": "System Integration Engineer, SERDES",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"amazon|integration engineer serdes": {
+"seen": "2026-09-22"
+},
+"ethosia:76871": {
+"t": "Integration Engineer – Electronics Background",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|integration engineer electronics background": {
+"seen": "2026-09-22"
+},
+"dialog:95078": {
+"t": "Hardware Integration Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|hardware integration engineer": {
+"seen": "2026-09-22"
+},
+"apple:200665600": {
+"t": "Audio Machine Learning Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"apple|audio machine learning engineer": {
+"seen": "2026-09-22"
+},
+"apple:200665627": {
+"t": "Machine Learning Engineer - Speech",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"apple|machine learning engineer speech": {
+"seen": "2026-09-22"
 }
 },
 "source_stats": {
