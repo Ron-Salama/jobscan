@@ -1946,24 +1946,51 @@
 },
 "|tools development software engineer": {
 "seen": "2026-09-22"
+},
+"hiremetech:148768383": {
+"t": "BI & AI Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|bi ai developer": {
+"seen": "2026-09-22"
+},
+"techjob:616d7ac18d8af500201348d2": {
+"t": "Software Development TL - Infrastructure",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|software development tl infrastructure": {
+"seen": "2026-09-22"
+},
+"apple:200665683": {
+"t": "Hardware Validation & Characterization Engineer - Camera & L",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"apple|hardware validation characterization engineer camera laser sensor": {
+"seen": "2026-09-22"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2552,
-"last": 2489
+"last": 2522
 },
 "experis": {
 "max": 600,
 "last": 600
 },
 "drushim": {
-"max": 137,
-"last": 135
+"max": 143,
+"last": 143
 },
 "greenhouse": {
-"max": 136,
-"last": 136
+"max": 137,
+"last": 137
 },
 "amazon": {
 "max": 100,
@@ -1979,15 +2006,15 @@
 },
 "nisha": {
 "max": 55,
-"last": 55
+"last": 54
 },
 "gotfriends": {
 "max": 120,
 "last": 120
 },
 "builtin": {
-"max": 42,
-"last": 42
+"max": 44,
+"last": 44
 },
 "linkedin": {
 "max": 48,
@@ -1998,8 +2025,8 @@
 "last": 120
 },
 "techjob": {
-"max": 92,
-"last": 92
+"max": 94,
+"last": 94
 },
 "alljobs": {
 "max": 120,
@@ -2011,7 +2038,7 @@
 },
 "workday": {
 "max": 28,
-"last": 27
+"last": 26
 },
 "apple": {
 "max": 79,
@@ -2019,7 +2046,7 @@
 },
 "camtek": {
 "max": 40,
-"last": 35
+"last": 31
 }
 }
 }
