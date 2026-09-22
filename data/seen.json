@@ -1973,12 +1973,21 @@
 },
 "apple|hardware validation characterization engineer camera laser sensor": {
 "seen": "2026-09-22"
+},
+"alljobs:8828985": {
+"t": "לחברה ביטחונית בירושלים, מפתח /ת אוטומציה",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"allstarsit|לחברה ביטחונית בירושלים מפתח ת אוטומציה": {
+"seen": "2026-09-22"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2552,
-"last": 2522
+"last": 2542
 },
 "experis": {
 "max": 600,
@@ -1986,11 +1995,11 @@
 },
 "drushim": {
 "max": 143,
-"last": 143
+"last": 141
 },
 "greenhouse": {
 "max": 137,
-"last": 137
+"last": 134
 },
 "amazon": {
 "max": 100,
@@ -2013,8 +2022,8 @@
 "last": 120
 },
 "builtin": {
-"max": 44,
-"last": 44
+"max": 45,
+"last": 45
 },
 "linkedin": {
 "max": 48,
@@ -2033,12 +2042,12 @@
 "last": 120
 },
 "comeet": {
-"max": 111,
-"last": 111
+"max": 112,
+"last": 112
 },
 "workday": {
 "max": 28,
-"last": 26
+"last": 25
 },
 "apple": {
 "max": 79,
@@ -2046,7 +2055,7 @@
 },
 "camtek": {
 "max": 40,
-"last": 31
+"last": 33
 }
 }
 }
