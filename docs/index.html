@@ -74,7 +74,9 @@ function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
-[...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;el("date").appendChild(o);});
+const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
+const dcount={}; JOBS.forEach(j=>{dcount[j.date]=(dcount[j.date]||0)+1;});
+[...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=d;o.textContent=fmtD(d)+" pull ("+(dcount[d]||0)+")";el("date").appendChild(o);});
 function exportStatuses(){
   const data={}; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k&&k.indexOf("st:")===0) data[k.slice(3)]=localStorage.getItem(k);}
   const n=Object.keys(data).length;
@@ -110,7 +112,7 @@ function render(){
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
   el("b").innerHTML=rows.map(j=>{const s=getSt(j.url);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
     return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'?'filtered':''}">
-    <td class="muted">${esc(j.date)}</td>
+    <td class="muted">${esc(fmtD(j.date))}</td>
     <td>${mmeter(j)}</td>
     <td>${vpill(j)}</td>
     <td><span class="pill ${j.region==='North'?'n':'c'}">${esc(j.region)}</span></td>
