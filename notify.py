@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Push notifier for JobScan — alerts ONLY on giants + referral companies.
 Supports Telegram (recommended) and/or CallMeBot WhatsApp. No-ops safely if unconfigured."""
-import os, urllib.request, urllib.parse
+import os, re, urllib.request, urllib.parse
 
 try:
     import notify_config as N   # local: holds the secrets (gitignored)
@@ -48,7 +48,9 @@ def notify_jobs(rows):
     lines = ["\U0001F514 JobScan: %d new giant/referral role%s" % (len(rows), "" if len(rows) == 1 else "s")]
     for r in rows[:12]:
         flag = "\U0001F514REF" if "REFERRAL" in r["openings"]["note"] else "★"
-        lines.append("%s %s — %s [%s]\n%s" % (flag, r["company"], r["role"][:70], r["region"], r["url"]))
+        cvm = re.search(r"\((.*?)\)", r.get("cv", "") or "")   # "Ron Salama - CV (Backend & Full-Stack).pdf" -> "Backend & Full-Stack"
+        cv = cvm.group(1) if cvm else (r.get("cv", "") or "").replace(".pdf", "")
+        lines.append("%s %s — %s [%s]\n\U0001F4C4 CV: %s\n%s" % (flag, r["company"], r["role"][:70], r["region"], cv or "?", r["url"]))
     if len(rows) > 12:
         lines.append("...and %d more (see tracker)" % (len(rows) - 12))
     _send("\n\n".join(lines))

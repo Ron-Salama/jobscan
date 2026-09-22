@@ -86,7 +86,8 @@ FOUNDATION_SKIP = ["rtl","vlsi","asic"," uvm","systemverilog","specman"," dft","
  "computer vision","image processing","deep learning research",
  # giant-board noise Ron doesn't want (pull them, but keep them OUT of the tracker):
  "silicon validation","soc validation","system validation"," soc "," soc-","post-silicon",
- "physical verification","dv engineer","design verification",
+ "physical verification","dv engineer","design verification","serdes","serializer","deserializer",
+ "hw serdes","spiv","phy layer",
  # networking / NOS specialization he doesn't have:
  "sonic","networking protocol"," l2 "," l3 ","l2/l3","data plane","control plane"," sai ",
  " nos ","switch asic","routing protocol","bgp","ospf"]
