@@ -105,7 +105,7 @@ function mmeter(j){const m=mval(j);const c=m>=70?'#8ff0b8':m>=45?'#ffd98f':'#ff9
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{return localStorage.getItem("st:"+u)||"New";}catch(e){return "New";}}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
-function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 [...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;el("date").appendChild(o);});
@@ -198,26 +198,30 @@ def apply_curation(alljobs):
         cur = json.load(open(CURATION_JSON, encoding="utf-8"))
     except Exception:
         return
-    verdicts = cur.get("verdicts", {}); jobify = cur.get("jobify", {})
+    verdicts = cur.get("verdicts", {}); jobify = cur.get("jobify", {}); rescued = cur.get("rescued", {})
     have = set()
     for r in alljobs:
         u = r.get("url", ""); have.add(u)
-        vd = verdicts.get(u) or jobify.get(u)
+        vd = verdicts.get(u) or jobify.get(u) or rescued.get(u)
         if vd:
             r["verdict"] = vd.get("v", ""); r["vwhy"] = vd.get("why", ""); r["vbasis"] = vd.get("basis", "")
             if vd.get("score") is not None: r["match"] = vd.get("score")
         if u in jobify:
             r["jobify"] = True
-    # Jobify roles not already in the tracker -> add as rows tagged jobify
-    for u, v in jobify.items():
-        if u in have: continue
-        alljobs.append({
-            "date": v.get("date", cur.get("updated", J.TODAY)), "region": v.get("region", "Unknown"),
-            "fit": {"YES": 5, "REACH": 4}.get(v.get("v"), 4), "match": v.get("score", 60),
-            "company": v.get("company", ""), "role": v.get("role", ""), "loc": v.get("loc", ""),
-            "url": u, "cv": v.get("cv", ""), "ref": bool(v.get("ref")), "giant": bool(v.get("giant")),
-            "tailor": False, "unread": False, "alert": False, "src": "jobify",
-            "verdict": v.get("v", ""), "vwhy": v.get("why", ""), "vbasis": v.get("basis", "title"), "jobify": True})
+    # roles not on the tracker but in an injected map -> add them.
+    #   jobify: from Ron's Jobify feed | bucket: rescued by Claude from the review bucket
+    for src, mp, tag in (("jobify", jobify, "jobify"), ("bucket", rescued, "rescued")):
+        for u, v in mp.items():
+            if u in have: continue
+            have.add(u)
+            alljobs.append({
+                "date": v.get("date", cur.get("updated", J.TODAY)), "region": v.get("region", "Unknown"),
+                "fit": {"YES": 5, "REACH": 4}.get(v.get("v"), 4), "match": v.get("score", 60),
+                "company": v.get("company", ""), "role": v.get("role", ""), "loc": v.get("loc", ""),
+                "url": u, "cv": v.get("cv", ""), "ref": bool(v.get("ref")), "giant": bool(v.get("giant")),
+                "tailor": False, "unread": False, "alert": False, "src": src,
+                "verdict": v.get("v", ""), "vwhy": v.get("why", ""), "vbasis": v.get("basis", "title"),
+                tag: True})
 
 def main():
     os.makedirs(DATA, exist_ok=True)
