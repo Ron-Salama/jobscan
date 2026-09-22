@@ -59,6 +59,10 @@ a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 tr.filtered td{opacity:.45}
 .n{background:#1c3a2a;color:#8ff0b8}.c{background:#2a2340;color:#c4b0ff}
 .fit5{color:#8ff0b8;font-weight:700}.fit4{color:#c9e69a}.fit3{color:#e6c78a}
+.mwrap{display:flex;align-items:center;gap:6px;min-width:92px}
+.mbar{flex:1;height:7px;border-radius:4px;background:#20262f;overflow:hidden}
+.mfill{height:100%;border-radius:4px}
+.mnum{font-variant-numeric:tabular-nums;font-weight:700;font-size:12px;width:26px;text-align:right}
 .muted{color:#8792a6;font-size:12px}
 select.st{background:#0f1115;color:#e7e9ee;border:1px solid #2b3240;border-radius:6px;padding:3px 5px;font-size:12px}
 select.st[data-v="Sent"]{border-color:#3a7d52;color:#8ff0b8}
@@ -72,7 +76,7 @@ select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
     <input type="text" id="q" placeholder="search company / role…" size="20">
     <select id="date"><option value="">all pulls</option></select>
     <select id="region"><option value="">all regions</option><option>North</option><option>Center</option></select>
-    <select id="fit"><option value="0">fit ≥ any</option><option value="5">fit 5</option><option value="4">fit ≥ 4</option><option value="3">fit ≥ 3</option></select>
+    <select id="fit"><option value="0">match ≥ any</option><option value="85">match ≥ 85</option><option value="70">match ≥ 70</option><option value="55">match ≥ 55</option></select>
     <select id="verdict"><option value="">any verdict</option><option>YES</option><option>REACH</option><option>NO</option><option value="_none">unrated</option></select>
     <select id="status"><option value="">any status</option><option>New</option><option>Sent</option><option>Interview</option><option>Skip</option></select>
     <label><input type="checkbox" id="refonly"> 🔔 referral</label>
@@ -83,15 +87,17 @@ select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
   </div>
 </header>
 <main><table id="t"><thead><tr>
-<th data-k="date">Pull</th><th data-k="fit">Fit</th><th data-k="verdict">Verdict</th><th data-k="region">Region</th>
+<th data-k="date">Pull</th><th data-k="match">Match</th><th data-k="verdict">Verdict</th><th data-k="region">Region</th>
 <th data-k="flags">Flags</th><th data-k="company">Company</th><th data-k="role">Role</th>
 <th data-k="cv">CV</th><th data-k="src">Src</th><th>Status</th><th>Open</th>
 </tr></thead><tbody id="b"></tbody></table></main>
 <script>
 const JOBS = __DATA__;
 document.getElementById("updated").textContent = "· updated __UPDATED__";
-let sortK="fit", sortDir=-1;
+let sortK="match", sortDir=-1;
 const el=id=>document.getElementById(id);
+const mval=j=>j.match!=null?j.match:(j.fit?Math.round(j.fit*18):50);
+function mmeter(j){const m=mval(j);const c=m>=70?'#8ff0b8':m>=45?'#ffd98f':'#ff9e9e';return '<div class="mwrap"><div class="mbar"><div class="mfill" style="width:'+m+'%;background:'+c+'"></div></div><span class="mnum" style="color:'+c+'">'+m+'</span></div>';}
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{return localStorage.getItem("st:"+u)||"New";}catch(e){return "New";}}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
@@ -109,14 +115,14 @@ function render(){
     const s=getSt(j.url);
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||(j.company+" "+j.role).toLowerCase().includes(q))&&(!dt||j.date===dt)&&(!rg||j.region===rg)
-      &&(j.fit>=mf)&&vmatch&&(!jo||j.jobify)&&(!hf||j.verdict!=="NO")&&(!st||s===st)&&(!ro||j.ref)&&(!to||j.tailor)&&(!hd||(s!=="Sent"&&s!=="Skip"));
+      &&(mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!hf||j.verdict!=="NO")&&(!st||s===st)&&(!ro||j.ref)&&(!to||j.tailor)&&(!hd||(s!=="Sent"&&s!=="Skip"));
   });
-  rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}return (x>y?1:x<y?-1:0)*sortDir;});
+  rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
   el("b").innerHTML=rows.map(j=>{const s=getSt(j.url);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
     return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'?'filtered':''}">
     <td class="muted">${esc(j.date)}</td>
-    <td class="fit${j.fit}">${j.fit}</td>
+    <td>${mmeter(j)}</td>
     <td>${vpill(j)}</td>
     <td><span class="pill ${j.region==='North'?'n':'c'}">${esc(j.region)}</span></td>
     <td>${pills(j)}</td>
@@ -174,6 +180,7 @@ def apply_curation(alljobs):
         vd = verdicts.get(u) or jobify.get(u)
         if vd:
             r["verdict"] = vd.get("v", ""); r["vwhy"] = vd.get("why", ""); r["vbasis"] = vd.get("basis", "")
+            if vd.get("score") is not None: r["match"] = vd.get("score")
         if u in jobify:
             r["jobify"] = True
     # Jobify roles not already in the tracker -> add as rows tagged jobify
@@ -181,11 +188,11 @@ def apply_curation(alljobs):
         if u in have: continue
         alljobs.append({
             "date": v.get("date", cur.get("updated", J.TODAY)), "region": v.get("region", "Unknown"),
-            "fit": {"YES": 5, "REACH": 4}.get(v.get("v"), 4),
+            "fit": {"YES": 5, "REACH": 4}.get(v.get("v"), 4), "match": v.get("score", 60),
             "company": v.get("company", ""), "role": v.get("role", ""), "loc": v.get("loc", ""),
             "url": u, "cv": v.get("cv", ""), "ref": bool(v.get("ref")), "giant": bool(v.get("giant")),
             "tailor": False, "unread": False, "alert": False, "src": "jobify",
-            "verdict": v.get("v", ""), "vwhy": v.get("why", ""), "jobify": True})
+            "verdict": v.get("v", ""), "vwhy": v.get("why", ""), "vbasis": v.get("basis", "title"), "jobify": True})
 
 def main():
     os.makedirs(DATA, exist_ok=True)
