@@ -86,14 +86,13 @@ input.note.has{border-color:#3a7d52}
     <select id="date"><option value="">all pulls</option></select>
     <select id="region"><option value="">all regions</option><option>North</option><option>Center</option></select>
     <select id="fit"><option value="0">match ≥ any</option><option value="85">match ≥ 85</option><option value="70">match ≥ 70</option><option value="55">match ≥ 55</option></select>
-    <select id="verdict"><option value="">any verdict</option><option>YES</option><option>REACH</option><option>NO</option><option value="_none">unrated</option></select>
+    <select id="verdict"><option value="">any verdict</option><option>YES</option><option>REACH</option><option value="_none">unrated</option></select>
     <select id="status"><option value="">any status</option><option>New</option><option>Sent</option><option>Interview</option><option>Skip</option></select>
     <label><input type="checkbox" id="refonly"> 🔔 referral</label>
     <label><input type="checkbox" id="toponly"> 🏆 top picks</label>
     <label><input type="checkbox" id="tailoronly"> ✎ worth tailoring</label>
     <label><input type="checkbox" id="treadyonly"> 🎯 tailor-ready</label>
     <label><input type="checkbox" id="jobifyonly"> Jobify</label>
-    <label><input type="checkbox" id="hidefiltered" checked> hide NO</label>
     <label><input type="checkbox" id="hidedone" checked> hide sent/skip</label>
     <button type="button" id="expBtn" class="tbtn" title="Download your applied/status marks (this browser) as a file">⬇ export status</button>
     <label class="tbtn" title="Load a status file exported from another device">⬆ import status<input type="file" id="impFile" accept="application/json" hidden></label>
@@ -158,12 +157,12 @@ window.ntChange=ntChange;
 function render(){
   const q=el("q").value.toLowerCase(),dt=el("date").value,rg=el("region").value,mf=+el("fit").value,
         st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,
-        vd=el("verdict").value,jo=el("jobifyonly").checked,hf=el("hidefiltered").checked,tp=el("toponly").checked,tr=el("treadyonly").checked;
+        vd=el("verdict").value,jo=el("jobifyonly").checked,tp=el("toponly").checked,tr=el("treadyonly").checked;
   let rows=JOBS.filter(j=>{
     const s=getSt(j.url);
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||(j.company+" "+j.role).toLowerCase().includes(q))&&(!dt||j.date===dt)&&(!rg||j.region===rg)
-      &&(mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!hf||j.verdict!=="NO")&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"));
+      &&(mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"));
   });
   rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
@@ -183,7 +182,7 @@ function render(){
     <td><input class="note${getNote(j.url)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(getNote(j.url))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
-["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","treadyonly","jobifyonly","hidefiltered","hidedone"].forEach(id=>el(id).addEventListener("input",render));
+["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","treadyonly","jobifyonly","hidedone"].forEach(id=>el(id).addEventListener("input",render));
 el("expBtn").onclick=exportStatuses;
 el("impFile").onchange=e=>{if(e.target.files[0]){importStatuses(e.target.files[0]); e.target.value="";}};
 render();
@@ -284,6 +283,7 @@ def main():
         seenu.add(u); alljobs.append(x)
     alljobs = alljobs[:CAP]
     apply_curation(alljobs)   # overlay Claude's verdicts + inject Jobify roles (survives every scan)
+    alljobs = [r for r in alljobs if r.get("verdict") != "NO"]   # drop rejected roles from the tracker; NO verdicts stay in curation.json as tombstones (won't re-surface / re-judge)
     J.atomic_write(JOBS_JSON, json.dumps(alljobs, ensure_ascii=False))
     # invisible review bucket: filtered/uncertain roles + their JD text, for on-demand review.
     # Order by how likely a real miss hides there, so the cap never drops the best leads first:
