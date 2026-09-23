@@ -283,7 +283,13 @@ def main():
         seenu.add(u); alljobs.append(x)
     alljobs = alljobs[:CAP]
     apply_curation(alljobs)   # overlay Claude's verdicts + inject Jobify roles (survives every scan)
-    alljobs = [r for r in alljobs if r.get("verdict") != "NO"]   # drop rejected roles from the tracker; NO verdicts stay in curation.json as tombstones (won't re-surface / re-judge)
+    # drop rejected roles (NO verdicts stay in curation.json as tombstones) + dead-source links.
+    # cps.co.il / techjob.co.il were disabled as sources 2026-09-23; their listing URLs redirect to
+    # the homepage (verified expired, title-only, no JD), so purge any lingering rows for good.
+    DEAD_HOSTS = ("cps.co.il", "techjob.co.il")
+    alljobs = [r for r in alljobs
+               if r.get("verdict") != "NO"
+               and not any(h in (r.get("url") or "") for h in DEAD_HOSTS)]
     J.atomic_write(JOBS_JSON, json.dumps(alljobs, ensure_ascii=False))
     # invisible review bucket: filtered/uncertain roles + their JD text, for on-demand review.
     # Order by how likely a real miss hides there, so the cap never drops the best leads first:
