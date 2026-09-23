@@ -97,13 +97,14 @@ select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
 </tr></thead><tbody id="b"></tbody></table></main>
 <script>
 const JOBS = __DATA__;
+const STATUSES = __STATUSES__;  /* Ron's applied/skip marks (global default; a local change overrides) */
 document.getElementById("updated").textContent = "· updated __UPDATED__";
 let sortK="match", sortDir=-1;
 const el=id=>document.getElementById(id);
 const mval=j=>j.match!=null?j.match:(j.fit?Math.round(j.fit*18):50);
 function mmeter(j){const m=mval(j);const c=m>=70?'#8ff0b8':m>=45?'#ffd98f':'#ff9e9e';return '<div class="mwrap"><div class="mbar"><div class="mfill" style="width:'+m+'%;background:'+c+'"></div></div><span class="mnum" style="color:'+c+'">'+m+'</span></div>';}
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-function getSt(u){try{return localStorage.getItem("st:"+u)||"New";}catch(e){return "New";}}
+function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"New";}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
@@ -167,7 +168,13 @@ render();
 
 def build_page(jobs, updated):
     os.makedirs(DOCS, exist_ok=True)
-    html = PAGE.replace("__DATA__", json.dumps(jobs, ensure_ascii=False)).replace("__UPDATED__", updated)
+    try:
+        statuses = json.load(open(CURATION_JSON, encoding="utf-8")).get("statuses", {})
+    except Exception:
+        statuses = {}
+    html = (PAGE.replace("__DATA__", json.dumps(jobs, ensure_ascii=False))
+                .replace("__STATUSES__", json.dumps(statuses, ensure_ascii=False))
+                .replace("__UPDATED__", updated))
     J.atomic_write(INDEX_HTML, html)
 
 def check_sources_dark(reg, counts):

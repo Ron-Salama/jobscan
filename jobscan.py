@@ -17,7 +17,7 @@ try:
     import sources_ext as X
     _EXT_FNS = [("ethosia",X.src_ethosia),("dialog",X.src_dialog),("nisha",X.src_nisha),
         ("gotfriends",X.src_gotfriends),("builtin",X.src_builtin),("linkedin",X.src_linkedin),
-        ("cps",X.src_cps),("techjob",X.src_techjob),("alljobs",X.src_alljobs),
+        ("alljobs",X.src_alljobs),   # cps+techjob disabled 2026-09-23: broken links (techjob API has no job URL; cps pages are JS-gated/expired) + no JD
         ("comeet",X.src_comeet),("workday",X.src_workday),("apple",X.src_apple),("camtek",X.src_camtek)]
 except Exception as _e:
     _EXT_FNS = []; print("sources_ext load err:", _e)
