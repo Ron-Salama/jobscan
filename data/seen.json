@@ -2243,12 +2243,147 @@
 },
 "nextinsurance66|graduate frontend full stack software engineer upnext program": {
 "seen": "2026-09-23"
+},
+"qualityai:58256344": {
+"t": "Learning Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|learning developer": {
+"seen": "2026-09-23"
+},
+"qualityai:51227644": {
+"t": "Test Automation and Software development",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|test automation and software development": {
+"seen": "2026-09-23"
+},
+"qualityai:59007244": {
+"t": "Automation Engineer - Python",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|automation engineer python": {
+"seen": "2026-09-23"
+},
+"qualityai:57030344": {
+"t": "QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|qa automation engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:59664144": {
+"t": "AI Vibe Coding Engineer / GenAI Prototyping Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|ai vibe coding engineer genai prototyping developer": {
+"seen": "2026-09-23"
+},
+"qualityai:54012244": {
+"t": "DevOps Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|devops engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:51571444": {
+"t": "Python Automation Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|python automation developer": {
+"seen": "2026-09-23"
+},
+"qualityai:58689244": {
+"t": "Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|automation engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:57661344": {
+"t": "Debug Engineer - Python",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"qualityai|debug engineer python": {
+"seen": "2026-09-23"
+},
+"qualityai:56601544": {
+"t": "Mobile Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|mobile automation engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:59281344": {
+"t": "Java Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|java software engineer": {
+"seen": "2026-09-23"
+},
+"lemonade:7cdf4386-e378-42b6-8f52-58ef7ff99ba8": {
+"t": "Backend Engineer - ML Platform",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"lemonade|backend engineer ml platform": {
+"seen": "2026-09-23"
+},
+"moonactive:f9d414e9-6bb9-4e35-99c2-6d452a66c7ae": {
+"t": "DevOps Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"moon active|devops engineer": {
+"seen": "2026-09-23"
+},
+"moonactive:b9ef962f-9edd-49f3-bb44-e288bb7885d4": {
+"t": "IT Infrastructure & Cloud Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"moon active|it infrastructure cloud engineer": {
+"seen": "2026-09-23"
+},
+"moonactive:fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc": {
+"t": "Unity Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"moon active|unity developer": {
+"seen": "2026-09-23"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2535
+"last": 2539
 },
 "experis": {
 "max": 600,
@@ -2284,7 +2419,7 @@
 },
 "builtin": {
 "max": 48,
-"last": 44
+"last": 45
 },
 "linkedin": {
 "max": 49,
@@ -2315,12 +2450,36 @@
 "last": 78
 },
 "camtek": {
-"max": 46,
-"last": 46
+"max": 49,
+"last": 49
 },
 "lever": {
 "max": 6,
 "last": 6
+},
+"qualityai": {
+"max": 66,
+"last": 66
+},
+"lemonade": {
+"max": 16,
+"last": 16
+},
+"moonactive": {
+"max": 11,
+"last": 11
+},
+"hibob": {
+"max": 11,
+"last": 11
+},
+"kaltura": {
+"max": 0,
+"last": 0
+},
+"verbit": {
+"max": 0,
+"last": 0
 }
 }
 }
