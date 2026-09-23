@@ -194,6 +194,15 @@ SOURCES = [("hiremetech",src_hiremetech),("experis",src_experis),("drushim",src_
 def _has(text, words):
     t=text.lower(); return any(w in t for w in words)
 
+def _has_word(text, words):
+    """Word-boundary match, so short terms like 'asic' don't match 'basic',
+    'soc' doesn't match 'associate', etc. Used for the hardware/foundation skip list."""
+    t=text.lower()
+    for w in words:
+        w=w.strip().strip("/-")
+        if w and re.search(r"\b"+re.escape(w)+r"\b", t): return True
+    return False
+
 def parse_years(desc):
     # Return the LOWEST experience floor stated. Ranges like "0-3 years" must
     # contribute their lower bound (0), not the number touching "years" (3) —
@@ -222,10 +231,8 @@ def classify(j):
     giant    = _has(j["company"].lower(), C.GIANTS)
     if not _has(tl, C.TITLE_DEV): return None                    # dev role by TITLE only
     # A hardware discipline in the TITLE = genuinely not his lane -> skip.
-    # The same term only in the JD BODY (e.g. a SW-tools role that supports a
-    # post-silicon team) is the team's domain, not a missing qualification -> review.
-    hw_in_title = _has(" "+tl+" ", C.FOUNDATION_SKIP)
-    hw_in_body  = _has((" ".join(j["tech"])+" "+(j["desc"] or "")).lower(), C.FOUNDATION_SKIP)
+    # (word-boundary match so "asic" != "basic", "soc" != "associate", etc.)
+    hw_in_title = _has_word(tl, C.FOUNDATION_SKIP)
 
     tailor = False
     ymin = j["years_min"] if j["years_min"] is not None else parse_years(j["desc"])
@@ -261,10 +268,9 @@ def classify(j):
             lane, why, tailor = "reach", "3y-worth-tailoring", True   # almost a match
         else:
             lane, why = "review", "unclear"      # seniority unknown, non-giant -> kept North-only
-    # SW-title role that only mentions a hardware domain in the JD body: don't hide it,
-    # surface it for a look (the domain is the team's, not a qualification he's missing).
-    if hw_in_body and lane != "skip":
-        lane, why, tailor = "review", "silicon-in-jd", False
+    # (Removed the "silicon-in-JD-body -> review" demotion: it was diverting apply-worthy
+    #  software roles off the tracker whenever their JD merely mentioned a hardware word.
+    #  Hardware *titles* are still skipped above; a software title stays on its seniority lane.)
     # CV pick
     t=blob.lower()
     if _has(t,["ai ","llm","genai","ai engineer","ai developer"]): cv=C.CV["ai"]
