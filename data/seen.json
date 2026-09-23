@@ -2378,12 +2378,66 @@
 },
 "moon active|unity developer": {
 "seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/Software-Security-Researcher_JR2010818": {
+"t": "Software Security Researcher",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nvidia|software security researcher": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/Firmware-Engineer_JR2021080": {
+"t": "Firmware Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nvidia|firmware engineer": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/Linux-Driver-Developer_JR2024027": {
+"t": "Linux Driver Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nvidia|linux driver developer": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Tel-Aviv/QA-Automation-Engineer--Cloud-Orchestrations_JR2025739": {
+"t": "QA Automation Engineer, Cloud Orchestrations",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nvidia|qa automation engineer cloud orchestrations": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/BSP-and-BMC-Verification-Software-Engineer_JR2016519": {
+"t": "BSP and BMC Verification Software Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nvidia|bsp and bmc verification software engineer": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/IC-Test-Program-Validation-and-Verification-Engineer_JR2018715": {
+"t": "IC Test Program Validation and Verification Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nvidia|ic test program validation and verification engineer": {
+"seen": "2026-09-23"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2542
+"last": 2543
 },
 "experis": {
 "max": 600,
@@ -2442,8 +2496,8 @@
 "last": 120
 },
 "workday": {
-"max": 31,
-"last": 31
+"max": 124,
+"last": 124
 },
 "apple": {
 "max": 79,
@@ -2451,7 +2505,7 @@
 },
 "camtek": {
 "max": 49,
-"last": 45
+"last": 44
 },
 "lever": {
 "max": 6,
