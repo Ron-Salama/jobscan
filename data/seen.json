@@ -2171,12 +2171,21 @@
 },
 "apple|embedded sw engineer firmware diagnostics": {
 "seen": "2026-09-23"
+},
+"hiremetech:148911915": {
+"t": "Developer priority",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|developer priority": {
+"seen": "2026-09-23"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2524
+"last": 2527
 },
 "experis": {
 "max": 600,
@@ -2212,11 +2221,11 @@
 },
 "builtin": {
 "max": 48,
-"last": 46
+"last": 44
 },
 "linkedin": {
 "max": 49,
-"last": 49
+"last": 48
 },
 "cps": {
 "max": 120,
@@ -2240,7 +2249,7 @@
 },
 "apple": {
 "max": 79,
-"last": 67
+"last": 78
 },
 "camtek": {
 "max": 46,
