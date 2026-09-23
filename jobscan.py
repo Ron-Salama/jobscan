@@ -225,6 +225,9 @@ def is_junior(j):
     return True,"unknown"   # keep, will be flagged review
 
 MANUAL_QA = ["qa engineer","qa tester","manual test","בודק","בדיקות תוכנה"]
+def is_qa(tl):
+    """QA-ish title -> route to the QA-bucket for review (real test-eng vs manual-QA)."""
+    return _has_word(tl, ["qa"]) or any(w in tl for w in ("quality assurance","tester","בדיקות","בודק"))
 def classify(j):
     title=j["title"]; tl=title.lower(); blob=(title+" "+" ".join(j["tech"])+" "+j["desc"])
     referral = _has(j["company"].lower(), C.REFERRAL_COMPANIES)  # company only
@@ -383,20 +386,22 @@ def _bucket(j, reason):
             "url":j.get("url",""),"region":j.get("region",""),"loc":j.get("city",""),
             "src":j.get("source",""),"desc":(j.get("desc") or "")[:700]}
 
-def select(raw, reg, filtered=None):
+def select(raw, reg, filtered=None, qa=None):
     """Region-drop + classify + dedup vs registry -> NEW rows. Mutates reg['seen'].
-    If `filtered` is a list, roles the rules set aside (skip / review / a giant whose
-    title missed the dev gate) are appended to it with their JD text for later review."""
+    `filtered` = review-bucket (skip/review/oddly-titled). `qa` = QA-bucket: QA-ish roles
+    the rules set aside, kept separately for review (real test-eng vs manual-QA)."""
     raw=[j for j in raw if j["region"] not in C.DROP_REGIONS and j.get("active",True)]
     keep=[]
     for j in raw:
         c=classify(j)
         if not c:
-            # Title missed the dev gate. Still bucket it (for Claude to review, NOT on the
-            # tracker) when it's a giant/referral OR its JD content looks like a real dev role
-            # (catches typos, unusual titles, Hebrew phrasings the keyword gate can't).
+            tl=(j.get("title") or "").lower()
+            # QA-ish titles miss the dev gate -> send to the QA-bucket (not the review-bucket).
+            if qa is not None and is_qa(tl):
+                qa.append(_bucket(j,"qa:not-dev-title")); continue
+            # Otherwise bucket it (for review, NOT the tracker) when it's a giant/referral OR
+            # its JD content reads like a real dev role (typos/unusual/Hebrew the gate misses).
             if filtered is not None:
-                tl=(j.get("title") or "").lower()
                 desc=(j.get("desc") or "").lower()
                 if _has(j["company"].lower(), C.GIANTS+C.REFERRAL_COMPANIES):
                     filtered.append(_bucket(j,"not-dev-title"))
@@ -407,7 +412,11 @@ def select(raw, reg, filtered=None):
         # Location filter is Jerusalem+South EXCLUSION only (done above via DROP_REGIONS).
         # "Israel"/no-city -> Unknown is kept: it's Israel and not positively Jer/South.
         if c["lane"]=="skip":
-            if filtered is not None: filtered.append(_bucket(j,c["why"]))  # senior/foundation/student/...
+            tl=(j.get("title") or "").lower()
+            if qa is not None and is_qa(tl):
+                qa.append(_bucket(j,"qa:"+c["why"]))          # manual-QA etc. -> QA-bucket
+            elif filtered is not None:
+                filtered.append(_bucket(j,c["why"]))          # senior/foundation/student/...
             continue
         if c["lane"]=="review":
             if filtered is not None: filtered.append(_bucket(j,"review:"+c["why"]))

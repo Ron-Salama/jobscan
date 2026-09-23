@@ -29,7 +29,10 @@ GIANTS = ["google","meta","facebook","amazon","aws","microsoft","apple","nvidia"
 
 # ---- Greenhouse boards (open JSON API) confirmed for Israeli employers ----
 GREENHOUSE_SLUGS = ["similarweb","jfrog","melio","payoneer","riskified","taboola","appsflyer",
- "lightricks","fireblocks","gong","wiz","monday"]  # 404s are skipped gracefully
+ "lightricks","fireblocks","gong","wiz","monday",
+ # added 2026-09-23 (probed live, confirmed Israel jobs):
+ "catonetworks","transmitsecurity","axonius","forter","yotpo","orcasecurity","augury",
+ "island","lightrun","descope"]  # 404s are skipped gracefully
 
 # ---- Comeet public boards (company -> {uid, token}); grows over time (v2) ----
 COMEET_BOARDS = {
