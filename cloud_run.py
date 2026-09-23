@@ -104,7 +104,7 @@ document.getElementById("updated").textContent = "· updated __UPDATED__";
 let sortK="match", sortDir=-1;
 const el=id=>document.getElementById(id);
 const mval=j=>j.match!=null?j.match:(j.fit?Math.round(j.fit*18):50);
-const tpk=j=>j.verdict==="YES"&&mval(j)>=85;const wt=j=>j.verdict==="YES"&&mval(j)<85;
+const tpk=j=>j.verdict==="YES"&&mval(j)>=90;const wt=j=>j.verdict==="YES"&&mval(j)<90;
 function mmeter(j){const m=mval(j);const c=m>=70?'#8ff0b8':m>=45?'#ffd98f':'#ff9e9e';return '<div class="mwrap"><div class="mbar"><div class="mfill" style="width:'+m+'%;background:'+c+'"></div></div><span class="mnum" style="color:'+c+'">'+m+'</span></div>';}
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"New";}
