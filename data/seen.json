@@ -1982,12 +1982,201 @@
 },
 "allstarsit|לחברה ביטחונית בירושלים מפתח ת אוטומציה": {
 "seen": "2026-09-22"
+},
+"hiremetech:148626155": {
+"t": "Junior Front End Web Developer‏",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|front end web developer": {
+"seen": "2026-09-23"
+},
+"hiremetech:148296510": {
+"t": "Integration Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|integration engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:148287320": {
+"t": "Junior Software Developer / QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|software developer qa automation engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:147385412": {
+"t": "Junior Fullstack Developer – Billing & Monetization",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|fullstack developer billing monetization": {
+"seen": "2026-09-23"
+},
+"hiremetech:147318715": {
+"t": "C# Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|c software developer": {
+"seen": "2026-09-23"
+},
+"hiremetech:144178685": {
+"t": "Communication Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|communication software engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:141069519": {
+"t": "Junior AI Developer — Agents & Application Development",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|ai developer agents application development": {
+"seen": "2026-09-23"
+},
+"hiremetech:141138439": {
+"t": "Test & Automation Engineer - Electro-Optics Department",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|test automation engineer electro optics department": {
+"seen": "2026-09-23"
+},
+"hiremetech:142677950": {
+"t": "Junior Data Validation Engineer (Position #3000)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|data validation engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:136360216": {
+"t": "QA Specialist (Manual & Automation)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|qa specialist": {
+"seen": "2026-09-23"
+},
+"hiremetech:140917428": {
+"t": "Junior Design Emulation/Validation Engineer m/f/d",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|design emulation validation engineer m f d": {
+"seen": "2026-09-23"
+},
+"hiremetech:127000524": {
+"t": "Machine Learning Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|machine learning developer": {
+"seen": "2026-09-23"
+},
+"hiremetech:143192483": {
+"t": "23372 - Automation Engineer (Petach-. Tikva, Israel)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|23372 automation engineer": {
+"seen": "2026-09-23"
+},
+"amazon:10557725": {
+"t": " Software Engineer , Annapurna Labs",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"amazon|software engineer annapurna labs": {
+"seen": "2026-09-23"
+},
+"amazon:10491309": {
+"t": "2026 Graduate Software Dev Engineer ",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"amazon|2026 graduate software dev engineer": {
+"seen": "2026-09-23"
+},
+"gotfriends:154609": {
+"t": "Infrastructure Software Engineer בחברת סטארט-אפ ב- Stealth M",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"|infrastructure software engineer בחברת סטארט אפ ב stealth mode": {
+"seen": "2026-09-23"
+},
+"comeet:AB.D6B": {
+"t": "Firmware Verification Engineer- Sub Contractor",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"samsung research and development center|firmware verification engineer sub contractor": {
+"seen": "2026-09-23"
+},
+"comeet:C0.D62": {
+"t": "Firmware Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"samsung research and development center|firmware engineer": {
+"seen": "2026-09-23"
+},
+"apple:200611225": {
+"t": "Embedded FW Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"apple|embedded fw engineer": {
+"seen": "2026-09-23"
+},
+"apple:200665626": {
+"t": "Machine Learning Engineer - Vision",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"apple|machine learning engineer vision": {
+"seen": "2026-09-23"
+},
+"apple:200659630": {
+"t": "Embedded SW Engineer -  System & Firmware Diagnostics",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"apple|embedded sw engineer firmware diagnostics": {
+"seen": "2026-09-23"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2530
+"last": 2524
 },
 "experis": {
 "max": 600,
@@ -1995,11 +2184,11 @@
 },
 "drushim": {
 "max": 143,
-"last": 141
+"last": 142
 },
 "greenhouse": {
 "max": 137,
-"last": 129
+"last": 126
 },
 "amazon": {
 "max": 100,
@@ -2023,7 +2212,7 @@
 },
 "builtin": {
 "max": 48,
-"last": 43
+"last": 46
 },
 "linkedin": {
 "max": 49,
@@ -2047,15 +2236,15 @@
 },
 "workday": {
 "max": 28,
-"last": 25
+"last": 26
 },
 "apple": {
 "max": 79,
-"last": 78
+"last": 67
 },
 "camtek": {
-"max": 41,
-"last": 41
+"max": 46,
+"last": 46
 }
 }
 }
