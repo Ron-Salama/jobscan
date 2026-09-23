@@ -390,13 +390,21 @@ def _bucket(j, reason):
             "url":j.get("url",""),"region":j.get("region",""),"loc":j.get("city",""),
             "src":j.get("source",""),"desc":(j.get("desc") or "")[:700]}
 
-def select(raw, reg, filtered=None, qa=None):
+def select(raw, reg, filtered=None, qa=None, giant=None):
     """Region-drop + classify + dedup vs registry -> NEW rows. Mutates reg['seen'].
     `filtered` = review-bucket (skip/review/oddly-titled). `qa` = QA-bucket: QA-ish roles
-    the rules set aside, kept separately for review (real test-eng vs manual-QA)."""
+    the rules set aside, kept separately for review (real test-eng vs manual-QA).
+    `giant` = Giant-bucket: EVERY giant-company role (senior/QA/any level), captured
+    regardless of the filters below, so a referral-worthy giant role is never silently
+    dropped (Ron's peace-of-mind safety net; reviewed manually like the other buckets)."""
     raw=[j for j in raw if j["region"] not in C.DROP_REGIONS and j.get("active",True)]
     keep=[]
     for j in raw:
+        if giant is not None and _has((j.get("company") or "").lower(), C.GIANTS):
+            tl=(j.get("title") or "").lower()
+            lvl=("senior" if _has(tl, C.SENIOR_TITLE) else
+                 "student" if _has(tl, C.STUDENT_MARK) else "open")
+            giant.append(_bucket(j, "giant:"+lvl))
         c=classify(j)
         if not c:
             tl=(j.get("title") or "").lower()

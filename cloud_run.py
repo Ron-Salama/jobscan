@@ -15,6 +15,7 @@ JOBS_JSON = os.path.join(DATA, "jobs.json")
 SEEN_JSON = os.path.join(DATA, "seen.json")
 BUCKET_JSON = os.path.join(DATA, "review-bucket.json")   # filtered/uncertain roles for later manual/AI review
 QA_JSON = os.path.join(DATA, "qa-bucket.json")           # QA-ish roles set aside for review (real test-eng vs manual-QA)
+GIANT_JSON = os.path.join(DATA, "giant-bucket.json")     # EVERY giant-company role (all levels) - peace-of-mind catch-all for manual review
 CURATION_JSON = os.path.join(DATA, "curation.json")   # Claude's persistent judgment overlay (verdicts + jobify roles)
 INDEX_HTML = os.path.join(DOCS, "index.html")
 CAP = 1200
@@ -269,8 +270,8 @@ def main():
     os.makedirs(DATA, exist_ok=True)
     print("JobScan CLOUD run %s" % J.TODAY)
     reg = J.load_reg(SEEN_JSON)
-    counts = {}; bucket = []; qa_bucket = []
-    rows = J.select(J.collect(counts), reg, bucket, qa_bucket)
+    counts = {}; bucket = []; qa_bucket = []; giant_bucket = []
+    rows = J.select(J.collect(counts), reg, bucket, qa_bucket, giant_bucket)
     new = [slim(r) for r in rows]
     try:
         existing = json.load(open(JOBS_JSON, encoding="utf-8"))
@@ -300,6 +301,12 @@ def main():
         {"generated": J.TODAY, "count": len(bucket), "roles": bucket[:BUCKET_CAP]}, ensure_ascii=False))
     J.atomic_write(QA_JSON, json.dumps(
         {"generated": J.TODAY, "count": len(qa_bucket), "roles": qa_bucket[:BUCKET_CAP]}, ensure_ascii=False))
+    # Giant-bucket: every giant-company role (all levels), non-senior first so the
+    # actionable ones stay on top when the cap trims. Reviewed manually, like the others.
+    _gpri = {"open": 0, "student": 1, "senior": 2}
+    giant_bucket.sort(key=lambda b: _gpri.get(b["reason"].split(":")[-1], 3))
+    J.atomic_write(GIANT_JSON, json.dumps(
+        {"generated": J.TODAY, "count": len(giant_bucket), "roles": giant_bucket[:BUCKET_CAP]}, ensure_ascii=False))
     check_sources_dark(reg, counts)
     J.save_reg(reg, SEEN_JSON)
     build_page(alljobs, J.TODAY)

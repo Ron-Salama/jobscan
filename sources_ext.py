@@ -1769,12 +1769,15 @@ def src_workday():
         # Palo Alto Networks is NOT on Workday (uses SmartRecruiters) -> omitted.
     }
 
-    SEARCH_TERMS = ["software"]   # contract default; add "engineer" etc. to broaden
-    PAGES = 4                     # newest/top pages only (offset 0,20,40,60)
+    # Broad terms so giant boards surface QA / test / automation / verification roles,
+    # not just "software" (2026-09-24 fix: NVIDIA QA/automation reqs were being missed
+    # entirely because the only search term was "software"). Deduped by externalPath.
+    SEARCH_TERMS = ["software", "engineer", "developer", "qa", "test", "automation", "verification"]
+    PAGES = 6                     # offset 0..100 per term
     LIMIT = 20
-    MAX_MULTI_PROBE = 12          # per-brand cap on detail probes of multi-location posts
-    MAX_DETAIL = 90               # global cap on detail fetches (runtime guard)
-    MAX_TOTAL = 120
+    MAX_MULTI_PROBE = 15          # per-brand cap on detail probes of multi-location posts
+    MAX_DETAIL = 260              # global cap on detail fetches (runtime guard)
+    MAX_TOTAL = 320
 
     # Distinctive Israeli location tokens (for list-level locationsText matching;
     # authoritative confirmation is the detail country field).
