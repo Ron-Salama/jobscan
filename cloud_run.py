@@ -53,6 +53,7 @@ tr.done td{opacity:.4}
 a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 .pill{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:600;white-space:nowrap}
 .ref{background:#3a1d2b;color:#ff9ec4}.giant{background:#20344a;color:#8fc7ff}.tailor{background:#3a331a;color:#ffd98f}
+.toppick{background:#14432a;color:#7cf0a8;font-weight:700}.wtailor{background:#3a331a;color:#ffd98f}
 .unread{background:#2a2f3a;color:#9aa6bb}
 .v-yes{background:#1c3a2a;color:#8ff0b8}.v-reach{background:#3a331a;color:#ffd98f}.v-no{background:#3a1d1d;color:#ff9e9e}
 .jbf{background:#20344a;color:#8fc7ff}
@@ -82,7 +83,8 @@ select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
     <select id="verdict"><option value="">any verdict</option><option>YES</option><option>REACH</option><option>NO</option><option value="_none">unrated</option></select>
     <select id="status"><option value="">any status</option><option>New</option><option>Sent</option><option>Interview</option><option>Skip</option></select>
     <label><input type="checkbox" id="refonly"> 🔔 referral</label>
-    <label><input type="checkbox" id="tailoronly"> ✎ tailor</label>
+    <label><input type="checkbox" id="toponly"> 🏆 top picks</label>
+    <label><input type="checkbox" id="tailoronly"> ✎ worth tailoring</label>
     <label><input type="checkbox" id="jobifyonly"> Jobify</label>
     <label><input type="checkbox" id="hidefiltered" checked> hide NO</label>
     <label><input type="checkbox" id="hidedone" checked> hide sent/skip</label>
@@ -102,11 +104,12 @@ document.getElementById("updated").textContent = "· updated __UPDATED__";
 let sortK="match", sortDir=-1;
 const el=id=>document.getElementById(id);
 const mval=j=>j.match!=null?j.match:(j.fit?Math.round(j.fit*18):50);
+const tpk=j=>j.verdict==="YES"&&mval(j)>=85;const wt=j=>j.verdict==="YES"&&mval(j)<85;
 function mmeter(j){const m=mval(j);const c=m>=70?'#8ff0b8':m>=45?'#ffd98f':'#ff9e9e';return '<div class="mwrap"><div class="mbar"><div class="mfill" style="width:'+m+'%;background:'+c+'"></div></div><span class="mnum" style="color:'+c+'">'+m+'</span></div>';}
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"New";}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
-function pills(j){let s="";if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.tailor)s+='<span class="pill tailor">✎tailor</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function pills(j){let s="";if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
@@ -136,12 +139,12 @@ window.stChange=stChange;
 function render(){
   const q=el("q").value.toLowerCase(),dt=el("date").value,rg=el("region").value,mf=+el("fit").value,
         st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,
-        vd=el("verdict").value,jo=el("jobifyonly").checked,hf=el("hidefiltered").checked;
+        vd=el("verdict").value,jo=el("jobifyonly").checked,hf=el("hidefiltered").checked,tp=el("toponly").checked;
   let rows=JOBS.filter(j=>{
     const s=getSt(j.url);
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||(j.company+" "+j.role).toLowerCase().includes(q))&&(!dt||j.date===dt)&&(!rg||j.region===rg)
-      &&(mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!hf||j.verdict!=="NO")&&(!st||s===st)&&(!ro||j.ref)&&(!to||j.tailor)&&(!hd||(s!=="Sent"&&s!=="Skip"));
+      &&(mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!hf||j.verdict!=="NO")&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!hd||(s!=="Sent"&&s!=="Skip"));
   });
   rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
@@ -160,7 +163,7 @@ function render(){
     <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}</td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
-["q","date","region","fit","verdict","status","refonly","tailoronly","jobifyonly","hidefiltered","hidedone"].forEach(id=>el(id).addEventListener("input",render));
+["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","jobifyonly","hidefiltered","hidedone"].forEach(id=>el(id).addEventListener("input",render));
 el("expBtn").onclick=exportStatuses;
 el("impFile").onchange=e=>{if(e.target.files[0]){importStatuses(e.target.files[0]); e.target.value="";}};
 render();
