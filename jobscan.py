@@ -19,7 +19,10 @@ try:
         ("gotfriends",X.src_gotfriends),("builtin",X.src_builtin),("linkedin",X.src_linkedin),
         ("alljobs",X.src_alljobs),   # cps+techjob disabled 2026-09-23: broken links (techjob API has no job URL; cps pages are JS-gated/expired) + no JD
         ("comeet",X.src_comeet),("workday",X.src_workday),("apple",X.src_apple),("camtek",X.src_camtek),
-        ("lever",X.src_lever)]
+        ("lever",X.src_lever),
+        # scrape adapters added 2026-09-23 (career-site scrapers):
+        ("qualityai",X.src_qualityai),("lemonade",X.src_lemonade),("moonactive",X.src_moonactive),
+        ("hibob",X.src_hibob),("kaltura",X.src_kaltura),("verbit",X.src_verbit)]
 except Exception as _e:
     _EXT_FNS = []; print("sources_ext load err:", _e)
 

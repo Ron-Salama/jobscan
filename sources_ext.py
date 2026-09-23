@@ -2504,3 +2504,1374 @@ def src_lever():
                         "desc": desc[:1500], "active": True})
         time.sleep(0.2)
     return out
+
+
+# ===== Scrape adapters added 2026-09-23 (career-site scrapers; requests+bs4) =====
+
+def src_qualityai():
+    """QualityAI (careers.quality-ai.com) — SAP SuccessFactors career site.
+    Returns Israel tech/software roles as list of dicts. Never raises."""
+    import re, time, requests
+    from bs4 import BeautifulSoup
+    from urllib.parse import urljoin
+
+    HOST = "https://careers.quality-ai.com"
+    LIST = HOST + "/search?q=&locationsearch=Israel&startrow={}"
+    HEADERS = {
+        "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                       "AppleWebKit/537.36 (KHTML, like Gecko) "
+                       "Chrome/124.0.0.0 Safari/537.36"),
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept": "text/html,application/xhtml+xml",
+    }
+    CAP = 120
+    MAX_PAGES = 6           # startrow 0..125 (SF pages of 25) — safety bound
+    TECH_TERMS = [
+        "python", "java", "javascript", "typescript", "c\\+\\+", "c#", r"\.net",
+        "node", "react", "angular", "vue", "sql", "nosql", "mongodb", "postgres",
+        "mysql", "oracle", "redis", "aws", "azure", "gcp", "docker", "kubernetes",
+        "k8s", "linux", "bash", "shell", "git", "jenkins", "ci/cd", "selenium",
+        "cypress", "playwright", "appium", "pytest", "junit", "testng", "rest",
+        "api", "graphql", "kafka", "spark", "hadoop", "terraform", "ansible",
+        "embedded", "rf", "fpga", "verilog", "vhdl", "matlab", "labview", "qa",
+        "automation", "devops", "php", "ruby", "golang", "rust", "scala",
+        "kotlin", "swift", "android", "ios", "jira", "agile", "scrum",
+        "machine learning", "deep learning", "tensorflow", "pytorch", "opencv",
+        "microservices", "spring", "django", "flask", "html", "css", "perl",
+        "powershell", "cybersecurity", "networking", "tcp/ip", "sap",
+    ]
+    _tech_rx = [(t, re.compile(r"(?<![a-z0-9])" + t + r"(?![a-z0-9])", re.I))
+                for t in TECH_TERMS]
+    _tech_label = {
+        "c\\+\\+": "c++", "c#": "c#", r"\.net": ".net", "k8s": "kubernetes",
+    }
+    MONTHS = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+              "jul": 7, "aug": 8, "sep": 9, "sept": 9, "oct": 10, "nov": 11,
+              "dec": 12}
+
+    def _get(url):
+        for attempt in range(2):
+            try:
+                r = requests.get(url, headers=HEADERS, timeout=25)
+                if r.status_code == 200 and r.content:
+                    return r.content
+            except Exception:
+                pass
+            time.sleep(1.0)
+        return None
+
+    def _clean(s):
+        if not s:
+            return ""
+        return re.sub(r"\s+", " ", s.replace("\xa0", " ").replace("�", " ")).strip()
+
+    def _parse_date(s):
+        # "26 Aug 2026" / "2 Sept 2026" -> sortable int yyyymmdd, else 0
+        m = re.search(r"(\d{1,2})\s+([A-Za-z]{3,4})\.?\s+(\d{4})", s or "")
+        if not m:
+            return 0
+        d, mon, y = int(m.group(1)), m.group(2)[:4].lower(), int(m.group(3))
+        mm = MONTHS.get(mon, MONTHS.get(mon[:3], 0))
+        return y * 10000 + mm * 100 + d if mm else 0
+
+    def _level(text):
+        t = (text or "").lower()
+        if re.search(r"\b(intern|internship|student|סטודנט)\b", t):
+            return "student"
+        if re.search(r"\b(senior|sr\.?|lead|principal|staff|expert|manager|"
+                     r"head of|director|architect)\b", t):
+            return "senior"
+        if re.search(r"\b(junior|jr\.?|entry[- ]level|graduate|associate)\b", t):
+            return "junior"
+        return ""
+
+    def _years(text):
+        t = (text or "").lower()
+        # ranges: "3-5 years", "3 to 5 years"
+        m = re.search(r"(\d{1,2})\s*(?:-|–|to)\s*(\d{1,2})\s*(?:\+)?\s*years?", t)
+        if m:
+            lo, hi = int(m.group(1)), int(m.group(2))
+            if lo <= hi <= 40:
+                return lo, hi
+        # "3+ years", "at least 3 years", "minimum 3 years", "over 3 years"
+        m = re.search(r"(?:at least|minimum(?: of)?|over|more than|"
+                      r"experience of)\s*(\d{1,2})\s*(?:\+)?\s*years?", t)
+        if m and int(m.group(1)) <= 40:
+            return int(m.group(1)), None
+        m = re.search(r"(\d{1,2})\s*\+\s*years?", t)
+        if m and int(m.group(1)) <= 40:
+            return int(m.group(1)), None
+        m = re.search(r"(\d{1,2})\s*years?(?:\s+of)?\s+(?:of\s+)?experience", t)
+        if m and int(m.group(1)) <= 40:
+            return int(m.group(1)), None
+        return None, None
+
+    def _tech(text):
+        t = (text or "").lower()
+        out = []
+        for term, rx in _tech_rx:
+            if rx.search(t):
+                out.append(_tech_label.get(term, term))
+        # de-dup preserving order
+        seen, res = set(), []
+        for x in out:
+            if x not in seen:
+                seen.add(x)
+                res.append(x)
+        return res
+
+    results = {}
+    try:
+        for page in range(MAX_PAGES):
+            html = _get(LIST.format(page * 25))
+            if not html:
+                break
+            soup = BeautifulSoup(html, "lxml")
+            rows = soup.select("tr.data-row")
+            if not rows:
+                break
+            new_on_page = 0
+            for row in rows:
+                a = row.select_one("a.jobTitle-link")
+                if not a or not a.get("href"):
+                    continue
+                href = a["href"]
+                mid = re.search(r"/(\d+)/?$", href)
+                sid = mid.group(1) if mid else href.rstrip("/").rsplit("/", 1)[-1]
+                if sid in results:
+                    continue
+                raw_title = _clean(a.get_text())
+                # strip leading req-id prefix e.g. "20613 - " / "23819- "
+                title = re.sub(r"^\d{3,6}\s*-\s*", "", raw_title).strip() or raw_title
+                dept = row.select_one("span.jobDepartment")
+                city = _clean(dept.get_text()) if dept else ""
+                if not city:
+                    city = "Petah Tikva"
+                dnode = row.select_one("td.colDate span.jobDate")
+                if not dnode:
+                    dnode = row.select_one("span.jobDate")
+                date_str = _clean(dnode.get_text()) if dnode else ""
+                results[sid] = {
+                    "source": "qualityai",
+                    "sid": sid,
+                    "title": title,
+                    "company": "QualityAI",
+                    "city": city,
+                    "url": urljoin(HOST, href),
+                    "level": _level(title),
+                    "years_min": None,
+                    "years_max": None,
+                    "tech": _tech(title),
+                    "desc": "",
+                    "active": True,
+                    "_date": _parse_date(date_str),
+                }
+                new_on_page += 1
+            if new_on_page == 0:
+                break
+            if len(results) >= 300:
+                break
+            time.sleep(0.6)
+    except Exception:
+        pass
+
+    # newest first, then cap
+    try:
+        items = sorted(results.values(), key=lambda d: d["_date"], reverse=True)
+    except Exception:
+        items = list(results.values())
+    items = items[:CAP]
+
+    # enrich each with detail page (desc / years / tech), resilient
+    for job in items:
+        try:
+            html = _get(job["url"])
+            if html:
+                dsoup = BeautifulSoup(html, "lxml")
+                node = (dsoup.select_one(".jobdescription")
+                        or dsoup.select_one("div.job")
+                        or dsoup.select_one("[itemprop=description]"))
+                if node:
+                    desc = _clean(node.get_text(" "))
+                    job["desc"] = desc[:5000]
+                    job["level"] = job["level"] or _level(job["title"] + " " + desc)
+                    ymin, ymax = _years(desc)
+                    job["years_min"], job["years_max"] = ymin, ymax
+                    job["tech"] = job["tech"] + [t for t in _tech(desc)
+                                                 if t not in job["tech"]]
+            time.sleep(0.4)
+        except Exception:
+            continue
+
+    # drop private helper key
+    for job in items:
+        job.pop("_date", None)
+    return items
+
+def src_lemonade():
+    """Lemonade careers (makers.lemonade.com) -> Israel tech/software roles.
+    Jobs are embedded in the Next.js __NEXT_DATA__ JSON blob on the careers page
+    (props.pageProps.allRecipes). No pagination; the whole roster ships in one page."""
+    import json, re, time, random
+    try:
+        import requests
+    except Exception:
+        return []
+    try:
+        from bs4 import BeautifulSoup
+    except Exception:
+        BeautifulSoup = None
+
+    UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+    HEADERS = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9",
+               "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+
+    # ---- helpers -----------------------------------------------------------
+    def _html_to_text(html):
+        if not html:
+            return ""
+        try:
+            if BeautifulSoup is not None:
+                return BeautifulSoup(html, "lxml").get_text("\n", strip=True)
+        except Exception:
+            pass
+        # stdlib fallback
+        txt = re.sub(r"(?is)<(script|style).*?>.*?</\1>", " ", html)
+        txt = re.sub(r"(?is)<br\s*/?>", "\n", txt)
+        txt = re.sub(r"(?is)</p>", "\n", txt)
+        txt = re.sub(r"(?s)<[^>]+>", " ", txt)
+        import html as _h
+        txt = _h.unescape(txt)
+        return re.sub(r"[ \t]+", " ", txt).strip()
+
+    def _level(title):
+        t = (title or "").lower()
+        if any(k in t for k in ("intern", "internship", "student", "working student",
+                                "graduate", "apprentice")):
+            return "student"
+        if any(k in t for k in ("senior", "sr.", "sr ", " staff", "staff ", "principal",
+                                "lead", "director", "head of", "vp ", "chief", "manager",
+                                "architect")):
+            return "senior"
+        if any(k in t for k in ("junior", "jr.", "jr ", "entry level", "entry-level")):
+            return "junior"
+        return ""
+
+    def _years(text):
+        if not text:
+            return (None, None)
+        low = text.lower()
+        # range: "3-5 years"
+        m = re.search(r"(\d{1,2})\s*[-–to]{1,4}\s*(\d{1,2})\s*\+?\s*years?", low)
+        if m:
+            a, b = int(m.group(1)), int(m.group(2))
+            if a <= b <= 40:
+                return (a, b)
+        # "3+ years" / "at least 3 years" / "3 years of experience"
+        m = re.search(r"(?:at least|minimum(?: of)?|min\.?)\s*(\d{1,2})\s*\+?\s*years?", low)
+        if not m:
+            m = re.search(r"(\d{1,2})\s*\+\s*years?", low)
+        if not m:
+            m = re.search(r"(\d{1,2})\s*years?\s+of\s+(?:experience|software|hands|professional|relevant|industry|backend|back-end)", low)
+        if m:
+            a = int(m.group(1))
+            if 0 <= a <= 40:
+                return (a, None)
+        return (None, None)
+
+    # canonical label -> list of patterns to look for (matched with boundaries)
+    TECH_TERMS = [
+        "python", "java", "javascript", "typescript", "node.js", "react native",
+        "react", "angular", "vue", "ruby on rails", "ruby", "rails", "golang",
+        "rust", "c++", "c#", ".net", "scala", "kotlin", "swift", "php", "elixir",
+        "kubernetes", "docker", "terraform", "aws", "azure", "gcp", "google cloud",
+        "graphql", "grpc", "kafka", "spark", "airflow", "snowflake",
+        "postgresql", "postgres", "mysql", "mongodb", "redis", "dynamodb", "nosql",
+        "sql", "elasticsearch", "microservices", "ci/cd", "machine learning",
+        "genai", "llm", "llms", "pytorch", "tensorflow", "data warehouse", "etl",
+        "dbt", "sagemaker", "linux", "bigquery", "hadoop", "pandas", "numpy",
+        "infrastructure-as-code", "devops", "sre", "observability", "ml platform",
+        "kubernetes", "rest api", "restful",
+    ]
+
+    def _tech(text):
+        if not text:
+            return []
+        low = text.lower()
+        found = []
+        for term in TECH_TERMS:
+            # boundary that treats +, #, . as part of the token (not word chars)
+            pat = r"(?<![a-z0-9+#.])" + re.escape(term) + r"(?![a-z0-9+#])"
+            try:
+                if re.search(pat, low):
+                    label = term
+                    if label not in found:
+                        found.append(label)
+            except Exception:
+                continue
+        return found[:25]
+
+    # department/title based gate for "tech / software only"
+    TECH_DEPTS = {"tech development", "product", "it", "data", "engineering",
+                  "r&d", "research & development"}
+    TECH_TITLE_HINTS = ("engineer", "developer", "software", "devops", "sre",
+                        "data ", "data scientist", "machine learning", "ml ",
+                        " ai", "ai ", "backend", "back-end", "frontend", "front-end",
+                        "full stack", "full-stack", "fullstack", "architect",
+                        "infrastructure", "platform", "security", "qa ",
+                        "product manager", "product designer", "technical",
+                        "analytics", "database", "cloud")
+    NON_TECH_TITLE = ("marketing", "brand", "sales", "recruit", "people ops",
+                      "finance", "legal", "counsel", "actuar", "compliance",
+                      "insurance pricing", "biz ", "bizops")
+
+    def _is_tech(dept, title):
+        d = (dept or "").strip().lower()
+        t = (title or "").strip().lower()
+        strong = ("engineer", "developer", "software", "data ", "machine learning",
+                  "platform", "devops", "sre", "architect")
+        if any(h in t for h in NON_TECH_TITLE) and not any(h in t for h in strong):
+            return False
+        if d in TECH_DEPTS:
+            return True
+        if any(h in t for h in TECH_TITLE_HINTS):
+            return True
+        return False
+
+    def _fetch(url):
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=25)
+            if r.status_code == 200 and r.content:
+                r.encoding = "utf-8"  # page is utf-8; header omits charset
+                return r.text
+        except Exception:
+            return None
+        return None
+
+    def _extract_recipes(html):
+        if not html:
+            return []
+        blob = None
+        # 1) proper parse of the __NEXT_DATA__ script via bs4
+        try:
+            if BeautifulSoup is not None:
+                soup = BeautifulSoup(html, "lxml")
+                tag = soup.find("script", id="__NEXT_DATA__")
+                if tag and tag.string:
+                    blob = tag.string
+        except Exception:
+            blob = None
+        # 2) regex fallback
+        if not blob:
+            try:
+                m = re.search(
+                    r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>',
+                    html, re.S)
+                if m:
+                    blob = m.group(1)
+            except Exception:
+                blob = None
+        if not blob:
+            return []
+        try:
+            data = json.loads(blob)
+        except Exception:
+            return []
+        try:
+            rec = data.get("props", {}).get("pageProps", {}).get("allRecipes")
+            if isinstance(rec, list):
+                return rec
+        except Exception:
+            pass
+        # deep fallback: hunt for a list of dicts that look like roles
+        found = []
+        def walk(o):
+            if found:
+                return
+            if isinstance(o, list):
+                if o and isinstance(o[0], dict) and "link" in o[0] and (
+                        "location" in o[0] or "department" in o[0]):
+                    found.append(o)
+                    return
+                for v in o:
+                    walk(v)
+            elif isinstance(o, dict):
+                for v in o.values():
+                    walk(v)
+        try:
+            walk(data)
+        except Exception:
+            pass
+        return found[0] if found else []
+
+    # ---- main --------------------------------------------------------------
+    results = []
+    try:
+        recipes = []
+        for url in ("https://makers.lemonade.com/careers",
+                    "https://makers.lemonade.com/"):
+            html = _fetch(url)
+            recipes = _extract_recipes(html)
+            if recipes:
+                break
+            time.sleep(random.uniform(0.6, 1.2))
+
+        # newest / display order first when an order key exists
+        try:
+            recipes = sorted(recipes, key=lambda x: x.get("order", 1e9))
+        except Exception:
+            pass
+
+        seen = set()
+        for j in recipes:
+            try:
+                loc = str(j.get("location") or "")
+                low_loc = loc.lower()
+                if "israel" not in low_loc and "tel aviv" not in low_loc:
+                    continue
+                title = (j.get("title") or "").strip()
+                dept = (j.get("department") or "").strip()
+                if not title:
+                    continue
+                if not _is_tech(dept, title):
+                    continue
+
+                sid = str(j.get("postingId") or j.get("id") or j.get("slug") or "").strip()
+                if sid and sid in seen:
+                    continue
+                if sid:
+                    seen.add(sid)
+
+                url = (j.get("link") or "").strip()
+                if not url and j.get("slug"):
+                    url = "https://makers.lemonade.com/role/" + str(j["slug"])
+
+                desc = _html_to_text(j.get("content") or "")
+                city = loc.split(",")[0].strip() if loc else ""
+                ymin, ymax = _years(desc)
+
+                results.append({
+                    "source": "lemonade",
+                    "sid": sid,
+                    "title": title,
+                    "company": "Lemonade",
+                    "city": city or "Tel Aviv",
+                    "url": url,
+                    "level": _level(title),
+                    "years_min": ymin,
+                    "years_max": ymax,
+                    "tech": _tech(desc),
+                    "desc": desc[:4000],
+                    "active": True,
+                })
+                if len(results) >= 120:
+                    break
+            except Exception:
+                continue
+    except Exception:
+        return results
+    return results
+
+def src_moonactive():
+    """Moon Active (Coin Master) careers via the Ashby public posting API.
+    Returns newest Israel-based tech/software roles. Never raises."""
+    import re, time, json
+    try:
+        import requests
+    except Exception:
+        return []
+    try:
+        from bs4 import BeautifulSoup
+    except Exception:
+        BeautifulSoup = None
+
+    UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+    headers = {"User-Agent": UA, "Accept": "application/json"}
+    out = []
+
+    # Ashby posting API serves the whole board in one JSON call (no real paging).
+    slugs = ["moonactive", "moon-active", "moon_active"]
+    data = None
+    for slug in slugs:
+        url = ("https://api.ashbyhq.com/posting-api/job-board/"
+               + slug + "?includeCompensation=false")
+        try:
+            r = requests.get(url, headers=headers, timeout=30)
+            if r.status_code == 200:
+                j = r.json()
+                if isinstance(j, dict) and j.get("jobs"):
+                    data = j
+                    break
+        except Exception:
+            pass
+        time.sleep(1.0)  # polite between slug attempts
+    if not data:
+        return []
+
+    jobs = data.get("jobs") or []
+
+    # ---- helpers ---------------------------------------------------------
+    def is_israel(job):
+        try:
+            pa = ((job.get("address") or {}).get("postalAddress") or {})
+            if str(pa.get("addressCountry", "")).strip().lower() == "israel":
+                return True
+            blob = json.dumps(
+                [job.get("location"), job.get("secondaryLocations"),
+                 job.get("address")], ensure_ascii=False).lower()
+            return ("israel" in blob or "tel aviv" in blob
+                    or "tel-aviv" in blob or "herzliya" in blob
+                    or "petah" in blob or "raanana" in blob)
+        except Exception:
+            return False
+
+    TECH_DEPTS = ("r&d", "data", "analytics", "security", " it",
+                  "it ", "engineering", "platform", "technology", "devops",
+                  "infrastructure")
+    TECH_KW = ("engineer", "developer", "devops", "sre", "backend",
+               "back end", "frontend", "front end", "full stack", "fullstack",
+               "full-stack", "software", "data ", "data analyst",
+               "data scientist", "security", "qa ", "automation", "architect",
+               "unity", "game engineer", "technical", "infrastructure",
+               "cloud", "machine learning", " ml", "ml ", " ai", "ai ",
+               "algorithm", "programmer", "android", "ios",
+               "platform", "python", "researcher")
+
+    def is_tech(job):
+        dept = str(job.get("department") or "").lower()
+        team = str(job.get("team") or "").lower()
+        title = str(job.get("title") or "").lower()
+        if any(d in dept or d in team for d in TECH_DEPTS):
+            return True
+        if any(k in title for k in TECH_KW):
+            return True
+        return False
+
+    def derive_level(title):
+        t = " " + title.lower() + " "
+        if any(w in t for w in (" intern ", " internship ", " student ",
+                                " trainee ", " apprentice ")):
+            return "student"
+        if any(w in t for w in (" junior ", " jr ", " jr. ", " entry ",
+                                " graduate ", " grad ")):
+            return "junior"
+        if any(w in t for w in (" senior ", " sr ", " sr. ", " lead ",
+                                " principal ", " staff ", " head ",
+                                " director ", " manager ", " expert ",
+                                " team lead ", " architect ")):
+            return "senior"
+        return ""
+
+    def parse_years(text):
+        if not text:
+            return (None, None)
+        t = text.lower().replace("–", "-").replace("—", "-")
+        # range: "3-5 years"
+        m = re.search(r"(\d{1,2})\s*-\s*(\d{1,2})\s*\+?\s*(?:years|yrs|year)",
+                      t)
+        if m:
+            a, b = int(m.group(1)), int(m.group(2))
+            if 0 <= a <= 40 and 0 <= b <= 40 and a <= b:
+                return (a, b)
+        # "at least/minimum of N years", "N+ years", "N years"
+        for pat in (r"(?:at least|minimum of|min\.?)\s*(\d{1,2})\s*\+?\s*"
+                    r"(?:years|yrs|year)",
+                    r"(\d{1,2})\s*\+\s*(?:years|yrs|year)",
+                    r"(\d{1,2})\s*(?:years|yrs|year)s?\s+of\s+"
+                    r"(?:experience|exp|relevant|hands)"):
+            m = re.search(pat, t)
+            if m:
+                v = int(m.group(1))
+                if 0 <= v <= 40:
+                    return (v, None)
+        return (None, None)
+
+    TECH_TAGS = [
+        ("python", r"\bpython\b"), ("java", r"\bjava\b"),
+        ("javascript", r"\bjavascript\b|\bjs\b"),
+        ("typescript", r"\btypescript\b|\bts\b"),
+        ("node.js", r"\bnode\.?js\b|\bnode\b"), ("react", r"\breact\b"),
+        ("angular", r"\bangular\b"), ("vue", r"\bvue\b"),
+        ("go", r"\bgolang\b|\bgo lang\b"), ("c++", r"c\+\+"),
+        ("c#", r"c#|\.net\b|\bdotnet\b"), ("ruby", r"\bruby\b"),
+        ("php", r"\bphp\b"), ("kotlin", r"\bkotlin\b"),
+        ("swift", r"\bswift\b"), ("scala", r"\bscala\b"),
+        ("rust", r"\brust\b"), ("unity", r"\bunity\b"),
+        ("unreal", r"\bunreal\b"), ("aws", r"\baws\b|amazon web services"),
+        ("gcp", r"\bgcp\b|google cloud"), ("azure", r"\bazure\b"),
+        ("kubernetes", r"\bkubernetes\b|\bk8s\b"), ("docker", r"\bdocker\b"),
+        ("terraform", r"\bterraform\b"), ("ansible", r"\bansible\b"),
+        ("jenkins", r"\bjenkins\b"), ("ci/cd", r"\bci/?cd\b"),
+        ("sql", r"\bsql\b"), ("mongodb", r"\bmongo\b|\bmongodb\b"),
+        ("postgresql", r"\bpostgres\b|\bpostgresql\b"),
+        ("mysql", r"\bmysql\b"), ("redis", r"\bredis\b"),
+        ("kafka", r"\bkafka\b"), ("spark", r"\bspark\b"),
+        ("airflow", r"\bairflow\b"), ("tensorflow", r"\btensorflow\b"),
+        ("pytorch", r"\bpytorch\b"),
+        ("machine learning", r"machine learning|\bml\b"),
+        ("graphql", r"\bgraphql\b"), ("grpc", r"\bgrpc\b"),
+        ("microservices", r"\bmicroservices?\b"), ("linux", r"\blinux\b"),
+        ("bash", r"\bbash\b|\bshell scripting\b"), ("git", r"\bgit\b"),
+        ("elasticsearch", r"\belasticsearch\b|\belastic\b"),
+        ("snowflake", r"\bsnowflake\b"), ("bigquery", r"\bbigquery\b"),
+        ("tableau", r"\btableau\b"), ("looker", r"\blooker\b"),
+        ("rest", r"\brest\b|\brestful\b"), ("graphite", r"\bgraphite\b"),
+    ]
+
+    def extract_tech(text):
+        if not text:
+            return []
+        t = text.lower()
+        found = []
+        for name, pat in TECH_TAGS:
+            try:
+                if re.search(pat, t):
+                    found.append(name)
+            except Exception:
+                pass
+        return found
+
+    def clean_text(html, plain):
+        if plain:
+            return plain.strip()
+        if html and BeautifulSoup is not None:
+            try:
+                return BeautifulSoup(html, "lxml").get_text(" ", strip=True)
+            except Exception:
+                pass
+        if html:
+            return re.sub(r"<[^>]+>", " ", html).strip()
+        return ""
+
+    # ---- sort newest first, then filter ----------------------------------
+    def pub_key(job):
+        return str(job.get("publishedAt") or "")
+    try:
+        jobs = sorted(jobs, key=pub_key, reverse=True)
+    except Exception:
+        pass
+
+    for job in jobs[:400]:
+        try:
+            if not job.get("isListed", True):
+                continue
+            if not is_israel(job):
+                continue
+            if not is_tech(job):
+                continue
+
+            title = str(job.get("title") or "").strip()
+            if not title:
+                continue
+            sid = str(job.get("id") or job.get("jobUrl") or title)
+            url = (job.get("jobUrl") or job.get("applyUrl") or "")
+
+            pa = ((job.get("address") or {}).get("postalAddress") or {})
+            city = (pa.get("addressLocality")
+                    or job.get("location") or "Israel")
+            city = str(city).strip()
+            if job.get("isRemote") and "remote" not in city.lower():
+                city = city + " (Remote)"
+
+            desc_full = clean_text(job.get("descriptionHtml"),
+                                   job.get("descriptionPlain"))
+            level = derive_level(title)
+            ymin, ymax = parse_years(desc_full)
+            tech = extract_tech(desc_full + " " + title)
+            desc = desc_full[:1500].strip()
+
+            out.append({
+                "source": "moonactive",
+                "sid": sid,
+                "title": title,
+                "company": "Moon Active",
+                "city": city,
+                "url": url,
+                "level": level,
+                "years_min": ymin,
+                "years_max": ymax,
+                "tech": tech,
+                "desc": desc,
+                "active": True,
+            })
+            if len(out) >= 120:
+                break
+        except Exception:
+            continue
+
+    return out
+
+# -*- coding: utf-8 -*-
+def src_hibob():
+    """
+    hibob (HiBob) adapter for Ron's Israel tech-job scanner.
+    HiBob's careers page (https://www.hibob.com/careers/) is a WordPress site
+    that SERVER-RENDERS its Comeet board via the 'hibob-hiring' plugin, so the
+    whole board comes back in one HTML GET (no JS, no pagination). Every opening
+    is an <a class="comeet-position"> carrying:
+        span.comeet-position-name  -> title
+        span.comeet-position-meta  -> "<employment type> | <country>" e.g. "Permanent | Israel"
+        href                       -> the Comeet-hosted job page (.../jobs/<uuid>); uuid = sid
+    Positions are grouped under <div class="comeet-g-r"> blocks headed by
+    <h3 class="comeet-group-name"> (the department), which we use for tech
+    classification. The individual job pages are a JS SPA with no server HTML,
+    so there is no JD to fetch server-side; desc is a synthesized context line
+    (department + employment type + country) and years come from the title only.
+    Returns Israel (meta contains 'Israel') tech/software roles only; the caller
+    applies seniority/relevance/dedup filters. Never raises: all network is
+    wrapped and partial results are returned.
+    """
+    import re, time
+    try:
+        import requests
+    except Exception:
+        return []
+    try:
+        from bs4 import BeautifulSoup
+    except Exception:
+        return []
+
+    UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+    HEADERS = {"User-Agent": UA,
+               "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+               "Accept-Language": "en-US,en;q=0.9"}
+    URLS = ["https://www.hibob.com/careers/", "https://www.hibob.com/careers"]
+    CAP = 120
+
+    # Broad tech signal (used inside tech / unknown departments).
+    TECH_RE = re.compile(
+        r"\b(engineer|engineering|developer|programmer|devops|devsecops|sre|software|"
+        r"back[\s-]?end|front[\s-]?end|full[\s-]?stack|data|machine\s*learning|\bml\b|\bai\b|"
+        r"artificial intelligence|algorithm|algorithms|\bqa\b|automation|sdet|architect|"
+        r"security|cyber|cloud|platform|infrastructure|\binfra\b|research|scientist|embedded|"
+        r"firmware|hardware|asic|verification|vlsi|\bnlp\b|computer vision|analyst|"
+        r"product manager|product owner|technical|python|java|golang|react|node|"
+        r"network|mobile|android|test|solutions? (?:architect|engineer)|support engineer)\b",
+        re.I)
+    # Strong tech signal (required to keep a role that sits in a NON-tech department).
+    STRONG_TECH_RE = re.compile(
+        r"\b(engineer|engineering|developer|programmer|devops|devsecops|sre|software|"
+        r"back[\s-]?end|front[\s-]?end|full[\s-]?stack|architect|algorithm|algorithms|"
+        r"\bqa\b|sdet|verification|vlsi|asic|firmware|embedded|data engineer|data scientist|"
+        r"data platform|machine\s*learning|\bml\b|\bnlp\b|computer vision|"
+        r"infrastructure engineer|platform engineer|security engineer|cloud engineer|"
+        r"tech lead|technical lead)\b", re.I)
+    NONTECH_RE = re.compile(
+        r"\b(sales|account executive|account manager|business development|\bbdr\b|\bsdr\b|"
+        r"marketing|brand|content writer|copywriter|recruit|talent acquisition|\bpeople\b|"
+        r"\bhr\b|human resources|finance|accountant|bookkeep|controller|payroll|legal|counsel|"
+        r"office manager|receptionist|administrative|executive assistant|community manager|"
+        r"customer success manager|social media|procurement|lifecycle marketing|"
+        r"paid acquisition|creative director|commission|finops)\b", re.I)
+    TECH_DEPTS = ("tech", "business technolog", "r&d", "engineering", "data",
+                  "product", "devops", "qa", "security", "platform",
+                  "infrastructure", "software", "development")
+    NONTECH_DEPTS = ("gtm", "go-to-market", "go to market", "marketing", "sales",
+                     "finance", "operations", "people", "p&c", "legal", "talent",
+                     "​hr", "human resources")
+
+    def is_tech(title, dept):
+        dl = (dept or "").lower()
+        title_tech = bool(TECH_RE.search(title))
+        title_strong = bool(STRONG_TECH_RE.search(title))
+        title_nontech = bool(NONTECH_RE.search(title))
+        dept_tech = any(d in dl for d in TECH_DEPTS)
+        dept_nontech = any(d in dl for d in NONTECH_DEPTS)
+        if dept_tech:
+            # tech department: keep unless the title is unambiguously non-tech
+            return not (title_nontech and not title_tech)
+        if dept_nontech:
+            # non-tech department: keep only with a strong engineering/tech title
+            return title_strong
+        # unknown department: fall back to broad title signal
+        return title_tech and not (title_nontech and not title_strong)
+
+    SENIOR_TITLE = re.compile(r"\b(senior|sr\.?|lead|principal|staff|head of|\bvp\b|"
+                              r"director|architect|expert)\b", re.I)
+    JUNIOR_TITLE = re.compile(r"\b(junior|jr\.?|entry[\s-]?level|graduate|associate)\b", re.I)
+    STUDENT_TITLE = re.compile(r"\b(intern|internship|student|working student|apprentice|"
+                               r"co[\s-]?op)\b", re.I)
+
+    def classify_level(title):
+        if STUDENT_TITLE.search(title):
+            return "student"
+        if JUNIOR_TITLE.search(title):
+            return "junior"
+        if SENIOR_TITLE.search(title):
+            return "senior"
+        return ""
+
+    def extract_years(text):
+        if not text:
+            return None, None
+        t = text.lower()
+        m = re.search(r"(\d{1,2})\s*(?:-|–|to)\s*(\d{1,2})\s*\+?\s*years", t)
+        if m:
+            a, b = int(m.group(1)), int(m.group(2))
+            if a <= b <= 40:
+                return a, b
+        m = re.search(r"(?:at least|minimum(?: of)?|min\.?|over|more than)\s*(\d{1,2})\s*\+?\s*years", t)
+        if m:
+            return int(m.group(1)), None
+        m = re.search(r"(\d{1,2})\s*\+\s*years", t)
+        if m:
+            return int(m.group(1)), None
+        m = re.search(r"(\d{1,2})\s*years?\s+(?:of\s+)?(?:experience|exp)", t)
+        if m:
+            v = int(m.group(1))
+            if v <= 40:
+                return v, None
+        return None, None
+
+    TECH_VOCAB = [
+        "Python", "Java", "JavaScript", "TypeScript", "Go", "Golang", "C++", "C#",
+        "Rust", "Scala", "Kotlin", "Swift", "Ruby", "PHP", "Node.js", "Node",
+        "React", "Angular", "Vue", "Next.js", "Django", "Flask", "FastAPI", "Spring",
+        ".NET", "GraphQL", "REST", "gRPC",
+        "AWS", "Azure", "GCP", "Google Cloud", "Kubernetes", "K8s", "Docker", "Terraform",
+        "Ansible", "Jenkins", "CI/CD", "Linux", "Bash",
+        "SQL", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch",
+        "Kafka", "Spark", "Airflow", "Snowflake", "BigQuery",
+        "TensorFlow", "PyTorch", "Pandas", "NumPy", "LLM", "LLMs", "NLP",
+        "Computer Vision", "Machine Learning", "Deep Learning", "Generative AI", "GenAI",
+        "Data Science", "MLOps", "Microservices", "Backend", "Frontend", "Full Stack",
+        "DevOps", "DevSecOps", "SRE", "QA", "Platform", "Infrastructure",
+        "Embedded", "Firmware", "AI", "Data",
+    ]
+
+    def extract_tech(text):
+        if not text:
+            return []
+        low = text.lower()
+        found = []
+        for kw in TECH_VOCAB:
+            k = kw.lower()
+            if len(k) <= 2:
+                pat = r"(?<![a-z0-9])" + re.escape(k) + r"(?![a-z0-9])"
+            elif re.match(r"^[a-z0-9]", k):
+                pat = r"(?<![a-z0-9])" + re.escape(k)
+            else:
+                pat = re.escape(k)
+            if re.search(pat, low):
+                if kw not in found:
+                    found.append(kw)
+        return found
+
+    # ---- fetch the (single) server-rendered board, with a light retry ----
+    html_bytes = None
+    for url in URLS:
+        for attempt in range(2):
+            try:
+                r = requests.get(url, headers=HEADERS, timeout=30)
+                if r.status_code == 200 and r.content and b"comeet-position" in r.content:
+                    html_bytes = r.content
+                    break
+            except Exception:
+                pass
+            time.sleep(0.5)
+        if html_bytes:
+            break
+    if not html_bytes:
+        return []
+
+    try:
+        soup = BeautifulSoup(html_bytes, "lxml")  # bytes -> correct utf-8 from <meta>
+    except Exception:
+        try:
+            soup = BeautifulSoup(html_bytes, "html.parser")
+        except Exception:
+            return []
+
+    jobs = []
+    seen = set()
+
+    # Prefer department-grouped traversal; fall back to a flat scan.
+    groups = soup.select("div.comeet-g-r")
+    if not groups:
+        groups = [soup]
+
+    UUID_RE = re.compile(r"/jobs/([0-9a-fA-F-]{16,})")
+
+    for grp in groups:
+        if len(jobs) >= CAP:
+            break
+        head = grp.select_one("h3.comeet-group-name")
+        dept = head.get_text(" ", strip=True) if head else ""
+        for a in grp.select("a.comeet-position"):
+            if len(jobs) >= CAP:
+                break
+            try:
+                nm_el = a.select_one("span.comeet-position-name")
+                title = nm_el.get_text(" ", strip=True) if nm_el else ""
+                if not title:
+                    continue
+                meta_el = a.select_one("span.comeet-position-meta")
+                meta = meta_el.get_text(" ", strip=True) if meta_el else ""
+
+                # Israel only (meta country segment contains 'Israel').
+                if "israel" not in meta.lower():
+                    continue
+                if not is_tech(title, dept):
+                    continue
+
+                href = (a.get("href") or "").strip()
+                if not href:
+                    continue
+                m = UUID_RE.search(href)
+                sid = m.group(1) if m else href
+                if sid in seen:
+                    continue
+
+                # employment type + country from the meta ("Permanent | Israel").
+                parts = [p.strip() for p in meta.split("|") if p.strip()]
+                emp_type = parts[0] if len(parts) >= 2 else ""
+                location = parts[-1] if parts else meta  # -> "Israel"
+
+                # city best-effort: the board exposes country only, not a city.
+                city = location if location and location.lower() != "israel" else ""
+
+                desc_bits = [b for b in (dept, emp_type, location) if b]
+                desc = " | ".join(desc_bits)
+
+                level = classify_level(title)
+                ymin, ymax = extract_years(title)
+                tech = extract_tech(title)
+
+                jobs.append({
+                    "source": "hibob",
+                    "sid": sid,
+                    "title": title,
+                    "company": "HiBob",
+                    "city": city,
+                    "url": href,
+                    "level": level,
+                    "years_min": ymin,
+                    "years_max": ymax,
+                    "tech": tech,
+                    "desc": desc,
+                    "active": True,
+                })
+                seen.add(sid)
+            except Exception:
+                continue
+
+    return jobs
+
+import re
+import time
+import requests
+from bs4 import BeautifulSoup
+
+
+def src_kaltura():
+    """
+    Kaltura careers adapter -> corp.kaltura.com/company/careers/
+
+    The careers "lobby" ships every open role in the static HTML as
+    <a class="b-new-careers-lobby__job" data-title=.. data-department=..
+    data-location=.. href="/careers/{slug}/{code}/"> (country in data-location,
+    city in the .job-location text, code = last URL path segment). We keep the
+    Israel rows and enrich each from its own role page. Every Kaltura JD opens
+    with ~1,400 chars of identical company boilerplate ("This is us ... 15+ years
+    since starting the company"), so description/tech/years are parsed only from
+    the role-specific text after that preamble. Returns a list of job dicts;
+    never raises.
+    """
+    UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+    HDRS = {"User-Agent": UA,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9"}
+    BASE = "https://corp.kaltura.com"
+    LIST = BASE + "/company/careers/"
+    CAP = 120
+    out = []
+
+    def _get(url, timeout=25):
+        r = requests.get(url, headers=HDRS, timeout=timeout, allow_redirects=True)
+        # page is UTF-8; guard against requests guessing latin-1 (would mojibake)
+        if not r.encoding or r.encoding.lower() in ("iso-8859-1", "latin-1"):
+            r.encoding = r.apparent_encoding or "utf-8"
+        return r
+
+    def _role_text(full):
+        # drop the leading identical company boilerplate; keep from the first
+        # real role/section header onward.
+        tl = full.lower()
+        heads = ["the role", "about the role", "what you'll do", "what you will do",
+                 "the opportunity", "responsibilities", "your impact", "who you are",
+                 "what you'll bring", "you bring", "qualifications"]
+        pos = [tl.find(h) for h in heads if tl.find(h) != -1]
+        idx = min(pos) if pos else -1
+        return full[idx:] if idx > 0 else full
+
+    def _level(title):
+        t = (title or "").lower()
+        if any(w in t for w in ("student", "intern", "internship", "סטודנט")):
+            return "student"
+        if any(w in t for w in ("senior", "sr.", "sr ", " lead", "lead ", "principal",
+                                "staff", "architect", "manager", "head of", "director",
+                                "team lead", "expert", " vp", "vp ", "chief")):
+            return "senior"
+        if any(w in t for w in ("junior", "jr.", "jr ", "entry", "graduate")):
+            return "junior"
+        return ""
+
+    def _years(text):
+        # role text only; still guard the stock "N years since starting" phrasing.
+        t = (text or "").lower().replace("–", "-").replace("—", "-")
+        ymin = ymax = None
+        m = re.search(r'(\d{1,2})\s*\+?\s*(?:-|to|up to)\s*(\d{1,2})\s*\+?\s*(?:years|yrs|year)', t)
+        if m:
+            a, b = int(m.group(1)), int(m.group(2))
+            if max(a, b) <= 30:
+                ymin, ymax = min(a, b), max(a, b)
+        got = []
+        for mm in re.finditer(r'(\d{1,2})\s*\+?\s*(?:years|yrs|year)\s*(?P<after>.{0,15})', t):
+            after = mm.group("after")
+            if "since" in after or "ago" in after:
+                continue
+            n = int(mm.group(1))
+            if n <= 30:
+                got.append(n)
+        if got and ymin is None:
+            ymin = min(got)
+        return ymin, ymax
+
+    # bare "go"/"video" excluded: "go-to-market"/"go live" and Kaltura's whole
+    # video domain match every role and carry no signal. "golang" catches real Go.
+    TECHKW = ["python", "c++", "c#", ".net", "java", "javascript", "typescript",
+              "react", "angular", "vue", "node", "sql", "nosql", "mongodb", "redis",
+              "postgres", "mysql", "aws", "azure", "gcp", "docker", "kubernetes",
+              "k8s", "terraform", "ansible", "pytorch", "tensorflow",
+              "machine learning", "deep learning", "ml", "ai", "llm", "genai",
+              "nlp", "rag", "computer vision", "linux", "golang", "rust", "php",
+              "ruby", "scala", "kotlin", "swift", "graphql", "rest", "grpc",
+              "microservices", "kafka", "rabbitmq", "spark", "elasticsearch",
+              "algorithms", "devops", "ci/cd", "sre", "qa", "automation",
+              "selenium", "cypress", "playwright", "webrtc", "streaming", "html",
+              "css", "netsuite", "salesforce", "prometheus", "grafana"]
+
+    def _tech(text):
+        t = " " + (text or "").lower() + " "
+        found = []
+        for k in TECHKW:
+            # boundary match so "ai" != "email", "go" != "google", etc.
+            if re.search(r'(?<![a-z0-9])' + re.escape(k) + r'(?![a-z0-9])', t):
+                if k not in found:
+                    found.append(k)
+        return found[:15]
+
+    try:
+        r = _get(LIST)
+        if r.status_code != 200:
+            return out
+        soup = BeautifulSoup(r.text, "lxml")
+        anchors = soup.select("a.b-new-careers-lobby__job")
+        if not anchors:
+            # fallback: any anchor carrying the job data-attrs
+            anchors = [a for a in soup.find_all("a", href=True) if a.get("data-title")]
+
+        for a in anchors:
+            if len(out) >= CAP:
+                break
+            try:
+                country = (a.get("data-location") or "").strip()
+                if "israel" not in country.lower():
+                    continue
+
+                href = (a.get("href") or "").strip()
+                if not href:
+                    continue
+                if href.startswith("/"):
+                    href = BASE + href
+                sid = href.rstrip("/").rsplit("/", 1)[-1]
+
+                title = (a.get("data-title") or "").strip()
+                if not title:
+                    tn = a.select_one(".b-new-careers-lobby__job-name")
+                    title = tn.get_text(" ", strip=True) if tn else ""
+                if not title:
+                    continue
+
+                loc_el = a.select_one(".b-new-careers-lobby__job-location")
+                city = loc_el.get_text(" ", strip=True) if loc_el else ""
+                if not city:
+                    city = country  # fall back to "Israel"
+
+                # enrich from the role page (small list -> cheap); one retry on flakiness
+                full = ""
+                for _attempt in range(2):
+                    try:
+                        d = _get(href, timeout=20)
+                        if d.status_code == 200:
+                            ds = BeautifulSoup(d.text, "lxml")
+                            art = (ds.select_one("div.b-new-career-inner__content")
+                                   or ds.select_one(".b-new-career-inner__content-texts")
+                                   or ds.select_one("article"))
+                            if art:
+                                txt = art.get_text(" ", strip=True)
+                                txt = re.sub(r'^\s*Back to jobs\s*', '', txt)
+                                full = re.sub(r'\s+', ' ', txt)
+                        time.sleep(0.3)
+                        if full:
+                            break
+                    except Exception:
+                        time.sleep(0.5)
+
+                role = _role_text(full)
+                desc = role[:2500]
+                ymin, ymax = _years(role)
+                out.append({
+                    "source": "kaltura",
+                    "sid": sid,
+                    "title": title,
+                    "company": "Kaltura",
+                    "city": city,
+                    "url": href,
+                    "level": _level(title),
+                    "years_min": ymin,
+                    "years_max": ymax,
+                    "tech": _tech(title + " " + role),
+                    "desc": desc,
+                    "active": True,
+                })
+            except Exception:
+                continue
+    except Exception:
+        pass
+
+    return out
+
+import re
+import time
+import requests
+from bs4 import BeautifulSoup
+
+
+def src_verbit():
+    """Verbit (verbit.ai) careers -> WordPress REST 'job' post type.
+    Returns Israel-based tech/software jobs as normalized dicts. Never raises."""
+    out = []
+    base = "https://verbit.ai/wp-json/wp/v2/job"
+    headers = {
+        "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                       "AppleWebKit/537.36 (KHTML, like Gecko) "
+                       "Chrome/124.0.0.0 Safari/537.36"),
+        "Accept": "application/json",
+    }
+
+    # --- Israel / tech detection helpers ---------------------------------
+    il_cities = ("tel aviv", "tel-aviv", "telaviv", "jerusalem", "haifa",
+                 "herzliya", "hertzliya", "ra'anana", "raanana", "netanya",
+                 "petah tikva", "petach tikva", "beer sheva", "be'er sheva",
+                 "rehovot", "ramat gan", "yokneam", "caesarea", "kfar saba",
+                 "hod hasharon", "modiin", "ashdod", "israel")
+
+    def is_israel(loc_name, loc_slug):
+        n = (loc_name or "").lower()
+        s = (loc_slug or "").lower()
+        if n.endswith(", il") or n == "il" or " il" in (" " + n):
+            if re.search(r"\bil\b", n):
+                return True
+        if s.endswith("-il") or s == "il":
+            return True
+        for c in il_cities:
+            if c in n or c.replace(" ", "-") in s or c.replace(" ", "") in s.replace("-", ""):
+                return True
+        return False
+
+    tech_kw = ("engineer", "developer", "devops", "software", "backend",
+               "frontend", "front-end", "back-end", "full stack", "fullstack",
+               "full-stack", "data", "machine learning", "ml", "ai ", "ai/",
+               "/ai", "nlp", "algorithm", "qa ", "qa/", "automation", "sre",
+               "architect", "programmer", "python", "java", "infrastructure",
+               "cloud", "security", "platform", "r&d", "research", "scientist",
+               "analytics", "bi ", "database", "mobile", "ios", "android",
+               "web ", "tech lead", "cto")
+
+    def is_tech(title, dept_names):
+        t = (title or "").lower()
+        d = " ".join(dept_names or []).lower()
+        blob = t + " || " + d
+        # obvious non-tech exclusions
+        if any(x in t for x in ("transcriber", "captioner", "scoper",
+                                "proofreader", "editor - ", "sales",
+                                "account executive", "recruiter",
+                                "customer success", "marketing", "hr ",
+                                "people ", "finance", "legal counsel",
+                                "office manager", "receptionist")):
+            # allow if it also clearly names an engineering/data function
+            if not any(k in t for k in ("engineer", "developer", "data",
+                                        "software", "devops", "qa",
+                                        "architect", "scientist")):
+                return False
+        if "r&d" in d or "engineering" in d or "research" in d or "product" in d or "data" in d:
+            return True
+        return any(k in blob for k in tech_kw)
+
+    def level_of(title):
+        t = (title or "").lower()
+        if any(k in t for k in ("intern", "internship", "student", "graduate", "working student")):
+            return "student"
+        if any(k in t for k in ("senior", "sr.", "sr ", "lead", "principal",
+                                "staff", "director", "head of", "head ",
+                                "manager", "architect", "vp ")):
+            return "senior"
+        if any(k in t for k in ("junior", "jr.", "jr ", "entry", "associate")):
+            return "junior"
+        return ""
+
+    def parse_years(text):
+        if not text:
+            return (None, None)
+        t = text.lower()
+        # ranges: "3-5 years", "3 to 5 years"
+        m = re.search(r"(\d{1,2})\s*(?:-|to|–|—)\s*(\d{1,2})\s*\+?\s*years", t)
+        if m:
+            a, b = int(m.group(1)), int(m.group(2))
+            if a <= b <= 40:
+                return (a, b)
+        # "4+ years" / "at least 4 years" / "minimum of 3 years"
+        m = re.search(r"(?:at least|minimum of|min\.?\s*of|min\.?)?\s*(\d{1,2})\s*\+?\s*years", t)
+        if m:
+            a = int(m.group(1))
+            if 0 <= a <= 40:
+                return (a, None)
+        return (None, None)
+
+    tech_terms = [
+        "python", "java", "javascript", "typescript", "node.js", "nodejs",
+        "node", "react", "angular", "vue", "go", "golang", "rust", "c++",
+        "c#", ".net", "ruby", "php", "kotlin", "swift", "scala",
+        "pytorch", "tensorflow", "keras", "scikit-learn", "sklearn",
+        "pandas", "numpy", "spark", "hadoop", "kafka", "airflow",
+        "aws", "azure", "gcp", "google cloud", "kubernetes", "k8s",
+        "docker", "terraform", "ansible", "jenkins", "gitlab", "ci/cd",
+        "linux", "bash", "sql", "postgresql", "postgres", "mysql",
+        "mongodb", "redis", "elasticsearch", "graphql", "rest", "grpc",
+        "microservices", "llm", "nlp", "asr", "genai", "generative ai",
+        "machine learning", "deep learning", "computer vision",
+        "selenium", "cypress", "playwright", "django", "flask", "fastapi",
+        "spring", "rabbitmq", "snowflake", "databricks", "dbt",
+    ]
+
+    def extract_tech(text):
+        if not text:
+            return []
+        t = text.lower()
+        found = []
+        for term in tech_terms:
+            if term in t and term not in found:
+                found.append(term)
+        return found[:25]
+
+    # --- fetch (paginated, resilient) ------------------------------------
+    seen = set()
+    for page in range(1, 6):  # newest ~5 pages
+        if len(out) >= 120:
+            break
+        params = {
+            "per_page": 100,
+            "page": page,
+            "orderby": "date",
+            "order": "desc",
+            "_embed": "wp:term",
+        }
+        try:
+            resp = requests.get(base, params=params, headers=headers, timeout=30)
+        except Exception:
+            break
+        if resp.status_code != 200:
+            break
+        try:
+            resp.encoding = "utf-8"
+            jobs = resp.json()
+        except Exception:
+            break
+        if not isinstance(jobs, list) or not jobs:
+            break
+
+        for j in jobs:
+            try:
+                jid = j.get("id")
+                if jid in seen:
+                    continue
+                seen.add(jid)
+
+                title = (j.get("title") or {}).get("rendered", "") or ""
+                title = BeautifulSoup(title, "lxml").get_text(" ", strip=True)
+                url = j.get("link", "") or ""
+
+                # resolve department + location from embedded terms
+                dept_names, loc_name, loc_slug = [], "", ""
+                emb = (j.get("_embedded") or {}).get("wp:term") or []
+                for group in emb:
+                    for term in (group or []):
+                        tax = term.get("taxonomy")
+                        name = BeautifulSoup(term.get("name", "") or "",
+                                             "lxml").get_text(" ", strip=True)
+                        if tax == "department" and name:
+                            dept_names.append(name)
+                        elif tax == "location" and name and not loc_name:
+                            loc_name = name
+                            loc_slug = term.get("slug", "") or ""
+                # fallback to class_list slugs if embed missing
+                if not loc_slug:
+                    for c in (j.get("class_list") or []):
+                        if isinstance(c, str) and c.startswith("location-"):
+                            loc_slug = c[len("location-"):]
+                            break
+
+                if not is_israel(loc_name, loc_slug):
+                    continue
+                if not is_tech(title, dept_names):
+                    continue
+
+                # description text
+                html = (j.get("content") or {}).get("rendered", "") or ""
+                desc = ""
+                if html:
+                    desc = BeautifulSoup(html, "lxml").get_text(" ", strip=True)
+                    desc = re.sub(r"\s+", " ", desc).strip()
+                    if len(desc) > 5000:
+                        desc = desc[:5000]
+
+                # city best-effort
+                city = ""
+                if loc_name:
+                    city = loc_name.split(",")[0].strip()
+                elif loc_slug:
+                    city = loc_slug.replace("-il", "").replace("-", " ").strip().title()
+
+                ymin, ymax = parse_years(desc)
+                tech = extract_tech(title + " " + desc)
+
+                out.append({
+                    "source": "verbit",
+                    "sid": str(jid),
+                    "title": title,
+                    "company": "Verbit",
+                    "city": city,
+                    "url": url,
+                    "level": level_of(title),
+                    "years_min": ymin,
+                    "years_max": ymax,
+                    "tech": tech,
+                    "desc": desc,
+                    "active": True,
+                })
+                if len(out) >= 120:
+                    break
+            except Exception:
+                continue
+
+        # small board: stop early if this page was not full
+        if len(jobs) < 100:
+            break
+        time.sleep(1.0)
+
+    return out
