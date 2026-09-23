@@ -2185,7 +2185,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2527
+"last": 2529
 },
 "experis": {
 "max": 600,
@@ -2249,7 +2249,7 @@
 },
 "apple": {
 "max": 79,
-"last": 78
+"last": 0
 },
 "camtek": {
 "max": 46,
