@@ -2216,6 +2216,33 @@
 },
 "lightrun|ai engineer": {
 "seen": "2026-09-23"
+},
+"greenhouse:nextinsurance66:7816741003": {
+"t": "Backend Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nextinsurance66|backend engineer": {
+"seen": "2026-09-23"
+},
+"greenhouse:nextinsurance66:7979131003": {
+"t": "Graduate Backend Software Engineer- UpNEXT Program",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nextinsurance66|graduate backend software engineer upnext program": {
+"seen": "2026-09-23"
+},
+"greenhouse:nextinsurance66:7979090003": {
+"t": "Graduate Frontend / Full Stack Software Engineer – UpNEXT Pr",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nextinsurance66|graduate frontend full stack software engineer upnext program": {
+"seen": "2026-09-23"
 }
 },
 "source_stats": {
@@ -2232,8 +2259,8 @@
 "last": 142
 },
 "greenhouse": {
-"max": 204,
-"last": 204
+"max": 261,
+"last": 261
 },
 "amazon": {
 "max": 100,
@@ -2276,20 +2303,24 @@
 "last": 120
 },
 "comeet": {
-"max": 114,
-"last": 114
+"max": 120,
+"last": 120
 },
 "workday": {
-"max": 28,
-"last": 26
+"max": 31,
+"last": 31
 },
 "apple": {
 "max": 79,
-"last": 33
+"last": 78
 },
 "camtek": {
 "max": 46,
 "last": 46
+},
+"lever": {
+"max": 6,
+"last": 6
 }
 }
 }
