@@ -1,0 +1,1057 @@
+{
+ "generated": "2026-09-23",
+ "source": "tailor-triage workflow wpmhi5acr",
+ "tailor": [
+  {
+   "idx": 7,
+   "url": "https://hiremetech.com/job/147385412",
+   "employer": "Glassix",
+   "title": "Junior Fullstack Developer – Billing & Monetization",
+   "region": "Center",
+   "base_cv": "Backend_FullStack",
+   "fit": 78,
+   "key_reqs": [
+    ".NET Core backend",
+    "React frontend",
+    "SQL / relational data basics",
+    "Full-stack web dev (work/studies/projects)",
+    "MS SQL",
+    "Redis / MongoDB / Elasticsearch",
+    "Cloud AWS/Azure/GCP",
+    "Junior 0-2 yrs"
+   ],
+   "gaps": [
+    {
+     "req": ".NET Core backend",
+     "status": "have",
+     "note": "Strong professional C#/.NET at Omwise, but that work is instrument/operator/test interfaces (desktop/ATE), not web backend. Actual .NET Core backend = self-directed ASP.NET Core REST service on Azure (project-only). 'have' is fair for a junior on C# depth + real ASP.NET Core, but it is not professional web-backend experience."
+    },
+    {
+     "req": "React frontend",
+     "status": "have",
+     "note": "Genuinely supported but project-only: Ella Says (Next.js/React/TypeScript). No professional frontend job. Role accepts project experience, so 'have' is valid."
+    },
+    {
+     "req": "SQL / relational data basics",
+     "status": "have",
+     "note": "MySQL at project level (Library Management client-server, other projects). Enough for 'relational basics'. Project-level only."
+    },
+    {
+     "req": "Full-stack web dev (any source)",
+     "status": "have",
+     "note": "Requirement explicitly accepts studies/projects; Ella Says is a real full-stack product. Only gap is no professional web-dev job (project-only) — honestly stated."
+    },
+    {
+     "req": "MS SQL specifically",
+     "status": "partial",
+     "note": "Has MySQL/SQL, not MS SQL. Relational skills transfer but MS SQL itself is unproven. Honest."
+    },
+    {
+     "req": "Redis / MongoDB / Elasticsearch",
+     "status": "missing",
+     "note": "No NoSQL / caching / search-engine experience. Learn-on-the-job for a junior."
+    },
+    {
+     "req": "Cloud AWS/Azure/GCP",
+     "status": "partial",
+     "note": "Azure self-directed (deployed ASP.NET Core service) + cloud coursework + B.Sc capstone pipeline. AWS/GCP coursework only. Not professional cloud depth. Honest."
+    },
+    {
+     "req": "Junior 0-2 yrs",
+     "status": "have",
+     "note": "Junior/new-grad, ~1yr professional at Omwise; matches the max-2-yrs entry level."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 41,
+   "url": "https://hiremetech.com/job/141069519",
+   "employer": "",
+   "title": "Junior AI Developer — Agents & Application Development",
+   "region": "Center (Bnei Brak, Gush Dan)",
+   "base_cv": "Software_AI",
+   "fit": 78,
+   "key_reqs": [
+    "B.Sc in CS/Software Engineering or equivalent",
+    "Academic AI knowledge: ML, Deep Learning, preferably NLP coursework",
+    "Python development familiarity",
+    "Software fundamentals: data structures, algorithms, Git",
+    "(adv) LLM APIs familiarity",
+    "(adv) Agent principles: tool/function calling, RAG",
+    "(adv) Web dev React/Next.js or databases (PostgreSQL)",
+    "(adv) Final-year/personal/open-source projects"
+   ],
+   "gaps": [
+    {
+     "req": "B.Sc CS/Software Engineering degree",
+     "status": "have",
+     "note": "Verified: B.Sc Software Engineering, Braude College 2022-2026, GPA 81."
+    },
+    {
+     "req": "Academic ML / Deep Learning / NLP coursework",
+     "status": "partial",
+     "note": "Has data-mining/ML coursework ONLY. Deep Learning and NLP are not in the profile. Core AI-knowledge req only half-met; do not reframe the missing DL/NLP as a perfect fit."
+    },
+    {
+     "req": "Python development",
+     "status": "have",
+     "note": "Verified: Strong Python - FastAPI RAG bot, JobScan scanner, capstone pipeline."
+    },
+    {
+     "req": "Data structures, algorithms, Git",
+     "status": "have",
+     "note": "Verified: Git is a Strong daily-use skill; DS/algorithms from SE degree."
+    },
+    {
+     "req": "LLM APIs familiarity (advantage)",
+     "status": "have",
+     "note": "Verified genuine: Google Gemini API integration in Ella Says; prompt design."
+    },
+    {
+     "req": "Agent principles: tool/function calling, RAG (advantage)",
+     "status": "partial",
+     "note": "Thin partial: RAG bot IN PROGRESS, not shipped; JobScan is one LLM-as-judge screening prompt, not agent tool/function-calling; AI coding agents are consumer use. No demonstrated tool/function-calling."
+    },
+    {
+     "req": "React/Next.js or PostgreSQL (advantage)",
+     "status": "have",
+     "note": "Met via React/Next.js/TS branch (Ella Says, project-level). No PostgreSQL (correctly not claimed); requirement is OR."
+    },
+    {
+     "req": "Final-year / personal / open-source projects (advantage)",
+     "status": "have",
+     "note": "Verified: B.Sc capstone (Extreme-Weather) + public JobScan on GitHub Actions CI/CD."
+    },
+    {
+     "req": "Graduated with honors (advantage)",
+     "status": "missing",
+     "note": "GPA 81/100 is not honors. Advantage-only, not disqualifying."
+    },
+    {
+     "req": "Short professional software/AI experience up to 1-2 yrs (advantage)",
+     "status": "have",
+     "note": "~1yr at Omwise, but C/C# ATE software - professional dev experience, NOT AI experience."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 36,
+   "url": "https://jobify360.co.il/jobs/4464782967-in",
+   "employer": "KLA",
+   "title": "Software Developer",
+   "region": "North (Migdal HaEmek)",
+   "base_cv": "Hardware_Test_Integration",
+   "fit": 77,
+   "key_reqs": [
+    "3+ years software dev experience OR equivalent via military service / significant academic projects",
+    "Strong C#/.NET and object-oriented design",
+    "Software engineering principles and design patterns",
+    "Multithreaded programming and debugging",
+    "Windows-based application development",
+    "Strong English communication",
+    "Database technologies and SQL (preferred)",
+    "Hardware-integrated systems / industrial automation / semiconductor environments (preferred)"
+   ],
+   "gaps": [
+    {
+     "req": "3+ years software dev experience (or equivalent via military/academic)",
+     "status": "partial",
+     "note": "<1yr professional software (Omwise ~9-10mo). The '3y equivalent' rests on IDF Test & Diagnostics leadership, which was hardware test/diagnostics, NOT software development; plus B.Sc projects. Meets the JD's explicit military/academic carve-out on paper, but is not a genuine 3y software track record and a strict screen may still filter."
+    },
+    {
+     "req": "Strong C#/.NET and object-oriented design",
+     "status": "have",
+     "note": "Verified: C#/.NET is his strongest skill, professional at Omwise (C/C# drivers, .NET operator interfaces); OOP listed in CV Concepts."
+    },
+    {
+     "req": "Software engineering principles and design patterns",
+     "status": "have",
+     "note": "SWE principles solidly backed (B.Sc SWE, 'Software Engineering Methods' 94/100, OOP). 'Design patterns' does not appear on the CV; inferred from degree, not work-demonstrated — acceptable for new-grad but soft."
+    },
+    {
+     "req": "Multithreaded programming and debugging",
+     "status": "partial",
+     "note": "Debugging strongly evidenced (ATE fault diagnosis, cross-layer troubleshooting, 'debugging' in Concepts). Multithreading has ZERO evidence in profile or CV — do not fabricate in tailoring."
+    },
+    {
+     "req": "Windows-based application development",
+     "status": "have",
+     "note": "Verified: CV shows .NET operator/test interfaces and technician GUIs — Windows desktop apps."
+    },
+    {
+     "req": "English communication",
+     "status": "have",
+     "note": "Verified: CV states English - professional working proficiency."
+    },
+    {
+     "req": "Database technologies and SQL (preferred)",
+     "status": "have",
+     "note": "Verified: SQL/MySQL on CV (Library Management System). Project/academic only, no professional DB depth and no PostgreSQL, but genuine exposure that covers this preferred req."
+    },
+    {
+     "req": "Hardware-integrated systems / semiconductor / industrial automation (preferred)",
+     "status": "have",
+     "note": "Verified and strong: ATE, SCPI, I2C, National Instruments, device drivers, hardware-software integration are his core Omwise domain. Semiconductor-specific exposure is adjacent (test/ATE, not fab), correctly noted."
+    }
+   ],
+   "red_flag": "years: 3y nominal, but JD accepts equivalent military/academic experience — Ron qualifies"
+  },
+  {
+   "idx": 33,
+   "url": "https://jobify360.co.il/jobs/4465526888-in",
+   "employer": "eTeacher Group",
+   "title": "AI Innovation Builder",
+   "region": "Center (Tel Aviv-Jaffa)",
+   "base_cv": "Software_AI",
+   "fit": 76,
+   "key_reqs": [
+    "Hands-on building/integrating with AI tools and LLMs",
+    "Familiarity with APIs, AI coding tools, Agents, RAG, Prompt Engineering, MCP",
+    "Low-Code/No-Code platform experience",
+    "Software development background (language-agnostic) + can write code",
+    "Product/business mindset + rapid concept-to-prototype, end-to-end ownership"
+   ],
+   "gaps": [
+    {
+     "req": "Hands-on building/integrating LLMs",
+     "status": "have",
+     "note": "Verified genuine: Ella Says (Gemini full-stack) and JobScan LLM-as-judge are real live integrations; RAG bot in progress. Legit have."
+    },
+    {
+     "req": "AI coding tools (Claude Code/Copilot/Cursor)",
+     "status": "have",
+     "note": "Listed strong; uses daily. Verified."
+    },
+    {
+     "req": "Prompt Engineering",
+     "status": "have",
+     "note": "'Prompt design' in strong skills; exercised in Gemini integration + LLM-as-judge. Supported, though the weakest of the 'have's."
+    },
+    {
+     "req": "APIs / REST + integrations",
+     "status": "have",
+     "note": "REST (project-level), ASP.NET Core (self-directed), Gemini API, instrument protocols. Verified."
+    },
+    {
+     "req": "Software development background, can write code",
+     "status": "have",
+     "note": "Core strength: professional C/C# dev at Omwise plus Python/.NET. Solid."
+    },
+    {
+     "req": "Agents",
+     "status": "partial",
+     "note": "Corrected basis: familiarity is from USING AI coding agents (Claude Code/Cursor), not from JobScan LLM-as-judge (a scoring call, not an agent). No agent/framework building. Partial stands."
+    },
+    {
+     "req": "RAG",
+     "status": "partial",
+     "note": "RAG Support Agent in progress, not shipped. Honest partial; keep as in-progress per Ron's guidance."
+    },
+    {
+     "req": "MCP (Model Context Protocol)",
+     "status": "missing",
+     "note": "No MCP work in profile. Correct."
+    },
+    {
+     "req": "Low-Code/No-Code platforms",
+     "status": "missing",
+     "note": "No such platform experience (Firebase BaaS does not count). Correct — and this is a full headline key requirement, which is why fit was trimmed."
+    },
+    {
+     "req": "Product/business mindset + rapid prototyping, end-to-end ownership",
+     "status": "partial",
+     "note": "End-to-end shipping genuinely demonstrated (SlimeKitten on Steam, JobScan live, Ella Says); explicit business/product framing absent. Partial fair."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 6,
+   "url": "https://www.linkedin.com/jobs/view/4470441408",
+   "employer": "Bellboy Robotics",
+   "title": "Junior Software Engineer",
+   "region": "Center (Tel Aviv-Yafo)",
+   "base_cv": "Backend_FullStack",
+   "fit": 72,
+   "key_reqs": [
+    "Proficiency in Python (production-quality)",
+    "Proficiency in TypeScript",
+    "Back-end systems: APIs, services, database-driven applications",
+    "Front-end development + client-server communication understanding",
+    "Git and modern software development workflows",
+    "CS/SE degree + strong CS fundamentals (DS/algorithms)",
+    "Preferred: robotics/embedded/real-time systems",
+    "Preferred: microservices & distributed systems"
+   ],
+   "gaps": [
+    {
+     "req": "Python proficiency (production-quality)",
+     "status": "have",
+     "note": "Genuine strength (JobScan, RAG/FastAPI in-progress, capstone pipeline), but professional/production code is C/C#, not Python — keep 'have' for proficiency, do not imply professional production Python"
+    },
+    {
+     "req": "TypeScript proficiency",
+     "status": "partial",
+     "note": "Project-only via Ella Says (Next.js/React/TS); no professional TS depth — unchanged"
+    },
+    {
+     "req": "Back-end systems (APIs, services, DB-driven apps)",
+     "status": "partial",
+     "note": "Project-level only: FastAPI (in progress), self-directed ASP.NET Core REST, MySQL, Firebase; professional backend is C/C# instrumentation, not web services — unchanged"
+    },
+    {
+     "req": "Front-end development + client-server communication",
+     "status": "partial",
+     "note": "DOWNGRADED from 'have': rests on the same single Ella Says project that made TypeScript 'partial'; front-end is project-only, one app. Client-server understanding is solid (REST, Firebase, Library client-server), but front-end breadth is thin for 'have'"
+    },
+    {
+     "req": "Git + modern workflows",
+     "status": "have",
+     "note": "Git strong + real CI/CD via GitHub Actions (JobScan) — unchanged"
+    },
+    {
+     "req": "CS/SE degree + CS fundamentals",
+     "status": "have",
+     "note": "B.Sc Software Engineering, Braude (GPA 81/100) — unchanged"
+    },
+    {
+     "req": "Preferred: robotics/embedded/real-time systems",
+     "status": "partial",
+     "note": "Kept 'partial' but reframed: NO robotics specifically and embedded/real-time is academic-only; the real edge is professional ATE/instrumentation, I2C device control, and instrument drivers (hardware/device-comms), which is a legitimate but narrower differentiator"
+    },
+    {
+     "req": "Preferred: microservices & distributed systems",
+     "status": "missing",
+     "note": "Academic exposure only; no professional microservices/distributed work — unchanged"
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 42,
+   "url": "https://jobify360.co.il/jobs/156_5E.E6E-emp",
+   "employer": "CommIT",
+   "title": "Software Engineer",
+   "region": "Center (Petach Tikva)",
+   "base_cv": "Backend_FullStack",
+   "fit": 70,
+   "key_reqs": [
+    "Strong hands-on C# and .NET",
+    "React and/or Java",
+    "Docker / containerized applications",
+    "Python and Node.js familiarity",
+    "Cloud environment, preferably AWS",
+    "Kubernetes, C++, FFmpeg/GStreamer (advantage)"
+   ],
+   "gaps": [
+    {
+     "req": "Strong hands-on C# and .NET",
+     "status": "have",
+     "note": "Genuine professional core: C#/.NET drivers + .NET operator interfaces at Omwise (~1yr), self-directed ASP.NET Core service, Unity/C# shipped game. Strongest match."
+    },
+    {
+     "req": "React and/or Java",
+     "status": "have",
+     "note": "Satisfied but weak: React/Next.js/TS is project-only (Ella Says), Java is academic. No professional web experience. Defensible for junior 'and/or' only."
+    },
+    {
+     "req": "Docker / containerized applications",
+     "status": "missing",
+     "note": "Fully absent (profile: no Docker professional depth). This is a bulleted requirement, not advantage-only, so the miss counts against fit."
+    },
+    {
+     "req": "Python and Node.js familiarity",
+     "status": "partial",
+     "note": "Python strong (JobScan, RAG, capstone); Node.js coursework only (Ron confirms 'only in courses'). Half satisfied."
+    },
+    {
+     "req": "Cloud environment, preferably AWS",
+     "status": "partial",
+     "note": "General cloud met via Azure self-directed + cloud data capstone; AWS specifically is coursework only. Preferred-tech not held."
+    },
+    {
+     "req": "Kubernetes / C++ / FFmpeg / GStreamer (advantageous)",
+     "status": "missing",
+     "note": "Advantage-only; has C not C++, no K8s or media stack. Not disqualifying."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 47,
+   "url": "https://www.linkedin.com/jobs/view/4470969801",
+   "employer": "M.A.P Motorad Automotive Parts LTD",
+   "title": "Developer",
+   "region": "North (Galil Tachton / Lower Galilee Regional Council, North District)",
+   "base_cv": "Backend_FullStack",
+   "fit": 69,
+   "key_reqs": [
+    "Modern programming languages/frameworks for web or enterprise applications",
+    "Version control systems",
+    "Testing practices",
+    "Basic security principles",
+    "Database proficiency",
+    "APIs and system integration",
+    "ERP or inventory management systems (advantageous)",
+    "Automotive or manufacturing background (advantageous)",
+    "B.Sc in CS/Software Engineering"
+   ],
+   "gaps": [
+    {
+     "req": "Modern programming languages/frameworks (web or enterprise apps)",
+     "status": "have",
+     "note": "Genuine: professional C#/.NET at Omwise + strong Python; project-level Next.js/React/TypeScript. Note enterprise-app claim rests on C#/.NET; web is project-only."
+    },
+    {
+     "req": "Version control systems",
+     "status": "have",
+     "note": "Genuine: Git across all projects incl. GitHub Actions CI/CD (JobScan)."
+    },
+    {
+     "req": "Testing practices",
+     "status": "partial",
+     "note": "Genuine but limited: tests+docs in B.Sc capstone (Extreme-Weather Pipeline). No professional software test-suite track record. Do NOT conflate his Omwise ATE work with software-testing practices."
+    },
+    {
+     "req": "Basic security principles",
+     "status": "missing",
+     "note": "DOWNGRADED from partial. No evidence anywhere in profile: not in strong/project skills, and NOT in the explicit coursework list (Java, Node, cloud, embedded, assembly, real-time, data-mining/ML). 'Partial' was an unsupported assumption."
+    },
+    {
+     "req": "Database proficiency",
+     "status": "have",
+     "note": "Defensible at junior level via MySQL client-server Library Mgmt + self-directed ASP.NET Core REST over DB. Caveat: all DB work is academic/self-directed, none professional. User confirmed MySQL (and explicitly NOT PostgreSQL)."
+    },
+    {
+     "req": "APIs and system integration",
+     "status": "have",
+     "note": "Genuine: REST APIs (ASP.NET Core self-directed, JobScan, Ella Says) + professional protocol integration at Omwise (SCPI/I2C/proprietary). Caveat: Omwise integration is hardware-protocol, not enterprise-system integration."
+    },
+    {
+     "req": "ERP or inventory management systems (advantageous)",
+     "status": "missing",
+     "note": "Correct. No ERP; Library Mgmt is inventory-adjacent but not ERP."
+    },
+    {
+     "req": "Automotive or manufacturing background (advantageous)",
+     "status": "partial",
+     "note": "Kept but thin. Omwise ATE/instrumentation software is manufacturing-ADJACENT tooling only; IDF is defense diagnostics. Zero automotive exposure."
+    },
+    {
+     "req": "B.Sc in CS/Software Engineering",
+     "status": "have",
+     "note": "Correct. B.Sc Software Engineering, Braude College 2022-2026 (GPA 81)."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 1,
+   "url": "https://www.amazon.jobs/en/jobs/10491309/2026-graduate-software-dev-engineer",
+   "employer": "Amazon",
+   "title": "2026 Graduate Software Dev Engineer",
+   "region": "Center (Tel Aviv)",
+   "base_cv": "Software_Engineer",
+   "fit": 68,
+   "key_reqs": [
+    "Bachelor's (or higher) in CS/CompEng/STEM, graduated within last 24 months",
+    "Proficiency in >=1 of Java/Python/C++/C#/Go/Rust/TypeScript",
+    "Data structures, algorithms, object-oriented design",
+    "AI/GenAI development tools familiarity",
+    "AWS cloud platforms",
+    "SQL/NoSQL databases",
+    "CI/CD and version control",
+    "Cloud-native architectures, microservices, distributed computing"
+   ],
+   "gaps": [
+    {
+     "req": "B.Sc in CS/Software Engineering (STEM), new grad within 24 months",
+     "status": "have",
+     "note": "Confirmed. B.Sc Software Engineering, Braude, 2022-2026 (GPA 81) - within the new-grad window. Genuinely supported."
+    },
+    {
+     "req": "Proficiency in one of Java/Python/C++/C#/Go/Rust/TypeScript",
+     "status": "have",
+     "note": "Confirmed. Strong C# and Python (both on Amazon's list), plus TypeScript at project level. Well-supported - requirement asks for only one."
+    },
+    {
+     "req": "Data structures, algorithms, object-oriented design",
+     "status": "have",
+     "note": "Kept as 'have' via the SW-Eng degree + C#/.NET and Java OOP project work, BUT flagged: no algorithmic/competitive-programming evidence, which is precisely Amazon's real interview screen. Label satisfies the CV line but understates the risk."
+    },
+    {
+     "req": "AI/GenAI development tools",
+     "status": "have",
+     "note": "Confirmed - genuine standout. Claude Code/Copilot/Cursor daily, Gemini LLM API integration, LLM-as-judge in JobScan. Not overstated."
+    },
+    {
+     "req": "AWS cloud platforms",
+     "status": "partial",
+     "note": "Kept 'partial' but borderline-generous: zero AWS beyond coursework. Rating rests entirely on transferable non-AWS cloud (Azure self-directed ASP.NET Core + Firebase). No AWS-specific experience."
+    },
+    {
+     "req": "SQL/NoSQL databases",
+     "status": "have",
+     "note": "Confirmed. MySQL (Library Management System, academic) + Firebase NoSQL (Ella Says). Genuine but project/academic-level only, not professional."
+    },
+    {
+     "req": "CI/CD and version control",
+     "status": "have",
+     "note": "Confirmed. Git daily; JobScan runs a real GitHub Actions CI/CD pipeline (~every 2h). Well-supported."
+    },
+    {
+     "req": "Cloud-native architectures, microservices, distributed computing",
+     "status": "missing",
+     "note": "DOWNGRADED from 'partial'. No microservices and no distributed-systems architecture: capstone is a batch large-dataset pipeline, 'cloud service' is a single REST app, distributed computing is coursework only. Does not meet the bar for 'partial' on this competency."
+    },
+    {
+     "req": "Open-source contributions",
+     "status": "missing",
+     "note": "Confirmed missing. Has public GitHub projects (JobScan, games) but no external open-source contributions. Not a listed hard requirement."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 37,
+   "url": "https://jobify360.co.il/jobs/f2e0bee770ea596b-id",
+   "employer": "Annapurna Labs Ltd. (Amazon)",
+   "title": "Software Engineer in Test, Graviton Team",
+   "region": "Tel Aviv (Center)",
+   "base_cv": "Hardware_Test_Integration",
+   "fit": 68,
+   "key_reqs": [
+    "Python programming with strong scripting",
+    "Coding in a modern language (Python/Java/C++/C#)",
+    "Object-oriented design",
+    "Build test automation frameworks & tools",
+    "Test case design & test methodologies",
+    "Embedded systems testing",
+    "Bash scripting (preferred)"
+   ],
+   "gaps": [
+    {
+     "req": "Python programming with strong scripting",
+     "status": "have",
+     "note": "Confirmed strong: JobScan multi-source scanner on GitHub Actions, B.Sc capstone data pipeline, RAG/FastAPI (in progress). Genuine."
+    },
+    {
+     "req": "Coding in a modern language (Python/Java/C++/C#)",
+     "status": "have",
+     "note": "Confirmed: C# and C are professional/strong at Omwise; Python strong across projects. OR-list requirement, comfortably met (C++ not held but not needed)."
+    },
+    {
+     "req": "Object-oriented design",
+     "status": "have",
+     "note": "Supported by professional C#/.NET work at Omwise (.NET operator/test interfaces, instrument drivers). Java OOP academic. Defensible as 'have'."
+    },
+    {
+     "req": "Build test automation frameworks & tools",
+     "status": "partial",
+     "note": "Genuine ATE/test-equipment software (cut a test workflow 20->5 min) + CI automation (JobScan on GitHub Actions), but NO software-SDET framework experience (pytest harnesses, etc.). His automation is hardware/ATE-flavored; do not present as software test-framework depth. Partial stands."
+    },
+    {
+     "req": "Test case design & test methodologies",
+     "status": "partial",
+     "note": "Real test-domain background (IDF Test & Diagnostics Team Leader, Omwise ATE fault diagnosis) but this is HARDWARE/ATE test, not software QA methodology (no test-plan/coverage/equivalence-partitioning terminology). Kept partial; flavor mismatch is a genuine gap."
+    },
+    {
+     "req": "Embedded systems testing",
+     "status": "partial",
+     "note": "Professional ATE/instrumentation testing genuinely touches embedded devices (I2C device control, SCPI/NI drivers, works with hardware team). Embedded/firmware itself is coursework-only, but the HW-test experience is real. Partial is fair, not inflated."
+    },
+    {
+     "req": "Bash scripting (preferred)",
+     "status": "missing",
+     "note": "DOWNGRADED from partial. No evidenced Bash — Ron is a Windows/PowerShell user; GitHub Actions run-steps are not demonstrated bash-scripting competence. Preferred-only so not disqualifying, and PowerShell background makes it easy to pick up, but marking it partial overclaimed."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 2,
+   "url": "https://hiremetech.com/job/148287320",
+   "employer": "BioView Ltd.",
+   "title": "Junior Software Developer / QA Automation Engineer",
+   "region": "Center",
+   "base_cv": "Hardware_Test_Integration",
+   "fit": 66,
+   "key_reqs": [
+    "B.Sc. CS/SE or final-year student",
+    "Basic knowledge of C++ and OOP (primary dev language)",
+    "Strong analytical & problem-solving / systematic troubleshooting",
+    "Willingness to do software dev + testing + test automation",
+    "SQL / relational databases (nice)",
+    "Git (nice)",
+    "Python / Java / C# / JavaScript (nice)",
+    "Image processing / computer vision (nice)",
+    "Previous QA / test automation experience (nice)"
+   ],
+   "gaps": [
+    {
+     "req": "B.Sc. in CS/SE or final-year student",
+     "status": "have",
+     "note": "B.Sc Software Engineering, Braude College, 2022-2026 (GPA 81). Genuine."
+    },
+    {
+     "req": "Basic knowledge of C++ and OOP (primary dev language: C++)",
+     "status": "partial",
+     "note": "ZERO C++ experience. Has strong C (procedural) and C#/.NET (heavy OOP). Requirement is only 'basic' and C/C# make ramp-up realistic, BUT C++ is the role's primary day-to-day language, so no direct experience is the single biggest risk. Partial is the honest call - not 'have'."
+    },
+    {
+     "req": "Strong analytical & systematic troubleshooting",
+     "status": "have",
+     "note": "IDF Test & Diagnostics team lead (multidisciplinary ATE fault diagnosis) + Omwise instrumentation debugging. Genuinely strong, well supported."
+    },
+    {
+     "req": "Willingness to do software dev + testing + test automation",
+     "status": "have",
+     "note": "Willingness requirement; also backed by real test-equipment work. Genuine."
+    },
+    {
+     "req": "QA / test automation / software testing experience (nice)",
+     "status": "partial",
+     "note": "DOWNGRADED from 'have'. Real, strong ADJACENT experience: ATE/test-equipment software, IDF test-diagnostics lead, 20->5min workflow cut, JobScan Python CI automation. But this is hardware/instrumentation test engineering + CI - NOT software-QA test-automation frameworks (unit/integration/regression suites). Strong for a hardware+software device shop, not literal software-QA experience. Analyzer's 'have' + 'single biggest differentiator' framing overstated it."
+    },
+    {
+     "req": "SQL / relational databases (nice)",
+     "status": "have",
+     "note": "MySQL at project/academic level only (Library Management System). Adequate for a nice-to-have, but not professional DB work - Ron himself flags no PostgreSQL and MySQL-only."
+    },
+    {
+     "req": "Git (nice)",
+     "status": "have",
+     "note": "Daily use incl. GitHub Actions CI/CD. Genuine."
+    },
+    {
+     "req": "Python / Java / C# / JavaScript (nice)",
+     "status": "have",
+     "note": "C# and Python strong (professional); JS/TS project-level; Java academic. 'Or' list well covered."
+    },
+    {
+     "req": "Image processing / computer vision (nice)",
+     "status": "missing",
+     "note": "No CV/image-processing background. Honestly marked by analyzer; nice-to-have only."
+    },
+    {
+     "req": "Visual Studio (nice)",
+     "status": "have",
+     "note": "Primary IDE for his professional C#/.NET and ASP.NET Core work. Genuine."
+    }
+   ],
+   "red_flag": "Rehovot on-site: long commute from Kiryat Ata (North), though Center is accepted"
+  },
+  {
+   "idx": 32,
+   "url": "https://hiremetech.com/job/148838268",
+   "employer": "NVIDIA",
+   "title": "Firmware QA Engineer - Nvlink program (NVIDIA)",
+   "region": "North (Yokneam)",
+   "base_cv": "Hardware_Test_Integration",
+   "fit": 60,
+   "key_reqs": [
+    "BSc in Computer Science or Electrical/Electronics Engineering",
+    "0-3 years experience (junior)",
+    "Proficient written/spoken English + clear communication",
+    "Python / scripting skills",
+    "QA methodologies and test design",
+    "Design/develop tests + build automation framework capabilities",
+    "Knowledge of networking protocols (Nvlink/interconnect)",
+    "Knowledge of Linux/Windows OS",
+    "Firmware (FW) testing domain"
+   ],
+   "gaps": [
+    {
+     "req": "BSc CS / EE",
+     "status": "have",
+     "note": "B.Sc Software Engineering (Braude, GPA 81). Genuinely CS-adjacent and accepted for QA roles; present as SW-Eng, not implied CS."
+    },
+    {
+     "req": "0-3 years experience",
+     "status": "have",
+     "note": "~1yr Omwise (ATE SW) + IDF Test & Diagnostics team leader. Solid junior, well supported."
+    },
+    {
+     "req": "English + communication",
+     "status": "have",
+     "note": "Assumed baseline for a Braude SW-Eng grad doing professional software work; NOT explicitly evidenced in profile ('no red flag' is not positive evidence). Verify in interview."
+    },
+    {
+     "req": "Python / scripting",
+     "status": "have",
+     "note": "Genuinely strong: JobScan CI/CD automation, FastAPI/RAG, capstone data pipeline. Well supported."
+    },
+    {
+     "req": "QA methodologies / test design",
+     "status": "partial",
+     "note": "Genuine test background (ATE fault-diagnosis, led 7-person Test & Diagnostics team) but this is hardware/ATE test, not formal software-QA methodology (test plans/cases/regression/bug-tracking not evidenced). Drop the JobScan LLM-judge as QA evidence."
+    },
+    {
+     "req": "Design tests + extend automation framework",
+     "status": "partial",
+     "note": "Wrote test interfaces/instrument drivers and automated a 20->5min workflow (real automation), but building/extending a formal test-automation framework is adjacent, not demonstrated."
+    },
+    {
+     "req": "Networking protocols (Nvlink/interconnect)",
+     "status": "missing",
+     "note": "Core domain gap. Has SCPI/I2C/proprietary instrumentation comm, NOT TCP/IP/Ethernet/InfiniBand/Nvlink. Networking is the program's defining domain, so this materially caps fit."
+    },
+    {
+     "req": "Linux/Windows OS",
+     "status": "partial",
+     "note": "Windows/.NET professionally (strong); Linux coursework-only. Half met."
+    },
+    {
+     "req": "Firmware (FW) testing domain",
+     "status": "partial",
+     "note": "Firmware-ADJACENT via C + I2C device control + instrument drivers, but this is ATE/instrumentation work, not firmware verification/QA. Generous-leaning partial; no evidence of actual FW test."
+    }
+   ],
+   "red_flag": "networking/Nvlink interconnect domain gap; NVIDIA saturated per pipeline notes"
+  },
+  {
+   "idx": 5,
+   "url": "https://hiremetech.com/job/148626155",
+   "employer": "The Vault",
+   "title": "Junior Front End Web Developer",
+   "region": "Center (Tel Aviv)",
+   "base_cv": "Backend_FullStack",
+   "fit": 55,
+   "key_reqs": [
+    "Solid understanding of HTML, CSS, JavaScript",
+    "Familiarity with modern front-end frameworks",
+    "Responsive design & cross-browser compatibility",
+    "Translate UI/UX designs into clean, functional interfaces",
+    "Collaborate with developers, designers, product team",
+    "B.Sc in CS/Software Engineering (advantage)",
+    "Interest/experience in cybersecurity or tech (plus)"
+   ],
+   "gaps": [
+    {
+     "req": "Solid understanding of HTML, CSS, JavaScript",
+     "status": "partial",
+     "note": "JS/TS are genuine but rest on ONE project (Ella Says); CSS depth is unevidenced (skills list React/Next/TS/JS, not CSS); all front-end is project-only, not professional. 'Solid' overstates single-project exposure. Downgraded have->partial."
+    },
+    {
+     "req": "Familiarity with modern front-end frameworks",
+     "status": "have",
+     "note": "React + Next.js in a real project (Ella Says) genuinely supports this. Removed analyzer's 'Idea Vault' citation — not in Ron's profile (per memory it is Daniel's app). Ella Says is his ONLY real front-end product."
+    },
+    {
+     "req": "Responsive design & cross-browser compatibility",
+     "status": "missing",
+     "note": "No explicit evidence in profile; analyzer's own note said 'no explicit evidence' yet marked partial. 'Implied by web projects' is not evidence. Downgraded partial->missing."
+    },
+    {
+     "req": "Translate UI/UX designs into clean, functional interfaces",
+     "status": "partial",
+     "note": "Built a functional web UI (Ella Says), but no design-to-code / working-from-mockups / formal UI-implementation experience is stated. Partial kept."
+    },
+    {
+     "req": "Collaborate with developers, designers, product team",
+     "status": "have",
+     "note": "Genuine collaboration: led 7-person IDF team + cross-functional work with hardware team at Omwise. Caveat: engineering cross-functional, not designer/product specifically."
+    },
+    {
+     "req": "B.Sc in CS/Software Engineering",
+     "status": "have",
+     "note": "B.Sc Software Engineering, Braude College, GPA 81/100. Accurate."
+    },
+    {
+     "req": "Interest/experience in cybersecurity or tech",
+     "status": "partial",
+     "note": "Satisfies the 'or tech' clause via his SW/systems background; NO cybersecurity experience. Analyzer's 'security-adjacent' framing of defense-systems/ATE overstates — defense hardware/test is not cybersecurity. It is only a 'plus' requirement."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 3,
+   "url": "https://hiremetech.com/job/143192483",
+   "employer": "",
+   "title": "23372 - Automation Engineer (QA/SDET software test automation)",
+   "region": "Center (Petah Tikva)",
+   "base_cv": "Software_Engineer",
+   "fit": 50,
+   "key_reqs": [
+    "Up to 2 yrs software test-automation development",
+    "Java OR TypeScript (willing to learn the other)",
+    "Mobile UI automation (Appium) or willingness to learn",
+    "API testing / building basic test cases",
+    "OOP & clean coding basics",
+    "Web/mobile fundamentals + HTTP + JSON request/response",
+    "Test design patterns (Page Object Model)",
+    "Basic SQL for data validation",
+    "Git + branching workflows",
+    "CI/CD concepts",
+    "Degree in CS/SE"
+   ],
+   "gaps": [
+    {
+     "req": "Up to 2 yrs software test-automation development",
+     "status": "partial",
+     "note": "Adjacent only. Omwise ATE/instrument automation (C/C#) is hardware/instrument test, and IDF Test & Diagnostics is systems fault-diagnosis leadership — neither is software test automation. JobScan is real automation-software dev (CI/CD, LLM screening) but not test automation. Transferable automation instinct, zero direct software-test-automation framework work."
+    },
+    {
+     "req": "Java OR TypeScript (willing to learn the other)",
+     "status": "have",
+     "note": "TypeScript project-level via one real app (Ella Says, Next.js/React/TS); Java coursework-only. One required language genuinely covered, though TS depth rests on a single project."
+    },
+    {
+     "req": "Mobile UI automation (Appium) or willingness to learn",
+     "status": "missing",
+     "note": "No Appium/mobile test automation. SlimeKitten on Google Play is a Unity game, not test automation. JD accepts willingness to learn."
+    },
+    {
+     "req": "API testing / building basic test cases",
+     "status": "partial",
+     "note": "Builds/consumes REST APIs (ASP.NET Core, Gemini) and capstone included tests, so HTTP/API understanding and some test-writing are real — but no dedicated API test suites, Postman, or QA test-case authoring. Building an API is not testing an API."
+    },
+    {
+     "req": "OOP & clean coding basics",
+     "status": "have",
+     "note": "Strong C#/.NET; solid OOP fundamentals. Genuinely supported."
+    },
+    {
+     "req": "Web/mobile fundamentals + HTTP + JSON handling",
+     "status": "have",
+     "note": "Web + HTTP + JSON solidly covered (Next.js/React/TS + REST/Gemini). Mobile fundamentals are thin (no native/mobile-web; SlimeKitten is Unity), but the web/HTTP/JSON half carries the requirement."
+    },
+    {
+     "req": "Test design patterns (Page Object Model)",
+     "status": "missing",
+     "note": "QA-framework-specific pattern not in profile."
+    },
+    {
+     "req": "Basic SQL for data validation",
+     "status": "have",
+     "note": "MySQL project-level (Library Management System client-server). Basic SQL genuinely covered. Keep to MySQL/SQL only — Ron has no PostgreSQL, do not claim it."
+    },
+    {
+     "req": "Git + branching workflows",
+     "status": "have",
+     "note": "Git across all projects incl. GitHub Actions CI. Supported."
+    },
+    {
+     "req": "CI/CD concepts",
+     "status": "have",
+     "note": "JobScan on GitHub Actions (scheduled CI/CD every ~2h, publishes to Pages). Genuinely strong — his best-supported item for this role."
+    },
+    {
+     "req": "Degree in CS/SE",
+     "status": "have",
+     "note": "B.Sc Software Engineering, Braude College (2022-2026). Supported."
+    },
+    {
+     "req": "Advantages: Selenium / Postman / MongoDB-NoSQL / Agile-Scrum",
+     "status": "missing",
+     "note": "None held (optional advantages). Firebase/Firestore gives minor NoSQL familiarity but is not MongoDB and not enough to claim the advantage."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 44,
+   "url": "https://jobify360.co.il/jobs/8_78409-emp",
+   "employer": "Matrix",
+   "title": "Python Automation Developer (מפתח/ת אוטומציה Python)",
+   "region": "Center (Holon)",
+   "base_cv": "Software_Engineer",
+   "fit": 50,
+   "key_reqs": [
+    "1yr software testing / QA experience",
+    "1yr Python automation development",
+    "Selenium or Playwright (web UI test automation)",
+    "API testing (Postman, Requests)",
+    "SQL database knowledge",
+    "Git",
+    "CI/CD pipelines",
+    "ISTQB (preferred)"
+   ],
+   "gaps": [
+    {
+     "req": "1yr software testing / QA experience",
+     "status": "partial",
+     "note": "Kept partial but the analyzer's note is generous. Zero DIRECT software-QA / E2E-web-test experience. His entire test background is hardware/instrumentation (Omwise ATE test software in C#; IDF ATE fault diagnosis). Genuine test-domain mindset transfers and is a real angle for a junior, but there are no software-QA years. A rewrite must not imply software-QA experience."
+    },
+    {
+     "req": "1yr Python automation development",
+     "status": "partial",
+     "note": "DOWNGRADED from 'have'. Python automation is real but project/academic only: JobScan (GitHub Actions), B.Sc capstone pipeline, RAG (in progress, not shipped). His only professional year is C/C# at Omwise, NOT Python. A '1yr Python automation development' experience bar is not met, and none of the Python is test-framework automation."
+    },
+    {
+     "req": "Selenium or Playwright (web UI test automation)",
+     "status": "missing",
+     "note": "Confirmed. Entirely absent. Core requirement and the main gap. Position as fast-to-learn, never claim."
+    },
+    {
+     "req": "API testing (Postman, Requests)",
+     "status": "partial",
+     "note": "Confirmed partial. Requests-style HTTP consumption in JobScan/RAG and REST API dev (ASP.NET Core, Ella Says), but no Postman and no dedicated API-testing practice. Adjacent, not the skill itself."
+    },
+    {
+     "req": "SQL database knowledge",
+     "status": "have",
+     "note": "Confirmed. MySQL at project level (Library Management System client-server) genuinely meets a 'SQL knowledge' bar. Project/academic only, not professional, which is fine for this junior knowledge requirement. (User steer: keep MySQL, do not claim PostgreSQL.)"
+    },
+    {
+     "req": "Git",
+     "status": "have",
+     "note": "Confirmed. Strong; used across all projects."
+    },
+    {
+     "req": "CI/CD pipelines",
+     "status": "have",
+     "note": "Confirmed but project-scoped: one genuine GitHub Actions workflow (JobScan, scheduled runs + Pages publish). Real hands-on, not professional CI/CD depth. Acceptable 'have' for a junior."
+    },
+    {
+     "req": "ISTQB (preferred)",
+     "status": "missing",
+     "note": "Confirmed. No QA certification; preferred, not required."
+    }
+   ],
+   "red_flag": ""
+  },
+  {
+   "idx": 38,
+   "url": "https://jobify360.co.il/jobs/4460488609-in",
+   "employer": "Veeva Crossix",
+   "title": "QA Automation Engineer - CDH",
+   "region": "Center (Kiryat Ono, also remote)",
+   "base_cv": "Software_Engineer",
+   "fit": 46,
+   "key_reqs": [
+    "Java coding proficiency",
+    "OOP principles",
+    "Test automation (integration/sanity/regression)",
+    "CI/CD tools (Git, Jenkins, JIRA)",
+    "Cloud services familiarity",
+    "Bachelor CS GPA>=83 OR military tech unit"
+   ],
+   "gaps": [
+    {
+     "req": "Java coding proficiency",
+     "status": "partial",
+     "note": "Java is academic/coursework only (Library Mgmt System Java/JavaFX/MySQL) — real code exists but no professional Java. Strong C#/C++ OOP transfers, but this is a Java-centric role, so this is the core weakness, not a minor one."
+    },
+    {
+     "req": "OOP principles",
+     "status": "have",
+     "note": "Genuinely supported: professional .NET/C# OOP at Omwise, plus C++/Java coursework. Legitimate 'have'."
+    },
+    {
+     "req": "Test automation (integration/sanity/regression)",
+     "status": "partial",
+     "note": "His test background is hardware/instrumentation ATE fault-diagnosis (IDF Test & Diagnostics lead; Omwise ATE) plus project-level Python tests — NOT software QA automation frameworks (Selenium/TestNG/API suites). Genuine test mindset, but transferability to software QA automation is limited; partial is generous and must be read as 'test discipline, not QA-automation tooling'."
+    },
+    {
+     "req": "CI/CD tools (Git, Jenkins, JIRA)",
+     "status": "partial",
+     "note": "Git strong and GitHub Actions real (JobScan), but that's 1 of 3 named tools — Jenkins and JIRA are both absent from the profile."
+    },
+    {
+     "req": "Cloud services familiarity",
+     "status": "partial",
+     "note": "Self-directed Azure C# web service + capstone cloud dataset processing + coursework AWS/GCP. Fair for a 'familiarity' bar; no professional cloud depth."
+    },
+    {
+     "req": "Apache Spark (nice-to-have)",
+     "status": "missing",
+     "note": "Not in profile. Correct."
+    },
+    {
+     "req": "AWS S3 / message queues (nice-to-have)",
+     "status": "missing",
+     "note": "AWS coursework only; no S3/SQS hands-on. Correct."
+    },
+    {
+     "req": "Relational databases (nice-to-have)",
+     "status": "have",
+     "note": "Project-level MySQL is genuine (client-server Library Management System). Project/academic only, not professional, but acceptable as 'have' for a nice-to-have."
+    },
+    {
+     "req": "Bachelor CS GPA>=83 OR military tech unit",
+     "status": "partial",
+     "note": "DOWNGRADED from have. GPA 81 fails the 83 branch outright, so the entire eligibility gate rests on interpreting the IDF Test & Diagnostics team-leader role as a 'military tech unit' — plausible but a recruiter judgment call, not a guaranteed qualification. Marking it a clean 'have' concealed that the whole gate hangs on one interpretive branch."
+    }
+   ],
+   "red_flag": "Java coursework-only for a Java-centric role"
+  }
+ ],
+ "skip": [
+  {
+   "idx": 4,
+   "url": "https://experis.co.il/job/237844/",
+   "employer": "",
+   "title": "Automated test stations technician/developer",
+   "region": "Center (task guess) — but \"Enercon\" likely = Enercon Technologies in Migdal HaEmek (North), which Ron also accepts; unverified due to dead link. Not a disqualifier either way.",
+   "fit": 60,
+   "reason": "dead-link"
+  },
+  {
+   "idx": 34,
+   "url": "https://ethosia.co.il/content/software-engineer-3/",
+   "employer": "",
+   "title": "Software Engineer",
+   "region": "Center",
+   "fit": 31,
+   "reason": "senior/years — requires 4+ years professional developer experience"
+  },
+  {
+   "idx": 35,
+   "url": "https://jobify360.co.il/jobs/37_43315-emp",
+   "employer": "Ness",
+   "title": "Python Developer",
+   "region": "Jerusalem",
+   "fit": 40,
+   "reason": "region: Jerusalem (Ron rejects Jerusalem)"
+  },
+  {
+   "idx": 39,
+   "url": "https://jobify360.co.il/jobs/171_6699-emp",
+   "employer": "Consist",
+   "title": "CI/CD Developer (מפתח CI/CD)",
+   "region": "Jerusalem",
+   "fit": 52,
+   "reason": "region (Jerusalem — Ron rejects)"
+  },
+  {
+   "idx": 40,
+   "url": "https://jobify360.co.il/jobs/466_575800-emp",
+   "employer": "Synergy Climate Northern Ltd. (Arad Group)",
+   "title": "Senior Embedded Engineer",
+   "region": "North - Yokneam Illit",
+   "fit": 33,
+   "reason": "senior"
+  },
+  {
+   "idx": 43,
+   "url": "https://jobify360.co.il/jobs/0bea4f513b3569ed-id",
+   "employer": "InspHire",
+   "title": "PHP Full Stack Web Developer",
+   "region": "Haifa (North)",
+   "fit": 15,
+   "reason": "foundation - zero PHP (mandatory core language)"
+  },
+  {
+   "idx": 45,
+   "url": "https://experis.co.il/job/240598/",
+   "employer": "",
+   "title": "מפתח בדיקות אוטומציה (Automation Testing Developer)",
+   "region": "Center (Tel Aviv / Petah Tikva)",
+   "fit": 60,
+   "reason": "dead-link (Experis jobStatus = \"deleted\"; posting appears closed)"
+  },
+  {
+   "idx": 46,
+   "url": "https://experis.co.il/job/235869/",
+   "employer": "",
+   "title": "Automation Testing Developer - Real-Time Embedded (defense company, Ashdod)",
+   "region": "South (Ashdod)",
+   "fit": 42,
+   "reason": "region (Ashdod/South, ~1h40m on-site from Kiryat Ata)"
+  }
+ ]
+}
