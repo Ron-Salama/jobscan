@@ -73,6 +73,10 @@ select.st{background:#0f1115;color:#e7e9ee;border:1px solid #2b3240;border-radiu
 select.st[data-v="Sent"]{border-color:#3a7d52;color:#8ff0b8}
 select.st[data-v="Interview"]{border-color:#7d6a2a;color:#ffd98f}
 select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
+input.note{background:#0f1115;color:#e7e9ee;border:1px solid #2b3240;border-radius:6px;padding:3px 6px;font-size:12px;width:150px}
+input.note:focus{border-color:#4a7bb5;outline:none;width:230px}
+input.note::placeholder{color:#5a6474}
+input.note.has{border-color:#3a7d52}
 </style></head><body>
 <header>
   <h1>🎯 Ron — Job Radar <span class="meta" id="updated"></span></h1>
@@ -98,11 +102,12 @@ select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
 <main><table id="t"><thead><tr>
 <th data-k="date">Pull</th><th data-k="match">Match</th><th data-k="verdict">Verdict</th><th data-k="region">Region</th>
 <th data-k="flags">Flags</th><th data-k="company">Company</th><th data-k="role">Role</th>
-<th data-k="cv">CV</th><th data-k="src">Src</th><th>Status</th><th>Open</th>
+<th data-k="cv">CV</th><th data-k="src">Src</th><th>Status</th><th>Open</th><th>Notes</th>
 </tr></thead><tbody id="b"></tbody></table></main>
 <script>
 const JOBS = __DATA__;
 const STATUSES = __STATUSES__;  /* Ron's applied/skip marks (global default; a local change overrides) */
+const NOTES = __NOTES__;  /* per-role free-text notes (global default; a local edit overrides) */
 document.getElementById("updated").textContent = "· updated __UPDATED__";
 let sortK="match", sortDir=-1;
 const el=id=>document.getElementById(id);
@@ -112,6 +117,8 @@ function mmeter(j){const m=mval(j);const c=m>=70?'#8ff0b8':m>=45?'#ffd98f':'#ff9
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"New";}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
+function getNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u])||"";}
+function setNote(u,v){try{localStorage.setItem("nt:"+u,v);}catch(e){}}
 function pills(j){let s="";if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
@@ -119,9 +126,11 @@ const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return 
 const dcount={}; JOBS.forEach(j=>{dcount[j.date]=(dcount[j.date]||0)+1;});
 [...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=d;o.textContent=fmtD(d)+" pull ("+(dcount[d]||0)+")";el("date").appendChild(o);});
 function exportStatuses(){
-  const data={}; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(k&&k.indexOf("st:")===0) data[k.slice(3)]=localStorage.getItem(k);}
-  const n=Object.keys(data).length;
-  const blob=new Blob([JSON.stringify({version:1,exported:new Date().toISOString(),count:n,statuses:data})],{type:"application/json"});
+  const data={},notes={}; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(!k)continue;
+    if(k.indexOf("st:")===0) data[k.slice(3)]=localStorage.getItem(k);
+    else if(k.indexOf("nt:")===0){const v=localStorage.getItem(k); if(v) notes[k.slice(3)]=v;}}
+  const n=Object.keys(data).length, m=Object.keys(notes).length;
+  const blob=new Blob([JSON.stringify({version:1,exported:new Date().toISOString(),count:n,statuses:data,notes:notes})],{type:"application/json"});
   const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
   a.download="jobscan-status-"+new Date().toISOString().slice(0,10)+".json"; a.click();
 }
@@ -133,12 +142,19 @@ function importStatuses(file){
       const cur=localStorage.getItem("st:"+u);
       if(cur&&cur!=="New"&&cur!==v){skip++;continue;}   // don't overwrite an existing decision on this device
       if(v!=="New"){localStorage.setItem("st:"+u,v); n++;}}
-    render(); alert("Imported "+n+" status marks"+(skip?"; kept "+skip+" you'd already set here":"")+".");
+    const nt=d.notes||{}; let nn=0;
+    for(const u in nt){const v=nt[u]; if(!v) continue;
+      const curn=localStorage.getItem("nt:"+u);
+      if(curn&&curn!==v){continue;}                     // don't clobber a note already written on this device
+      localStorage.setItem("nt:"+u,v); nn++;}
+    render(); alert("Imported "+n+" status marks"+(nn?" and "+nn+" notes":"")+(skip?"; kept "+skip+" you'd already set here":"")+".");
   }catch(err){alert("Import failed: "+err.message);}};
   r.readAsText(file);
 }
 function stChange(sel){setSt(sel.dataset.u, sel.value);render();}
 window.stChange=stChange;
+function ntChange(inp){setNote(inp.dataset.u, inp.value);inp.classList.toggle("has",!!inp.value);}
+window.ntChange=ntChange;
 function render(){
   const q=el("q").value.toLowerCase(),dt=el("date").value,rg=el("region").value,mf=+el("fit").value,
         st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,
@@ -163,7 +179,8 @@ function render(){
     <td class="muted">${esc(j.cv)}</td>
     <td class="muted">${esc(j.src)}</td>
     <td><select class="st" data-v="${s}" data-u="${esc(j.url)}" onchange="stChange(this)">${opts}</select></td>
-    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}</td></tr>`;}).join("");
+    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}</td>
+    <td><input class="note${getNote(j.url)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(getNote(j.url))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
 ["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","treadyonly","jobifyonly","hidefiltered","hidedone"].forEach(id=>el(id).addEventListener("input",render));
@@ -175,11 +192,13 @@ render();
 def build_page(jobs, updated):
     os.makedirs(DOCS, exist_ok=True)
     try:
-        statuses = json.load(open(CURATION_JSON, encoding="utf-8")).get("statuses", {})
+        cur = json.load(open(CURATION_JSON, encoding="utf-8"))
+        statuses = cur.get("statuses", {}); notes = cur.get("notes", {})
     except Exception:
-        statuses = {}
+        statuses = {}; notes = {}
     html = (PAGE.replace("__DATA__", json.dumps(jobs, ensure_ascii=False))
                 .replace("__STATUSES__", json.dumps(statuses, ensure_ascii=False))
+                .replace("__NOTES__", json.dumps(notes, ensure_ascii=False))
                 .replace("__UPDATED__", updated))
     J.atomic_write(INDEX_HTML, html)
 
