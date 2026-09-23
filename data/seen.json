@@ -1987,7 +1987,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2558
+"last": 2510
 },
 "experis": {
 "max": 600,
@@ -1995,11 +1995,11 @@
 },
 "drushim": {
 "max": 143,
-"last": 141
+"last": 142
 },
 "greenhouse": {
 "max": 137,
-"last": 134
+"last": 133
 },
 "amazon": {
 "max": 100,
@@ -2023,7 +2023,7 @@
 },
 "builtin": {
 "max": 48,
-"last": 45
+"last": 46
 },
 "linkedin": {
 "max": 48,
@@ -2034,8 +2034,8 @@
 "last": 120
 },
 "techjob": {
-"max": 94,
-"last": 94
+"max": 96,
+"last": 96
 },
 "alljobs": {
 "max": 120,
@@ -2051,11 +2051,11 @@
 },
 "apple": {
 "max": 79,
-"last": 35
+"last": 79
 },
 "camtek": {
 "max": 40,
-"last": 37
+"last": 38
 }
 }
 }
