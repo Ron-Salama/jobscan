@@ -1507,6 +1507,17 @@ def src_comeet():
         ("Arpeely",            "57.001", "7512BE615F3249541D91D4415F31D4441D9EA2"),
         ("AT&T Israel",        "38.00A", "83A315C29223996399641D039963996107418AE"),
         ("Israel Tech Guard",  "29.009", "92936F65271401F125212521B7B929527136F6"),
+        # added 2026-09-23 (board-discovery, verified IL positions):
+        ("Earnix",             "93.00B", "39B1207AD1AD1736736120739B193D736"),
+        ("Personetics",        "83.00A", "38A11B2A9E018C60153C714A9E38A"),
+        ("Cellebrite",         "C3.00F", "3CF130BF3C0B6D16DA1AA9B6D130B16DA"),
+        ("Cognyte",            "F2.009", "2F9EDD2F92F911D61AC12F914CF11D62F9"),
+        ("Silverfort",         "54.007", "45715B315B38AE22B8D051A0A457D051E61"),
+        ("Innoviz",            "52.004", "25495012A0104C012A0104C6FCBA40"),
+        ("Fiverr",             "60.002", "62188018812631018862C4188"),
+        ("Gett",               "A0.002", "A2288A232A014432A28814432A"),
+        ("Allot",              "C4.009", "4C917ED1CB699217ED04C92B11217F2B11"),
+        ("Moovit",             "63.007", "36711036CE11031E9F146A1B38367A356CE"),
     ]
 
     API = "https://www.comeet.co/careers-api/2.0/company/{uid}/positions?token={token}&details=true"
@@ -1753,6 +1764,8 @@ def src_workday():
         "NVIDIA":  ("nvidia",  "wd5", "NVIDIAExternalCareerSite"),
         "Intel":   ("intel",   "wd1", "External"),
         "Philips": ("philips", "wd3", "jobs-and-careers"),
+        "Unity":   ("unitytech", "wd1", "Unity"),      # added 2026-09-23
+        "Snyk":    ("snyk", "wd103", "External"),       # added 2026-09-23
         # Palo Alto Networks is NOT on Workday (uses SmartRecruiters) -> omitted.
     }
 
@@ -2460,3 +2473,34 @@ def src_camtek():
 
     return out[:CAP]
 
+
+
+# ===== Lever (open JSON API) — added 2026-09-23 =====
+def src_lever():
+    """Lever public postings API: GET api.lever.co/v0/postings/{slug}?mode=json -> JSON array.
+    Registry of Israeli-employer Lever slugs; filter to Israel by categories.location."""
+    import json, re, time, urllib.request
+    UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+    SLUGS = ["walkme"]   # grows as more Israeli Lever boards are confirmed
+    ILC = ("israel", "tel aviv", "herzliya", "haifa", "yokneam", "ramat", "netanya",
+           "petah", "raanana", "kfar", "jerusalem", "beer", "hod hasharon", "caesarea")
+    out = []
+    for slug in SLUGS:
+        try:
+            req = urllib.request.Request("https://api.lever.co/v0/postings/%s?mode=json" % slug,
+                                         headers={"User-Agent": UA, "Accept": "application/json"})
+            arr = json.loads(urllib.request.urlopen(req, timeout=20).read().decode("utf-8"))
+        except Exception:
+            continue
+        for p in arr:
+            cats = p.get("categories", {}) or {}
+            loc = cats.get("location") or ""
+            if not any(k in loc.lower() for k in ILC):
+                continue
+            desc = re.sub("<[^>]+>", " ", (p.get("descriptionPlain") or p.get("description") or ""))
+            out.append({"source": "lever:" + slug, "sid": p.get("id", ""), "title": p.get("text", ""),
+                        "company": slug, "city": loc, "url": p.get("hostedUrl", ""),
+                        "level": "", "years_min": None, "years_max": None, "tech": [],
+                        "desc": desc[:1500], "active": True})
+        time.sleep(0.2)
+    return out
