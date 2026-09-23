@@ -1987,7 +1987,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2510
+"last": 2530
 },
 "experis": {
 "max": 600,
@@ -1995,11 +1995,11 @@
 },
 "drushim": {
 "max": 143,
-"last": 142
+"last": 141
 },
 "greenhouse": {
 "max": 137,
-"last": 133
+"last": 129
 },
 "amazon": {
 "max": 100,
@@ -2023,11 +2023,11 @@
 },
 "builtin": {
 "max": 48,
-"last": 46
+"last": 43
 },
 "linkedin": {
-"max": 48,
-"last": 48
+"max": 49,
+"last": 49
 },
 "cps": {
 "max": 120,
@@ -2042,8 +2042,8 @@
 "last": 120
 },
 "comeet": {
-"max": 112,
-"last": 112
+"max": 114,
+"last": 114
 },
 "workday": {
 "max": 28,
@@ -2051,11 +2051,11 @@
 },
 "apple": {
 "max": 79,
-"last": 79
+"last": 78
 },
 "camtek": {
-"max": 40,
-"last": 38
+"max": 41,
+"last": 41
 }
 }
 }
