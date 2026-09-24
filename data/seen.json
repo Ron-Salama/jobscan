@@ -8252,12 +8252,90 @@
 "u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000151664219",
 "src": "checkpoint",
 "city": "tel aviv"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|70c7d475bbf8": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|9e1cb4a213c6": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|676e59f556a4": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"linkedin:4462722022": {
+"t": "Embedded Software Engineer , EFA Annapurna",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"amazon web services|embedded software engineer efa annapurna|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4462722022",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4466990468": {
+"t": "AI Platform Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"tairc|ai platform engineer|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4466990468",
+"src": "linkedin",
+"city": "or akiva haifa district"
+},
+"linkedin:4442639520": {
+"t": "Experienced Machine Learning Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"mobileye|experienced machine learning engineer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4442639520",
+"src": "linkedin",
+"city": "ramat gan tel aviv district"
+},
+"linkedin:4464769511": {
+"t": "Experienced BI Consultant & Data Developer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"experda com|experienced bi consultant data developer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4464769511",
+"src": "linkedin",
+"city": "givat shmuel center district"
+},
+"linkedin:4452227417": {
+"t": "דרוש/ה מדריך/ה מנוסה באפיון, אוטומציה והטמעת פתרונות AI בארג",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"cob|דרוש ה מדריך ה מנוסה באפיון אוטומציה והטמעת פתרונות ai בארגונים|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4452227417",
+"src": "linkedin",
+"city": "tel aviv district"
 }
 },
 "source_stats": {
 "hiremetech": {
-"max": 2571,
-"last": 2571
+"max": 2573,
+"last": 2573
 },
 "experis": {
 "max": 600,
@@ -8272,12 +8350,12 @@
 "last": 287
 },
 "amazon": {
-"max": 166,
-"last": 166
+"max": 167,
+"last": 167
 },
 "ethosia": {
 "max": 120,
-"last": 120
+"last": 0
 },
 "dialog": {
 "max": 201,
@@ -8293,15 +8371,15 @@
 },
 "builtin": {
 "max": 48,
-"last": 42
+"last": 43
 },
 "linkedin": {
 "max": 609,
-"last": 602
+"last": 604
 },
 "alljobs": {
 "max": 681,
-"last": 670
+"last": 672
 },
 "comeet": {
 "max": 272,
@@ -8342,7 +8420,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 6
+"zero_runs": 7
 },
 "ashby": {
 "max": 47,
@@ -8385,13 +8463,14 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-24T19:46+03:00",
+"last_scan": "2026-09-24T21:46+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
 "day": "2026-09-24",
 "keys": [
-"kaltura:never"
+"kaltura:never",
+"ethosia:dark"
 ]
 },
 "ref_digest": {
