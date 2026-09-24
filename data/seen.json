@@ -8330,12 +8330,36 @@
 "u": "https://www.linkedin.com/jobs/view/4452227417",
 "src": "linkedin",
 "city": "tel aviv district"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|080f27cbc2cf": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|38e5d1d14864": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"alljobs:8783757": {
+"t": "C ++ Embedded Developer | Real-Time Systems",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"חברה חסויה|c embedded developer real time|North": {
+"seen": "2026-09-25",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8783757",
+"src": "alljobs",
+"city": "נתניה חדרה פרדס חנה כרכור קיסריה חיפה"
 }
 },
 "source_stats": {
 "hiremetech": {
-"max": 2573,
-"last": 2573
+"max": 2581,
+"last": 2581
 },
 "experis": {
 "max": 600,
@@ -8343,19 +8367,19 @@
 },
 "drushim": {
 "max": 309,
-"last": 303
+"last": 302
 },
 "greenhouse": {
 "max": 296,
 "last": 287
 },
 "amazon": {
-"max": 167,
-"last": 167
+"max": 168,
+"last": 168
 },
 "ethosia": {
 "max": 120,
-"last": 0
+"last": 120
 },
 "dialog": {
 "max": 201,
@@ -8371,7 +8395,7 @@
 },
 "builtin": {
 "max": 48,
-"last": 43
+"last": 42
 },
 "linkedin": {
 "max": 609,
@@ -8379,7 +8403,7 @@
 },
 "alljobs": {
 "max": 681,
-"last": 672
+"last": 674
 },
 "comeet": {
 "max": 272,
@@ -8387,7 +8411,7 @@
 },
 "workday": {
 "max": 693,
-"last": 692
+"last": 691
 },
 "apple": {
 "max": 85,
@@ -8399,7 +8423,7 @@
 },
 "lever": {
 "max": 158,
-"last": 157
+"last": 155
 },
 "qualityai": {
 "max": 66,
@@ -8420,7 +8444,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 7
+"zero_runs": 8
 },
 "ashby": {
 "max": 47,
@@ -8428,11 +8452,11 @@
 },
 "eightfold": {
 "max": 54,
-"last": 54
+"last": 53
 },
 "oracle_hcm": {
 "max": 45,
-"last": 43
+"last": 42
 },
 "smartrecruiters": {
 "max": 42,
@@ -8444,7 +8468,7 @@
 },
 "checkpoint": {
 "max": 103,
-"last": 102
+"last": 101
 },
 "meta": {
 "max": 8,
@@ -8463,14 +8487,13 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-24T21:46+03:00",
+"last_scan": "2026-09-25T02:33+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
-"day": "2026-09-24",
+"day": "2026-09-25",
 "keys": [
-"kaltura:never",
-"ethosia:dark"
+"kaltura:never"
 ]
 },
 "ref_digest": {
