@@ -7934,12 +7934,270 @@
 "u": "https://www.linkedin.com/jobs/view/4459832498",
 "src": "linkedin",
 "city": "north district"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|ef0e3ec41c3d": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|e0ee14183f37": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|bd936bf4bae4": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"mobileye|experienced deep learning algorithm developer object perception group|Center": {
+"seen": "2026-09-24",
+"u": "https://jobs.eu.lever.co/mobileye/a1d4788f-68d7-46bc-97c4-04c1599f7ff4",
+"src": "lever:mobileye",
+"city": "ramat gan"
+},
+"hiremetech:149025658": {
+"t": "Junior C++ Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|cpp engineer|caesarea|56387e554dc4": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/149025658",
+"src": "hiremetech",
+"city": "caesarea"
+},
+"hiremetech:149025748": {
+"t": "מפתח/ת BI מנוסה לרמת גן - ניסיון עד שנתיים",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|מפתח ת bi מנוסה לרמת גן ניסיון עד שנתיים|ramat gan|0fb3e0a5f97f": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/149025748",
+"src": "hiremetech",
+"city": "ramat gan"
+},
+"experis:8335": {
+"t": "Experienced RT Embedded Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"drushim:38489557": {
+"t": "DEVOPS מנוסה לארגון פיננסי במרכז הארץ",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"דב הלפרין יועצים hms|devops מנוסה לארגון פיננסי במרכז הארץ|Center": {
+"seen": "2026-09-24",
+"u": "https://www.drushim.co.il/job/38489557/0e0c64c0/",
+"src": "drushim",
+"city": "376 רמת גן ramat gan 539120 34 824785 32 068424 2"
+},
+"drushim:38430676": {
+"t": "V&V Engineer לחברת מדיקל מובילה בחיפה!",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"gav|v v engineer לחברת מדיקל מובילה בחיפה|North": {
+"seen": "2026-09-24",
+"u": "https://www.drushim.co.il/job/38430676/e5eef811/",
+"src": "drushim",
+"city": "690 חיפה haifa 539095 34 989571 32 7940463 21"
+},
+"dialog:94727": {
+"t": "מהנדס/ת V&V ו-QA",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-24"
+},
+"|מהנדס ת v v ו qa|השרון|581b07a14e15": {
+"seen": "2026-09-24",
+"u": "https://www.dialog.co.il/high-tech/jobs/jobpage?positionId=94727",
+"src": "dialog",
+"city": "השרון"
+},
+"builtin:11351756": {
+"t": "Junior Mobile Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"gini apps|mobile developer|Center": {
+"seen": "2026-09-24",
+"u": "https://builtin.com/job/junior-mobile-developer/11351756",
+"src": "builtin",
+"city": "herzliya"
+},
+"linkedin:4369678841": {
+"t": "Full Stack Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-24"
+},
+"comet|full stack engineer|Unknown": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4369678841",
+"src": "linkedin",
+"city": ""
+},
+"linkedin:4467832147": {
+"t": "Networking QA and Automation Engineer, Network Systems",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"nvidia|networking qa and automation engineer network|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4467832147",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4460689369": {
+"t": "CL QA Test Engineer and Lab Infrastructure Owner",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"nvidia|cl qa test engineer and lab infrastructure owner|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4460689369",
+"src": "linkedin",
+"city": "yokneam ilit north district"
+},
+"linkedin:4451422799": {
+"t": "DDR Validation Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"google|ddr validation engineer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4451422799",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4451437304": {
+"t": "DDR Validation Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"google|ddr validation engineer|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4451437304",
+"src": "linkedin",
+"city": "haifa district"
+},
+"linkedin:4460095315": {
+"t": "DPU Performance Validation Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"nvidia|dpu performance validation engineer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4460095315",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4460041147": {
+"t": "CPU Design for Test Engineer, Google Cloud",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"google|cpu design test engineer google cloud|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4460041147",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4449319565": {
+"t": "Front-End Integration Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"nvidia|front end integration engineer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4449319565",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4460050054": {
+"t": "CPU Design for Test Engineer, Google Cloud",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"google|cpu design test engineer google cloud|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4460050054",
+"src": "linkedin",
+"city": "haifa district"
+},
+"linkedin:4411549131": {
+"t": "Final Integration Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"kla|final integration engineer|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4411549131",
+"src": "linkedin",
+"city": "migdal haemeq north district"
+},
+"alljobs:8744382": {
+"t": "דרוש.ה DevOps מנוסה לארגון פיננסי במרכז הארץ",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"hms הלפרין יועצים|דרוש ה devops מנוסה לארגון פיננסי במרכז הארץ|Center": {
+"seen": "2026-09-24",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8744382",
+"src": "alljobs",
+"city": "רמת גן"
+},
+"pwc:739": {
+"t": "AI Engineer - JB-739",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-24"
+},
+"pwc next|ai engineer jb 739|Center": {
+"seen": "2026-09-24",
+"u": "https://pwc-careersite.hunterhrms.com/job?jid=739",
+"src": "pwc",
+"city": "tel aviv"
+},
+"pwc:709": {
+"t": "מפתח.ת למידה ותפעול הדרכה מנוסה - JB-709",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-24"
+},
+"pwc|מפתח ת למידה ותפעול הדרכה מנוסה jb 709|Center": {
+"seen": "2026-09-24",
+"u": "https://pwc-careersite.hunterhrms.com/job?jid=709",
+"src": "pwc",
+"city": "tel aviv"
 }
 },
 "source_stats": {
 "hiremetech": {
-"max": 2559,
-"last": 2559
+"max": 2571,
+"last": 2571
 },
 "experis": {
 "max": 600,
@@ -7947,7 +8205,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 308
+"last": 306
 },
 "greenhouse": {
 "max": 296,
@@ -7975,7 +8233,7 @@
 },
 "builtin": {
 "max": 48,
-"last": 45
+"last": 44
 },
 "linkedin": {
 "max": 609,
@@ -7983,11 +8241,11 @@
 },
 "alljobs": {
 "max": 681,
-"last": 671
+"last": 672
 },
 "comeet": {
 "max": 272,
-"last": 272
+"last": 253
 },
 "workday": {
 "max": 693,
@@ -8003,7 +8261,7 @@
 },
 "lever": {
 "max": 158,
-"last": 158
+"last": 157
 },
 "qualityai": {
 "max": 66,
@@ -8024,7 +8282,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 4
+"zero_runs": 5
 },
 "ashby": {
 "max": 47,
@@ -8061,9 +8319,13 @@
 "sap": {
 "max": 4,
 "last": 4
+},
+"pwc": {
+"max": 15,
+"last": 15
 }
 },
-"last_scan": "2026-09-24T16:14+03:00",
+"last_scan": "2026-09-24T17:30+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
@@ -8071,5 +8333,13 @@
 "keys": [
 "kaltura:never"
 ]
+},
+"ref_digest": {
+"https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/FC-Verification-Engineer_JR2021916-1": "2026-09-24",
+"t:nvidia|fc verification engineer|North": "2026-09-24",
+"t:nvidia|fc verification engineer|*": "2026-09-24",
+"https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Data-Center-Engineer--HPC-and-AI_JR2019312": "2026-09-24",
+"t:nvidia|data center engineer hpc and ai|North": "2026-09-24",
+"t:nvidia|data center engineer hpc and ai|*": "2026-09-24"
 }
 }
