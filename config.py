@@ -18,6 +18,10 @@ NORTH = {"haifa","krayot","kiryat ata","kiryat bialik","kiryat motzkin","kiryat 
  # added 2026-09-24 (audit BUG 10): places + district names that fell through to Center
  "misgav","binyamina","or akiva","rosh pina","rosh pinna","tivon","kiryat tivon","safed","tzfat",
  "zefat","north district","northern district","northern","haifa district","galilee","atlit",
+ # added 2026-09-24 (LinkedIn rows 'Galil Tachton', 'Tel Hai', 'Ein Harod' read as Center)
+ "galil tachton","galil elyon","hagalil","tel hai","kfar giladi","ein harod","jezreel","golan",
+ "katzrin","qatzrin","metula","kfar vradim",
+ "גליל תחתון","גליל עליון","גליל מערבי","תל חי","כפר גלעדי","עין חרוד","גולן","קצרין","מטולה","כפר ורדים",
  # Hebrew (every Hebrew location used to become Center)
  "חיפה","הצפון","מחוז הצפון","מחוז צפון","קריות","הקריות","קרית אתא","קריית אתא","ביאליק",
  "קרית ביאליק","קריית ביאליק","מוצקין","קרית מוצקין","קריית מוצקין","קרית ים","קריית ים",
