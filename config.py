@@ -73,7 +73,7 @@ REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-a
 PAY_TIERS = {"multinational": (22, 27), "defense": (19, 23), "hightech": (18, 22),
              "outsourcing": (16, 19), "traditional": (15, 19), "unknown": (16, 21)}
 # (GIANTS below = the multinational / big-tech tier)
-PAY_DEFENSE = ["rafael","רפאל","elbit","אלביט","israel aerospace","iai","התעשייה האווירית","elisra","plasan","tomer"]
+PAY_DEFENSE = ["rafael","רפאל","elbit","אלביט","israel aerospace","iai","התעשייה האווירית","elisra","plasan","tomer","drs rada","rada"]
 PAY_OUTSOURCING = ["yael","korentec","קורן טק","k-test","matrix","ness","experis","malam","מלם","dataway","דאטה וויי",
  "allstarsit","elad","אלעד מערכות","qpoint","sela","john bryce","logica","לוגיקה","bagira","בגירה","jobsseek",
  "comblack","webbs","וובס","oz software","עוז תוכנה","ethosia","gotfriends","nisha","dialog","דיאלוג","g stat"]

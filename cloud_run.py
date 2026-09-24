@@ -210,12 +210,12 @@ function render(){
     <td class="muted" title="${esc(j.paytip||'')}">${esc(j.pay||'')}</td>
     <td><span class="pill ${j.region==='North'?'n':j.region==='Unknown'?'u':'c'}">${esc(j.region)}</span></td>
     <td>${pills(j)}</td>
-    <td>${esc(j.company)}</td>
+    <td>${esc(j.company)}${j.company_listed?' <span class="muted" title="listed on Jobify as: '+esc(j.company_listed)+'">(via Jobify)</span>':''}</td>
     <td>${esc(j.role)}${j.loc?' <span class="muted">· '+esc(j.loc)+'</span>':''}</td>
     <td class="muted">${esc(j.cv)}</td>
     <td class="muted">${esc(j.src)}</td>
     <td><select class="st" data-v="${s}" data-u="${esc(j.url)}" onchange="stChange(this)">${opts}</select></td>
-    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}</td>
+    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}${j.orig?'<br><a href="'+esc(j.orig)+'" target="_blank" rel="noopener" title="the same job on the employer&#39;s own site - apply here">company ↗</a>':''}${j.srcurl&&j.srcurl!==j.orig?'<br><a href="'+esc(j.srcurl)+'" target="_blank" rel="noopener" title="the original job-board posting Jobify copied">source ↗</a>':''}</td>
     <td><input class="note${getNote(j.url)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(getNote(j.url))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
@@ -528,6 +528,7 @@ def apply_curation(alljobs, cur=None):
     rescued, rcanon = _norm_map(cur.get("rescued"))
     tready, _ = _norm_map(cur.get("tailor_ready"))   # roles Claude has triaged + picked a base CV for (badge 🎯)
     important, icanon = _norm_map(cur.get("important"))   # Ron's pinned roles (📌 badge, top of page, never dropped)
+    origin, _ = _norm_map(cur.get("origin"))   # aggregator (Jobify) row -> real employer + original / company-site links
     statuses = _norm_values(cur.get("statuses"))
     divergent_verdicts(verdicts, jobify, rescued)
     have = {_nu(r.get("url")) for r in alljobs}
@@ -589,6 +590,15 @@ def apply_curation(alljobs, cur=None):
         meta = jobify.get(k) or rescued.get(k)
         if isinstance(meta, dict):
             _overlay_meta(r, meta)
+        og = origin.get(k)
+        if isinstance(og, dict):
+            # Jobify often shows a reposting program / legal entity instead of the employer
+            # ('סינרגיה אקלימית צפונית' reposts Arad, NVIDIA...): show the real one, keep the listed name
+            emp = (og.get("employer") or "").strip()
+            if emp and emp != (r.get("company") or "").strip():
+                r["company_listed"] = r.get("company", ""); r["company"] = emp
+            if og.get("direct_url"): r["orig"] = og["direct_url"]
+            if og.get("source_url"): r["srcurl"] = og["source_url"]
         if pick_cv and not (r.get("cv") or "").strip():
             # an injected role with no cv in its entry (or an old row) gets the title-based pick
             try: r["cv"] = pick_cv(r.get("role") or "", "") or ""
