@@ -8192,6 +8192,66 @@
 "u": "https://pwc-careersite.hunterhrms.com/job?jid=709",
 "src": "pwc",
 "city": "tel aviv"
+},
+"hiremetech:149035518": {
+"t": "Full Stack Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|full stack developer|tel aviv|f1d882a56059": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/149035518",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"linkedin:4469760202": {
+"t": "Full Stack Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"qed science|full stack developer|Unknown": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4469760202",
+"src": "linkedin",
+"city": ""
+},
+"linkedin:4469772131": {
+"t": "Security Software Engineer — Container Network Security",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"check point software|security software engineer container network security|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4469772131",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"alljobs:8832820": {
+"t": "מהנדס /ת DevOps למערכות Embedded וסייבר לחברת הייטק בירושלים",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"גב מערכות|מהנדס ת devops למערכות embedded וסייבר לחברת הייטק בירושלים|Center": {
+"seen": "2026-09-24",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8832820",
+"src": "alljobs",
+"city": "בית שמש ירושלים מעלה אדומים מודיעין עילית אריאל"
+},
+"checkpoint:1664219": {
+"t": "Security Software Engineer — Container Network Security",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-24"
+},
+"check point|security software engineer container network security|Center": {
+"seen": "2026-09-24",
+"u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000151664219",
+"src": "checkpoint",
+"city": "tel aviv"
 }
 },
 "source_stats": {
@@ -8205,11 +8265,11 @@
 },
 "drushim": {
 "max": 309,
-"last": 306
+"last": 303
 },
 "greenhouse": {
 "max": 296,
-"last": 289
+"last": 287
 },
 "amazon": {
 "max": 166,
@@ -8233,23 +8293,23 @@
 },
 "builtin": {
 "max": 48,
-"last": 44
+"last": 42
 },
 "linkedin": {
 "max": 609,
-"last": 600
+"last": 602
 },
 "alljobs": {
 "max": 681,
-"last": 672
+"last": 670
 },
 "comeet": {
 "max": 272,
-"last": 253
+"last": 271
 },
 "workday": {
 "max": 693,
-"last": 693
+"last": 692
 },
 "apple": {
 "max": 85,
@@ -8282,11 +8342,11 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 5
+"zero_runs": 6
 },
 "ashby": {
 "max": 47,
-"last": 47
+"last": 46
 },
 "eightfold": {
 "max": 54,
@@ -8302,7 +8362,7 @@
 },
 "google": {
 "max": 107,
-"last": 107
+"last": 105
 },
 "checkpoint": {
 "max": 103,
@@ -8325,7 +8385,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-24T17:30+03:00",
+"last_scan": "2026-09-24T19:46+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
