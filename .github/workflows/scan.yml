@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "0 */2 * * *"   # every 2 hours (UTC). GitHub may delay under load.
   workflow_dispatch: {}      # lets you run it manually from the Actions tab
+  push:                      # a curation edit reaches the page right away: rebuild only (no scan, no alerts)
+    branches: [main]
+    paths: ["data/curation.json"]
 
 permissions:
   contents: write            # allow committing data/ + docs/ back
@@ -17,31 +20,49 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main          # a queued run must build on the LATEST main, not its stale trigger commit
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Rule regression tests
+        run: if [ -d tests ]; then python -m pytest -q tests; fi
       - name: Run scan
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python cloud_run.py
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            # curation.json changed: re-apply it to the existing jobs.json + rebuild the page
+            JOBSCAN_NO_ALERT=1 python cloud_run.py --rebuild-only
+          else
+            python cloud_run.py
+          fi
       - name: Commit results
         run: |
           git config user.name "jobscan-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data docs
-          git commit -m "scan $(date -u +%FT%TZ)" || echo "no changes to commit"
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then kind="rebuild"; else kind="scan"; fi
+          git commit -m "$kind $(date -u +%FT%TZ)" || echo "no changes to commit"
           # Reconcile with anything pushed while this run was scanning. merge -X ours
           # keeps THIS scan's regenerated data/docs on any conflict, while still pulling
           # in non-conflicting changes (e.g. curation.json). Retry the push a few times
-          # so an overlapping manual push can never make a scan fail to publish.
+          # so an overlapping manual push can never make a scan fail to publish - and if
+          # every attempt fails, FAIL the job so the Telegram failure alert below fires
+          # (seen.json was not published, so the next run would re-alert the same roles).
+          pushed=0
           for i in 1 2 3 4 5; do
             git fetch origin main || true
-            git merge -X ours --no-edit origin/main || true
-            git push && break
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; }
+            if git push origin HEAD:main; then pushed=1; break; fi
             echo "push retry $i"; sleep 5
           done
+          if [ "$pushed" != "1" ]; then
+            echo "::error::push failed after 5 attempts - results were NOT published"
+            exit 1
+          fi
       - name: Alert on run failure
         if: failure()
         env:
