@@ -7,34 +7,73 @@ REGISTRY     = r"D:\jobscan\seen.json"
 SUMMARY_DIR  = r"D:\jobscan\daily"
 
 # ---- location rules (drop Jerusalem + South per Ron 2026-09-17) ----
+# Matched by jobscan.region_of() as WHOLE tokens (English: word-bound; Hebrew: letter-bound,
+# allowing the one/two-letter prefixes ו/ה/ב/ל/מ/ש/כ), after splitting the location on , / | ;
+# so short names like 'עכו' / 'arad' / 'omer' never match inside other words.
 NORTH = {"haifa","krayot","kiryat ata","kiryat bialik","kiryat motzkin","kiryat yam","kiryat haim",
  "yokneam","yoqneam","migdal haemek","migdal ha'emek","karmiel","carmiel","nazareth","natzrat",
  "afula","tiberias","akko","acre","nahariya","nesher","tirat carmel","caesarea","hadera",
  "pardes hanna","zichron","zikhron","sarid","beit shean","bet shean","tefen","migdal tefen",
- "tamra","sakhnin","nof hagalil","kiryat shmona","maalot","shlomi","yavne'el","gush segev"}
-SOUTH = {"beer sheva","be'er sheva","beersheba","ashkelon","ashdod","kiryat gat","netivot",
- "sderot","ofakim","dimona","eilat","yeruham","rahat","arad","lehavim","meitar","omer","gedera"}
-JERUSALEM = {"jerusalem","yerushalayim","har hotzvim","maale adumim","mevaseret"}
+ "tamra","sakhnin","nof hagalil","kiryat shmona","maalot","shlomi","yavne'el","gush segev",
+ # added 2026-09-24 (audit BUG 10): places + district names that fell through to Center
+ "misgav","binyamina","or akiva","rosh pina","rosh pinna","tivon","kiryat tivon","safed","tzfat",
+ "zefat","north district","northern district","northern","haifa district","galilee","atlit",
+ # Hebrew (every Hebrew location used to become Center)
+ "חיפה","הצפון","מחוז הצפון","מחוז צפון","קריות","הקריות","קרית אתא","קריית אתא","ביאליק",
+ "קרית ביאליק","קריית ביאליק","מוצקין","קרית מוצקין","קריית מוצקין","קרית ים","קריית ים",
+ "קרית חיים","קריית חיים","יקנעם","יוקנעם","כרמיאל","נשר","טירת כרמל","טירת הכרמל","עכו",
+ "נהריה","מגדל העמק","עפולה","נצרת","נוף הגליל","טבריה","תפן","מגדל תפן","משגב","קיסריה",
+ "חדרה","זכרון יעקב","זיכרון יעקב","בנימינה","אור עקיבא","ראש פינה","צפת","טבעון",
+ "קרית טבעון","קריית טבעון","קרית שמונה","קריית שמונה","מעלות","שלומי","בית שאן","סחנין",
+ "טמרה","פרדס חנה","הגליל","עמק יזרעאל","חוף הכרמל","עתלית"}
+# (deliberately NOT bare 'צפון'/'דרום'/'גליל': 'צפון תל אביב', 'דרום תל אביב', 'גליל ים' are Center)
+SOUTH = {"beer sheva","be'er sheva","beer-sheva","be'er-sheva","beersheba","ashkelon","ashdod",
+ "kiryat gat","netivot","sderot","ofakim","dimona","eilat","yeruham","rahat","arad","lehavim",
+ "meitar","omer","gedera","south district","southern district","negev",
+ "באר שבע","באר-שבע","הדרום","מחוז הדרום","מחוז דרום","אשדוד","אשקלון","קרית גת","קריית גת",
+ "דימונה","אילת","נתיבות","שדרות","אופקים","ירוחם","רהט","ערד","להבים","מיתר","הנגב"}
+JERUSALEM = {"jerusalem","yerushalayim","har hotzvim","maale adumim","ma'ale adumim","mevaseret",
+ "beit shemesh","bet shemesh","jerusalem district",
+ "ירושלים","מבשרת","מבשרת ציון","מעלה אדומים","בית שמש","הר חוצבים"}
+# Clearly outside Israel (builtin/LinkedIn/giant boards leak these) -> dropped.
+ABROAD = {"germany","munich","berlin","frankfurt","india","gurugram","gurgaon","bangalore",
+ "bengaluru","hyderabad","pune","chennai","noida","usa","united states","new york","san francisco",
+ "california","seattle","austin","boston","chicago","london","united kingdom","uk","england",
+ "poland","warsaw","krakow","ukraine","kyiv","kiev","romania","bucharest","cyprus","limassol",
+ "portugal","lisbon","spain","madrid","barcelona","france","paris","netherlands","amsterdam",
+ "canada","toronto","singapore","japan","tokyo","china","shanghai","australia","sydney",
+ "ireland","dublin","serbia","belgrade","bulgaria","sofia","czech republic","prague","hungary",
+ "budapest","switzerland","zurich","austria","vienna","sweden","stockholm","taiwan","korea",
+ "seoul","vietnam","philippines","mexico","brazil","argentina"}
+# location strings that only say "Israel" (or "anywhere") carry no region -> Unknown
+REGION_GENERIC = {"israel","ישראל","il","isr","כל הארץ","all israel","multiple locations"}
 # everything else that is clearly a real city -> Center; unknown -> Unknown (kept, flagged)
-DROP_REGIONS = {"South","Jerusalem"}
+DROP_REGIONS = {"South","Jerusalem","Abroad"}
 
+# Both company lists below are matched by jobscan.company_is() as WHOLE words of the company
+# name (never raw substrings: 'sap' must not hit 'Sapiens', 'meta' not 'Metalab', 'intel' not
+# 'Intelligo'); names of 6+ letters also match a glued slug ('paloaltonetworks', 'pricewaterhousecoopers').
 # ---- referral companies: LOUD flag on good match, quiet 'maybe' on reach ----
 REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-alto","apple","pwc","pricewaterhouse"]
 
 # ---- giants: always surfaced (scanned via their own ATS too) ----
 GIANTS = ["google","meta","facebook","amazon","aws","microsoft","apple","nvidia","intel","mobileye",
- "qualcomm","ibm","cisco","samsung","broadcom","marvell","western digital","sandisk","dell","hp ",
- "hpe","oracle","sap","salesforce","paypal","ebay","booking","wix","monday","checkpoint","check point",
+ "qualcomm","ibm","cisco","samsung","broadcom","marvell","western digital","sandisk","dell","hp",
+ "hpe","hewlett packard","oracle","sap","salesforce","paypal","ebay","booking","wix","monday","checkpoint","check point",
  "nice","cyberark","jfrog","similarweb","taboola","appsflyer","payoneer","fiverr","lightricks","philips","camtek","palo alto"]
 
 # ---- Greenhouse boards (open JSON API) confirmed for Israeli employers ----
+# 2026-09-24: 'gong'/'wiz' 404 -> live boards are 'gongio'/'wizinc'; 'monday' 404 (moved to Ashby).
 GREENHOUSE_SLUGS = ["similarweb","jfrog","melio","payoneer","riskified","taboola","appsflyer",
- "lightricks","fireblocks","gong","wiz","monday",
+ "lightricks","fireblocks","gongio","wizinc",
  # added 2026-09-23 (probed live, confirmed Israel jobs):
  "catonetworks","transmitsecurity","axonius","forter","yotpo","orcasecurity","augury",
  "island","lightrun","descope",
  # added 2026-09-23 (board-discovery, confirmed Israel jobs):
- "bringg","tipaltisolutions","nextinsurance66","atbayjobs","aidocmedical","playtikaltd"]  # 404s skipped gracefully
+ "bringg","tipaltisolutions","nextinsurance66","atbayjobs","aidocmedical","playtikaltd"]  # a 404 is logged + counted, then skipped
+# display name for slugs that aren't the company's name (only for boards added after rows existed,
+# so existing company|title dedup keys don't change)
+GREENHOUSE_NAMES = {"gongio":"Gong","wizinc":"Wiz"}
 
 # ---- Comeet public boards (company -> {uid, token}); grows over time (v2) ----
 COMEET_BOARDS = {
@@ -52,7 +91,18 @@ TITLE_DEV = ["developer","software","full stack","fullstack","full-stack","backe
  # added 2026-09-22 from real dropped-role analysis:
  "prompt engineer","ml engineer","machine learning engineer","sre","site reliability",
  "sdk","react native","platform engineer","cloud engineer","integration engineer","data platform",
- "mobile developer","founding engineer","software architect"]
+ "mobile developer","founding engineer","software architect",
+ # added 2026-09-24 (audit BUG 8): Ron's core test / integration / SW-FW lane had no terms.
+ # (deliberately NOT bare 'integration'/'integrat' -> 'Technical Support & Integrations Engineer';
+ #  NOT bare 'verification' (chip DV) or 'linux' (sysadmin) -> Ron's judgment calls)
+ "integrator","system integration","hw/sw","s/w","mlops",
+ "labview","teststand","software verification","system verification","sw verification",
+ "אינטגרציה","אינטגרטור","שילובים","ולידציה","ואלידציה","מבדקים",'צב"ד',"צב״ד","וריפיקציה"]
+# Title terms checked WORD-BOUND (jobscan._has_word): as substrings 'sw' hits 'swift'/'switch',
+# 'ate' hits 'private'/'state', and 'test engineer'/'test product' hit 'Pentest Engineer'/'Pentest Product'.
+TITLE_DEV_WORDS = ["sw","fw","ate",
+ "test engineer","test engineering","testing engineer","test product","test and product",
+ "test equipment","test system","test systems","development in test","test development"]
 
 # JD-content safety net: if a TITLE misses TITLE_DEV but the JD contains this many of these
 # programming/framework signals, the role is put in the REVIEW BUCKET (not dropped, not on the
@@ -61,14 +111,25 @@ DEVSIG = ["python","java","c++","c#","c sharp",".net","javascript","typescript",
  "node ","angular","vue","backend","back-end","back end","frontend","front-end","full stack","fullstack",
  "rest api","restful","microservice","sql","nosql","docker","kubernetes","linux","ci/cd","embedded",
  "firmware","oop","object-oriented","spring","django","flask","golang"," go ","kotlin","git ","גיט",
- "שפת תכנות","פיתוח תוכנה","אלגוריתמ","כתיבת קוד","מיקרו-שירות","ווב"]
+ "שפת תכנות","פיתוח תוכנה","אלגוריתמ","כתיבת קוד","מיקרו-שירות","ווב",
+ # added 2026-09-24 (audit ADD 5): Ron's ATE / instrument-control / test-tool vocabulary.
+ # Only feeds the jd-signal bucket rescue, never the tracker.
+ "labview","teststand","scpi","gpib","visa ","modbus","rs232","rs-232","wpf","winforms",
+ "multithread","instrument"]
 DEVSIG_MIN = 3
 # but never rescue these clearly-non-dev titles even if their JD name-drops tools:
-DEVSIG_NONDEV = ["analyst","manager","student","intern","support","sales","marketing","recruit","hr ",
+# (student/intern titles are excluded via jobscan.is_student_title - word-bound, so that
+#  'internal'/'international' no longer block a rescue)
+DEVSIG_NONDEV = ["analyst","manager","support","sales","marketing","recruit","hr ",
  "mechanical","chemical","physicist","physics","biolog","account","finance","operations","logistics",
  "procurement","customer success","teacher","technician","pre-sale","presale","field engineer",
  "process engineer","quality engineer","application engineer","mechanic","optic","pcb"," rf ",
- "network administrator","noc","help desk","helpdesk","tier 1","system administrator","sysadmin"]
+ "network administrator","noc","help desk","helpdesk","tier 1","system administrator","sysadmin",
+ # Hebrew non-dev engineering / business titles (Experis/AllJobs/Drushim)
+ "מכונות","מכני","כימי","אזרחי","בניין","תעשייה וניהול","ייצור","תהליכים","רכש","לוגיסטיקה",
+ "מכירות","שיווק","גיוס","כספים","חשבונ","טכנאי","איכות","חומרים","אווירו",
+ "מהנדס/ת ביצוע ","מהנדס ביצוע ",   # site/construction engineer (trailing space: not 'ביצועים' = performance)
+ "שירות שטח","field service","manufacturing","board design"]
 
 # ---- junior / early-career title signals (EN + HE), recognized from the TITLE ----
 # These mark a role as junior even when the source gives no level field and the JD
@@ -95,19 +156,36 @@ FOUNDATION_SKIP = ["rtl","vlsi","asic"," uvm","systemverilog","specman"," dft","
  "hw serdes","spiv","phy layer",
  # networking / NOS specialization he doesn't have:
  "sonic","networking protocol"," l2 "," l3 ","l2/l3","data plane","control plane"," sai ",
- " nos ","switch asic","routing protocol","bgp","ospf"]
+ " nos ","switch asic","routing protocol","bgp","ospf",
+ # added 2026-09-24 (audit ADD 4): chip-DV / silicon terms, needed before any 'verification'
+ # title term (classify() checks this list word-bound, so short 'rtl'/'asic'/'uvm' are safe)
+ "pre-silicon","pre silicon","presilicon","post silicon","formal verification","cpu verification",
+ "digital verification","emulation verification","uvm","verilog","vhdl"]
+# JD words that mark a *verification* title as chip DV (checked only for verification titles)
+DV_JD = ["uvm","systemverilog","system verilog","verilog","vhdl","rtl","asic","pre-silicon",
+ "formal verification","design verification","specman"]
 
-SENIOR_TITLE = ["senior","sr.","sr ","lead","principal","staff","architect","team lead","teamlead",
- "manager","head of","vp ","director","chief","expert","מנהל","בכיר","ראש צוות"]
+# Senior markers in the TITLE. Substrings on purpose ('lead' must catch 'Team Leader'/'Leadership';
+# Hebrew inflections מנהלת/בכירה). The ambiguous English stems live in SENIOR_TITLE_WORDS and are
+# matched WORD-BOUND ('Platform Architecture', 'Expertise', 'Staffing', 'MVP' are not senior).
+SENIOR_TITLE = ["senior","sr.","sr ","lead","principal","team lead","teamlead",
+ "manager","head of","director","מנהל","בכיר","ראש צוות"]
+SENIOR_TITLE_WORDS = ["architect","architects","expert","experts","staff","vp","chief"]
 
-STUDENT_MARK = ["student","intern","internship","סטודנט","מתמח","משרת סטודנט","הכשרה"]
+# Student/intern markers - reference list only. Match titles with jobscan.is_student_title()
+# (word-bound, TITLE only), never as substrings and never on JD text: 'intern' is inside
+# 'internal'/'international', 'מתמחה' in a JD means 'specializing', 'הכשרה' = 'training provided'.
+# 'graduate'/'new grad'/'בוגר' are JUNIOR (see JUNIOR_MARK), not student.
+STUDENT_MARK = ["student","intern","interns","internship","co-op","trainee","סטודנט","משרת סטודנט"]
 
-# ---- CV variants (must match the tracker's CVS list / his files) ----
+# ---- CV variants: Ron's current set (Desktop\Ron - CVs\SUPER_DUPER_FINAL\Ron_Salama_<name>.pdf) ----
+# picked by jobscan.pick_cv(): from the TITLE first; JD keyword counts only for generic titles.
 CV = {
- "ai":"Ron Salama - CV (Software & AI).pdf",
- "backend":"Ron Salama - CV (Backend & Full-Stack).pdf",
- "embedded":"Ron Salama - CV (Firmware & Embedded).pdf",
- "clow":"Ron Salama - CV (C & Low-Level).pdf",
- "test":"Ron Salama - CV (Hardware & Test).pdf",
- "sysint":"Ron Salama - CV (Systems Integration).pdf",
+ "test":"Hardware_Test_Integration",
+ "ai":"Software_AI",
+ "backend":"Backend_FullStack",
+ "clow":"C_Systems",
+ "embedded":"Firmware_Embedded",
+ "gametech":"GameTech_TechnicalArt",
+ "general":"Ron_Salama_CV",
 }
