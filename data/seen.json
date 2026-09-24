@@ -7694,12 +7694,252 @@
 "u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8831282",
 "src": "alljobs",
 "city": "תל אביב יפו"
+},
+"|software performance engineer|yokneam|a19d87bd3bfa": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/146690932",
+"src": "hiremetech",
+"city": "yokneam"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|9e1cb4a213c6": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|54f6d9f1ea57": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|785d8090379e": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"hiremetech:148994391": {
+"t": "Junior QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|qa automation engineer|tel aviv|da16a3d12ace": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/148994391",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149025613": {
+"t": "Junior C++ Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|cpp engineer|caesarea|fefc4b40372d": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/149025613",
+"src": "hiremetech",
+"city": "caesarea"
+},
+"hiremetech:149025407": {
+"t": "Junior Mobile Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|mobile developer|herzliya|e250554f5d7d": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/149025407",
+"src": "hiremetech",
+"city": "herzliya"
+},
+"hiremetech:149021328": {
+"t": "Full-Stack Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|full stack developer|tel aviv|af5832ce8a96": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/149021328",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149001547": {
+"t": "AI Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|ai engineer|tel aviv|57229e914469": {
+"seen": "2026-09-24",
+"u": "https://hiremetech.com/job/149001547",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"drushim:38532459": {
+"t": "לחברת UCT דרוש/ה מתכנת/ת CMM- נוף הגליל",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"fluid solutions uct|לחברת uct דרוש ה מתכנת ת cmm נוף הגליל|North": {
+"seen": "2026-09-24",
+"u": "https://www.drushim.co.il/job/38532459/b94d24c1/",
+"src": "drushim",
+"city": "753 נוף הגליל nof hagalil 539132 35 324812 32 711539 26"
+},
+"drushim:38389389": {
+"t": "מפתח/ת אוטומציה (SDET / Automation Developer)",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"one city|מפתח ת אוטומציה|North": {
+"seen": "2026-09-24",
+"u": "https://www.drushim.co.il/job/38389389/4c358525/",
+"src": "drushim",
+"city": "690 חיפה haifa 539095 34 989571 32 7940463 21"
+},
+"drushim:38532022": {
+"t": "טכנאי/ת אוטומציה",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"ש שסטוביץ|טכנאי ת אוטומציה|North": {
+"seen": "2026-09-24",
+"u": "https://www.drushim.co.il/job/38532022/5a00ecb3/",
+"src": "drushim",
+"city": "637 קיסריה caesarea 539153 34 904544 32 519016 28"
+},
+"linkedin:4434176305": {
+"t": "Junior C++ Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"harmonic|cpp engineer|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4434176305",
+"src": "linkedin",
+"city": "caesarea haifa district"
+},
+"linkedin:4469719722": {
+"t": "Java Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"mobile group|java software engineer|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4469719722",
+"src": "linkedin",
+"city": "hadera haifa district"
+},
+"linkedin:4469719895": {
+"t": "Full stack developer C# .NET &WPF",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"galitechonline|full stack developer csharp dotnet wpf|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4469719895",
+"src": "linkedin",
+"city": "hadera haifa district"
+},
+"linkedin:4469731174": {
+"t": "Junior Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"confidential careers|software developer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4469731174",
+"src": "linkedin",
+"city": "center district"
+},
+"linkedin:4471427217": {
+"t": "System Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"rafael advanced defense|software engineer|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4471427217",
+"src": "linkedin",
+"city": "kiryat bialik haifa district"
+},
+"linkedin:4469708297": {
+"t": "Junior QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"tlvtech|qa automation engineer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4469708297",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4460609210": {
+"t": "Experienced Software Linux Integration Engineer - OS team",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"mobileye|experienced software linux integration engineer os team|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4460609210",
+"src": "linkedin",
+"city": "petah tikva center district"
+},
+"linkedin:4460996006": {
+"t": "PHY/Radio Validation Engineer - Kfar-Netter - Israel",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"qualcomm|phy radio validation engineer kfar netter|Center": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4460996006",
+"src": "linkedin",
+"city": "kfar netter center district"
+},
+"linkedin:4469681110": {
+"t": "Test Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"tower semiconductor|test engineer|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4469681110",
+"src": "linkedin",
+"city": "migdal haemek north district"
+},
+"linkedin:4459832498": {
+"t": "ATE Development",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"yael korentec technologies|ate development|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4459832498",
+"src": "linkedin",
+"city": "north district"
 }
 },
 "source_stats": {
 "hiremetech": {
-"max": 2558,
-"last": 2531
+"max": 2559,
+"last": 2559
 },
 "experis": {
 "max": 600,
@@ -7707,11 +7947,11 @@
 },
 "drushim": {
 "max": 309,
-"last": 309
+"last": 308
 },
 "greenhouse": {
 "max": 296,
-"last": 296
+"last": 289
 },
 "amazon": {
 "max": 166,
@@ -7727,7 +7967,7 @@
 },
 "nisha": {
 "max": 55,
-"last": 54
+"last": 31
 },
 "gotfriends": {
 "max": 386,
@@ -7739,7 +7979,7 @@
 },
 "linkedin": {
 "max": 609,
-"last": 608
+"last": 600
 },
 "alljobs": {
 "max": 681,
@@ -7750,24 +7990,24 @@
 "last": 272
 },
 "workday": {
-"max": 689,
-"last": 688
+"max": 693,
+"last": 693
 },
 "apple": {
 "max": 85,
-"last": 85
+"last": 82
 },
 "camtek": {
 "max": 49,
 "last": 30
 },
 "lever": {
-"max": 155,
-"last": 155
+"max": 158,
+"last": 158
 },
 "qualityai": {
 "max": 66,
-"last": 66
+"last": 65
 },
 "lemonade": {
 "max": 16,
@@ -7784,27 +8024,27 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 3
+"zero_runs": 4
 },
 "ashby": {
-"max": 45,
-"last": 45
+"max": 47,
+"last": 47
 },
 "eightfold": {
-"max": 52,
-"last": 52
+"max": 54,
+"last": 54
 },
 "oracle_hcm": {
 "max": 45,
-"last": 45
+"last": 43
 },
 "smartrecruiters": {
 "max": 42,
-"last": 41
+"last": 34
 },
 "google": {
-"max": 106,
-"last": 106
+"max": 107,
+"last": 107
 },
 "checkpoint": {
 "max": 103,
@@ -7823,7 +8063,7 @@
 "last": 4
 }
 },
-"last_scan": "2026-09-24T10:08+03:00",
+"last_scan": "2026-09-24T16:14+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
