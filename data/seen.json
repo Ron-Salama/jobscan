@@ -7628,12 +7628,36 @@
 "u": "https://www.metacareers.com/jobs/2316600655751692/",
 "src": "metacareers:meta",
 "city": "tel aviv"
+},
+"alljobs:8824306": {
+"t": "מפתח.ת אלגוריתמים מנוסה ב- C++",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|מפתח ת אלגוריתמים מנוסה ב cpp|גליל תחתון|e42e1eb36100": {
+"seen": "2026-09-24",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8824306",
+"src": "alljobs",
+"city": "גליל תחתון"
+},
+"alljobs:8816510": {
+"t": "מהנדס.ת תוכנה RT Embedded",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"|מהנדס ת תוכנה rt embedded|גליל תחתון|23b87a17a747": {
+"seen": "2026-09-24",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8816510",
+"src": "alljobs",
+"city": "גליל תחתון"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2548
+"last": 2549
 },
 "experis": {
 "max": 600,
@@ -7676,8 +7700,8 @@
 "last": 609
 },
 "alljobs": {
-"max": 678,
-"last": 678
+"max": 681,
+"last": 681
 },
 "comeet": {
 "max": 271,
@@ -7718,7 +7742,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 1
+"zero_runs": 2
 },
 "ashby": {
 "max": 45,
@@ -7757,7 +7781,7 @@
 "last": 4
 }
 },
-"last_scan": "2026-09-24T04:59+03:00",
+"last_scan": "2026-09-24T05:18+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0
 }
