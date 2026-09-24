@@ -7652,20 +7652,62 @@
 "u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8816510",
 "src": "alljobs",
 "city": "גליל תחתון"
+},
+"|devops infra cloud engineer|rehovot|89c30c9a32cd": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/143194017",
+"src": "hiremetech",
+"city": "rehovot"
+},
+"linkedin:4471427100": {
+"t": "Software Developer For Hardware Systems",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"rafael advanced defense|software developer hardware|North": {
+"seen": "2026-09-24",
+"u": "https://www.linkedin.com/jobs/view/4471427100",
+"src": "linkedin",
+"city": "kiryat bialik haifa district"
+},
+"alljobs:8821539": {
+"t": "salesforce Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-24"
+},
+"מלם תים|salesforce developer|Center": {
+"seen": "2026-09-24",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8821539",
+"src": "alljobs",
+"city": "לוד"
+},
+"alljobs:8831282": {
+"t": "מפתח CRM Dynamics לארגון מוביל",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-24"
+},
+"ingima|מפתח crm dynamics לארגון מוביל|Center": {
+"seen": "2026-09-24",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8831282",
+"src": "alljobs",
+"city": "תל אביב יפו"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2558,
-"last": 2549
+"last": 2531
 },
 "experis": {
 "max": 600,
 "last": 600
 },
 "drushim": {
-"max": 308,
-"last": 308
+"max": 309,
+"last": 309
 },
 "greenhouse": {
 "max": 296,
@@ -7697,19 +7739,19 @@
 },
 "linkedin": {
 "max": 609,
-"last": 609
+"last": 608
 },
 "alljobs": {
 "max": 681,
-"last": 681
+"last": 671
 },
 "comeet": {
-"max": 271,
-"last": 271
+"max": 272,
+"last": 272
 },
 "workday": {
 "max": 689,
-"last": 689
+"last": 688
 },
 "apple": {
 "max": 85,
@@ -7720,8 +7762,8 @@
 "last": 30
 },
 "lever": {
-"max": 153,
-"last": 153
+"max": 155,
+"last": 155
 },
 "qualityai": {
 "max": 66,
@@ -7742,7 +7784,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 2
+"zero_runs": 3
 },
 "ashby": {
 "max": 45,
@@ -7753,12 +7795,12 @@
 "last": 52
 },
 "oracle_hcm": {
-"max": 44,
-"last": 44
+"max": 45,
+"last": 45
 },
 "smartrecruiters": {
 "max": 42,
-"last": 42
+"last": 41
 },
 "google": {
 "max": 106,
@@ -7766,7 +7808,7 @@
 },
 "checkpoint": {
 "max": 103,
-"last": 103
+"last": 102
 },
 "meta": {
 "max": 8,
@@ -7781,7 +7823,13 @@
 "last": 4
 }
 },
-"last_scan": "2026-09-24T05:18+03:00",
+"last_scan": "2026-09-24T10:08+03:00",
 "alert_queue": [],
-"alert_fail_streak": 0
+"alert_fail_streak": 0,
+"source_alerts_sent": {
+"day": "2026-09-24",
+"keys": [
+"kaltura:never"
+]
+}
 }
