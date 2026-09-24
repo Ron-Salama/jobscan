@@ -325,11 +325,15 @@ _YNUM = r"(?<![\d.])(\d{1,2}(?:\.\d)?)"
 _YRANGE = re.compile(_YNUM + r"\s*\+?\s*(?:-|to\b|עד)\s*(\d{1,2}(?:\.\d)?)\s*\+?\s*" + _YRS)
 _YSINGLE = re.compile(_YNUM + r"\s*\+?\s*" + _YRS)
 # a number right after these is a ceiling / timeline / company history, not a requirement
+# (parse_years takes the MAX, so a missed 'operating for 12 years' would out-rank the real '1-2 years')
 _YBLOCK_BEFORE = re.compile(r"(?:\bup\s+to|\bwithin|(?<![א-ת])עד|\bfor\s+over|\bover\s+the\s+(?:past|last)"
                             r"|\bin\s+the\s+(?:past|last)|\bfounded|\bestablished|(?<![א-ת])מזה"
-                            r"|(?<![א-ת])לפני)[^\d]{0,12}$")
+                            r"|(?<![א-ת])לפני"
+                            r"|\b(?:operating|existing|active|business|market|around)\s+for)[^\d]{0,12}$")
 _YBLOCK_AFTER = re.compile(r"^\s*(?:ago\b|old\b|history\b|warranty\b|since\b|degree\b|of stud|remaining\b"
-                           r"|left\b|לימוד)")
+                           r"|left\b|לימוד"
+                           r"|in (?:the )?(?:market|business|industry)\b|of (?:operation|growth|success)\b)")
+_YBLOCK_AFTER_WIN = 24   # chars after 'N years' fed to _YBLOCK_AFTER (' in the industry' is 16)
 # nice-to-have statements are not requirements (taking the MAX would promote them):
 # '3 שנות ניסיון ב-Python - יתרון', '5+ years preferred', or anything under an 'Advantages:' header
 _YPREF = re.compile(r"\bpreferred\b|advantage|\ba plus\b|nice to have|\bbonus\b|יתרון|רצוי")
@@ -343,11 +347,18 @@ YEARS_MAX_SANE = 15   # '30 שנות ניסיון' is a mentor's / company's boa
 _YSTMT = re.compile(r"[\n;•()]|\.(?!\d)|</?(?:br|li|p|ul|div)\b")   # statement boundaries (text or HTML)
 _YDASH = re.compile(r"\s[-–]\s")                                     # ' - ' bullets / '– יתרון' markers
 def _years_nice_to_have(txt, m):
-    """The 'N years' at match m is a nice-to-have: marked in the same statement (outside any
-    parenthetical: '(Go is a plus)' is about Go), or it sits under an 'Advantages:' /
-    'Preferred Qualifications' header (the later header wins)."""
-    tail = " - ".join(_YDASH.split(_YSTMT.split(txt[m.end():m.end()+80])[0])[:2])  # the statement + its '– marker'
-    head = _YSTMT.split(txt[max(0, m.start()-40):m.start()])[-1]
+    """The 'N years' at match m is a nice-to-have: marked in the requirement's OWN statement
+    (outside any parenthetical: '(Go is a plus)' is about Go), or it sits under an
+    'Advantages:' / 'Preferred Qualifications' header (the later header wins).
+    The statement is cut at statement separators AND at ' - ' bullets, so on a flattened JD
+    another bullet's '- advantage' / '- יתרון' can't attach to a real requirement; the next
+    dash part is joined only when the requirement's own part is short (<= 5 words), which is
+    the '1-2 שנות ניסיון בבדיקות – יתרון' / '3 years - a plus' shape."""
+    parts = _YDASH.split(_YSTMT.split(txt[m.end():m.end()+80])[0])
+    tail = parts[0]
+    if len(parts) > 1 and len(tail.split()) <= 5:
+        tail += " - " + parts[1]
+    head = _YDASH.split(_YSTMT.split(txt[max(0, m.start()-40):m.start()])[-1])[-1]
     if _YPREF.search(tail) or _YPREF.search(head):
         return True
     back = txt[max(0, m.start()-600):m.start()]
@@ -367,7 +378,7 @@ def parse_years(desc):
         floors=[]
         def _ok(txt, m):
             return not (_YBLOCK_BEFORE.search(txt[max(0, m.start()-40):m.start()])
-                        or _YBLOCK_AFTER.search(txt[m.end():m.end()+12])
+                        or _YBLOCK_AFTER.search(txt[m.end():m.end()+_YBLOCK_AFTER_WIN])
                         or _years_nice_to_have(txt, m))
         for m in _YRANGE.finditer(t):
             if _ok(t, m):
@@ -382,11 +393,14 @@ def parse_years(desc):
     except Exception:
         return None
 
+# what may follow a name glued into a slug ('paloalto'+'networks', 'nvidia'+'israel')
+_CO_SUFFIX = re.compile(r"(?:israel|inc|ltd|corp|co|com|networks|technologies|systems|group|il|labs)*")
 def company_is(company, names):
     """True when `company` names one of `names` as WHOLE word(s). A raw substring test made
     'sap' hit 'Sapiens', 'meta' hit 'Metalab', 'intel' hit 'Intelligo', and 'hp ' never
-    matched a plain 'HP'. Names of 6+ letters also match a glued slug at the start
-    ('paloaltonetworks', 'pricewaterhousecoopers', 'nvidiaisrael'). Never raises."""
+    matched a plain 'HP'. Names of 6+ letters also match a glued slug at the start, but only
+    when the rest is nothing or corporate suffix(es) ('paloaltonetworks', 'nvidiaisrael';
+    NOT 'Bookingjini' for booking or 'Marvellous Ltd' for marvell). Never raises."""
     try:
         c=re.sub(r"\s+"," ", re.sub(r"[^a-z0-9֐-׿]+"," ", (company or "").lower())).strip()
         if not c: return False
@@ -396,15 +410,16 @@ def company_is(company, names):
             if not n: continue
             if re.search(r"(?<![a-z0-9])"+re.escape(n)+r"(?![a-z0-9])", c): return True
             ng=n.replace(" ","")
-            if len(ng) >= 6 and glued.startswith(ng): return True
+            if len(ng) >= 6 and glued.startswith(ng) and _CO_SUFFIX.fullmatch(glued[len(ng):]):
+                return True
         return False
     except Exception:
         return False
 
 def is_dev_title(tl):
     """The strict TITLE gate: a dev/integration word as a substring (TITLE_DEV), or a short
-    stem (sw/fw/ate) / test phrase ('test engineer', 'test product'...) as whole words
-    (TITLE_DEV_WORDS - so 'Swift', 'Private', 'Pentest Product' don't pass)."""
+    stem (sw/fw/ate/s/w) / test phrase ('test engineer', 'test product'...) as whole words
+    (TITLE_DEV_WORDS - so 'Swift', 'Private', 'Sales/Web', 'Pentest Product' don't pass)."""
     tl=(tl or "").lower()
     return _has(tl, C.TITLE_DEV) or _has_word(tl, getattr(C, "TITLE_DEV_WORDS", []))
 
@@ -448,6 +463,12 @@ _INDUSTRIAL = re.compile(r"\bplc\b|scada|בקרה|control engineer|מהנדס/ת
 def is_industrial_control(tl):
     """PLC / SCADA / industrial control & automation titles: not Ron's lane (RON_PROFILE)."""
     return bool(_INDUSTRIAL.search((tl or "").lower()))
+
+# titles that pass the gate on a test/automation word but are not software test work:
+# 'Mechanical Test Engineer', 'Penetration Tester', 'Pentest Automation', 'עורך/ת ...'
+_NOT_SW_TEST = re.compile(r"mechanical|penetration|pentest|עורכ")
+def is_not_sw_test(tl):
+    return bool(_NOT_SW_TEST.search((tl or "").lower()))
 
 # paid-course / 'training + placement' ads dressed as jobs (Drushim: 'AI software engineer -
 # הכשרה והשמה'). Used to be caught by 'הכשרה' in the old STUDENT_MARK title test.
@@ -533,7 +554,9 @@ def classify(j):
              or j["level"] in ("junior","entry","entry level","junior / entry level","associate")
              or (ymin is not None and ymin <= 2))
 
-    if is_manual_qa(tl, desc):
+    if is_not_sw_test(tl):
+        lane, why = "skip", "not-sw-test"             # mechanical / pentest / editor past the gate
+    elif is_manual_qa(tl, desc):
         lane, why = "skip", "manual-QA"
     elif is_industrial_control(tl):
         lane, why = "skip", "industrial-control"      # PLC/SCADA/control: not his lane
@@ -627,14 +650,24 @@ def _key_is_fresh(seen, key):
     except Exception:
         return False
 
+def _soft_value(j, day=None):
+    """The seen[] value stored under a soft key: when + which row owns it (its URL, source and
+    normalized city), so _soft_block can tell a repost from a second req at the same source."""
+    return {"seen":day or TODAY, "u":j.get("url",""), "src":j.get("source",""), "city":norm(j.get("city"))}
+
 def _soft_block(seen, j, retired=()):
     """None when the row may be admitted; otherwise the URL of the row that owns the
     blocking soft key ('' when unknown, e.g. a legacy key). `retired` = legacy keys whose
-    owner is live this run (so its precise new-format key decides instead)."""
+    owner is live this run (so its precise new-format key decides instead).
+    A key owned by the SAME source in a DIFFERENT city does not block: that is two genuine
+    reqs (e.g. Haifa + Yokneam, both 'North'), not a repost."""
     lk=_legacy_key(j)
     for key in (soft_key(j), None if lk in retired else lk):
         if key and not _key_is_fresh(seen, key):
             v=seen.get(key)
+            if (isinstance(v, dict) and v.get("src") and v.get("src") == j.get("source")
+                    and "city" in v and v.get("city") != norm(j.get("city"))):
+                continue
             return (v.get("u") if isinstance(v, dict) else "") or ""
     return None
 
@@ -794,8 +827,7 @@ def select(raw, reg, filtered=None, qa=None, giant=None):
         hit=next((seen[s] for s in _sids(j) if s in seen), None)
         if hit is None: continue
         k=soft_key(j)
-        if k: seen.setdefault(k, {"seen":(hit.get("seen") if isinstance(hit, dict) else None) or TODAY,
-                                  "u":j.get("url","")})
+        if k: seen.setdefault(k, _soft_value(j, (hit.get("seen") if isinstance(hit, dict) else None) or TODAY))
         lk=_legacy_key(j)
         if lk: retired.add(lk)
     fresh=[]; nsup=0; run_keys={}
@@ -844,7 +876,7 @@ def select(raw, reg, filtered=None, qa=None, giant=None):
         for m in (j.get("_members") or [])[1:]:
             seen.setdefault("%s:%s"%(m["source"],m["sid"]), dict(entry))
         k=soft_key(j)
-        if k: seen[k]={"seen":TODAY,"u":j["url"]}
+        if k: seen[k]=_soft_value(j)
     return rows
 
 def alerts_for(rows):
@@ -887,7 +919,7 @@ def send_alerts(rows, reg=None, path=None):
             u=it.get("url") or ""
             if u in urls: continue
             urls.add(u); items.append(it)
-        failed=[]
+        failed=[]; over=[]
         if items:
             items.sort(key=lambda it: 0 if it.get("ref") else 1)     # referral roles first (stable)
             send, over = items[:ALERT_BATCH_MAX], items[ALERT_BATCH_MAX:]
@@ -897,9 +929,13 @@ def send_alerts(rows, reg=None, path=None):
                 notify.notify_text("\U0001F514 JobScan: +%d more new giant/referral roles this run "
                                    "(large batch — see the tracker)" % len(over))
             print("alerted %d/%d giant/referral roles%s" % (delivered, len(send),
-                  (" | %d undelivered -> queued for retry" % len(failed)) if failed else ""))
+                  (" | %d undelivered%s -> queued for retry (max %d)"
+                   % (len(failed), (" + %d overflow" % len(over)) if over else "", ALERT_QUEUE_MAX))
+                  if failed else ""))
         if reg is not None and (items or reg.get("alert_queue") or reg.get("alert_fail_streak")):
-            reg["alert_queue"]=[_alert_item(f) for f in failed][-ALERT_QUEUE_MAX:]
+            # a failed run also queues the overflow beyond ALERT_BATCH_MAX (its count nudge most
+            # likely failed too); the HEAD is kept, so referral roles survive the cap first
+            reg["alert_queue"]=[_alert_item(f) for f in failed + (over if failed else [])][:ALERT_QUEUE_MAX]
             streak = (int(reg.get("alert_fail_streak") or 0) + 1) if failed else 0
             reg["alert_fail_streak"]=streak
             save_reg(reg, path)

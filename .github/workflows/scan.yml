@@ -29,6 +29,7 @@ jobs:
       - name: Rule regression tests
         run: if [ -d tests ]; then python -m pytest -q tests; fi
       - name: Run scan
+        id: scan             # outputs.alert_fail == '1' -> alerts undelivered 3 runs in a row (see last steps)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -40,6 +41,7 @@ jobs:
             python cloud_run.py
           fi
       - name: Commit results
+        if: success() || failure()   # publish whatever the scan wrote, even when a step failed
         run: |
           git config user.name "jobscan-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -63,6 +65,14 @@ jobs:
             echo "::error::push failed after 5 attempts - results were NOT published"
             exit 1
           fi
+      - name: Fail on undelivered alerts
+        # cloud_run exits 0 when giant/referral alerts failed 3 runs in a row, so the commit above
+        # still publishes seen.json + the retry queue; the job is failed HERE, after publishing,
+        # so the Telegram failure alert below still fires.
+        if: steps.scan.outputs.alert_fail == '1'
+        run: |
+          echo "::error::JobScan: giant/referral alerts undelivered 3+ runs in a row (check TELEGRAM_TOKEN / TELEGRAM_CHAT_ID secrets)"
+          exit 1
       - name: Alert on run failure
         if: failure()
         env:
