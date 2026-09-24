@@ -332,8 +332,10 @@ _YBLOCK_BEFORE = re.compile(r"(?:\bup\s+to|\bwithin|(?<![א-ת])עד|\bfor\s+ove
                             r"|\b(?:operating|existing|active|business|market|around)\s+for)[^\d]{0,12}$")
 _YBLOCK_AFTER = re.compile(r"^\s*(?:ago\b|old\b|history\b|warranty\b|since\b|degree\b|of stud|remaining\b"
                            r"|left\b|לימוד"
-                           r"|in (?:the )?(?:market|business|industry)\b|of (?:operation|growth|success)\b)")
-_YBLOCK_AFTER_WIN = 24   # chars after 'N years' fed to _YBLOCK_AFTER (' in the industry' is 16)
+                           r"|of (?:operation|growth|success)\b)")
+# NOTE: deliberately no 'in the industry/market' blocker - "5+ years in the industry" is a real (senior)
+# requirement and must count; company-history phrasing is caught by _YBLOCK_BEFORE ('operating for ...').
+_YBLOCK_AFTER_WIN = 24   # chars after 'N years' fed to _YBLOCK_AFTER (' of operation' needs > 12)
 # nice-to-have statements are not requirements (taking the MAX would promote them):
 # '3 שנות ניסיון ב-Python - יתרון', '5+ years preferred', or anything under an 'Advantages:' header
 _YPREF = re.compile(r"\bpreferred\b|advantage|\ba plus\b|nice to have|\bbonus\b|יתרון|רצוי")
@@ -466,7 +468,7 @@ def is_industrial_control(tl):
 
 # titles that pass the gate on a test/automation word but are not software test work:
 # 'Mechanical Test Engineer', 'Penetration Tester', 'Pentest Automation', 'עורך/ת ...'
-_NOT_SW_TEST = re.compile(r"mechanical|penetration|pentest|עורכ")
+_NOT_SW_TEST = re.compile(r"mechanical|penetration|pentest|עור[כך]")   # עורך/עורכת = editor (final kaf too)
 def is_not_sw_test(tl):
     return bool(_NOT_SW_TEST.search((tl or "").lower()))
 

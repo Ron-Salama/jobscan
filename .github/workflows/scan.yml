@@ -41,7 +41,10 @@ jobs:
             python cloud_run.py
           fi
       - name: Commit results
-        if: success() || failure()   # publish whatever the scan wrote, even when a step failed
+        # default condition: publish only when the scan step succeeded. Alert-delivery failures no
+        # longer fail the scan step (cloud_run exits 0 and sets alert_fail); the job is failed by the
+        # 'Fail on undelivered alerts' step AFTER this commit, so data still publishes in that case,
+        # while a crashed/half-written scan does not.
         run: |
           git config user.name "jobscan-bot"
           git config user.email "actions@users.noreply.github.com"

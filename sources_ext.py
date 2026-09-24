@@ -296,7 +296,7 @@ def src_dialog():
                                  "architect", "בכיר",
                                  "team lead", "expert", "מנוסה")):
             return "senior"
-        if any(w in t for w in ("junior", "jr.", "entry", "גוניור",
+        if any(w in t for w in ("junior", "jr.", "entry level", "entry-level", "גוניור",   # not bare 'entry' (Sentry, data entry)
                                 "זוטר",
                                 "ללא ניסיון")):
             return "junior"
@@ -2172,7 +2172,8 @@ def src_workday():
                         # the server ignored the facet (returned the whole tenant) only when the
                         # Israel values themselves hold fewer postings than the tenant: an
                         # Israel-only tenant legitimately has total == global and is kept
-                        if total >= global_total and 0 < il_count < global_total:
+                        if total >= global_total and (0 < il_count < global_total
+                                                      or (il_count == 0 and global_total > 50)):   # tenant reports no facet counts
                             _log("%s: facet %s ignored by server (total %d = global, Israel %d) -> skipped"
                                  % (brand, param, total, il_count))
                             total = 0

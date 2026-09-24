@@ -368,6 +368,22 @@ def test_review_source_alert_once_per_issue_per_day():
         if saved is not None: os.environ["JOBSCAN_NO_ALERT"] = saved
 
 
+def test_followup_test_development_titles_pass_gate():
+    for t in ("מהנדס/ת פיתוח מבדקים", "מהנדס מבדקים", "מהנדסת מבדקים", "מהנדס/ת לתכן מבדקים"):
+        assert J.is_dev_title(t.lower()), t
+
+
+def test_followup_editor_final_kaf_skipped():
+    assert J.is_not_sw_test("עורך/ת וידאו ומפתח/ת")
+    assert J.is_not_sw_test("עורכת תוכן")
+    assert not J.is_not_sw_test("test automation engineer")
+
+
+def test_followup_years_in_the_industry_counts():
+    assert J.parse_years("5+ years in the industry") == 5
+    assert J.parse_years("The company has been operating for 12 years. 1-2 years of experience") == 1
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):

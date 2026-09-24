@@ -101,6 +101,7 @@ TITLE_DEV = ["developer","software","full stack","fullstack","full-stack","backe
  "labview","teststand","software verification","system verification","sw verification",
  # (not bare 'מבדקים' = 'tests/exams' in any field; review 2026-09-24)
  "אינטגרציה","אינטגרטור","שילובים","ולידציה","ואלידציה","תכן מבדקים","מהנדס/ת מבדקים",
+ "פיתוח מבדקים","מהנדס מבדקים","מהנדסת מבדקים",   # test-development engineer titles (e.g. IAI) - keep in the gate
  'צב"ד',"צב״ד","וריפיקציה"]
 # Title terms checked WORD-BOUND (jobscan._has_word): as substrings 'sw' hits 'swift'/'switch',
 # 'ate' hits 'private'/'state', 's/w' hits 'Sales/Web' / 'Operations/Warehouse', and
