@@ -136,7 +136,9 @@ function scanAge(){const e=el("lastscan");if(!SCAN||!SCAN.iso){e.textContent="";
   e.classList.toggle("stale",h>__STALEH__);}
 scanAge();setInterval(scanAge,60000);
 /* unrated rows (no judged match score) get a capped ESTIMATE from the rule fit, so they never
-   outrank judged YES roles; the meter is greyed with a '~' so it can't pass for a real score. */
+   outrank judged YES roles; the meter is greyed with a '~' so it can't pass for a real score.
+   The 'match >=' filter applies to judged rows only (an estimate is not a match); unrated rows
+   are isolated with the 'unrated' verdict option instead. */
 const rated=j=>j.match!=null;
 const mval=j=>rated(j)?j.match:Math.min(j.fit?Math.round(j.fit*18):50,65);
 const tpk=j=>j.verdict==="YES"&&mval(j)>=90;const wt=j=>j.verdict==="YES"&&mval(j)<90;
@@ -193,7 +195,7 @@ function render(){
     const s=getSt(j.url);
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!dt||j.date===dt)&&rgOk(j,rg)
-      &&(mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"));
+      &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"));
   });
   rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
@@ -255,12 +257,16 @@ def _nu(u):
     """Lookup key for a posting URL: '.../job/12474' and '.../job/12474/' are the same posting."""
     return (u or "").strip().rstrip("/") if isinstance(u, str) else ""
 
-_VRANK = {"YES": 3, "REACH": 2, "NO": 1}
-def _norm_map(mp):
+_VRANK = {"YES": 3, "REACH": 2, "NO": 1}             # jobify / rescued / tailor_ready: strongest verdict wins
+_VRANK_VERDICTS = {"NO": 4, "YES": 3, "REACH": 2}    # verdicts map: a NO is a tombstone and must win
+def _norm_map(mp, vrank=None):
     """{url: entry} -> ({key: entry}, {key: canonical url}). On a trailing-slash collision keep the
-    stronger verdict (then the entry with company/role filled); the no-slash spelling is canonical."""
+    higher-ranked verdict per `vrank` (default YES>REACH>NO; the verdicts map passes
+    _VRANK_VERDICTS so a NO tombstone beats a YES), then the entry with company/role filled;
+    the no-slash spelling is canonical."""
     out, canon = {}, {}
     if not isinstance(mp, dict): return out, canon
+    vr = vrank or _VRANK
     for u, v in mp.items():
         k = _nu(u)
         if not k: continue
@@ -270,7 +276,7 @@ def _norm_map(mp):
         old = out[k]
         def rank(e):
             if not isinstance(e, dict): return (-1, 0)
-            return (_VRANK.get((e.get("v") or "").upper(), 0),
+            return (vr.get((e.get("v") or "").upper(), 0),
                     bool((e.get("company") or "").strip()) + bool((e.get("role") or "").strip()))
         if rank(v) > rank(old): out[k] = v
         if not u.endswith("/"): canon[k] = u
@@ -314,9 +320,13 @@ def _company_match(company, words):
 _AGG_LABELS = {"hiremetech", "linkedin", "ethosia", "jobify360", "dialog", "gotfriends", "alljobs", "drushim",
                "experis", "nisha", "builtin", "comeet", "greenhouse", "lever", "ashbyhq", "indeed", "glassdoor",
                "jobmaster", "quality-ai", "facebook", "whatsapp", "smartrecruiters", "workable", "breezy",
-               "jobvite", "taleo", "icims", "successfactors"}
-_AGG_DOMAINS = ("t.me", "bit.ly", "forms.gle", "docs.google.com", "forms.google.com")
-_HOST_SKIP = {"www", "career", "careers", "jobs", "job", "apply", "boards", "hr", "join", "work", "en", "he"}
+               "jobvite", "taleo", "icims", "successfactors",
+               # HR platforms / placement agencies (review 2026-09-24): never the employer
+               "hibob", "qualityai", "sqlink", "jobnet", "adamtotal", "jobkarov", "jobs2"}
+# link shorteners / link-in-bio / chat links: the host says nothing about the employer
+_AGG_DOMAINS = ("t.me", "bit.ly", "forms.gle", "docs.google.com", "forms.google.com",
+                "lnkd.in", "wa.me", "tinyurl.com", "goo.gl", "bitly.com", "linktr.ee")
+_HOST_SKIP = {"www", "career", "careers", "jobs", "job", "apply", "boards", "hr", "join", "work", "en", "he", "app"}
 _HOST_TLD = {"co", "il", "com", "org", "net", "io", "ai", "gov", "ac", "biz", "info", "tech", "jobs"}
 def _company_from_host(url):
     """Employer from the posting's own host, e.g. career.rafael.co.il -> 'Rafael',
@@ -375,8 +385,9 @@ def check_sources_dark(reg, counts):
       dark    - it used to return >= SOURCE_DARK_MIN rows, now 0 / error
       partial - it now returns < SOURCE_PARTIAL x its best run (a board/tenant/search lane died)
       never   - it returned 0 on SOURCE_ZERO_RUNS runs in a row and has never returned a row
-    Always printed; sent to Telegram at most ONCE per (Israel) day (reg['source_alert_day']).
-    Returns [(name, kind, prev_max, n)]."""
+    Always printed; each issue ('<source>:<kind>') is sent to Telegram at most ONCE per (Israel)
+    day (reg['source_alerts_sent'] = {day, keys}), so a second source going dark later the same
+    day still alerts. Returns [(name, kind, prev_max, n)]."""
     stats = reg.setdefault("source_stats", {})
     issues = []
     for name, n in counts.items():
@@ -402,14 +413,21 @@ def check_sources_dark(reg, counts):
         msg = "⚠️ JobScan source health — " + "; ".join(one(*i) for i in issues)
         print(msg)
         today = _now_il().date().isoformat()
+        sent = reg.get("source_alerts_sent")
+        if not isinstance(sent, dict) or sent.get("day") != today or not isinstance(sent.get("keys"), list):
+            sent = {"day": today, "keys": []}
+        reg.pop("source_alert_day", None)          # the old once-a-day-for-everything marker
+        todo = [i for i in issues if "%s:%s" % (i[0], i[1]) not in sent["keys"]]
         if os.environ.get("JOBSCAN_NO_ALERT"):
             print("(source alert suppressed via JOBSCAN_NO_ALERT)")
-        elif reg.get("source_alert_day") == today:
-            print("(source alert already sent today - not re-sent)")
+        elif not todo:
+            print("(every source issue was already alerted today - not re-sent)")
         else:
             try:
                 import notify
-                if notify.notify_text(msg): reg["source_alert_day"] = today
+                if notify.notify_text("⚠️ JobScan source health — " + "; ".join(one(*i) for i in todo)):
+                    sent["keys"].extend("%s:%s" % (i[0], i[1]) for i in todo)
+                    reg["source_alerts_sent"] = sent
             except Exception as e: print("notify err", e)
     return issues
 
@@ -429,14 +447,34 @@ def divergent_verdicts(verdicts, jobify, rescued, show=True):
             print("   %-40s %s" % (" ".join("%s=%s" % (nm, v or "-") for nm, v in vs.items()), k))
     return diff
 
+_SPECIFIC_REGIONS = ("North", "South", "Jerusalem", "Abroad")
+def _entry_region(v):
+    """(derived, effective) region of a curation entry. derived = region_of(loc + role) (a role
+    like 'Developer (Beer Sheva)' names its place); effective = the stored region, unless it is
+    missing / 'Unknown' / 'Center' and the derived one is specific (North/South/Jerusalem/Abroad).
+    A bare role reads as 'Center' in region_of, so a derived Center never overrides.
+    effective is '' when the entry stores no region and names no specific place."""
+    stored = v.get("region") if isinstance(v.get("region"), str) else ""
+    stored = stored.strip()
+    rg = ""
+    fn = getattr(J, "region_of", None)
+    if fn:
+        try: rg = fn(((v.get("loc") or "") + " " + (v.get("role") or "")).strip())
+        except Exception: rg = ""
+    if stored in ("", "Unknown", "Center") and rg in _SPECIFIC_REGIONS:
+        return rg, rg
+    return rg, stored
+
 def _overlay_meta(r, meta):
     """curation.json company/role/region onto a row (BUG 20). A curated (injected) row follows its
     curation entry, so fixes made there reach the page; a scanned row only gets its blanks, masked
-    employer or Unknown region filled - the scanner's own data is never overwritten."""
+    employer or Unknown region filled - the scanner's own data is never overwritten.
+    A curated row's region is the entry's EFFECTIVE region (_entry_region), the same one it was
+    injected with, so a stale stored 'Center'/'Unknown' can't undo a place named in loc/role."""
     curated = r.get("src") in ("jobify", "bucket")
     for f in ("company", "role", "region", "loc", "cv"):
         if f in ("loc", "cv") and not curated: continue
-        val = meta.get(f)
+        val = _entry_region(meta)[1] if (f == "region" and curated) else meta.get(f)
         val = val.strip() if isinstance(val, str) else ""
         if not val or (f == "company" and val == "(masked)"): continue
         if f == "region" and val == "Unknown" and not curated: continue
@@ -451,7 +489,7 @@ def apply_curation(alljobs, cur=None):
     auto-refresh. Mutates `alljobs`; returns the curation dict. Only a CORRUPT curation.json
     raises (a missing one is a no-op overlay)."""
     if cur is None: cur = load_curation()
-    verdicts, _ = _norm_map(cur.get("verdicts"))
+    verdicts, _ = _norm_map(cur.get("verdicts"), _VRANK_VERDICTS)   # NO tombstone wins a '/' collision
     jobify, jcanon = _norm_map(cur.get("jobify"))
     rescued, rcanon = _norm_map(cur.get("rescued"))
     tready, _ = _norm_map(cur.get("tailor_ready"))   # roles Claude has triaged + picked a base CV for (badge 🎯)
@@ -462,7 +500,7 @@ def apply_curation(alljobs, cur=None):
     #   jobify: from Ron's Jobify feed | bucket: rescued by Claude from the review bucket
     # The verdicts map is consulted FIRST: a NO there is a tombstone, so the role is not
     # re-injected from a stale jobify/rescued YES/REACH (BUG 1) - unless Ron applied to it.
-    skipped_no = 0
+    skipped_no = skipped_rg = 0
     for src, mp, canon, tag in (("jobify", jobify, jcanon, "jobify"), ("bucket", rescued, rcanon, "rescued")):
         for k, v in mp.items():
             if k in have or not isinstance(v, dict) or _not_a_job(k): continue
@@ -470,11 +508,16 @@ def apply_curation(alljobs, cur=None):
             if not isinstance(vd, dict): vd = v
             if _is_no(vd) and statuses.get(k) not in KEEP_STATUSES:
                 skipped_no += 1; continue
+            # the same region rule as the scanner: a South/Jerusalem/abroad role (by its loc or
+            # the place in its role text) is not injected - unless Ron applied to it
+            rg, region = _entry_region(v)
+            if rg in C.DROP_REGIONS and statuses.get(k) not in KEEP_STATUSES:
+                skipped_rg += 1; continue
             have.add(k)
             vv = (vd.get("v") or "").upper()
             score = vd.get("score") if vd.get("score") is not None else v.get("score")
             alljobs.append({
-                "date": v.get("date") or cur.get("updated") or J.TODAY, "region": v.get("region") or "Unknown",
+                "date": v.get("date") or cur.get("updated") or J.TODAY, "region": region or "Unknown",
                 "fit": {"YES": 5, "REACH": 4}.get(vv, 4), "match": score if score is not None else 60,
                 "company": v.get("company", ""), "role": v.get("role", ""), "loc": v.get("loc", ""),
                 "url": canon.get(k, k), "cv": v.get("cv", ""), "ref": bool(v.get("ref")), "giant": bool(v.get("giant")),
@@ -483,6 +526,10 @@ def apply_curation(alljobs, cur=None):
                 tag: True})
     if skipped_no:
         print("curation: %d jobify/rescued role(s) not injected - NO in verdicts" % skipped_no)
+    if skipped_rg:
+        print("curation: %d jobify/rescued role(s) not injected - region in %s"
+              % (skipped_rg, "/".join(sorted(C.DROP_REGIONS))))
+    pick_cv = getattr(J, "pick_cv", None)
     # overlay pass over EVERY row, re-injected ones included (tailor_ready used to miss those)
     for r in alljobs:
         k = _nu(r.get("url"))
@@ -495,6 +542,10 @@ def apply_curation(alljobs, cur=None):
         meta = jobify.get(k) or rescued.get(k)
         if isinstance(meta, dict):
             _overlay_meta(r, meta)
+        if pick_cv and not (r.get("cv") or "").strip():
+            # an injected role with no cv in its entry (or an old row) gets the title-based pick
+            try: r["cv"] = pick_cv(r.get("role") or "", "") or ""
+            except Exception: pass
         tr = tready.get(k)
         if isinstance(tr, dict):
             r["tailor_ready"] = True; r["tready_base"] = tr.get("base", "")
@@ -609,12 +660,14 @@ def _rtag(reason):
 
 def _rkey(reason):
     """Reason for per-reason counts: the full 'tag:sub' reason minus any URL / free text."""
-    s = re.split(r"\s|\(|:(?=\s*https?:)|https?:", (reason or "").strip(), 1)[0].rstrip(":")
+    s = re.split(r"\s|\(|:(?=\s*https?:)|https?:", (reason or "").strip(), maxsplit=1)[0].rstrip(":")
     return s or "?"
 
 def _review_key(b):
-    """Junior-marked titles first whatever the reason (CHANGE 4), then by reason priority."""
-    jr = J._has((b.get("role") or "").lower(), C.JUNIOR_MARK)
+    """Junior-marked titles first whatever the reason (CHANGE 4), then by reason priority.
+    A student title is not junior ('Undergraduate student developer' has 'graduate' inside)."""
+    role = b.get("role") or ""
+    jr = J._has(role.lower(), C.JUNIOR_MARK) and not _is_student_title(role)
     return (0 if jr else 1, _PRI.get(_rtag(b.get("reason")), 4))
 
 def finish_bucket(rows, key=None, cap=None, drops=()):
@@ -709,7 +762,27 @@ def main(argv=None):
     build_page(alljobs, J.TODAY, cur, reg.get("last_scan"))
     print("new:%d  total_on_page:%d  bucket:%d" % (len(new), len(alljobs), len(bucket)))
     if not rebuild:
-        J.send_alerts(rows)
+        # send_alerts raises SystemExit(1) after ALERT_FAIL_EXIT failed deliveries in a row. Exiting
+        # here would skip the workflow's Commit step (seen.json + the retry queue unpublished, so the
+        # same roles re-alert); instead exit 0, and scan.yml fails the job AFTER committing.
+        alert_fail = False
+        try:
+            J.send_alerts(rows)
+        except SystemExit as e:
+            alert_fail = True
+            print("alerts: send_alerts requested a failing exit (%s) - deferred until after the commit" % (e.code,))
+        if alert_fail:
+            _gh_output("alert_fail", "1")
+
+def _gh_output(key, val):
+    """Append key=val to $GITHUB_OUTPUT (a step output for later workflow steps). No-op locally."""
+    path = os.environ.get("GITHUB_OUTPUT")
+    if not path: return
+    try:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("%s=%s\n" % (key, val))
+    except Exception as e:
+        print("GITHUB_OUTPUT write err:", e)
 
 if __name__ == "__main__":
     main()

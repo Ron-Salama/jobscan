@@ -223,6 +223,151 @@ def test_today_is_iso_date():
     assert len(J.TODAY) == 10 and J.TODAY[4] == "-" and J.TODAY[7] == "-"
 
 
+# ---------------- code-review fixes (2026-09-24) ----------------
+def test_review_title_gate_s_w_word_bound():
+    assert not J.is_dev_title("sales/web analyst")                     # 's/w' inside 'sales/web'
+    assert not J.is_dev_title("operations/warehouse coordinator")
+    for t in ("S/W Engineer", "HW/SW Integrator", "SW/FW Engineer", "מהנדס/ת מבדקים"):
+        assert J.is_dev_title(t.lower()), t
+    assert not J.is_dev_title("מבדקים רפואיים")                          # bare 'מבדקים' dropped
+
+
+def test_review_not_sw_test_titles_skipped():
+    for t in ("Mechanical Test Engineer", "Penetration Tester Automation", "Pentest Automation Engineer"):
+        assert _lane(t, level="junior") == ("skip", "not-sw-test"), t
+    assert _lane("Junior Test Engineer", level="junior") == ("apply", "junior")
+
+
+def test_review_dv_needs_unambiguous_marker():
+    assert _lane("Software Verification Engineer", level="junior",
+                 desc="Work next to the RTL team on C# test tools") == ("apply", "junior")
+    assert _lane("Software Verification Engineer", level="junior",
+                 desc="Python tools for ASIC bring-up") == ("apply", "junior")
+    assert _lane("Software Verification Engineer", level="junior",
+                 desc="SystemVerilog testbenches")[1] == "foundation-gap"
+
+
+def test_review_company_glued_slug_needs_suffix():
+    assert not J.company_is("Bookingjini", ["booking"])
+    assert J.company_is("Booking.com", ["booking"])
+    assert not J.company_is("Marvellous Ltd", ["marvell"])
+    assert J.company_is("Marvell Israel", ["marvell"])
+    assert J.company_is("PaloAltoNetworks", C.REFERRAL_COMPANIES)
+    assert J.company_is("nvidiaisrael", C.GIANTS)
+
+
+def test_review_parse_years_company_history_and_own_statement():
+    assert J.parse_years("The company has been operating for 12 years. 1-2 years of experience") == 1
+    assert J.parse_years("12 years of growth. 2 years of experience") == 2
+    # another bullet's '- advantage' must not attach to a real requirement (flattened JD)
+    assert J.parse_years("Docker - advantage - 3+ years of Python experience") == 3
+    assert J.parse_years("3+ years of hands-on experience developing backend services in Python"
+                         " - familiarity with AWS, an advantage") == 3
+    assert J.parse_years("3 years - a plus") is None                    # short statement + its marker
+
+
+def test_review_soft_key_same_source_other_city_is_a_new_req():
+    reg = {"seen": {}}
+    haifa = J.normalize(_job("Junior Backend Engineer", company="Foo", source="linkedin", city="Haifa",
+                             level="junior"))
+    assert len(J.select([haifa], reg)) == 1
+    yok = dict(haifa, sid="2", url="https://example/yokneam", city="Yokneam")
+    assert len(J.select([J.normalize(yok)], reg)) == 1                  # same source, other city: admitted
+    other = dict(haifa, sid="3", url="https://example/other", city="Nesher", source="builtin")
+    bucket = []
+    assert J.select([J.normalize(other)], reg, bucket) == []            # another board's copy: suppressed
+    assert bucket[0]["reason"].startswith("dup-suppressed")
+
+
+def test_review_failed_run_queues_overflow_referral_first():
+    import tempfile, types
+    fake = types.ModuleType("notify")
+    fail_n = {"n": 10}
+    def notify_jobs(rows, failed=None):
+        n = fail_n["n"]; failed.extend(rows[len(rows) - n:]); return len(rows) - n  # the last n roles fail
+    fake.notify_jobs = notify_jobs; fake.notify_text = lambda t: False
+    saved = {k: os.environ.pop(k, None) for k in ("JOBSCAN_NO_ALERT", "GITHUB_ACTIONS")}
+    last_reg = dict(J._LAST_REG)
+    old = sys.modules.get("notify"); sys.modules["notify"] = fake
+    try:
+        def row(i, ref=False):
+            return {"company": "Co%d" % i, "role": "Dev", "region": "North", "url": "https://x/%d" % i,
+                    "cv": "", "openings": {"note": ("REFERRAL " if ref else "") + "GIANT ALERT"}}
+        # 64 roles -> 60 sent (the referral role first) + 4 overflow
+        rows = [row(i) for i in range(J.ALERT_BATCH_MAX + 3)] + [row(900, True)]
+        with tempfile.TemporaryDirectory() as d:
+            reg = {"seen": {}}
+            J.send_alerts(rows, reg, os.path.join(d, "seen.json"))       # last message (10 roles) fails
+            q = [it["url"] for it in reg["alert_queue"]]
+            assert len(q) == 14 and "https://x/%d" % (J.ALERT_BATCH_MAX + 2) in q   # 10 failed + 4 overflow
+            assert reg["alert_fail_streak"] == 1
+            fail_n["n"] = J.ALERT_BATCH_MAX; reg = {"seen": {}}
+            J.send_alerts(rows, reg, os.path.join(d, "seen.json"))       # everything fails: 64 > queue cap
+            q = [it["url"] for it in reg["alert_queue"]]
+            assert len(q) == J.ALERT_QUEUE_MAX and q[0] == "https://x/900"   # head kept: referral first
+            fail_n["n"] = 0; reg = {"seen": {}}
+            J.send_alerts(rows, reg, os.path.join(d, "seen.json"))       # delivered: overflow not queued
+            assert reg["alert_queue"] == [] and reg["alert_fail_streak"] == 0
+    finally:
+        if old is not None: sys.modules["notify"] = old
+        else: sys.modules.pop("notify", None)
+        for k, v in saved.items():
+            if v is not None: os.environ[k] = v
+        J._LAST_REG.clear(); J._LAST_REG.update(last_reg)
+
+
+def test_review_notify_drops_rejected_single_role_only():
+    import notify
+    orig = (notify._send, notify.configured)
+    notify._send = lambda text: None; notify.configured = lambda: True     # channel rejects every message
+    try:
+        failed = []
+        assert notify.notify_jobs([{"company": "A", "role": "Dev", "url": "u1"}], failed) == 0
+        assert failed == []                                              # single role: dropped, not queued
+        two = [{"company": "A", "role": "Dev", "url": "u1"}, {"company": "B", "role": "Dev", "url": "u2"}]
+        assert notify.notify_jobs(two, failed) == 0 and len(failed) == 2  # a batch stays retryable
+    finally:
+        notify._send, notify.configured = orig
+    assert notify._cv_label("Ron_Salama_CV") == "General"
+    assert notify._cv_label("Hardware_Test_Integration") == "Hardware_Test_Integration"
+
+
+def test_review_cloud_run_helpers():
+    import cloud_run as CR
+    v, _ = CR._norm_map({"https://a/1": {"v": "YES"}, "https://a/1/": {"v": "NO"}}, CR._VRANK_VERDICTS)
+    assert v["https://a/1"]["v"] == "NO"                                 # a NO tombstone wins
+    v, _ = CR._norm_map({"https://a/1": {"v": "YES"}, "https://a/1/": {"v": "NO"}})
+    assert v["https://a/1"]["v"] == "YES"                                # jobify/rescued: YES>REACH>NO
+    assert CR._rkey("dup-suppressed: https://x/y") == "dup-suppressed"
+    assert CR._review_key({"role": "Undergraduate student developer", "reason": "review:x"})[0] == 1
+    assert CR._review_key({"role": "Graduate developer", "reason": "review:x"})[0] == 0
+    for u in ("https://lnkd.in/abc", "https://wa.me/972500", "https://app.hibob.com/x", "https://sqlink.com/j/1"):
+        assert CR._company_from_host(u) == "", u
+    assert CR._company_from_host("https://app.rafael.co.il/x") == "Rafael"
+    assert CR._entry_region({"loc": "", "role": "Developer (Beer Sheva)", "region": "Center"}) == ("South", "South")
+    assert CR._entry_region({"loc": "", "role": "Software Engineer", "region": ""})[1] == ""
+
+
+def test_review_source_alert_once_per_issue_per_day():
+    import types
+    import cloud_run as CR
+    sent = []
+    fake = types.ModuleType("notify"); fake.notify_text = lambda msg: sent.append(msg) or True
+    saved = os.environ.pop("JOBSCAN_NO_ALERT", None)
+    old = sys.modules.get("notify"); sys.modules["notify"] = fake
+    try:
+        reg = {"source_stats": {"alpha": {"max": 50}, "beta": {"max": 40}}}
+        CR.check_sources_dark(reg, {"alpha": 0, "beta": 40})
+        CR.check_sources_dark(reg, {"alpha": 0, "beta": 40})             # same issue, same day: not re-sent
+        assert len(sent) == 1 and "alpha" in sent[0]
+        CR.check_sources_dark(reg, {"alpha": 0, "beta": 0})              # a NEW issue the same day: sent
+        assert len(sent) == 2 and "beta" in sent[1] and "alpha" not in sent[1]
+    finally:
+        if old is not None: sys.modules["notify"] = old
+        else: sys.modules.pop("notify", None)
+        if saved is not None: os.environ["JOBSCAN_NO_ALERT"] = saved
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):

@@ -287,10 +287,14 @@ def src_dialog():
         # "that specializes in development" and made 14/18 false 'student' labels)
         if _is_student_title(title):
             return "student"
+        # SENIOR from the TITLE only: on the JD/blurb 'lead' hit 'leading', 'architect' hit
+        # 'architectures', 'expert' hit 'expertise' (review 2026-09-24); the blurb still
+        # counts for junior
+        tl = (title or "").lower()
         t = (title + " " + blob).lower()
-        if any(w in t for w in ("senior", "sr.", "lead", "principal", "staff",
-                                "architect", "בכיר",
-                                "team lead", "expert", "מנוסה")):
+        if any(w in tl for w in ("senior", "sr.", "lead", "principal", "staff",
+                                 "architect", "בכיר",
+                                 "team lead", "expert", "מנוסה")):
             return "senior"
         if any(w in t for w in ("junior", "jr.", "entry", "גוניור",
                                 "זוטר",
@@ -1406,7 +1410,9 @@ def src_alljobs():
         blob = (title + " " + desc).lower()
         if _is_student_title(title):
             return "student"
-        if any(w in blob for w in SENIOR):
+        # SENIOR from the TITLE only ('lead' in 'leading', 'architect' in 'architectures'
+        # mislabelled JD-wide); the JD still counts for junior
+        if any(w in (title or "").lower() for w in SENIOR):
             return "senior"
         if any(w in blob for w in JUNIOR):
             return "junior"
@@ -2079,8 +2085,9 @@ def src_workday():
         return found
 
     def _walk_facets(facets):
-        # yields (facetParameter, id, descriptor) for every leaf value, descending
+        # yields (facetParameter, id, descriptor, count) for every leaf value, descending
         # into nested groups such as locationMainGroup -> locationHierarchy1/locations
+        # (count = the value's posting count, 0 when the tenant doesn't report it)
         for f in facets or []:
             if not isinstance(f, dict):
                 continue
@@ -2092,7 +2099,11 @@ def src_workday():
                     for x in _walk_facets([v]):
                         yield x
                     continue
-                yield param, v.get("id"), (v.get("descriptor") or "")
+                try:
+                    cnt = int(v.get("count") or 0)
+                except Exception:
+                    cnt = 0
+                yield param, v.get("id"), (v.get("descriptor") or ""), cnt
 
     def _post(base, facets, offset, limit):
         body = {"appliedFacets": facets, "limit": limit, "offset": offset, "searchText": ""}
@@ -2135,20 +2146,21 @@ def src_workday():
                 _log("%s: facet discovery request FAILED -> 0" % brand)
                 continue
             global_total = j0.get("total") or 0
-            cands = {}   # facetParameter -> [(id, descriptor)]
-            for param, fid, desc in _walk_facets(j0.get("facets")):
+            cands = {}   # facetParameter -> [(id, descriptor, count)]
+            for param, fid, desc, cnt in _walk_facets(j0.get("facets")):
                 if param and fid and IL_FACET_RX.search(desc):
-                    cands.setdefault(param, []).append((fid, desc))
+                    cands.setdefault(param, []).append((fid, desc, cnt))
             if not cands:
                 _log("%s: no Israel location facet (global %d) -> 0" % (brand, global_total))
                 continue
-            il_descs = [d for vals in cands.values() for _, d in vals]
+            il_descs = [d for vals in cands.values() for _, d, _ in vals]
 
             # 2) page every Israel facet parameter until offset >= total
             listed = {}          # ext -> posting (dedupe across parameters)
             facet_total = 0
             for param, vals in cands.items():
-                facets = {param: [fid for fid, _ in vals]}
+                facets = {param: [fid for fid, _, _ in vals]}
+                il_count = sum(c for _, _, c in vals)   # what the Israel values say they hold
                 offset, total = 0, None
                 while len(listed) < cap:
                     jj = _post(base, facets, offset, LIMIT)
@@ -2157,9 +2169,12 @@ def src_workday():
                         break
                     if total is None:
                         total = jj.get("total") or 0     # only page 1 carries the total
-                        if global_total > 50 and total >= global_total:
-                            _log("%s: facet %s ignored by server (total %d = global) -> skipped"
-                                 % (brand, param, total))
+                        # the server ignored the facet (returned the whole tenant) only when the
+                        # Israel values themselves hold fewer postings than the tenant: an
+                        # Israel-only tenant legitimately has total == global and is kept
+                        if total >= global_total and 0 < il_count < global_total:
+                            _log("%s: facet %s ignored by server (total %d = global, Israel %d) -> skipped"
+                                 % (brand, param, total, il_count))
                             total = 0
                             break
                     postings = jj.get("jobPostings") or []

@@ -52,9 +52,11 @@ DROP_REGIONS = {"South","Jerusalem","Abroad"}
 
 # Both company lists below are matched by jobscan.company_is() as WHOLE words of the company
 # name (never raw substrings: 'sap' must not hit 'Sapiens', 'meta' not 'Metalab', 'intel' not
-# 'Intelligo'); names of 6+ letters also match a glued slug ('paloaltonetworks', 'pricewaterhousecoopers').
+# 'Intelligo'); names of 6+ letters also match a glued slug when the rest is only a corporate
+# suffix ('paloaltonetworks', 'nvidiaisrael' - but not 'Bookingjini' / 'Marvellous').
 # ---- referral companies: LOUD flag on good match, quiet 'maybe' on reach ----
-REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-alto","apple","pwc","pricewaterhouse"]
+REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-alto","apple","pwc","pricewaterhouse",
+ "pricewaterhousecoopers"]
 
 # ---- giants: always surfaced (scanned via their own ATS too) ----
 GIANTS = ["google","meta","facebook","amazon","aws","microsoft","apple","nvidia","intel","mobileye",
@@ -95,12 +97,15 @@ TITLE_DEV = ["developer","software","full stack","fullstack","full-stack","backe
  # added 2026-09-24 (audit BUG 8): Ron's core test / integration / SW-FW lane had no terms.
  # (deliberately NOT bare 'integration'/'integrat' -> 'Technical Support & Integrations Engineer';
  #  NOT bare 'verification' (chip DV) or 'linux' (sysadmin) -> Ron's judgment calls)
- "integrator","system integration","hw/sw","s/w","mlops",
+ "integrator","system integration","hw/sw","mlops",
  "labview","teststand","software verification","system verification","sw verification",
- "אינטגרציה","אינטגרטור","שילובים","ולידציה","ואלידציה","מבדקים",'צב"ד',"צב״ד","וריפיקציה"]
+ # (not bare 'מבדקים' = 'tests/exams' in any field; review 2026-09-24)
+ "אינטגרציה","אינטגרטור","שילובים","ולידציה","ואלידציה","תכן מבדקים","מהנדס/ת מבדקים",
+ 'צב"ד',"צב״ד","וריפיקציה"]
 # Title terms checked WORD-BOUND (jobscan._has_word): as substrings 'sw' hits 'swift'/'switch',
-# 'ate' hits 'private'/'state', and 'test engineer'/'test product' hit 'Pentest Engineer'/'Pentest Product'.
-TITLE_DEV_WORDS = ["sw","fw","ate",
+# 'ate' hits 'private'/'state', 's/w' hits 'Sales/Web' / 'Operations/Warehouse', and
+# 'test engineer'/'test product' hit 'Pentest Engineer'/'Pentest Product'.
+TITLE_DEV_WORDS = ["sw","fw","ate","s/w",
  "test engineer","test engineering","testing engineer","test product","test and product",
  "test equipment","test system","test systems","development in test","test development"]
 
@@ -161,8 +166,10 @@ FOUNDATION_SKIP = ["rtl","vlsi","asic"," uvm","systemverilog","specman"," dft","
  # title term (classify() checks this list word-bound, so short 'rtl'/'asic'/'uvm' are safe)
  "pre-silicon","pre silicon","presilicon","post silicon","formal verification","cpu verification",
  "digital verification","emulation verification","uvm","verilog","vhdl"]
-# JD words that mark a *verification* title as chip DV (checked only for verification titles)
-DV_JD = ["uvm","systemverilog","system verilog","verilog","vhdl","rtl","asic","pre-silicon",
+# JD words that mark a *verification* title as chip DV (checked only for verification titles).
+# Unambiguous DV markers only: 'rtl' / 'asic' / 'pre-silicon' also appear in the JDs of the
+# software/system V&V roles that sit next to chip teams (review 2026-09-24).
+DV_JD = ["uvm","systemverilog","system verilog","verilog","vhdl",
  "formal verification","design verification","specman"]
 
 # Senior markers in the TITLE. Substrings on purpose ('lead' must catch 'Team Leader'/'Leadership';
