@@ -66,6 +66,21 @@ REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-a
  # 'DT&CS' -> 'PwC NEXT' via src_pwc, LinkedIn 'PwC | NEXT Technology Solutions') - 2026-09-24
  "pwc","pricewaterhouse","pricewaterhousecoopers","pwc next","pwcnext","next technology solutions"]
 
+# ---- estimated pay (page 'Est. pay' column, YES rows only) - Ron 2026-09-24 ----
+# Rough monthly gross ILS for a junior (0-2y), by employer tier. From 2026 salary surveys:
+# TechJob (Sept 2026), Nisha (Jan 2026), Gotfriends 2026, ECEJI 2026 (defense junior median
+# base ~21-22k), TheWorker self-reports for outsourcers (~17.6k avg). An ESTIMATE, not an offer.
+PAY_TIERS = {"multinational": (22, 27), "defense": (19, 23), "hightech": (18, 22),
+             "outsourcing": (16, 19), "traditional": (15, 19), "unknown": (16, 21)}
+# (GIANTS below = the multinational / big-tech tier)
+PAY_DEFENSE = ["rafael","רפאל","elbit","אלביט","israel aerospace","iai","התעשייה האווירית","elisra","plasan","tomer"]
+PAY_OUTSOURCING = ["yael","korentec","קורן טק","k-test","matrix","ness","experis","malam","מלם","dataway","דאטה וויי",
+ "allstarsit","elad","אלעד מערכות","qpoint","sela","john bryce","logica","לוגיקה","bagira","בגירה","jobsseek",
+ "comblack","webbs","וובס","oz software","עוז תוכנה","ethosia","gotfriends","nisha","dialog","דיאלוג","g stat"]
+PAY_TRADITIONAL = ["pwc","pricewaterhouse","deloitte","kpmg","ernst","harel","הראל","phoenix","הפניקס","migdal","מגדל",
+ "bank","בנק","leumi","hapoalim","discount","yedioth","ידיעות","insurance","ביטוח","clalit","כללית","maccabi","מכבי",
+ "hilan","חילן","sonol","סונול"]
+
 # ---- giants: always surfaced (scanned via their own ATS too) ----
 GIANTS = ["google","meta","facebook","amazon","aws","microsoft","apple","nvidia","intel","mobileye",
  "qualcomm","ibm","cisco","samsung","broadcom","marvell","western digital","sandisk","dell","hp",

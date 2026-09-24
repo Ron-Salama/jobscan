@@ -550,6 +550,15 @@ def test_call10_referral_digest_new_only_dedup_rollover():
         notify.configured, notify._send = orig
 
 
+def test_est_pay_tiers():
+    import cloud_run as CR
+    assert CR.est_pay("NVIDIA", "Software Engineer", "North")[:2] == (22, 27)        # multinational, no North cut
+    assert CR.est_pay("Rafael", "Software Engineer", "North")[:2] == (19, 23)        # defense direct
+    assert CR.est_pay("קורן טק טכנולוגיות", "מהנדס/ת בדיקות אוטומטיות", "North")[:2] == (15, 18)
+    assert CR.est_pay("PwC Israel", "Innovation & Technology Associate", "Center")[:2] == (15, 19)
+    assert CR.est_pay("(masked)", "Software Engineer", "Center")[:2] == (16, 21)
+    assert CR.est_pay("Startica", "Prompt Engineer", "North")[:2] == (18, 22)       # high-tech +AI -North
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):

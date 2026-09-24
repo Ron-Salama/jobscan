@@ -119,7 +119,7 @@ input.note.has{border-color:#3a7d52}
   </div>
 </header>
 <main><table id="t"><thead><tr>
-<th data-k="date">Pull</th><th data-k="match">Match</th><th data-k="verdict">Verdict</th><th data-k="region">Region</th>
+<th data-k="date">Pull</th><th data-k="match">Match</th><th data-k="verdict">Verdict</th><th data-k="pay" title="Rough junior monthly gross estimate (YES roles) - not an offer">Est. pay</th><th data-k="region">Region</th>
 <th data-k="flags">Flags</th><th data-k="company">Company</th><th data-k="role">Role</th>
 <th data-k="cv">CV</th><th data-k="src">Src</th><th>Status</th><th>Open</th><th>Notes</th>
 </tr></thead><tbody id="b"></tbody></table></main>
@@ -200,13 +200,14 @@ function render(){
       &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"))
       ||(!!j.important&&(!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!hd||(s!=="Sent"&&s!=="Skip")));
   });
-  rows.sort((a,b)=>{if(!!a.important!==!!b.important)return a.important?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}return (x>y?1:x<y?-1:0)*sortDir;});
+  rows.sort((a,b)=>{if(!!a.important!==!!b.important)return a.important?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}else if(sortK==="pay"){x=a.paylo||0;y=b.paylo||0;}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
   el("b").innerHTML=rows.map(j=>{const s=getSt(j.url);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
     return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'&&!j.important?'filtered':''} ${j.important?'improw':''}">
     <td class="muted">${esc(fmtD(j.date))}</td>
     <td>${mmeter(j)}</td>
     <td>${vpill(j)}</td>
+    <td class="muted" title="${esc(j.paytip||'')}">${esc(j.pay||'')}</td>
     <td><span class="pill ${j.region==='North'?'n':j.region==='Unknown'?'u':'c'}">${esc(j.region)}</span></td>
     <td>${pills(j)}</td>
     <td>${esc(j.company)}</td>
@@ -304,6 +305,36 @@ def _dead(r):
 def _not_a_job(u):
     """Curation entries that are search pages, not postings (render as blank rows)."""
     return "linkedin.com/jobs/search" in (u or "")
+
+_PAY_ROLE = [("test", re.compile(r"\bqa\b|test|automation|validation|verification|בדיק|אוטומצי|ולידציה")),
+             ("game", re.compile(r"\bgame|unity|unreal|משחק")),
+             ("embedded", re.compile(r"embedded|firmware|c\+\+|\brt\b|real.?time|low.?level|משובצ|קושחה")),
+             ("ai", re.compile(r"\bai\b|\bml\b|llm|genai|machine learning|prompt|בינה"))]
+_PAY_ADJ = {"test": -1, "game": -3, "embedded": 1, "ai": 1}
+
+def est_pay(company, role, region):
+    """Rough junior monthly gross range for a row: (lo, hi, tooltip) - employer tier
+    (config.PAY_TIERS) + role adjustment + a North discount outside the big-tech/defense tiers.
+    An estimate from 2026 salary surveys, never the employer's number. Never raises."""
+    try:
+        co = (company or "").strip(); tl = (role or "").lower()
+        m = lambda names: _company_match(co, names)
+        if not co or co in ("(masked)", "- חסוי -", "חסוי"): tier = "unknown"
+        elif m(C.PAY_DEFENSE): tier = "defense"
+        elif m(C.GIANTS): tier = "multinational"
+        elif m(C.PAY_OUTSOURCING): tier = "outsourcing"
+        elif m(C.PAY_TRADITIONAL): tier = "traditional"
+        else: tier = "hightech"
+        lo, hi = C.PAY_TIERS[tier]
+        kind = next((k for k, rx in _PAY_ROLE if rx.search(tl)), "")
+        adj = _PAY_ADJ.get(kind, 0)
+        if region == "North" and tier in ("hightech", "traditional", "unknown"): adj -= 1
+        lo, hi = max(12, lo + adj), max(13, hi + adj)
+        tip = "Rough estimate, not an offer: %s tier%s%s, junior 0-2y (2026 salary surveys)" % (
+            tier, (", " + kind + " role") if kind else "", ", North" if region == "North" else "")
+        return lo, hi, tip
+    except Exception:
+        return None
 
 def _kept_by_status(r, statuses):
     """Ron applied (Sent) or is interviewing: the row stays whatever the verdict/host says."""
@@ -565,6 +596,11 @@ def apply_curation(alljobs, cur=None):
         im = important.get(k)
         if isinstance(im, dict):
             r["important"] = im.get("note") or "important"
+        # estimated pay on YES rows (Ron 2026-09-24); cleared if a row stops being a YES
+        for f in ("pay", "paylo", "paytip"): r.pop(f, None)
+        if (r.get("verdict") or "").upper() == "YES":
+            ep = est_pay(r.get("company"), r.get("role"), r.get("region"))
+            if ep: r["pay"], r["paylo"], r["paytip"] = "₪%d-%dk" % (ep[0], ep[1]), ep[0], ep[2]
         tr = tready.get(k)
         if isinstance(tr, dict):
             r["tailor_ready"] = True; r["tready_base"] = tr.get("base", "")
