@@ -384,6 +384,12 @@ def test_followup_years_in_the_industry_counts():
     assert J.parse_years("The company has been operating for 12 years. 1-2 years of experience") == 1
 
 
+def test_followup_galilee_places_are_north():
+    for loc in ("Galil Tachton (North)", "Tel Hai", "Ein Harod", "גליל עליון", "קצרין"):
+        assert J.region_of(loc) == "North", loc
+    assert J.region_of("Gelil Yam, Herzliya") == "Center"
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):
