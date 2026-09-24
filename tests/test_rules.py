@@ -158,7 +158,7 @@ def test_company_is_word_bound():
                "NICE", "Qualcomm", "Cisco"):
         assert J.company_is(co, C.GIANTS), co
     assert J.company_is("Palo Alto Networks", C.REFERRAL_COMPANIES)
-    assert J.company_is("PwC NEXT", C.REFERRAL_COMPANIES)          # the referral is PwC NEXT only (call #13)
+    assert J.company_is("PricewaterhouseCoopers", C.REFERRAL_COMPANIES)   # PwC Israel + PwC NEXT referrals
     for co in ("Sapiens", "Metalab", "Intelligo", "Applied Materials", "(masked)", ""):
         assert not J.company_is(co, C.GIANTS), co
 
@@ -430,10 +430,10 @@ def test_call9_junior_title_with_4y_goes_to_review():
     assert _lane("Junior Software Engineer", desc="1-2 years of experience") == ("apply", "junior")
 
 
-def test_call13_referral_is_pwc_next_not_all_pwc():
-    for co in ("PwC NEXT", "PwC | NEXT Technology Solutions"):
+def test_call13_referral_covers_pwc_israel_and_pwc_next():
+    for co in ("PwC NEXT", "PwC | NEXT Technology Solutions", "PwC Israel", "PricewaterhouseCoopers"):
         assert J.company_is(co, C.REFERRAL_COMPANIES), co
-    for co in ("PwC Israel", "PricewaterhouseCoopers", "Next Insurance", "NextSilicon"):
+    for co in ("Next Insurance", "NextSilicon"):
         assert not J.company_is(co, C.REFERRAL_COMPANIES), co
     assert not J.ref_digest_ok("penetration tester - jb-727")          # pentest is not his lane
 

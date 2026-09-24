@@ -62,9 +62,9 @@ DROP_REGIONS = {"South","Jerusalem","Abroad"}
 # suffix ('paloaltonetworks', 'nvidiaisrael' - but not 'Bookingjini' / 'Marvellous').
 # ---- referral companies: LOUD flag on good match, quiet 'maybe' on reach ----
 REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-alto","apple",
- # the PwC referral is PwC NEXT (PwC Israel's tech subsidiary), NOT PwC as a whole (Ron, 2026-09-24):
- # career site employer 'DT&CS' -> 'PwC NEXT' (src_pwc); LinkedIn 'PwC | NEXT Technology Solutions'
- "pwc next","pwcnext","next technology solutions"]
+ # Ron has referrals at BOTH PwC Israel and PwC NEXT (its tech subsidiary; career site employer
+ # 'DT&CS' -> 'PwC NEXT' via src_pwc, LinkedIn 'PwC | NEXT Technology Solutions') - 2026-09-24
+ "pwc","pricewaterhouse","pricewaterhousecoopers","pwc next","pwcnext","next technology solutions"]
 
 # ---- giants: always surfaced (scanned via their own ATS too) ----
 GIANTS = ["google","meta","facebook","amazon","aws","microsoft","apple","nvidia","intel","mobileye",
