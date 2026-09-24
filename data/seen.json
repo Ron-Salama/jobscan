@@ -1,1 +1,2527 @@
-{"seen": {"hiremetech:148437258": {"t": "Graduate Frontend / Full Stack Software Engineer – UpNEXT Pr", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|graduate frontend full stack software engineer upnext program": {"seen": "2026-09-18"}, "hiremetech:148435480": {"t": "Graduate Backend Software Engineer- UpNEXT Program", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|graduate backend software engineer upnext program": {"seen": "2026-09-18"}, "hiremetech:148144724": {"t": "Junior Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|software engineer": {"seen": "2026-09-18"}, "hiremetech:148309885": {"t": "iOS Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|ios developer": {"seen": "2026-09-18"}, "hiremetech:148374147": {"t": "Software Configuration Management (SCM) Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|software configuration management engineer": {"seen": "2026-09-18"}, "hiremetech:148298764": {"t": "DevOps/AI Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|devops ai engineer": {"seen": "2026-09-18"}, "hiremetech:148021066": {"t": "מפתח/ת תוכנה שרוצה לעשות את הצעד הראשון לעולם הסייבר?", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|מפתח ת תוכנה שרוצה לעשות את הצעד הראשון לעולם הסייבר": {"seen": "2026-09-18"}, "hiremetech:148150120": {"t": "Junior Full Stack Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|full stack engineer": {"seen": "2026-09-18"}, "hiremetech:148103662": {"t": "Junior Backend Software Engineer Kfar Saba, Central District", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|backend software engineer kfar saba central district 08 30 2026": {"seen": "2026-09-18"}, "hiremetech:148001919": {"t": "Angular Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|angular developer": {"seen": "2026-09-18"}, "hiremetech:147857411": {"t": "Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "hiremetech:147887909": {"t": "Software Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|software developer": {"seen": "2026-09-18"}, "hiremetech:147694044": {"t": "Junior Full Stack Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|full stack developer": {"seen": "2026-09-18"}, "hiremetech:148192803": {"t": "מהנדס/ת בקרה ואוטומציה", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|מהנדס ת בקרה ואוטומציה": {"seen": "2026-09-18"}, "hiremetech:148149820": {"t": "דרוש/ה מהנדס Full Stack מתחיל (AI-Native)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|דרוש ה מהנדס full stack מתחיל": {"seen": "2026-09-18"}, "hiremetech:148007168": {"t": "DevOps Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|devops engineer": {"seen": "2026-09-18"}, "hiremetech:147686728": {"t": "Junior Unreal Engine Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|unreal engine developer": {"seen": "2026-09-18"}, "hiremetech:147565312": {"t": "Junior Embedded Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|embedded software engineer": {"seen": "2026-09-18"}, "hiremetech:147288445": {"t": "Junior Developer – Issue Resolution", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|developer issue resolution": {"seen": "2026-09-18"}, "hiremetech:147286082": {"t": "Full Stack Developer | C# Angular", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|full stack developer c angular": {"seen": "2026-09-18"}, "hiremetech:147182089": {"t": "Associate Software Engineer (Fixed-Term Contract)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|associate software engineer": {"seen": "2026-09-18"}, "hiremetech:142710329": {"t": "Junior Embedded Software Engineer robotics platforms- Tempor", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|embedded software engineer robotics platforms temporary": {"seen": "2026-09-18"}, "hiremetech:146690932": {"t": "Software Performance Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|software performance engineer": {"seen": "2026-09-18"}, "hiremetech:146436218": {"t": "Software Verification Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|software verification engineer": {"seen": "2026-09-18"}, "hiremetech:147149787": {"t": "מפתח/ת ומיישם/ת Power Platform & SharePoint", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|מפתח ת ומיישם ת power platform sharepoint": {"seen": "2026-09-18"}, "hiremetech:147446381": {"t": "מפתח/ת full stack", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|מפתח ת full stack": {"seen": "2026-09-18"}, "hiremetech:6387742": {"t": "Junior React Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|react developer": {"seen": "2026-09-18"}, "hiremetech:140492834": {"t": "Junior Backend Developer (PHP)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|backend developer": {"seen": "2026-09-18"}, "hiremetech:143471773": {"t": "Data Engineer - AWS Specialist", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|data engineer aws specialist": {"seen": "2026-09-18"}, "hiremetech:143384246": {"t": "Junior Full Stack PHP", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|full stack php": {"seen": "2026-09-18"}, "hiremetech:143364665": {"t": "Junior Software Engineer C++", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|software engineer c": {"seen": "2026-09-18"}, "hiremetech:142860792": {"t": "Frontend Engineer – AI-Driven Data Security Platform", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|frontend engineer ai driven data security platform": {"seen": "2026-09-18"}, "hiremetech:142581504": {"t": "Salesforce Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|salesforce developer": {"seen": "2026-09-18"}, "hiremetech:142566564": {"t": "Junior Core Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|core developer": {"seen": "2026-09-18"}, "hiremetech:141075324": {"t": "Backend Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|backend engineer": {"seen": "2026-09-18"}, "hiremetech:140346653": {"t": "Software Engineer -New College Grad", "lane": "review", "tailor": false, "seen": "2026-09-18"}, "|software engineer new college grad": {"seen": "2026-09-18"}, "hiremetech:136491163": {"t": "QA & Automation Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|qa automation engineer": {"seen": "2026-09-18"}, "hiremetech:136490854": {"t": "Junior Full Stack developer – TLV Site", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|full stack developer tlv site": {"seen": "2026-09-18"}, "hiremetech:134684234": {"t": "Junior Fullstack Software Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|fullstack software developer": {"seen": "2026-09-18"}, "hiremetech:6369189": {"t": "Junior Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|developer": {"seen": "2026-09-18"}, "hiremetech:143181397": {"t": "Validation & Automation Engineer", "lane": "review", "tailor": false, "seen": "2026-09-18"}, "|validation automation engineer": {"seen": "2026-09-18"}, "hiremetech:142711047": {"t": "Junior level Fullstack Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|level fullstack engineer": {"seen": "2026-09-18"}, "hiremetech:136490436": {"t": "Junior Full Stack developer – Ukraine Site", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|full stack developer ukraine site": {"seen": "2026-09-18"}, "hiremetech:135656739": {"t": "Backend Java Developer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|backend java developer": {"seen": "2026-09-18"}, "hiremetech:134749066": {"t": "מפתח/ת JAVA AI JUNIOR", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|מפתח ת java ai": {"seen": "2026-09-18"}, "hiremetech:106872978": {"t": "Graduate QA Automation Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|graduate qa automation engineer": {"seen": "2026-09-18"}, "hiremetech:142711046": {"t": "Junior level Fullstack Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "hiremetech:142520690": {"t": "Data Engineer לארגון ציבורי באזור המרכז (1)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|data engineer לארגון ציבורי באזור המרכז": {"seen": "2026-09-18"}, "hiremetech:141190002": {"t": "מפתח DevOps גוניור", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|מפתח devops גוניור": {"seen": "2026-09-18"}, "hiremetech:136611917": {"t": "Junior Backend Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|backend software engineer": {"seen": "2026-09-18"}, "hiremetech:142860777": {"t": "Firmware Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|firmware engineer": {"seen": "2026-09-18"}, "hiremetech:140568085": {"t": "Data Engineer עבור ארגון טכנולוגי באזור המרכז (1)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|data engineer עבור ארגון טכנולוגי באזור המרכז": {"seen": "2026-09-18"}, "hiremetech:136316963": {"t": "מפתחת net גוניור", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|מפתחת net גוניור": {"seen": "2026-09-18"}, "hiremetech:143610571": {"t": "מגייס/ת טכנולוגי/ת ללא ניסיון, לוג און תוכנה", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|מגייס ת טכנולוגי ת ללא ניסיון לוג און תוכנה": {"seen": "2026-09-18"}, "drushim:38441335": {"t": "מטמיע/ת מערכות נוכחות לחברת תוכנה בר\"ג", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "חסוי|מטמיע ת מערכות נוכחות לחברת תוכנה בר ג": {"seen": "2026-09-18"}, "greenhouse:jfrog:7939091": {"t": "GenAI & Competitive Intelligence Engineer   ", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "jfrog|genai competitive intelligence engineer": {"seen": "2026-09-18"}, "greenhouse:jfrog:8152802": {"t": "Software Engineer ", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "jfrog|software engineer": {"seen": "2026-09-18"}, "greenhouse:taboola:8073783": {"t": "Experienced Full Stack Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "taboola|experienced full stack engineer": {"seen": "2026-09-18"}, "greenhouse:taboola:8176684": {"t": "Software Developer – Production Engineering", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "taboola|software developer production engineering": {"seen": "2026-09-18"}, "amazon:10541334": {"t": "Junior Embedded Software Engineer, Graviton", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "amazon|embedded software engineer graviton": {"seen": "2026-09-18"}, "amazon:10538439": {"t": "Embedded Software Engineer , Annapurna Labs", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "amazon|embedded software engineer annapurna labs": {"seen": "2026-09-18"}, "amazon:10534007": {"t": "Software Engineer - Linux kernel, EFA", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "amazon|software engineer linux kernel efa": {"seen": "2026-09-18"}, "amazon:10533899": {"t": "Software Engineer in Test , Graviton Team", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "amazon|software engineer in test graviton team": {"seen": "2026-09-18"}, "amazon:10521270": {"t": "Software Development Engineer (AWS ML), Machine Learning Isr", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "amazon|software development engineer machine learning flow sub team": {"seen": "2026-09-18"}, "amazon:10521736": {"t": "Embedded Software Engineer - Nitro , Annapurna Labs", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "amazon|embedded software engineer nitro annapurna labs": {"seen": "2026-09-18"}, "amazon:10503595": {"t": "Ethernet Validation Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "amazon|ethernet validation engineer": {"seen": "2026-09-18"}, "amazon:10492675": {"t": "Software Development Engineer , Annapurna Labs", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "amazon|software development engineer annapurna labs": {"seen": "2026-09-18"}, "dialog:95064": {"t": "Hardware Verification & Validation Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|hardware verification validation engineer": {"seen": "2026-09-18"}, "gotfriends:151062": {"t": "AI Engineer- Generative AI (Java) בחברה פרטית", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|ai engineer generative ai בחברה פרטית": {"seen": "2026-09-18"}, "gotfriends:154863": {"t": "Software Engineer, Robotics & Integration בחברת סטארט-אפ שמפ", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|software engineer robotics integration בחברת סטארט אפ שמפתחת רחפני שטח": {"seen": "2026-09-18"}, "gotfriends:154468": {"t": "Software Developer בחברת סטארט-אפ חדשנית", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|software developer בחברת סטארט אפ חדשנית": {"seen": "2026-09-18"}, "gotfriends:153760": {"t": "Backend Developer בחברת Cybersecurity גלובלית", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|backend developer בחברת cybersecurity גלובלית": {"seen": "2026-09-18"}, "gotfriends:153957": {"t": "React Native Developer בחברה טכנולוגית", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|react native developer בחברה טכנולוגית": {"seen": "2026-09-18"}, "gotfriends:152553": {"t": "פיתוח Frontend בחברת סטארט-אפ בתחום ה-AI", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|פיתוח frontend בחברת סטארט אפ בתחום ה ai": {"seen": "2026-09-18"}, "gotfriends:152229": {"t": "Frontend Engineer בחברת סטארט-אפ בתחום ה-Blockchain וה-Crypt", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|frontend engineer בחברת סטארט אפ בתחום ה blockchain וה crypto": {"seen": "2026-09-18"}, "gotfriends:154926": {"t": "Backend Developer בחברת סטארט-אפ בתחום ה-Security Cloud", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|backend developer בחברת סטארט אפ בתחום ה security cloud": {"seen": "2026-09-18"}, "gotfriends:154854": {"t": "Software Engineer בחברת סטארט-אפ בתחום ה-Cyber", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|software engineer בחברת סטארט אפ בתחום ה cyber": {"seen": "2026-09-18"}, "linkedin:4458662012": {"t": "Software Engineer III, Waze, Mobile (Android)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "google|software engineer iii waze mobile": {"seen": "2026-09-18"}, "linkedin:4455903010": {"t": "Software Development Engineer, Elastic Block Storage, Server", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "amazon web services|software development engineer elastic block storage server durability engine": {"seen": "2026-09-18"}, "linkedin:4461858207": {"t": "Java Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "applied materials|java software engineer": {"seen": "2026-09-18"}, "linkedin:4439798199": {"t": "Core Backend Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "aidoc|core backend engineer": {"seen": "2026-09-18"}, "linkedin:4412464414": {"t": "Junior level Fullstack Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "tomax think academy|level fullstack engineer": {"seen": "2026-09-18"}, "linkedin:4468654724": {"t": "Full Stack Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "unframe|full stack software engineer": {"seen": "2026-09-18"}, "linkedin:4437432497": {"t": "Software Engineer (Full Stack)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "shopic|software engineer": {"seen": "2026-09-18"}, "linkedin:4445675230": {"t": "Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "iscar|software engineer": {"seen": "2026-09-18"}, "linkedin:4466323118": {"t": "Junior Fullstack Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "glassix|fullstack developer": {"seen": "2026-09-18"}, "linkedin:4416284127": {"t": "Full Stack Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "gini apps|full stack developer": {"seen": "2026-09-18"}, "linkedin:4429308684": {"t": ".Net Developer & WPF", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "bagira|net developer wpf": {"seen": "2026-09-18"}, "linkedin:4461817525": {"t": "Experienced Backend Developer- .NET C# (582)", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "utron|experienced backend developer net c": {"seen": "2026-09-18"}, "linkedin:4449051662": {"t": "Backend .Net Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "landa|backend net software engineer": {"seen": "2026-09-18"}, "linkedin:4437392354": {"t": "Backend Developer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "black rabbit|backend developer": {"seen": "2026-09-18"}, "linkedin:4435663163": {"t": "Python Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "infinidat|python software engineer": {"seen": "2026-09-18"}, "linkedin:4440973256": {"t": "Software Development Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "fortinet|software development engineer": {"seen": "2026-09-18"}, "alljobs:8819743": {"t": "דרוש /ה AI Engineer לארגון מוביל!", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "קומפאי טכנולוגיות בע מ|דרוש ה ai engineer לארגון מוביל": {"seen": "2026-09-18"}, "alljobs:8736771": {"t": "מפתח /ת תוכנה Junior", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "peax talent|מפתח ת תוכנה": {"seen": "2026-09-18"}, "alljobs:8825917": {"t": "AI Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|ai engineer": {"seen": "2026-09-18"}, "alljobs:8823261": {"t": "מפתח /ת AI", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "חברה חסויה|מפתח ת ai": {"seen": "2026-09-18"}, "alljobs:8656406": {"t": "AI / data Engineer - לרילוקיישן לקפריסין לימסול!", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "איזי אפ ייעוץ והשמה בע מ|ai data engineer לרילוקיישן לקפריסין לימסול": {"seen": "2026-09-18"}, "alljobs:8801901": {"t": "Applied AI Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "|applied ai engineer": {"seen": "2026-09-18"}, "alljobs:8821010": {"t": "QA Engineer | Manual Automation | רמת החייל", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "gtech|qa engineer manual automation רמת החייל": {"seen": "2026-09-18"}, "alljobs:8815243": {"t": "QA Automation Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "דיאלוג|qa automation engineer": {"seen": "2026-09-18"}, "comeet:8F.946": {"t": "Graduate QA Automation Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "vast data|graduate qa automation engineer": {"seen": "2026-09-18"}, "comeet:0A.C67": {"t": "DevOps Engineer (U.S Citizen)", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "oligo security|devops engineer": {"seen": "2026-09-18"}, "comeet:FD.A51": {"t": "Full Stack Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "tech guard|full stack engineer": {"seen": "2026-09-18"}, "workday:/job/Israel-Yokneam/Software-Performance-Engineer_JR2024413": {"t": "Software Performance Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "nvidia|software performance engineer": {"seen": "2026-09-18"}, "workday:/job/Israel-Haifa/Software-Engineer_JR0283723": {"t": "Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "intel|software engineer": {"seen": "2026-09-18"}, "apple:200627584": {"t": "Backend SW Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|backend sw engineer": {"seen": "2026-09-18"}, "apple:200682345": {"t": "iOS Software Engineer- Location Technologies", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|ios software engineer location technologies": {"seen": "2026-09-18"}, "apple:200623409": {"t": "Firmware WiFi Engineer - Wireless Technologies & Ecosystems", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|firmware wifi engineer wireless technologies ecosystems": {"seen": "2026-09-18"}, "apple:200623639": {"t": "SW Developer For Validation-SSD", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|sw developer validation ssd": {"seen": "2026-09-18"}, "apple:200672340": {"t": "Embedded Platform Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|embedded platform engineer": {"seen": "2026-09-18"}, "apple:200666549": {"t": "Software Engineer - Test Automation & Infrastructure", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|software engineer test automation infrastructure": {"seen": "2026-09-18"}, "apple:200666053": {"t": "Software Data Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|software data engineer": {"seen": "2026-09-18"}, "apple:200665701": {"t": "Real - Time Embedded Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|real time embedded engineer": {"seen": "2026-09-18"}, "apple:200648117": {"t": "iCloud Drive — Software, Test Automation & Infrastructure En", "lane": "reach", "tailor": true, "seen": "2026-09-18"}, "apple|icloud drive software test automation infrastructure engineer": {"seen": "2026-09-18"}, "hiremetech:143194017": {"t": "Devops Infra/cloud Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-18"}, "|devops infra cloud engineer": {"seen": "2026-09-18"}, "hiremetech:140200619": {"t": "מפתח/ת BI עבור חברה ביטחונית באזור הצפון (1)", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|מפתח ת bi עבור חברה ביטחונית באזור הצפון": {"seen": "2026-09-21"}, "hiremetech:148336333": {"t": "Networking QA and Automation Engineer, Network Systems", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|networking qa and automation engineer network": {"seen": "2026-09-21"}, "hiremetech:148185057": {"t": "Full Stack Developer #1990", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|full stack developer 1990": {"seen": "2026-09-21"}, "hiremetech:148296683": {"t": "Software Engineer III", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|software engineer iii": {"seen": "2026-09-21"}, "hiremetech:148028934": {"t": "AI Tools and Cloud Software Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|ai tools and cloud software developer": {"seen": "2026-09-21"}, "hiremetech:147889393": {"t": "Java Backend Developer", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|java backend developer": {"seen": "2026-09-21"}, "hiremetech:146457770": {"t": "R&D Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|r d software engineer": {"seen": "2026-09-21"}, "hiremetech:147397756": {"t": "מפתח.ת אלגוריתמים AI/Computer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח ת אלגוריתמים ai computer": {"seen": "2026-09-21"}, "hiremetech:144846369": {"t": "AI Text Validation Specialist (Hebrew language)", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|ai text validation specialist": {"seen": "2026-09-21"}, "hiremetech:141409417": {"t": "Firmware SerDes Verification Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|firmware serdes verification engineer": {"seen": "2026-09-21"}, "amazon:10481131": {"t": "Chip Validation Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "amazon|chip validation software engineer": {"seen": "2026-09-21"}, "ethosia:76838": {"t": "System Integration & Validation Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|integration validation engineer": {"seen": "2026-09-21"}, "ethosia:76700": {"t": "AI NPU Simulator Software Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|ai npu simulator software developer": {"seen": "2026-09-21"}, "ethosia:76681": {"t": "Mid-Level Backend Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|mid level backend software engineer": {"seen": "2026-09-21"}, "ethosia:76680": {"t": "PHY/Radio Validation Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|phy radio validation engineer": {"seen": "2026-09-21"}, "ethosia:76661": {"t": "experienced Linux Test Automation Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|experienced linux test automation developer": {"seen": "2026-09-21"}, "ethosia:76657": {"t": "Software Engineer- Real-Time Systems", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|software engineer real time": {"seen": "2026-09-21"}, "ethosia:76641": {"t": "Embedded Software Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|embedded software developer": {"seen": "2026-09-21"}, "ethosia:76640": {"t": "Embedded SW Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|embedded sw engineer": {"seen": "2026-09-21"}, "nisha:12541": {"t": "Data Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-21"}, "|data engineer": {"seen": "2026-09-21"}, "nisha:12533": {"t": "FW / Embedded Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-21"}, "|fw embedded engineer": {"seen": "2026-09-21"}, "nisha:8469": {"t": "Back End Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|back end engineer": {"seen": "2026-09-21"}, "nisha:11088": {"t": "ראש\\\\\\\\\\\\\\\\ת צוות תוכנה", "lane": "reach", "tailor": true, "seen": "2026-09-21"}, "|ראש ת צוות תוכנה": {"seen": "2026-09-21"}, "linkedin:4449084615": {"t": "Python Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "cybord|python software engineer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-devops": {"t": "מפתח/ת DEVOPS", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח ת devops": {"seen": "2026-09-21"}, "cps:junior-hw-embedded-engineer": {"t": "Junior HW/Embedded Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|hw embedded engineer": {"seen": "2026-09-21"}, "cps:ios-mobile-developer": {"t": "IOS Mobile Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|ios mobile developer": {"seen": "2026-09-21"}, "cps:php-developer": {"t": "PHP Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|php developer": {"seen": "2026-09-21"}, "cps:python-developer-2": {"t": "Python Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|python developer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%95%d7%9e%d7%97%d7%94-c-%d7%9c%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%90%d7%a4%d7%9c%d7%99%d7%a7%d7%a6%d7%99%d7%95%d7%aa-%d7%9c%d7%a2%d7%99%d7%91%d7%95%d7%93-%d7%aa%d7%9e%d7%95%d7%a0%d7%94": {"t": "מומחה C++ לפיתוח אפליקציות לעיבוד תמונה רפואית", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מומחה c לפיתוח אפליקציות לעיבוד תמונה רפואית": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-low-level": {"t": "מפתח LOW LEVEL", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח low level": {"seen": "2026-09-21"}, "cps:c-developer": {"t": "C++ Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|c developer": {"seen": "2026-09-21"}, "cps:full-stack-java-engineer": {"t": "Full stack JAVA Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|full stack java engineer": {"seen": "2026-09-21"}, "cps:real-time-embedded-developer": {"t": "Real Time Embedded Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|real time embedded developer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-c": {"t": "מפתח/ת ++C", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח ת c": {"seen": "2026-09-21"}, "cps:java-software-engineer": {"t": "Java Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|java software engineer": {"seen": "2026-09-21"}, "cps:rt-embedded-engineer": {"t": "RT/Embedded Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|rt embedded engineer": {"seen": "2026-09-21"}, "cps:junior-full-stack-web-developer": {"t": "Junior Full Stack Web Developer", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|full stack web developer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-embedded": {"t": "מהנדס/ת Embedded", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מהנדס ת embedded": {"seen": "2026-09-21"}, "cps:full-stack-software-engineer": {"t": "Full Stack Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|full stack software engineer": {"seen": "2026-09-21"}, "cps:digital-back-end-engineer": {"t": "Digital Back-End Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|digital back end engineer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94": {"t": "מהנדס/ת תוכנה", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מהנדס ת תוכנה": {"seen": "2026-09-21"}, "cps:fullstack-developer": {"t": "Fullstack Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|fullstack developer": {"seen": "2026-09-21"}, "cps:java-developer-2": {"t": "Java Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|java developer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-gis": {"t": "מפתח/ת GIS", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח ת gis": {"seen": "2026-09-21"}, "cps:machine-learning-system-software-developer": {"t": "Machine Learning System Software Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|machine learning software developer": {"seen": "2026-09-21"}, "cps:embedded-engineer-2": {"t": "Embedded Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|embedded engineer": {"seen": "2026-09-21"}, "cps:priority-erp-developer": {"t": "Priority ERP Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|priority erp developer": {"seen": "2026-09-21"}, "cps:web-developer": {"t": "Web Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|web developer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%a6%d7%93-%d7%a9%d7%a8%d7%aa": {"t": "מפתח/ת צד שרת", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח ת צד שרת": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-fullstack-%d7%91-c": {"t": "מפתח fullstack ב-#C", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח fullstack ב c": {"seen": "2026-09-21"}, "cps:backend-c-developer": {"t": "Backend C++ Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|backend c developer": {"seen": "2026-09-21"}, "cps:ios-sdk-developer": {"t": "iOS SDK Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|ios sdk developer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%90%d7%a4%d7%9c%d7%99%d7%a7%d7%a6%d7%99%d7%99%d7%aa-web": {"t": "מפתח אפליקציית Web", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח אפליקציית web": {"seen": "2026-09-21"}, "cps:net-backend-developer": {"t": "Net Backend Developer.", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|net backend developer": {"seen": "2026-09-21"}, "cps:validation-software-engineer": {"t": "Validation SoftWare Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|validation software engineer": {"seen": "2026-09-21"}, "cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-rt-embedded": {"t": "מפתח/ת RT Embedded", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|מפתח ת rt embedded": {"seen": "2026-09-21"}, "cps:junior-debugger-software-engineer": {"t": "Junior Debugger Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|debugger software engineer": {"seen": "2026-09-21"}, "cps:software-application-engineer": {"t": "SoftWare Application Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|software application engineer": {"seen": "2026-09-21"}, "cps:software-development-engineer": {"t": "Software Development Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|software development engineer": {"seen": "2026-09-21"}, "cps:c-software-engineer": {"t": "C++ Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|c software engineer": {"seen": "2026-09-21"}, "cps:experienced-firmware-engineer": {"t": "Experienced Firmware Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|experienced firmware engineer": {"seen": "2026-09-21"}, "cps:dsp-phy-firmware-engineer": {"t": "DSP/PHY Firmware Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|dsp phy firmware engineer": {"seen": "2026-09-21"}, "cps:c-backend-developer": {"t": "C++ Backend Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|c backend developer": {"seen": "2026-09-21"}, "techjob:696e0a42dd7c427ad9acbe2e": {"t": "Frontend Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|frontend software engineer": {"seen": "2026-09-21"}, "techjob:671f8624762a7b7f163ad2c3": {"t": "Frontend Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|frontend developer": {"seen": "2026-09-21"}, "techjob:68737e8df43d15d3ff8da25b": {"t": "Backend Infrastructure Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|backend infrastructure engineer": {"seen": "2026-09-21"}, "techjob:68737825f43d15d3ff8d9654": {"t": "Front End Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|front end engineer": {"seen": "2026-09-21"}, "techjob:682ee944db560edc53c9ed1c": {"t": "Python Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|python engineer": {"seen": "2026-09-21"}, "techjob:6873766ddb560edc53dc721d": {"t": "Front End Engineer/ FS", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|front end engineer fs": {"seen": "2026-09-21"}, "techjob:6a981748ec73bb7a321d16cd": {"t": "Backend Engineer - OT Security Team", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|backend engineer ot security team": {"seen": "2026-09-21"}, "techjob:61ae319a0fb8a4001fb00752": {"t": "Software Engineer- E- Commerce", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|software engineer e commerce": {"seen": "2026-09-21"}, "techjob:62a19fbca0e1130024fa3130": {"t": "React Native Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|react native developer": {"seen": "2026-09-21"}, "techjob:621cf09a4f62ed002579fc8d": {"t": "Mobile React Native", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|mobile react native": {"seen": "2026-09-21"}, "techjob:624af8f24f62ed00257a309c": {"t": "Software Engineer- User Data", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|software engineer user data": {"seen": "2026-09-21"}, "techjob:6565aa57a6bd1a893225a564": {"t": "Full Stack Developer- Office of the CEO", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|full stack developer office of ceo": {"seen": "2026-09-21"}, "techjob:6565c4090c626c5869889bf1": {"t": "Startup Entrepreneur - Mobile Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|startup entrepreneur mobile developer": {"seen": "2026-09-21"}, "techjob:6666f244d860f71a230b7a52": {"t": "Full Stack Engineer  - Mansion", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|full stack engineer mansion": {"seen": "2026-09-21"}, "techjob:660d1ef0d95f0259508bcd4e": {"t": "Android Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|android developer": {"seen": "2026-09-21"}, "techjob:6565c57a0c626c5869889de1": {"t": "Startup Entrepreneur - AI Developer- NLP", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|startup entrepreneur ai developer nlp": {"seen": "2026-09-21"}, "techjob:6565c4e80c626c5869889d10": {"t": "Startup Entrepreneur - Web Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|startup entrepreneur web developer": {"seen": "2026-09-21"}, "techjob:625664e24f62ed00257a3d74": {"t": "Full Stack Startup Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|full stack startup engineer": {"seen": "2026-09-21"}, "techjob:5fe49e83c031ab0021df0653": {"t": "Mobile Backend Developer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "|mobile backend developer": {"seen": "2026-09-21"}, "workday:/job/Israel-Yokneam/System-Software-Engineer_JR2016510": {"t": "System Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "nvidia|software engineer": {"seen": "2026-09-21"}, "workday:/job/Israel-Yokneam/Software-Developer---Networking_JR2024804": {"t": "Software Developer - Networking", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "nvidia|software developer networking": {"seen": "2026-09-21"}, "workday:/job/Israel-Yokneam/Software-Validation-Engineer_JR2011195": {"t": "Software Validation Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "nvidia|software validation engineer": {"seen": "2026-09-21"}, "workday:/job/Israel-Yokneam/Advanced-Software-Development-Engineer_JR2020678": {"t": "Advanced Software Development Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "nvidia|advanced software development engineer": {"seen": "2026-09-21"}, "workday:/job/Israel-Yokneam/Software-Verification-Engineer--Networking_JR2022969-1": {"t": "Software Verification Engineer, Networking", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "nvidia|software verification engineer networking": {"seen": "2026-09-21"}, "workday:/job/Israel-Haifa/Security-Software-Development-Engineer_JR0285317": {"t": "Security Software Development Engineer", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "intel|security software development engineer": {"seen": "2026-09-21"}, "apple:200674773": {"t": "Full Stack Developer : Agentic AI", "lane": "review", "tailor": false, "seen": "2026-09-21"}, "apple|full stack developer agentic ai": {"seen": "2026-09-21"}, "hiremetech:143751831": {"t": "מתכנת/ת ג'וניור ל- IBI קפיטל – מספר משרה 1726", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|מתכנת ת ג וניור ל ibi קפיטל מספר משרה 1726": {"seen": "2026-09-21"}, "dialog:94951": {"t": "בוגר/ת תואר הנדסת חשמל למשרת מהנדס/ת ולידציה ואוטומציה", "lane": "apply", "tailor": false, "seen": "2026-09-21"}, "|בוגר ת תואר הנדסת חשמל למשרת מהנדס ת ולידציה ואוטומציה": {"seen": "2026-09-21"}, "hiremetech:141138110": {"t": "Integration Technician / Integration Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-22"}, "|integration technician integration engineer": {"seen": "2026-09-22"}, "greenhouse:jfrog:8156071": {"t": "IS Integration Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-22"}, "jfrog|is integration engineer": {"seen": "2026-09-22"}, "greenhouse:appsflyer:8781235002": {"t": "Mobile SDK Engineer ", "lane": "apply", "tailor": false, "seen": "2026-09-22"}, "appsflyer|mobile sdk engineer": {"seen": "2026-09-22"}, "amazon:10506530": {"t": "System Integration Engineer, SERDES", "lane": "apply", "tailor": false, "seen": "2026-09-22"}, "amazon|integration engineer serdes": {"seen": "2026-09-22"}, "ethosia:76871": {"t": "Integration Engineer – Electronics Background", "lane": "review", "tailor": false, "seen": "2026-09-22"}, "|integration engineer electronics background": {"seen": "2026-09-22"}, "dialog:95078": {"t": "Hardware Integration Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-22"}, "|hardware integration engineer": {"seen": "2026-09-22"}, "apple:200665600": {"t": "Audio Machine Learning Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-22"}, "apple|audio machine learning engineer": {"seen": "2026-09-22"}, "apple:200665627": {"t": "Machine Learning Engineer - Speech", "lane": "reach", "tailor": true, "seen": "2026-09-22"}, "apple|machine learning engineer speech": {"seen": "2026-09-22"}, "cps:tools-development-software-engineer": {"t": "Tools Development Software Engineer", "lane": "review", "tailor": false, "seen": "2026-09-22"}, "|tools development software engineer": {"seen": "2026-09-22"}, "hiremetech:148768383": {"t": "BI & AI Developer", "lane": "apply", "tailor": false, "seen": "2026-09-22"}, "|bi ai developer": {"seen": "2026-09-22"}, "techjob:616d7ac18d8af500201348d2": {"t": "Software Development TL - Infrastructure", "lane": "review", "tailor": false, "seen": "2026-09-22"}, "|software development tl infrastructure": {"seen": "2026-09-22"}, "apple:200665683": {"t": "Hardware Validation & Characterization Engineer - Camera & L", "lane": "reach", "tailor": true, "seen": "2026-09-22"}, "apple|hardware validation characterization engineer camera laser sensor": {"seen": "2026-09-22"}, "alljobs:8828985": {"t": "לחברה ביטחונית בירושלים, מפתח /ת אוטומציה", "lane": "reach", "tailor": true, "seen": "2026-09-22"}, "allstarsit|לחברה ביטחונית בירושלים מפתח ת אוטומציה": {"seen": "2026-09-22"}, "hiremetech:148626155": {"t": "Junior Front End Web Developer‏", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|front end web developer": {"seen": "2026-09-23"}, "hiremetech:148296510": {"t": "Integration Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|integration engineer": {"seen": "2026-09-23"}, "hiremetech:148287320": {"t": "Junior Software Developer / QA Automation Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|software developer qa automation engineer": {"seen": "2026-09-23"}, "hiremetech:147385412": {"t": "Junior Fullstack Developer – Billing & Monetization", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|fullstack developer billing monetization": {"seen": "2026-09-23"}, "hiremetech:147318715": {"t": "C# Software Developer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|c software developer": {"seen": "2026-09-23"}, "hiremetech:144178685": {"t": "Communication Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|communication software engineer": {"seen": "2026-09-23"}, "hiremetech:141069519": {"t": "Junior AI Developer — Agents & Application Development", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|ai developer agents application development": {"seen": "2026-09-23"}, "hiremetech:141138439": {"t": "Test & Automation Engineer - Electro-Optics Department", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|test automation engineer electro optics department": {"seen": "2026-09-23"}, "hiremetech:142677950": {"t": "Junior Data Validation Engineer (Position #3000)", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|data validation engineer": {"seen": "2026-09-23"}, "hiremetech:136360216": {"t": "QA Specialist (Manual & Automation)", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|qa specialist": {"seen": "2026-09-23"}, "hiremetech:140917428": {"t": "Junior Design Emulation/Validation Engineer m/f/d", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|design emulation validation engineer m f d": {"seen": "2026-09-23"}, "hiremetech:127000524": {"t": "Machine Learning Developer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|machine learning developer": {"seen": "2026-09-23"}, "hiremetech:143192483": {"t": "23372 - Automation Engineer (Petach-. Tikva, Israel)", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|23372 automation engineer": {"seen": "2026-09-23"}, "amazon:10557725": {"t": " Software Engineer , Annapurna Labs", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "amazon|software engineer annapurna labs": {"seen": "2026-09-23"}, "amazon:10491309": {"t": "2026 Graduate Software Dev Engineer ", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "amazon|2026 graduate software dev engineer": {"seen": "2026-09-23"}, "gotfriends:154609": {"t": "Infrastructure Software Engineer בחברת סטארט-אפ ב- Stealth M", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "|infrastructure software engineer בחברת סטארט אפ ב stealth mode": {"seen": "2026-09-23"}, "comeet:AB.D6B": {"t": "Firmware Verification Engineer- Sub Contractor", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "samsung research and development center|firmware verification engineer sub contractor": {"seen": "2026-09-23"}, "comeet:C0.D62": {"t": "Firmware Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "samsung research and development center|firmware engineer": {"seen": "2026-09-23"}, "apple:200611225": {"t": "Embedded FW Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "apple|embedded fw engineer": {"seen": "2026-09-23"}, "apple:200665626": {"t": "Machine Learning Engineer - Vision", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "apple|machine learning engineer vision": {"seen": "2026-09-23"}, "apple:200659630": {"t": "Embedded SW Engineer -  System & Firmware Diagnostics", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "apple|embedded sw engineer firmware diagnostics": {"seen": "2026-09-23"}, "hiremetech:148911915": {"t": "Developer priority", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "|developer priority": {"seen": "2026-09-23"}, "greenhouse:catonetworks:4863034101": {"t": "Agentic AI Engineer ", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "catonetworks|agentic ai engineer": {"seen": "2026-09-23"}, "greenhouse:catonetworks:4951235101": {"t": " Agentic AI Engineer - Product Support", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "catonetworks|agentic ai engineer product support": {"seen": "2026-09-23"}, "greenhouse:catonetworks:4769033101": {"t": "Field AI Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "catonetworks|field ai engineer": {"seen": "2026-09-23"}, "greenhouse:lightrun:4767904101": {"t": "AI Engineer ", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "lightrun|ai engineer": {"seen": "2026-09-23"}, "greenhouse:nextinsurance66:7816741003": {"t": "Backend Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "nextinsurance66|backend engineer": {"seen": "2026-09-23"}, "greenhouse:nextinsurance66:7979131003": {"t": "Graduate Backend Software Engineer- UpNEXT Program", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "nextinsurance66|graduate backend software engineer upnext program": {"seen": "2026-09-23"}, "greenhouse:nextinsurance66:7979090003": {"t": "Graduate Frontend / Full Stack Software Engineer – UpNEXT Pr", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "nextinsurance66|graduate frontend full stack software engineer upnext program": {"seen": "2026-09-23"}, "qualityai:58256344": {"t": "Learning Developer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|learning developer": {"seen": "2026-09-23"}, "qualityai:51227644": {"t": "Test Automation and Software development", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|test automation and software development": {"seen": "2026-09-23"}, "qualityai:59007244": {"t": "Automation Engineer - Python", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|automation engineer python": {"seen": "2026-09-23"}, "qualityai:57030344": {"t": "QA Automation Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|qa automation engineer": {"seen": "2026-09-23"}, "qualityai:59664144": {"t": "AI Vibe Coding Engineer / GenAI Prototyping Developer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|ai vibe coding engineer genai prototyping developer": {"seen": "2026-09-23"}, "qualityai:54012244": {"t": "DevOps Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|devops engineer": {"seen": "2026-09-23"}, "qualityai:51571444": {"t": "Python Automation Developer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|python automation developer": {"seen": "2026-09-23"}, "qualityai:58689244": {"t": "Automation Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|automation engineer": {"seen": "2026-09-23"}, "qualityai:57661344": {"t": "Debug Engineer - Python", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "qualityai|debug engineer python": {"seen": "2026-09-23"}, "qualityai:56601544": {"t": "Mobile Automation Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|mobile automation engineer": {"seen": "2026-09-23"}, "qualityai:59281344": {"t": "Java Software Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "qualityai|java software engineer": {"seen": "2026-09-23"}, "lemonade:7cdf4386-e378-42b6-8f52-58ef7ff99ba8": {"t": "Backend Engineer - ML Platform", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "lemonade|backend engineer ml platform": {"seen": "2026-09-23"}, "moonactive:f9d414e9-6bb9-4e35-99c2-6d452a66c7ae": {"t": "DevOps Engineer", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "moon active|devops engineer": {"seen": "2026-09-23"}, "moonactive:b9ef962f-9edd-49f3-bb44-e288bb7885d4": {"t": "IT Infrastructure & Cloud Engineer", "lane": "apply", "tailor": false, "seen": "2026-09-23"}, "moon active|it infrastructure cloud engineer": {"seen": "2026-09-23"}, "moonactive:fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc": {"t": "Unity Developer", "lane": "reach", "tailor": true, "seen": "2026-09-23"}, "moon active|unity developer": {"seen": "2026-09-23"}}, "source_stats": {"hiremetech": {"max": 2558, "last": 2542}, "experis": {"max": 600, "last": 600}, "drushim": {"max": 143, "last": 142}, "greenhouse": {"max": 261, "last": 261}, "amazon": {"max": 100, "last": 100}, "ethosia": {"max": 120, "last": 120}, "dialog": {"max": 120, "last": 120}, "nisha": {"max": 55, "last": 54}, "gotfriends": {"max": 120, "last": 120}, "builtin": {"max": 48, "last": 45}, "linkedin": {"max": 49, "last": 48}, "alljobs": {"max": 120, "last": 120}, "comeet": {"max": 120, "last": 120}, "workday": {"max": 31, "last": 31}, "apple": {"max": 79, "last": 78}, "camtek": {"max": 49, "last": 45}, "lever": {"max": 6, "last": 6}, "qualityai": {"max": 66, "last": 66}, "lemonade": {"max": 16, "last": 16}, "moonactive": {"max": 11, "last": 11}, "hibob": {"max": 11, "last": 11}, "kaltura": {"max": 0, "last": 0}}}
+{
+"seen": {
+"hiremetech:148437258": {
+"t": "Graduate Frontend / Full Stack Software Engineer – UpNEXT Pr",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|graduate frontend full stack software engineer upnext program": {
+"seen": "2026-09-18"
+},
+"hiremetech:148435480": {
+"t": "Graduate Backend Software Engineer- UpNEXT Program",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|graduate backend software engineer upnext program": {
+"seen": "2026-09-18"
+},
+"hiremetech:148144724": {
+"t": "Junior Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|software engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:148309885": {
+"t": "iOS Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|ios developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:148374147": {
+"t": "Software Configuration Management (SCM) Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|software configuration management engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:148298764": {
+"t": "DevOps/AI Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|devops ai engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:148021066": {
+"t": "מפתח/ת תוכנה שרוצה לעשות את הצעד הראשון לעולם הסייבר?",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|מפתח ת תוכנה שרוצה לעשות את הצעד הראשון לעולם הסייבר": {
+"seen": "2026-09-18"
+},
+"hiremetech:148150120": {
+"t": "Junior Full Stack Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|full stack engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:148103662": {
+"t": "Junior Backend Software Engineer Kfar Saba, Central District",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|backend software engineer kfar saba central district 08 30 2026": {
+"seen": "2026-09-18"
+},
+"hiremetech:148001919": {
+"t": "Angular Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|angular developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:147857411": {
+"t": "Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"hiremetech:147887909": {
+"t": "Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|software developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:147694044": {
+"t": "Junior Full Stack Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|full stack developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:148192803": {
+"t": "מהנדס/ת בקרה ואוטומציה",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|מהנדס ת בקרה ואוטומציה": {
+"seen": "2026-09-18"
+},
+"hiremetech:148149820": {
+"t": "דרוש/ה מהנדס Full Stack מתחיל (AI-Native)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|דרוש ה מהנדס full stack מתחיל": {
+"seen": "2026-09-18"
+},
+"hiremetech:148007168": {
+"t": "DevOps Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|devops engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:147686728": {
+"t": "Junior Unreal Engine Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|unreal engine developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:147565312": {
+"t": "Junior Embedded Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|embedded software engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:147288445": {
+"t": "Junior Developer – Issue Resolution",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|developer issue resolution": {
+"seen": "2026-09-18"
+},
+"hiremetech:147286082": {
+"t": "Full Stack Developer | C# Angular",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|full stack developer c angular": {
+"seen": "2026-09-18"
+},
+"hiremetech:147182089": {
+"t": "Associate Software Engineer (Fixed-Term Contract)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|associate software engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:142710329": {
+"t": "Junior Embedded Software Engineer robotics platforms- Tempor",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|embedded software engineer robotics platforms temporary": {
+"seen": "2026-09-18"
+},
+"hiremetech:146690932": {
+"t": "Software Performance Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|software performance engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:146436218": {
+"t": "Software Verification Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|software verification engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:147149787": {
+"t": "מפתח/ת ומיישם/ת Power Platform & SharePoint",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|מפתח ת ומיישם ת power platform sharepoint": {
+"seen": "2026-09-18"
+},
+"hiremetech:147446381": {
+"t": "מפתח/ת full stack",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|מפתח ת full stack": {
+"seen": "2026-09-18"
+},
+"hiremetech:6387742": {
+"t": "Junior React Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|react developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:140492834": {
+"t": "Junior Backend Developer (PHP)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|backend developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:143471773": {
+"t": "Data Engineer - AWS Specialist",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|data engineer aws specialist": {
+"seen": "2026-09-18"
+},
+"hiremetech:143384246": {
+"t": "Junior Full Stack PHP",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|full stack php": {
+"seen": "2026-09-18"
+},
+"hiremetech:143364665": {
+"t": "Junior Software Engineer C++",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|software engineer c": {
+"seen": "2026-09-18"
+},
+"hiremetech:142860792": {
+"t": "Frontend Engineer – AI-Driven Data Security Platform",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|frontend engineer ai driven data security platform": {
+"seen": "2026-09-18"
+},
+"hiremetech:142581504": {
+"t": "Salesforce Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|salesforce developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:142566564": {
+"t": "Junior Core Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|core developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:141075324": {
+"t": "Backend Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|backend engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:140346653": {
+"t": "Software Engineer -New College Grad",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|software engineer new college grad": {
+"seen": "2026-09-18"
+},
+"hiremetech:136491163": {
+"t": "QA & Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|qa automation engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:136490854": {
+"t": "Junior Full Stack developer – TLV Site",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|full stack developer tlv site": {
+"seen": "2026-09-18"
+},
+"hiremetech:134684234": {
+"t": "Junior Fullstack Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|fullstack software developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:6369189": {
+"t": "Junior Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:143181397": {
+"t": "Validation & Automation Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|validation automation engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:142711047": {
+"t": "Junior level Fullstack Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|level fullstack engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:136490436": {
+"t": "Junior Full Stack developer – Ukraine Site",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|full stack developer ukraine site": {
+"seen": "2026-09-18"
+},
+"hiremetech:135656739": {
+"t": "Backend Java Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|backend java developer": {
+"seen": "2026-09-18"
+},
+"hiremetech:134749066": {
+"t": "מפתח/ת JAVA AI JUNIOR",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|מפתח ת java ai": {
+"seen": "2026-09-18"
+},
+"hiremetech:106872978": {
+"t": "Graduate QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|graduate qa automation engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:142711046": {
+"t": "Junior level Fullstack Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"hiremetech:142520690": {
+"t": "Data Engineer לארגון ציבורי באזור המרכז (1)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|data engineer לארגון ציבורי באזור המרכז": {
+"seen": "2026-09-18"
+},
+"hiremetech:141190002": {
+"t": "מפתח DevOps גוניור",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|מפתח devops גוניור": {
+"seen": "2026-09-18"
+},
+"hiremetech:136611917": {
+"t": "Junior Backend Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|backend software engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:142860777": {
+"t": "Firmware Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|firmware engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:140568085": {
+"t": "Data Engineer עבור ארגון טכנולוגי באזור המרכז (1)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז": {
+"seen": "2026-09-18"
+},
+"hiremetech:136316963": {
+"t": "מפתחת net גוניור",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|מפתחת net גוניור": {
+"seen": "2026-09-18"
+},
+"hiremetech:143610571": {
+"t": "מגייס/ת טכנולוגי/ת ללא ניסיון, לוג און תוכנה",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|מגייס ת טכנולוגי ת ללא ניסיון לוג און תוכנה": {
+"seen": "2026-09-18"
+},
+"drushim:38441335": {
+"t": "מטמיע/ת מערכות נוכחות לחברת תוכנה בר\"ג",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"חסוי|מטמיע ת מערכות נוכחות לחברת תוכנה בר ג": {
+"seen": "2026-09-18"
+},
+"greenhouse:jfrog:7939091": {
+"t": "GenAI & Competitive Intelligence Engineer   ",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"jfrog|genai competitive intelligence engineer": {
+"seen": "2026-09-18"
+},
+"greenhouse:jfrog:8152802": {
+"t": "Software Engineer ",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"jfrog|software engineer": {
+"seen": "2026-09-18"
+},
+"greenhouse:taboola:8073783": {
+"t": "Experienced Full Stack Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"taboola|experienced full stack engineer": {
+"seen": "2026-09-18"
+},
+"greenhouse:taboola:8176684": {
+"t": "Software Developer – Production Engineering",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"taboola|software developer production engineering": {
+"seen": "2026-09-18"
+},
+"amazon:10541334": {
+"t": "Junior Embedded Software Engineer, Graviton",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"amazon|embedded software engineer graviton": {
+"seen": "2026-09-18"
+},
+"amazon:10538439": {
+"t": "Embedded Software Engineer , Annapurna Labs",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"amazon|embedded software engineer annapurna labs": {
+"seen": "2026-09-18"
+},
+"amazon:10534007": {
+"t": "Software Engineer - Linux kernel, EFA",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"amazon|software engineer linux kernel efa": {
+"seen": "2026-09-18"
+},
+"amazon:10533899": {
+"t": "Software Engineer in Test , Graviton Team",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"amazon|software engineer in test graviton team": {
+"seen": "2026-09-18"
+},
+"amazon:10521270": {
+"t": "Software Development Engineer (AWS ML), Machine Learning Isr",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"amazon|software development engineer machine learning flow sub team": {
+"seen": "2026-09-18"
+},
+"amazon:10521736": {
+"t": "Embedded Software Engineer - Nitro , Annapurna Labs",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"amazon|embedded software engineer nitro annapurna labs": {
+"seen": "2026-09-18"
+},
+"amazon:10503595": {
+"t": "Ethernet Validation Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"amazon|ethernet validation engineer": {
+"seen": "2026-09-18"
+},
+"amazon:10492675": {
+"t": "Software Development Engineer , Annapurna Labs",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"amazon|software development engineer annapurna labs": {
+"seen": "2026-09-18"
+},
+"dialog:95064": {
+"t": "Hardware Verification & Validation Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|hardware verification validation engineer": {
+"seen": "2026-09-18"
+},
+"gotfriends:151062": {
+"t": "AI Engineer- Generative AI (Java) בחברה פרטית",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|ai engineer generative ai בחברה פרטית": {
+"seen": "2026-09-18"
+},
+"gotfriends:154863": {
+"t": "Software Engineer, Robotics & Integration בחברת סטארט-אפ שמפ",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|software engineer robotics integration בחברת סטארט אפ שמפתחת רחפני שטח": {
+"seen": "2026-09-18"
+},
+"gotfriends:154468": {
+"t": "Software Developer בחברת סטארט-אפ חדשנית",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|software developer בחברת סטארט אפ חדשנית": {
+"seen": "2026-09-18"
+},
+"gotfriends:153760": {
+"t": "Backend Developer בחברת Cybersecurity גלובלית",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|backend developer בחברת cybersecurity גלובלית": {
+"seen": "2026-09-18"
+},
+"gotfriends:153957": {
+"t": "React Native Developer בחברה טכנולוגית",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|react native developer בחברה טכנולוגית": {
+"seen": "2026-09-18"
+},
+"gotfriends:152553": {
+"t": "פיתוח Frontend בחברת סטארט-אפ בתחום ה-AI",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|פיתוח frontend בחברת סטארט אפ בתחום ה ai": {
+"seen": "2026-09-18"
+},
+"gotfriends:152229": {
+"t": "Frontend Engineer בחברת סטארט-אפ בתחום ה-Blockchain וה-Crypt",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|frontend engineer בחברת סטארט אפ בתחום ה blockchain וה crypto": {
+"seen": "2026-09-18"
+},
+"gotfriends:154926": {
+"t": "Backend Developer בחברת סטארט-אפ בתחום ה-Security Cloud",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|backend developer בחברת סטארט אפ בתחום ה security cloud": {
+"seen": "2026-09-18"
+},
+"gotfriends:154854": {
+"t": "Software Engineer בחברת סטארט-אפ בתחום ה-Cyber",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|software engineer בחברת סטארט אפ בתחום ה cyber": {
+"seen": "2026-09-18"
+},
+"linkedin:4458662012": {
+"t": "Software Engineer III, Waze, Mobile (Android)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"google|software engineer iii waze mobile": {
+"seen": "2026-09-18"
+},
+"linkedin:4455903010": {
+"t": "Software Development Engineer, Elastic Block Storage, Server",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"amazon web services|software development engineer elastic block storage server durability engine": {
+"seen": "2026-09-18"
+},
+"linkedin:4461858207": {
+"t": "Java Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"applied materials|java software engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4439798199": {
+"t": "Core Backend Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"aidoc|core backend engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4412464414": {
+"t": "Junior level Fullstack Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"tomax think academy|level fullstack engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4468654724": {
+"t": "Full Stack Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"unframe|full stack software engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4437432497": {
+"t": "Software Engineer (Full Stack)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"shopic|software engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4445675230": {
+"t": "Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"iscar|software engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4466323118": {
+"t": "Junior Fullstack Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"glassix|fullstack developer": {
+"seen": "2026-09-18"
+},
+"linkedin:4416284127": {
+"t": "Full Stack Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"gini apps|full stack developer": {
+"seen": "2026-09-18"
+},
+"linkedin:4429308684": {
+"t": ".Net Developer & WPF",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"bagira|net developer wpf": {
+"seen": "2026-09-18"
+},
+"linkedin:4461817525": {
+"t": "Experienced Backend Developer- .NET C# (582)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"utron|experienced backend developer net c": {
+"seen": "2026-09-18"
+},
+"linkedin:4449051662": {
+"t": "Backend .Net Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"landa|backend net software engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4437392354": {
+"t": "Backend Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"black rabbit|backend developer": {
+"seen": "2026-09-18"
+},
+"linkedin:4435663163": {
+"t": "Python Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"infinidat|python software engineer": {
+"seen": "2026-09-18"
+},
+"linkedin:4440973256": {
+"t": "Software Development Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"fortinet|software development engineer": {
+"seen": "2026-09-18"
+},
+"alljobs:8819743": {
+"t": "דרוש /ה AI Engineer לארגון מוביל!",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"קומפאי טכנולוגיות בע מ|דרוש ה ai engineer לארגון מוביל": {
+"seen": "2026-09-18"
+},
+"alljobs:8736771": {
+"t": "מפתח /ת תוכנה Junior",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"peax talent|מפתח ת תוכנה": {
+"seen": "2026-09-18"
+},
+"alljobs:8825917": {
+"t": "AI Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|ai engineer": {
+"seen": "2026-09-18"
+},
+"alljobs:8823261": {
+"t": "מפתח /ת AI",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"חברה חסויה|מפתח ת ai": {
+"seen": "2026-09-18"
+},
+"alljobs:8656406": {
+"t": "AI / data Engineer - לרילוקיישן לקפריסין לימסול!",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"איזי אפ ייעוץ והשמה בע מ|ai data engineer לרילוקיישן לקפריסין לימסול": {
+"seen": "2026-09-18"
+},
+"alljobs:8801901": {
+"t": "Applied AI Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"|applied ai engineer": {
+"seen": "2026-09-18"
+},
+"alljobs:8821010": {
+"t": "QA Engineer | Manual Automation | רמת החייל",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"gtech|qa engineer manual automation רמת החייל": {
+"seen": "2026-09-18"
+},
+"alljobs:8815243": {
+"t": "QA Automation Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"דיאלוג|qa automation engineer": {
+"seen": "2026-09-18"
+},
+"comeet:8F.946": {
+"t": "Graduate QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"vast data|graduate qa automation engineer": {
+"seen": "2026-09-18"
+},
+"comeet:0A.C67": {
+"t": "DevOps Engineer (U.S Citizen)",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"oligo security|devops engineer": {
+"seen": "2026-09-18"
+},
+"comeet:FD.A51": {
+"t": "Full Stack Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"tech guard|full stack engineer": {
+"seen": "2026-09-18"
+},
+"workday:/job/Israel-Yokneam/Software-Performance-Engineer_JR2024413": {
+"t": "Software Performance Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"nvidia|software performance engineer": {
+"seen": "2026-09-18"
+},
+"workday:/job/Israel-Haifa/Software-Engineer_JR0283723": {
+"t": "Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"intel|software engineer": {
+"seen": "2026-09-18"
+},
+"apple:200627584": {
+"t": "Backend SW Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|backend sw engineer": {
+"seen": "2026-09-18"
+},
+"apple:200682345": {
+"t": "iOS Software Engineer- Location Technologies",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|ios software engineer location technologies": {
+"seen": "2026-09-18"
+},
+"apple:200623409": {
+"t": "Firmware WiFi Engineer - Wireless Technologies & Ecosystems",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|firmware wifi engineer wireless technologies ecosystems": {
+"seen": "2026-09-18"
+},
+"apple:200623639": {
+"t": "SW Developer For Validation-SSD",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|sw developer validation ssd": {
+"seen": "2026-09-18"
+},
+"apple:200672340": {
+"t": "Embedded Platform Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|embedded platform engineer": {
+"seen": "2026-09-18"
+},
+"apple:200666549": {
+"t": "Software Engineer - Test Automation & Infrastructure",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|software engineer test automation infrastructure": {
+"seen": "2026-09-18"
+},
+"apple:200666053": {
+"t": "Software Data Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|software data engineer": {
+"seen": "2026-09-18"
+},
+"apple:200665701": {
+"t": "Real - Time Embedded Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|real time embedded engineer": {
+"seen": "2026-09-18"
+},
+"apple:200648117": {
+"t": "iCloud Drive — Software, Test Automation & Infrastructure En",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-18"
+},
+"apple|icloud drive software test automation infrastructure engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:143194017": {
+"t": "Devops Infra/cloud Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-18"
+},
+"|devops infra cloud engineer": {
+"seen": "2026-09-18"
+},
+"hiremetech:140200619": {
+"t": "מפתח/ת BI עבור חברה ביטחונית באזור הצפון (1)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון": {
+"seen": "2026-09-21"
+},
+"hiremetech:148336333": {
+"t": "Networking QA and Automation Engineer, Network Systems",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|networking qa and automation engineer network": {
+"seen": "2026-09-21"
+},
+"hiremetech:148185057": {
+"t": "Full Stack Developer #1990",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|full stack developer 1990": {
+"seen": "2026-09-21"
+},
+"hiremetech:148296683": {
+"t": "Software Engineer III",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|software engineer iii": {
+"seen": "2026-09-21"
+},
+"hiremetech:148028934": {
+"t": "AI Tools and Cloud Software Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|ai tools and cloud software developer": {
+"seen": "2026-09-21"
+},
+"hiremetech:147889393": {
+"t": "Java Backend Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|java backend developer": {
+"seen": "2026-09-21"
+},
+"hiremetech:146457770": {
+"t": "R&D Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|r d software engineer": {
+"seen": "2026-09-21"
+},
+"hiremetech:147397756": {
+"t": "מפתח.ת אלגוריתמים AI/Computer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח ת אלגוריתמים ai computer": {
+"seen": "2026-09-21"
+},
+"hiremetech:144846369": {
+"t": "AI Text Validation Specialist (Hebrew language)",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|ai text validation specialist": {
+"seen": "2026-09-21"
+},
+"hiremetech:141409417": {
+"t": "Firmware SerDes Verification Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|firmware serdes verification engineer": {
+"seen": "2026-09-21"
+},
+"amazon:10481131": {
+"t": "Chip Validation Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"amazon|chip validation software engineer": {
+"seen": "2026-09-21"
+},
+"ethosia:76838": {
+"t": "System Integration & Validation Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|integration validation engineer": {
+"seen": "2026-09-21"
+},
+"ethosia:76700": {
+"t": "AI NPU Simulator Software Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|ai npu simulator software developer": {
+"seen": "2026-09-21"
+},
+"ethosia:76681": {
+"t": "Mid-Level Backend Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|mid level backend software engineer": {
+"seen": "2026-09-21"
+},
+"ethosia:76680": {
+"t": "PHY/Radio Validation Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|phy radio validation engineer": {
+"seen": "2026-09-21"
+},
+"ethosia:76661": {
+"t": "experienced Linux Test Automation Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|experienced linux test automation developer": {
+"seen": "2026-09-21"
+},
+"ethosia:76657": {
+"t": "Software Engineer- Real-Time Systems",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|software engineer real time": {
+"seen": "2026-09-21"
+},
+"ethosia:76641": {
+"t": "Embedded Software Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|embedded software developer": {
+"seen": "2026-09-21"
+},
+"ethosia:76640": {
+"t": "Embedded SW Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|embedded sw engineer": {
+"seen": "2026-09-21"
+},
+"nisha:12541": {
+"t": "Data Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-21"
+},
+"|data engineer": {
+"seen": "2026-09-21"
+},
+"nisha:12533": {
+"t": "FW / Embedded Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-21"
+},
+"|fw embedded engineer": {
+"seen": "2026-09-21"
+},
+"nisha:8469": {
+"t": "Back End Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|back end engineer": {
+"seen": "2026-09-21"
+},
+"nisha:11088": {
+"t": "ראש\\\\\\\\\\\\\\\\ת צוות תוכנה",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-21"
+},
+"|ראש ת צוות תוכנה": {
+"seen": "2026-09-21"
+},
+"linkedin:4449084615": {
+"t": "Python Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"cybord|python software engineer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-devops": {
+"t": "מפתח/ת DEVOPS",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח ת devops": {
+"seen": "2026-09-21"
+},
+"cps:junior-hw-embedded-engineer": {
+"t": "Junior HW/Embedded Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|hw embedded engineer": {
+"seen": "2026-09-21"
+},
+"cps:ios-mobile-developer": {
+"t": "IOS Mobile Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|ios mobile developer": {
+"seen": "2026-09-21"
+},
+"cps:php-developer": {
+"t": "PHP Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|php developer": {
+"seen": "2026-09-21"
+},
+"cps:python-developer-2": {
+"t": "Python Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|python developer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%95%d7%9e%d7%97%d7%94-c-%d7%9c%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%90%d7%a4%d7%9c%d7%99%d7%a7%d7%a6%d7%99%d7%95%d7%aa-%d7%9c%d7%a2%d7%99%d7%91%d7%95%d7%93-%d7%aa%d7%9e%d7%95%d7%a0%d7%94": {
+"t": "מומחה C++ לפיתוח אפליקציות לעיבוד תמונה רפואית",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מומחה c לפיתוח אפליקציות לעיבוד תמונה רפואית": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-low-level": {
+"t": "מפתח LOW LEVEL",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח low level": {
+"seen": "2026-09-21"
+},
+"cps:c-developer": {
+"t": "C++ Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|c developer": {
+"seen": "2026-09-21"
+},
+"cps:full-stack-java-engineer": {
+"t": "Full stack JAVA Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|full stack java engineer": {
+"seen": "2026-09-21"
+},
+"cps:real-time-embedded-developer": {
+"t": "Real Time Embedded Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|real time embedded developer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-c": {
+"t": "מפתח/ת ++C",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח ת c": {
+"seen": "2026-09-21"
+},
+"cps:java-software-engineer": {
+"t": "Java Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|java software engineer": {
+"seen": "2026-09-21"
+},
+"cps:rt-embedded-engineer": {
+"t": "RT/Embedded Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|rt embedded engineer": {
+"seen": "2026-09-21"
+},
+"cps:junior-full-stack-web-developer": {
+"t": "Junior Full Stack Web Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|full stack web developer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-embedded": {
+"t": "מהנדס/ת Embedded",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מהנדס ת embedded": {
+"seen": "2026-09-21"
+},
+"cps:full-stack-software-engineer": {
+"t": "Full Stack Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|full stack software engineer": {
+"seen": "2026-09-21"
+},
+"cps:digital-back-end-engineer": {
+"t": "Digital Back-End Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|digital back end engineer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%94%d7%a0%d7%93%d7%a1-%d7%aa-%d7%aa%d7%95%d7%9b%d7%a0%d7%94": {
+"t": "מהנדס/ת תוכנה",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מהנדס ת תוכנה": {
+"seen": "2026-09-21"
+},
+"cps:fullstack-developer": {
+"t": "Fullstack Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|fullstack developer": {
+"seen": "2026-09-21"
+},
+"cps:java-developer-2": {
+"t": "Java Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|java developer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-gis": {
+"t": "מפתח/ת GIS",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח ת gis": {
+"seen": "2026-09-21"
+},
+"cps:machine-learning-system-software-developer": {
+"t": "Machine Learning System Software Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|machine learning software developer": {
+"seen": "2026-09-21"
+},
+"cps:embedded-engineer-2": {
+"t": "Embedded Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|embedded engineer": {
+"seen": "2026-09-21"
+},
+"cps:priority-erp-developer": {
+"t": "Priority ERP Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|priority erp developer": {
+"seen": "2026-09-21"
+},
+"cps:web-developer": {
+"t": "Web Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|web developer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-%d7%a6%d7%93-%d7%a9%d7%a8%d7%aa": {
+"t": "מפתח/ת צד שרת",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח ת צד שרת": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-fullstack-%d7%91-c": {
+"t": "מפתח fullstack ב-#C",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח fullstack ב c": {
+"seen": "2026-09-21"
+},
+"cps:backend-c-developer": {
+"t": "Backend C++ Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|backend c developer": {
+"seen": "2026-09-21"
+},
+"cps:ios-sdk-developer": {
+"t": "iOS SDK Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|ios sdk developer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%90%d7%a4%d7%9c%d7%99%d7%a7%d7%a6%d7%99%d7%99%d7%aa-web": {
+"t": "מפתח אפליקציית Web",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח אפליקציית web": {
+"seen": "2026-09-21"
+},
+"cps:net-backend-developer": {
+"t": "Net Backend Developer.",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|net backend developer": {
+"seen": "2026-09-21"
+},
+"cps:validation-software-engineer": {
+"t": "Validation SoftWare Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|validation software engineer": {
+"seen": "2026-09-21"
+},
+"cps:%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-rt-embedded": {
+"t": "מפתח/ת RT Embedded",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מפתח ת rt embedded": {
+"seen": "2026-09-21"
+},
+"cps:junior-debugger-software-engineer": {
+"t": "Junior Debugger Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|debugger software engineer": {
+"seen": "2026-09-21"
+},
+"cps:software-application-engineer": {
+"t": "SoftWare Application Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|software application engineer": {
+"seen": "2026-09-21"
+},
+"cps:software-development-engineer": {
+"t": "Software Development Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|software development engineer": {
+"seen": "2026-09-21"
+},
+"cps:c-software-engineer": {
+"t": "C++ Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|c software engineer": {
+"seen": "2026-09-21"
+},
+"cps:experienced-firmware-engineer": {
+"t": "Experienced Firmware Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|experienced firmware engineer": {
+"seen": "2026-09-21"
+},
+"cps:dsp-phy-firmware-engineer": {
+"t": "DSP/PHY Firmware Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|dsp phy firmware engineer": {
+"seen": "2026-09-21"
+},
+"cps:c-backend-developer": {
+"t": "C++ Backend Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|c backend developer": {
+"seen": "2026-09-21"
+},
+"techjob:696e0a42dd7c427ad9acbe2e": {
+"t": "Frontend Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|frontend software engineer": {
+"seen": "2026-09-21"
+},
+"techjob:671f8624762a7b7f163ad2c3": {
+"t": "Frontend Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|frontend developer": {
+"seen": "2026-09-21"
+},
+"techjob:68737e8df43d15d3ff8da25b": {
+"t": "Backend Infrastructure Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|backend infrastructure engineer": {
+"seen": "2026-09-21"
+},
+"techjob:68737825f43d15d3ff8d9654": {
+"t": "Front End Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|front end engineer": {
+"seen": "2026-09-21"
+},
+"techjob:682ee944db560edc53c9ed1c": {
+"t": "Python Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|python engineer": {
+"seen": "2026-09-21"
+},
+"techjob:6873766ddb560edc53dc721d": {
+"t": "Front End Engineer/ FS",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|front end engineer fs": {
+"seen": "2026-09-21"
+},
+"techjob:6a981748ec73bb7a321d16cd": {
+"t": "Backend Engineer - OT Security Team",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|backend engineer ot security team": {
+"seen": "2026-09-21"
+},
+"techjob:61ae319a0fb8a4001fb00752": {
+"t": "Software Engineer- E- Commerce",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|software engineer e commerce": {
+"seen": "2026-09-21"
+},
+"techjob:62a19fbca0e1130024fa3130": {
+"t": "React Native Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|react native developer": {
+"seen": "2026-09-21"
+},
+"techjob:621cf09a4f62ed002579fc8d": {
+"t": "Mobile React Native",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|mobile react native": {
+"seen": "2026-09-21"
+},
+"techjob:624af8f24f62ed00257a309c": {
+"t": "Software Engineer- User Data",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|software engineer user data": {
+"seen": "2026-09-21"
+},
+"techjob:6565aa57a6bd1a893225a564": {
+"t": "Full Stack Developer- Office of the CEO",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|full stack developer office of ceo": {
+"seen": "2026-09-21"
+},
+"techjob:6565c4090c626c5869889bf1": {
+"t": "Startup Entrepreneur - Mobile Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|startup entrepreneur mobile developer": {
+"seen": "2026-09-21"
+},
+"techjob:6666f244d860f71a230b7a52": {
+"t": "Full Stack Engineer  - Mansion",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|full stack engineer mansion": {
+"seen": "2026-09-21"
+},
+"techjob:660d1ef0d95f0259508bcd4e": {
+"t": "Android Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|android developer": {
+"seen": "2026-09-21"
+},
+"techjob:6565c57a0c626c5869889de1": {
+"t": "Startup Entrepreneur - AI Developer- NLP",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|startup entrepreneur ai developer nlp": {
+"seen": "2026-09-21"
+},
+"techjob:6565c4e80c626c5869889d10": {
+"t": "Startup Entrepreneur - Web Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|startup entrepreneur web developer": {
+"seen": "2026-09-21"
+},
+"techjob:625664e24f62ed00257a3d74": {
+"t": "Full Stack Startup Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|full stack startup engineer": {
+"seen": "2026-09-21"
+},
+"techjob:5fe49e83c031ab0021df0653": {
+"t": "Mobile Backend Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|mobile backend developer": {
+"seen": "2026-09-21"
+},
+"workday:/job/Israel-Yokneam/System-Software-Engineer_JR2016510": {
+"t": "System Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"nvidia|software engineer": {
+"seen": "2026-09-21"
+},
+"workday:/job/Israel-Yokneam/Software-Developer---Networking_JR2024804": {
+"t": "Software Developer - Networking",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"nvidia|software developer networking": {
+"seen": "2026-09-21"
+},
+"workday:/job/Israel-Yokneam/Software-Validation-Engineer_JR2011195": {
+"t": "Software Validation Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"nvidia|software validation engineer": {
+"seen": "2026-09-21"
+},
+"workday:/job/Israel-Yokneam/Advanced-Software-Development-Engineer_JR2020678": {
+"t": "Advanced Software Development Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"nvidia|advanced software development engineer": {
+"seen": "2026-09-21"
+},
+"workday:/job/Israel-Yokneam/Software-Verification-Engineer--Networking_JR2022969-1": {
+"t": "Software Verification Engineer, Networking",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"nvidia|software verification engineer networking": {
+"seen": "2026-09-21"
+},
+"workday:/job/Israel-Haifa/Security-Software-Development-Engineer_JR0285317": {
+"t": "Security Software Development Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"intel|security software development engineer": {
+"seen": "2026-09-21"
+},
+"apple:200674773": {
+"t": "Full Stack Developer : Agentic AI",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"apple|full stack developer agentic ai": {
+"seen": "2026-09-21"
+},
+"hiremetech:143751831": {
+"t": "מתכנת/ת ג'וניור ל- IBI קפיטל – מספר משרה 1726",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|מתכנת ת ג וניור ל ibi קפיטל מספר משרה 1726": {
+"seen": "2026-09-21"
+},
+"dialog:94951": {
+"t": "בוגר/ת תואר הנדסת חשמל למשרת מהנדס/ת ולידציה ואוטומציה",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-21"
+},
+"|בוגר ת תואר הנדסת חשמל למשרת מהנדס ת ולידציה ואוטומציה": {
+"seen": "2026-09-21"
+},
+"hiremetech:141138110": {
+"t": "Integration Technician / Integration Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|integration technician integration engineer": {
+"seen": "2026-09-22"
+},
+"greenhouse:jfrog:8156071": {
+"t": "IS Integration Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"jfrog|is integration engineer": {
+"seen": "2026-09-22"
+},
+"greenhouse:appsflyer:8781235002": {
+"t": "Mobile SDK Engineer ",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"appsflyer|mobile sdk engineer": {
+"seen": "2026-09-22"
+},
+"amazon:10506530": {
+"t": "System Integration Engineer, SERDES",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"amazon|integration engineer serdes": {
+"seen": "2026-09-22"
+},
+"ethosia:76871": {
+"t": "Integration Engineer – Electronics Background",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|integration engineer electronics background": {
+"seen": "2026-09-22"
+},
+"dialog:95078": {
+"t": "Hardware Integration Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|hardware integration engineer": {
+"seen": "2026-09-22"
+},
+"apple:200665600": {
+"t": "Audio Machine Learning Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"apple|audio machine learning engineer": {
+"seen": "2026-09-22"
+},
+"apple:200665627": {
+"t": "Machine Learning Engineer - Speech",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"apple|machine learning engineer speech": {
+"seen": "2026-09-22"
+},
+"cps:tools-development-software-engineer": {
+"t": "Tools Development Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|tools development software engineer": {
+"seen": "2026-09-22"
+},
+"hiremetech:148768383": {
+"t": "BI & AI Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|bi ai developer": {
+"seen": "2026-09-22"
+},
+"techjob:616d7ac18d8af500201348d2": {
+"t": "Software Development TL - Infrastructure",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-22"
+},
+"|software development tl infrastructure": {
+"seen": "2026-09-22"
+},
+"apple:200665683": {
+"t": "Hardware Validation & Characterization Engineer - Camera & L",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"apple|hardware validation characterization engineer camera laser sensor": {
+"seen": "2026-09-22"
+},
+"alljobs:8828985": {
+"t": "לחברה ביטחונית בירושלים, מפתח /ת אוטומציה",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-22"
+},
+"allstarsit|לחברה ביטחונית בירושלים מפתח ת אוטומציה": {
+"seen": "2026-09-22"
+},
+"hiremetech:148626155": {
+"t": "Junior Front End Web Developer‏",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|front end web developer": {
+"seen": "2026-09-23"
+},
+"hiremetech:148296510": {
+"t": "Integration Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|integration engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:148287320": {
+"t": "Junior Software Developer / QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|software developer qa automation engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:147385412": {
+"t": "Junior Fullstack Developer – Billing & Monetization",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|fullstack developer billing monetization": {
+"seen": "2026-09-23"
+},
+"hiremetech:147318715": {
+"t": "C# Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|c software developer": {
+"seen": "2026-09-23"
+},
+"hiremetech:144178685": {
+"t": "Communication Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|communication software engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:141069519": {
+"t": "Junior AI Developer — Agents & Application Development",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|ai developer agents application development": {
+"seen": "2026-09-23"
+},
+"hiremetech:141138439": {
+"t": "Test & Automation Engineer - Electro-Optics Department",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|test automation engineer electro optics department": {
+"seen": "2026-09-23"
+},
+"hiremetech:142677950": {
+"t": "Junior Data Validation Engineer (Position #3000)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|data validation engineer": {
+"seen": "2026-09-23"
+},
+"hiremetech:136360216": {
+"t": "QA Specialist (Manual & Automation)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|qa specialist": {
+"seen": "2026-09-23"
+},
+"hiremetech:140917428": {
+"t": "Junior Design Emulation/Validation Engineer m/f/d",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|design emulation validation engineer m f d": {
+"seen": "2026-09-23"
+},
+"hiremetech:127000524": {
+"t": "Machine Learning Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|machine learning developer": {
+"seen": "2026-09-23"
+},
+"hiremetech:143192483": {
+"t": "23372 - Automation Engineer (Petach-. Tikva, Israel)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|23372 automation engineer": {
+"seen": "2026-09-23"
+},
+"amazon:10557725": {
+"t": " Software Engineer , Annapurna Labs",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"amazon|software engineer annapurna labs": {
+"seen": "2026-09-23"
+},
+"amazon:10491309": {
+"t": "2026 Graduate Software Dev Engineer ",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"amazon|2026 graduate software dev engineer": {
+"seen": "2026-09-23"
+},
+"gotfriends:154609": {
+"t": "Infrastructure Software Engineer בחברת סטארט-אפ ב- Stealth M",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"|infrastructure software engineer בחברת סטארט אפ ב stealth mode": {
+"seen": "2026-09-23"
+},
+"comeet:AB.D6B": {
+"t": "Firmware Verification Engineer- Sub Contractor",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"samsung research and development center|firmware verification engineer sub contractor": {
+"seen": "2026-09-23"
+},
+"comeet:C0.D62": {
+"t": "Firmware Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"samsung research and development center|firmware engineer": {
+"seen": "2026-09-23"
+},
+"apple:200611225": {
+"t": "Embedded FW Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"apple|embedded fw engineer": {
+"seen": "2026-09-23"
+},
+"apple:200665626": {
+"t": "Machine Learning Engineer - Vision",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"apple|machine learning engineer vision": {
+"seen": "2026-09-23"
+},
+"apple:200659630": {
+"t": "Embedded SW Engineer -  System & Firmware Diagnostics",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"apple|embedded sw engineer firmware diagnostics": {
+"seen": "2026-09-23"
+},
+"hiremetech:148911915": {
+"t": "Developer priority",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"|developer priority": {
+"seen": "2026-09-23"
+},
+"greenhouse:catonetworks:4863034101": {
+"t": "Agentic AI Engineer ",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"catonetworks|agentic ai engineer": {
+"seen": "2026-09-23"
+},
+"greenhouse:catonetworks:4951235101": {
+"t": " Agentic AI Engineer - Product Support",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"catonetworks|agentic ai engineer product support": {
+"seen": "2026-09-23"
+},
+"greenhouse:catonetworks:4769033101": {
+"t": "Field AI Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"catonetworks|field ai engineer": {
+"seen": "2026-09-23"
+},
+"greenhouse:lightrun:4767904101": {
+"t": "AI Engineer ",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"lightrun|ai engineer": {
+"seen": "2026-09-23"
+},
+"greenhouse:nextinsurance66:7816741003": {
+"t": "Backend Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nextinsurance66|backend engineer": {
+"seen": "2026-09-23"
+},
+"greenhouse:nextinsurance66:7979131003": {
+"t": "Graduate Backend Software Engineer- UpNEXT Program",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nextinsurance66|graduate backend software engineer upnext program": {
+"seen": "2026-09-23"
+},
+"greenhouse:nextinsurance66:7979090003": {
+"t": "Graduate Frontend / Full Stack Software Engineer – UpNEXT Pr",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nextinsurance66|graduate frontend full stack software engineer upnext program": {
+"seen": "2026-09-23"
+},
+"qualityai:58256344": {
+"t": "Learning Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|learning developer": {
+"seen": "2026-09-23"
+},
+"qualityai:51227644": {
+"t": "Test Automation and Software development",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|test automation and software development": {
+"seen": "2026-09-23"
+},
+"qualityai:59007244": {
+"t": "Automation Engineer - Python",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|automation engineer python": {
+"seen": "2026-09-23"
+},
+"qualityai:57030344": {
+"t": "QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|qa automation engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:59664144": {
+"t": "AI Vibe Coding Engineer / GenAI Prototyping Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|ai vibe coding engineer genai prototyping developer": {
+"seen": "2026-09-23"
+},
+"qualityai:54012244": {
+"t": "DevOps Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|devops engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:51571444": {
+"t": "Python Automation Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|python automation developer": {
+"seen": "2026-09-23"
+},
+"qualityai:58689244": {
+"t": "Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|automation engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:57661344": {
+"t": "Debug Engineer - Python",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"qualityai|debug engineer python": {
+"seen": "2026-09-23"
+},
+"qualityai:56601544": {
+"t": "Mobile Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|mobile automation engineer": {
+"seen": "2026-09-23"
+},
+"qualityai:59281344": {
+"t": "Java Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"qualityai|java software engineer": {
+"seen": "2026-09-23"
+},
+"lemonade:7cdf4386-e378-42b6-8f52-58ef7ff99ba8": {
+"t": "Backend Engineer - ML Platform",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"lemonade|backend engineer ml platform": {
+"seen": "2026-09-23"
+},
+"moonactive:f9d414e9-6bb9-4e35-99c2-6d452a66c7ae": {
+"t": "DevOps Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"moon active|devops engineer": {
+"seen": "2026-09-23"
+},
+"moonactive:b9ef962f-9edd-49f3-bb44-e288bb7885d4": {
+"t": "IT Infrastructure & Cloud Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"moon active|it infrastructure cloud engineer": {
+"seen": "2026-09-23"
+},
+"moonactive:fd2cd6bb-1e02-4270-95cb-e40f7f3d5ccc": {
+"t": "Unity Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"moon active|unity developer": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/Software-Security-Researcher_JR2010818": {
+"t": "Software Security Researcher",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nvidia|software security researcher": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/Firmware-Engineer_JR2021080": {
+"t": "Firmware Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nvidia|firmware engineer": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/Linux-Driver-Developer_JR2024027": {
+"t": "Linux Driver Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nvidia|linux driver developer": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Tel-Aviv/QA-Automation-Engineer--Cloud-Orchestrations_JR2025739": {
+"t": "QA Automation Engineer, Cloud Orchestrations",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-23"
+},
+"nvidia|qa automation engineer cloud orchestrations": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/BSP-and-BMC-Verification-Software-Engineer_JR2016519": {
+"t": "BSP and BMC Verification Software Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nvidia|bsp and bmc verification software engineer": {
+"seen": "2026-09-23"
+},
+"workday:/job/Israel-Yokneam/IC-Test-Program-Validation-and-Verification-Engineer_JR2018715": {
+"t": "IC Test Program Validation and Verification Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-23"
+},
+"nvidia|ic test program validation and verification engineer": {
+"seen": "2026-09-23"
+}
+},
+"source_stats": {
+"hiremetech": {
+"max": 2558,
+"last": 2543
+},
+"experis": {
+"max": 600,
+"last": 600
+},
+"drushim": {
+"max": 143,
+"last": 142
+},
+"greenhouse": {
+"max": 261,
+"last": 261
+},
+"amazon": {
+"max": 100,
+"last": 100
+},
+"ethosia": {
+"max": 120,
+"last": 120
+},
+"dialog": {
+"max": 120,
+"last": 120
+},
+"nisha": {
+"max": 55,
+"last": 54
+},
+"gotfriends": {
+"max": 120,
+"last": 120
+},
+"builtin": {
+"max": 48,
+"last": 45
+},
+"linkedin": {
+"max": 49,
+"last": 48
+},
+"alljobs": {
+"max": 120,
+"last": 120
+},
+"comeet": {
+"max": 120,
+"last": 120
+},
+"workday": {
+"max": 124,
+"last": 124
+},
+"apple": {
+"max": 79,
+"last": 78
+},
+"camtek": {
+"max": 49,
+"last": 44
+},
+"lever": {
+"max": 6,
+"last": 6
+},
+"qualityai": {
+"max": 66,
+"last": 66
+},
+"lemonade": {
+"max": 16,
+"last": 16
+},
+"moonactive": {
+"max": 11,
+"last": 11
+},
+"hibob": {
+"max": 11,
+"last": 11
+},
+"kaltura": {
+"max": 0,
+"last": 0
+}
+}
+}
