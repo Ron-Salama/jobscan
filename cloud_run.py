@@ -729,9 +729,9 @@ def main(argv=None):
     existing = _expect(_load_json(JOBS_JSON, []), list, JOBS_JSON)
     cur = load_curation()
     statuses = _norm_values(cur.get("statuses"))
-    counts = {}; bucket = []; qa_bucket = []; giant_bucket = []; rows = []
+    counts = {}; bucket = []; qa_bucket = []; giant_bucket = []; ref_digest = []; rows = []
     if not rebuild:
-        rows = J.select(J.collect(counts), reg, bucket, qa_bucket, giant_bucket)
+        rows = J.select(J.collect(counts), reg, bucket, qa_bucket, giant_bucket, ref_digest)
     new = [slim(r) for r in rows]
     new_keys = {_nu(x.get("url")) for x in new}
     alljobs = merge_rows(new, existing)
@@ -757,6 +757,25 @@ def main(argv=None):
         # invisible buckets: filtered/uncertain roles + their JD text, for on-demand review
         write_buckets(bucket, qa_bucket, giant_bucket, alljobs)
         check_sources_dark(reg, counts)
+        # referral-company roles outside the title gate -> one Telegram digest (never raises);
+        # sent before the registry save so its 'already digested' marks are committed with it.
+        # Never digest a role Ron/Claude already handled: a NO tombstone, any status mark, or a row
+        # already on the page - nor another board's copy of it (same company|title).
+        try:
+            vmap, _ = _norm_map(cur.get("verdicts"), _VRANK_VERDICTS)
+            judged = ({k for k, v in vmap.items() if _is_no(v)}
+                      | {k for k, s in statuses.items() if s not in ("", "New")}
+                      | {_nu(r.get("url")) for r in alljobs}) - {""}
+            tkey = lambda b: J.digest_title_key(b.get("company"), b.get("role"))
+            # same role under another URL: this run's copies of a judged URL, rows on the page
+            # (a BuiltIn / '/en-US/' copy of a Workday req) and NO verdicts that carry company+role
+            jt = ({tkey(b) for b in ref_digest if _nu(b.get("url")) in judged}
+                  | {tkey(r) for r in alljobs if r.get("company") and r.get("role")}
+                  | {tkey(v) for k, v in vmap.items() if _is_no(v) and v.get("company") and v.get("role")})
+            ref_digest = [b for b in ref_digest if _nu(b.get("url")) not in judged and tkey(b) not in jt]
+        except Exception as e:
+            print("ref digest filter err:", e)
+        J.send_ref_digest(ref_digest, reg)
         reg["last_scan"] = _now_il().isoformat(timespec="minutes")
         J.save_reg(reg, SEEN_JSON)
     build_page(alljobs, J.TODAY, cur, reg.get("last_scan"))

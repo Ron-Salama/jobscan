@@ -27,7 +27,7 @@ def test_region_hebrew_north():
     assert J.region_of("חיפה והצפון") == "North"
     assert J.region_of("יקנעם") == "North"
     assert J.region_of("כרמיאל") == "North"
-    assert J.region_of("קרית אתא") == "North"          # Ron's home town
+    assert J.region_of("קרית אתא") == "North"
     assert J.region_of("North District, Israel") == "North"
     assert J.region_of("Binyamina") == "North"
 
@@ -158,7 +158,7 @@ def test_company_is_word_bound():
                "NICE", "Qualcomm", "Cisco"):
         assert J.company_is(co, C.GIANTS), co
     assert J.company_is("Palo Alto Networks", C.REFERRAL_COMPANIES)
-    assert J.company_is("PricewaterhouseCoopers", C.REFERRAL_COMPANIES)
+    assert J.company_is("PwC NEXT", C.REFERRAL_COMPANIES)          # the referral is PwC NEXT only (call #13)
     for co in ("Sapiens", "Metalab", "Intelligo", "Applied Materials", "(masked)", ""):
         assert not J.company_is(co, C.GIANTS), co
 
@@ -388,6 +388,166 @@ def test_followup_galilee_places_are_north():
     for loc in ("Galil Tachton (North)", "Tel Hai", "Ein Harod", "גליל עליון", "קצרין"):
         assert J.region_of(loc) == "North", loc
     assert J.region_of("Gelil Yam, Herzliya") == "Center"
+
+
+# ---------------- Ron's judgment calls, 2026-09-24 ----------------
+def test_call1_verification_software_titles_pass_gate():
+    for t in ("Verification Software Engineer", "SW Verification Engineer", "V&V Engineer",
+              "Software Verification & Validation Engineer", "Firmware Verification Engineer",
+              "System Integration & Verification Engineer", "BSP and BMC Verification Software Engineer"):
+        assert J.is_dev_title(t.lower()), t
+    assert not J.is_dev_title("verification engineer")              # bare = chip DV risk, not gated in
+    assert _lane("Design Verification Engineer") is None               # chip DV: never gated in
+    assert _lane("Design Verification Software Engineer")[1] == "foundation-gap"
+
+
+def test_call7_devops_ml_reach_unless_pure_junior():
+    assert _lane("DevOps Engineer", desc="1-3 years of experience with AWS") == ("reach", "profile-gap")
+    assert _lane("ML Engineer", desc="2+ years building models") == ("reach", "profile-gap")
+    assert _lane("Junior DevOps Engineer") == ("apply", "junior-learn-on-job")       # no years = learn on the job
+    assert _lane("DevOps Engineer", desc="0-2 years of experience") == ("apply", "junior-learn-on-job")
+    assert _lane("Junior DevOps Engineer", desc="2+ years of experience") == ("reach", "profile-gap")
+    assert _lane("Senior DevOps Engineer")[0] == "skip"
+    # not profile-gap: AI app engineering, cloud *software*, platform
+    assert _lane("Junior AI Engineer") == ("apply", "junior")
+    assert _lane("Junior Cloud Software Engineer") == ("apply", "junior")
+    c = J.classify(_job("DevOps Engineer", company="NVIDIA"))
+    assert (c["lane"], c["why"], c["tailor"]) == ("reach", "profile-gap", False)       # no giant ping
+
+
+def test_call8_experienced_title_is_reach():
+    assert _lane("Experienced Backend Developer") == ("reach", "experienced-title")
+    assert _lane("Experienced Backend Developer", desc="1-3 years of experience") == ("reach", "experienced-title")
+    assert _lane("מפתח/ת Full Stack מנוסה") == ("reach", "experienced-title")
+    assert _lane("Experienced Backend Developer", desc="5+ years of experience")[0] == "skip"
+    assert _lane("Senior Experienced Developer")[0] == "skip"
+
+
+def test_call9_junior_title_with_4y_goes_to_review():
+    assert _lane("Junior Software Engineer", desc="4+ years of experience in C++") == ("review", "junior-title-vs-years")
+    c = J.classify(_job("Junior Software Engineer", company="NVIDIA", desc="5+ years of experience"))
+    assert (c["lane"], c["why"]) == ("review", "junior-title-vs-years")
+    assert _lane("Junior Software Engineer", desc="1-2 years of experience") == ("apply", "junior")
+
+
+def test_call13_referral_is_pwc_next_not_all_pwc():
+    for co in ("PwC NEXT", "PwC | NEXT Technology Solutions"):
+        assert J.company_is(co, C.REFERRAL_COMPANIES), co
+    for co in ("PwC Israel", "PricewaterhouseCoopers", "Next Insurance", "NextSilicon"):
+        assert not J.company_is(co, C.REFERRAL_COMPANIES), co
+    assert not J.ref_digest_ok("penetration tester - jb-727")          # pentest is not his lane
+
+
+def test_review_experienced_giant_keeps_ping():
+    for d in ("Requirements: 2+ years of experience in C++ and Linux-free test tools for our lab.",
+              "We build C++ test tools for our lab systems; strong OOP and debugging skills are needed.",
+              "Requirements: 3+ years of experience in C++ and test tools for our lab systems."):
+        c = J.classify(_job("Experienced Software Engineer", company="NVIDIA", desc=d))
+        assert (c["lane"], c["why"], c["tailor"]) == ("reach", "experienced-title", True), d
+    c = J.classify(_job("Experienced DevOps Engineer", company="Mobileye", desc="2+ years of experience with AWS and CI tooling."))
+    assert (c["lane"], c["why"], c["tailor"]) == ("reach", "profile-gap", False)   # #7 stays ping-free
+
+
+def test_review_vv_title_gets_dv_guard():
+    assert _lane("Junior V&V Engineer", desc="Build UVM / SystemVerilog testbenches for ASIC blocks")[1] == "foundation-gap"
+    assert _lane("Junior V&V Engineer", desc="Develop C# and Python test tools for system V&V") == ("apply", "junior")
+
+
+def test_review_profile_gap_uses_title_head_and_hebrew():
+    assert not J.is_profile_gap_title("software engineer, devops tools")
+    assert not J.is_profile_gap_title("python developer - sre team")
+    assert J.is_profile_gap_title("backend & devops engineer")
+    assert J.is_profile_gap_title("מהנדס/ת לצוות הdevops")
+    assert J.is_experienced_title("מפתח/ת full stack מנוס/ה") and J.is_experienced_title("המנוסה")
+    assert not J.is_experienced_title("inexperienced") and not J.is_experienced_title("מנוסח")
+
+
+def test_review_region_placeholders_and_spellings():
+    for l in ("Location not specified", "Israel - 2 Locations", "2+ Locations", "3 מיקומים", "Various locations"):
+        assert J.region_of(l) == "Unknown", l
+    for l in ("Bergisch Gladbach", "Rösrath"):
+        assert J.region_of(l) == "Abroad", l
+    for l in ("Yizre'el", "קיבוץ יזרעאל", "Yokne'am Illit", "Kiryat Shemona, Israel"):
+        assert J.region_of(l) == "North", l
+
+
+def test_review_digest_role_filter():
+    for t in ("business development representative", "talent development specialist", "engineering program coordinator",
+              "מהנדס/ת חומרה", "מהנדס/ת בדיקות לחומרה", "physical layer architecture engineer",
+              "interconnect hardware characterization engineer", "electrical engineer"):
+        assert not J.ref_digest_ok(t), t
+    for t in ("nvlink qa engineer", "network solution verification engineer", "technical product engineer (cortex)",
+              "system engineer"):
+        assert J.ref_digest_ok(t), t
+    assert J.digest_title_key("PANW", "QA Engineer (Cortex XDR)") != J.digest_title_key("PANW", "QA Engineer (Prisma Cloud)")
+    assert J.digest_title_key("X", "C# Developer") != J.digest_title_key("X", "C++ Developer")
+
+
+def test_review_digest_unknown_copy_and_length_budget():
+    os.environ.pop("JOBSCAN_NO_ALERT", None)
+    import notify
+    sent = []
+    orig = (notify.configured, notify._send)
+    notify.configured = lambda: True
+    notify._send = lambda text: sent.append(text) or (len(text) <= 4096 or None)
+    try:
+        reg = {"seen": {}}
+        wd = {"url": "wd", "company": "NVIDIA", "role": "Nvlink QA Engineer", "region": "North"}
+        bi = {"url": "bi", "company": "NVIDIA", "role": "Nvlink QA Engineer", "region": "Unknown"}   # '2 Locations'
+        ta = {"url": "li", "company": "NVIDIA", "role": "Nvlink QA Engineer", "region": "Center"}    # another site
+        assert J.send_ref_digest([bi, wd, ta], reg) == 2 and "[Unknown]" not in sent[-1]
+        long = [{"url": "https://x.example/" + "p" * 380 + str(i), "company": "Palo Alto Networks (CyberArk)",
+                 "role": "QA Automation Engineer %02d " % i + "x" * 50, "region": "Center"} for i in range(12)]
+        n = J.send_ref_digest(long, reg)
+        assert 0 < n < 12 and len(sent[-1]) <= 4096 and "more in the next run" in sent[-1]
+        assert J.send_ref_digest(long, reg) == 12 - n or len(sent[-1]) <= 4096
+    finally:
+        notify.configured, notify._send = orig
+
+
+def _raw(title, company, url, city="Yokneam"):
+    j = _job(title, company=company, city=city)
+    j["url"] = url; j["region"] = J.region_of(city)
+    return j
+
+
+def test_call10_referral_digest_collects_gate_misses():
+    raw = [_raw("Nvlink QA Engineer", "NVIDIA", "u1"),                  # misses the gate, relevant -> digest
+           _raw("Hardware Test Engineer", "NVIDIA", "u2"),               # passes the gate -> tracker, not digest
+           _raw("Senior Networking QA Engineer", "NVIDIA", "u3"),        # senior -> not digest
+           _raw("Account Manager", "NVIDIA", "u4"),                      # non-dev -> not digest
+           _raw("ASIC Design Engineer", "NVIDIA", "u5"),                 # chip design -> not digest
+           _raw("Nvlink QA Engineer", "SomeStartup", "u6")]              # not a referral company
+    dig = []
+    J.select(raw, {"seen": {}}, [], [], [], dig)
+    assert [d["url"] for d in dig] == ["u1"]
+
+
+def test_call10_referral_digest_new_only_dedup_rollover():
+    os.environ.pop("JOBSCAN_NO_ALERT", None)
+    import notify
+    sent = []
+    orig = (notify.configured, notify._send)
+    notify.configured = lambda: True
+    notify._send = lambda text: sent.append(text) or True
+    try:
+        reg = {"seen": {}}
+        a = {"url": "u1", "company": "NVIDIA", "role": "Nvlink QA Engineer", "region": "North"}
+        a2 = {"url": "li-copy", "company": "NVIDIA", "role": "Nvlink QA Engineer", "region": "North"}
+        b = {"url": "u2", "company": "NVIDIA", "role": "Cloud QA Engineer", "region": "Center"}
+        assert J.send_ref_digest([a, a2], reg) == 1                   # the LinkedIn copy is the same role
+        assert J.send_ref_digest([a, a2, b], reg) == 1                # only the NEW one goes out
+        assert len(sent) == 2 and "Cloud QA Engineer" in sent[1] and "Nvlink" not in sent[1]
+        assert J.send_ref_digest([a, b], reg) == 0 and len(sent) == 2  # nothing new -> no message
+        many = [{"url": "m%d" % i, "company": "Camtek", "role": "System Engineer %d" % i, "region": "North"}
+                for i in range(J.REF_DIGEST_MAX + 3)]
+        assert J.send_ref_digest(many, reg) == J.REF_DIGEST_MAX and "+3 more" in sent[-1]
+        assert J.send_ref_digest(many, reg) == 3                      # the rest roll to the next run
+        notify._send = lambda text: False                               # failed delivery -> retried later
+        c = {"url": "u3", "company": "NVIDIA", "role": "QA Engineer", "region": "North"}
+        assert J.send_ref_digest([c], reg) == 0 and "u3" not in reg["ref_digest"]
+    finally:
+        notify.configured, notify._send = orig
 
 
 if __name__ == "__main__":

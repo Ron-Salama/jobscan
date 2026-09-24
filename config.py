@@ -20,8 +20,8 @@ NORTH = {"haifa","krayot","kiryat ata","kiryat bialik","kiryat motzkin","kiryat 
  "zefat","north district","northern district","northern","haifa district","galilee","atlit",
  # added 2026-09-24 (LinkedIn rows 'Galil Tachton', 'Tel Hai', 'Ein Harod' read as Center)
  "galil tachton","galil elyon","hagalil","tel hai","kfar giladi","ein harod","jezreel","golan",
- "katzrin","qatzrin","metula","kfar vradim",
- "גליל תחתון","גליל עליון","גליל מערבי","תל חי","כפר גלעדי","עין חרוד","גולן","קצרין","מטולה","כפר ורדים",
+ "katzrin","qatzrin","metula","kfar vradim","yizre'el","yizreel","yokne'am","yoqne'am","kiryat shemona","karmi'el",
+ "גליל תחתון","גליל עליון","גליל מערבי","תל חי","כפר גלעדי","עין חרוד","גולן","קצרין","מטולה","כפר ורדים","יזרעאל",
  # Hebrew (every Hebrew location used to become Center)
  "חיפה","הצפון","מחוז הצפון","מחוז צפון","קריות","הקריות","קרית אתא","קריית אתא","ביאליק",
  "קרית ביאליק","קריית ביאליק","מוצקין","קרית מוצקין","קריית מוצקין","קרית ים","קריית ים",
@@ -48,9 +48,11 @@ ABROAD = {"germany","munich","berlin","frankfurt","india","gurugram","gurgaon","
  "canada","toronto","singapore","japan","tokyo","china","shanghai","australia","sydney",
  "ireland","dublin","serbia","belgrade","bulgaria","sofia","czech republic","prague","hungary",
  "budapest","switzerland","zurich","austria","vienna","sweden","stockholm","taiwan","korea",
- "seoul","vietnam","philippines","mexico","brazil","argentina"}
+ "seoul","vietnam","philippines","mexico","brazil","argentina",
+ "bergisch gladbach","rösrath","rosrath","roesrath"}   # Camtek Germany (review 2026-09-24)
 # location strings that only say "Israel" (or "anywhere") carry no region -> Unknown
-REGION_GENERIC = {"israel","ישראל","il","isr","כל הארץ","all israel","multiple locations"}
+REGION_GENERIC = {"israel","ישראל","il","isr","כל הארץ","all israel","multiple locations",
+ "location not specified","various locations"}
 # everything else that is clearly a real city -> Center; unknown -> Unknown (kept, flagged)
 DROP_REGIONS = {"South","Jerusalem","Abroad"}
 
@@ -59,8 +61,10 @@ DROP_REGIONS = {"South","Jerusalem","Abroad"}
 # 'Intelligo'); names of 6+ letters also match a glued slug when the rest is only a corporate
 # suffix ('paloaltonetworks', 'nvidiaisrael' - but not 'Bookingjini' / 'Marvellous').
 # ---- referral companies: LOUD flag on good match, quiet 'maybe' on reach ----
-REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-alto","apple","pwc","pricewaterhouse",
- "pricewaterhousecoopers"]
+REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-alto","apple",
+ # the PwC referral is PwC NEXT (PwC Israel's tech subsidiary), NOT PwC as a whole (Ron, 2026-09-24):
+ # career site employer 'DT&CS' -> 'PwC NEXT' (src_pwc); LinkedIn 'PwC | NEXT Technology Solutions'
+ "pwc next","pwcnext","next technology solutions"]
 
 # ---- giants: always surfaced (scanned via their own ATS too) ----
 GIANTS = ["google","meta","facebook","amazon","aws","microsoft","apple","nvidia","intel","mobileye",
@@ -103,6 +107,7 @@ TITLE_DEV = ["developer","software","full stack","fullstack","full-stack","backe
  #  NOT bare 'verification' (chip DV) or 'linux' (sysadmin) -> Ron's judgment calls)
  "integrator","system integration","hw/sw","mlops",
  "labview","teststand","software verification","system verification","sw verification",
+ "v&v",   # 'V&V Engineer' (defense software/system V&V); 'Verification & Validation' passes via 'validation'
  # (not bare 'מבדקים' = 'tests/exams' in any field; review 2026-09-24)
  "אינטגרציה","אינטגרטור","שילובים","ולידציה","ואלידציה","תכן מבדקים","מהנדס/ת מבדקים",
  "פיתוח מבדקים","מהנדס מבדקים","מהנדסת מבדקים",   # test-development engineer titles (e.g. IAI) - keep in the gate
@@ -183,6 +188,21 @@ DV_JD = ["uvm","systemverilog","system verilog","verilog","vhdl",
 SENIOR_TITLE = ["senior","sr.","sr ","lead","principal","team lead","teamlead",
  "manager","head of","director","מנהל","בכיר","ראש צוות"]
 SENIOR_TITLE_WORDS = ["architect","architects","expert","experts","staff","vp","chief"]
+
+# Ron's decisions 2026-09-24 (judgment calls #7/#8), both matched WORD-BOUND in the TITLE:
+# DevOps / SRE / cloud / ML-engineering titles are outside his profile -> REACH ('profile-gap'),
+# EXCEPT a pure junior/grad opening with no experience asked (learn-on-the-job -> stays apply/YES).
+PROFILE_GAP_TITLE = ["devops","dev ops","dev-ops","sre","site reliability","cloud engineer","mlops",
+ "ml engineer","machine learning engineer","ml developer","machine learning developer"]
+# 'Experienced ...' / 'מנוסה' titles: not senior - some ask only 1-3 years -> REACH (4y+ stays senior).
+EXPERIENCED_TITLE = ["experienced","מנוסה","מנוסים","מנוסות"]
+# Referral digest (call #10): hardware / manufacturing disciplines left OUT of the digest even
+# though their titles say 'engineer' (word-bound; only titles that already missed the dev gate).
+REF_DIGEST_SKIP = ["thermal","packaging","interposer","npi","cad","sta","phy","industrialization",
+ "documentation","learning and development","configuration control","camera","analog","layout",
+ "signal integrity","power integrity","hardware engineer","hardware design","design engineer",
+ "product engineer","ic","modem","antenna","optical","pcb","board","silicon","chip",
+ "physical layer","characterization","characterisation"]
 
 # Student/intern markers - reference list only. Match titles with jobscan.is_student_title()
 # (word-bound, TITLE only), never as substrings and never on JD text: 'intern' is inside

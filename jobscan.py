@@ -28,7 +28,8 @@ try:
         # giant company sites (2026-09-24, audit): Qualcomm+Microsoft, Oracle+Dell, Wix+SanDisk, ...
         ("eightfold","src_eightfold"),("oracle_hcm","src_oracle_hcm"),("smartrecruiters","src_smartrecruiters"),
         ("google","src_google"),("checkpoint","src_checkpoint"),("meta","src_meta"),
-        ("booking","src_booking"),("sap","src_sap")]
+        ("booking","src_booking"),("sap","src_sap"),
+        ("pwc","src_pwc")]          # PwC Israel career site; PwC NEXT = referral (2026-09-24)
     _EXT_FNS = []
     for _n, _f in _EXT_NAMES:
         _fn = getattr(X, _f, None)
@@ -104,8 +105,8 @@ _LOC_NOISE = re.compile(r"\(.*?\)|\b(?:hybrid|remote|on ?site|onsite)\b|היבר
 def _part_region(p):
     """Region of ONE location fragment, or None when it names no place ('Israel', 'Remote')."""
     bare = re.sub(r"\s+", " ", _LOC_NOISE.sub(" ", p)).strip(" .")
-    if not bare or bare in _REGION_GENERIC:
-        return None
+    if not bare or bare in _REGION_GENERIC or re.fullmatch(r"(?:(?:israel|il|ישראל) )?\d+\+? (?:more )?(?:locations?|מיקומים)", bare):
+        return None     # a board's '2 Locations' placeholder names no place (was read as Center)
     if _RX_NORTH.search(p):  return "North"
     if _RX_SOUTH.search(p):  return "South"
     if _RX_JER.search(p):    return "Jerusalem"
@@ -114,7 +115,7 @@ def _part_region(p):
 
 def region_of(city):
     """North / Center / South / Jerusalem / Abroad / Unknown for a location string (EN + HE).
-    Splits multi-place strings on , / | ; — North if ANY place is North (Ron lives there);
+    Splits multi-place strings on , / | ; — North if ANY place is North (the preferred region);
     South / Jerusalem / Abroad only if EVERY recognised place is (an agency listing
     'Tel Aviv & Center, Shfela, Beer Sheva & South' is kept as Center). Never raises."""
     try:
@@ -527,6 +528,32 @@ def is_qa(tl):
 # gate-miss titles worth a look when the source gave no JD to read (review bucket 'no-jd-title')
 _NO_JD_TITLE = re.compile(r"engineer|developer|מהנדס|מפתח|מתכנת")
 
+def _term_rx(words):
+    """Whole-term regex for English title terms that also matches right after a Hebrew letter
+    ('הDevOps' = 'the DevOps') and around '&' / '/' - _has_word's word-boundary misses those."""
+    ws = sorted({w.strip().lower() for w in words if w and w.strip() and re.search(r"[a-z]", w)}, key=len, reverse=True)
+    return re.compile(r"(?<![a-z0-9])(?:" + "|".join(re.escape(w) for w in ws) + r")(?![a-z0-9])") if ws else None
+
+_GAP_RX = _term_rx(getattr(C, "PROFILE_GAP_TITLE", []))
+_CORE_SW_HEAD = ["software","developer","programmer","backend","back end","back-end","full stack","fullstack",
+                 "full-stack","frontend","front end","front-end","qa","test","automation","python","java","c++","sw"]
+def is_profile_gap_title(tl):
+    """DevOps / SRE / cloud / ML-engineering title (Ron's call #7), judged on the title's HEAD (the
+    role noun before the first ', ' / ' - ' / '(' qualifier): 'Software Engineer, DevOps Tools' and
+    'Python Developer - SRE team' are software roles; 'DevOps Engineer', 'Backend & DevOps Engineer'
+    and 'מהנדס/ת לצוות הDevOps' are profile-gap."""
+    tl = (tl or "").lower()
+    if not (_GAP_RX and _GAP_RX.search(tl)):
+        return False
+    head = re.split(r",|\s[-–—|:]\s|\(", tl, 1)[0]
+    return bool(_GAP_RX.search(head)) or not _has_word(head, _CORE_SW_HEAD)
+
+_EXP_HE = re.compile(r"(?<![א-ת])[הו]?מנוס(?:ה|ים|ות|/ה|\.ה|/ת)?(?![א-ת])")
+def is_experienced_title(tl):
+    """'Experienced ...' / 'מנוסה' (also מנוס/ה, מנוס.ה, המנוסה, מנוסים) - Ron's call #8. Not 'מנוסח'."""
+    tl = (tl or "").lower()
+    return bool(re.search(r"(?<![a-z0-9])experienced(?![a-z0-9])", tl) or _EXP_HE.search(tl))
+
 STUDENT_LEVELS = ("student","student / intern","intern")
 # sources whose 'student' level is a structured field (not a keyword guess over free text)
 STRUCTURED_LEVEL_SOURCES = ("hiremetech","experis","comeet")
@@ -541,7 +568,7 @@ def classify(j):
     # (word-boundary match so "asic" != "basic", "soc" != "associate", etc.)
     hw_in_title = _has_word(tl, C.FOUNDATION_SKIP)
     # a *verification* title whose JD is chip DV (UVM/SystemVerilog/RTL) is the same gap
-    if not hw_in_title and re.search(r"verification|וריפיקציה", tl) and _has_word(desc, getattr(C, "DV_JD", [])):
+    if not hw_in_title and re.search(r"verification|v&v|וריפיקציה", tl) and _has_word(desc, getattr(C, "DV_JD", [])):
         hw_in_title = True
 
     tailor = False
@@ -552,9 +579,10 @@ def classify(j):
     # (free-text adapters guessed it from JD/blurb words -> junior roles were skipped)
     student = is_student_title(title) or (
         j["level"] in STUDENT_LEVELS and (j.get("source") or "").split(":")[0] in STRUCTURED_LEVEL_SOURCES)
-    is_jr = (_has(tl, C.JUNIOR_MARK)                              # junior/grad word in the title (EN+HE)
-             or j["level"] in ("junior","entry","entry level","junior / entry level","associate")
-             or (ymin is not None and ymin <= 2))
+    jr_title = _has(tl, C.JUNIOR_MARK)                            # junior/grad word in the title (EN+HE)
+    jr_level = j["level"] in ("junior","entry","entry level","junior / entry level","associate")
+    is_jr = jr_title or jr_level or (ymin is not None and ymin <= 2)
+    experienced = is_experienced_title(tl)
 
     if is_not_sw_test(tl):
         lane, why = "skip", "not-sw-test"             # mechanical / pentest / editor past the gate
@@ -568,6 +596,15 @@ def classify(j):
         lane, why = "skip", "foundation-gap"          # hardware discipline in the TITLE itself
     elif student:
         lane, why = "skip", "student"
+    elif jr_title and not senior_title and ymin is not None and ymin >= 4:
+        # 'Junior X' whose JD asks 4y+: a contradictory posting (or a years misread) -> the review
+        # bucket for a human/Claude read, never a silent drop (Ron's call #9, 2026-09-24)
+        lane, why = "review", "junior-title-vs-years"
+    elif experienced and not senior_title and not (ymin is not None and ymin >= 4):
+        # 'Experienced ...' / 'מנוסה': some ask only 1-3 years -> REACH, not senior (call #8)
+        # (4y+/senior already excluded above) a giant/referral one keeps its tailor flag + ping, like
+        # the referral branch would have given it; only profile-gap (#7) roles are ping-free
+        lane, why, tailor = "reach", "experienced-title", ymin == 3 or referral or giant
     elif referral or giant:
         # a referral broadens quals to junior-mid, but NOT to senior/4y+ (not a reach even with a referral)
         if senior_title or (ymin is not None and ymin >= 4):
@@ -587,6 +624,15 @@ def classify(j):
             lane, why, tailor = "reach", "3y-worth-tailoring", True   # almost a match
         else:
             lane, why = "review", "unclear"      # seniority unknown, non-giant -> kept North-only
+    # DevOps / SRE / cloud / ML-engineering titles are outside Ron's profile (call #7): REACH,
+    # unless it's a pure learn-on-the-job opening - no experience asked (0y) or a junior/grad
+    # title/level with no years stated - which stays apply (= YES). No ping for these reaches.
+    if lane in ("apply", "reach") and is_profile_gap_title(tl):
+        pure_junior = ymin == 0 or (ymin is None and (jr_title or jr_level))
+        if lane == "apply" and pure_junior:
+            why = "junior-learn-on-job"
+        else:
+            lane, why, tailor = "reach", "profile-gap", False
     # (Removed the "silicon-in-JD-body -> review" demotion: it was diverting apply-worthy
     #  software roles off the tracker whenever their JD merely mentioned a hardware word.
     #  Hardware *titles* are still skipped above; a software title stays on its seniority lane.)
@@ -766,13 +812,47 @@ def _bucket(j, reason):
             "url":j.get("url",""),"region":j.get("region",""),"loc":j.get("city",""),
             "src":j.get("source",""),"desc":(j.get("desc") or "")[:700]}
 
-def select(raw, reg, filtered=None, qa=None, giant=None):
+# the digest needs a real engineering/test ROLE noun ('Engineering Coordinator', 'Business Development
+# Representative' used to pass on the substrings 'engineer' / 'develop'), and never a sales/HR/admin
+# 'development' title or a Hebrew hardware discipline (review 2026-09-24)
+_DIGEST_ROLE = re.compile(r"\bengineers?\b|\bdevelopers?\b|programmer|\bqa\b|\btest|integrat|validation"
+                          r"|verification|v&v|automation|מהנדס|מפתח|מתכנת|בודק|בדיקות|אינטגר|ולידציה|וריפיקציה")
+_DIGEST_NOT = re.compile(r"business develop|organi[sz]ational develop|talent develop|market develop"
+                         r"|coordinator|administrat|assistant|electrical engineer|electronics? engineer"
+                         r"|חומרה|חשמל|אלקטרוני|אופטי|מכונות|מכני")
+def ref_digest_ok(tl, desc=""):
+    """A referral-company title that MISSED the dev gate but may still be worth a referral:
+    an engineering/test ROLE (_DIGEST_ROLE) that isn't senior, student, clearly non-dev (sales,
+    manager, technician...), chip-design/foundation, a hardware discipline (REF_DIGEST_SKIP /
+    _DIGEST_NOT), industrial control, pentest, or a verification title whose JD is chip DV."""
+    tl=(tl or "").lower()
+    if not _DIGEST_ROLE.search(tl) or _DIGEST_NOT.search(tl):
+        return False
+    if re.search(r"verification|v&v|וריפיקציה", tl) and _has_word(desc or "", getattr(C, "DV_JD", [])):
+        return False
+    # 'Technical Product Engineer' (Palo Alto) is a software role; other '... product engineer' are HW/NPI
+    skip_tl = tl.replace("technical product engineer", "technical product role")
+    return not (is_senior_title(tl) or is_student_title(tl) or _has(tl, C.DEVSIG_NONDEV)
+                or _has_word(tl, C.FOUNDATION_SKIP) or _has_word(skip_tl, getattr(C, "REF_DIGEST_SKIP", []))
+                or is_industrial_control(tl) or is_not_sw_test(tl))
+
+def digest_title_key(company, role):
+    """company|title for the digest: punctuation-insensitive but, unlike norm(), keeps parenthesised
+    qualifiers ('QA Engineer (Cortex XDR)' != 'QA Engineer (Prisma Cloud)') and C#/C++/.NET."""
+    def _tk(x):
+        x = (x or "").lower().replace("c#", " csharp ").replace("c++", " cpp ").replace(".net", " dotnet ")
+        return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9֐-׿]+", " ", x)).strip()
+    return "%s|%s" % (_tk(company), _tk(role))
+
+def select(raw, reg, filtered=None, qa=None, giant=None, refdigest=None):
     """Region-drop + classify + dedup vs registry -> NEW rows. Mutates reg['seen'].
     `filtered` = review-bucket (skip/review/oddly-titled). `qa` = QA-bucket: QA-ish roles
     the rules set aside, kept separately for review (real test-eng vs manual-QA).
     `giant` = Giant-bucket: EVERY giant-company role (senior/QA/any level), captured
     regardless of the filters below, so a referral-worthy giant role is never silently
-    dropped (Ron's peace-of-mind safety net; reviewed manually like the other buckets)."""
+    dropped (Ron's peace-of-mind safety net; reviewed manually like the other buckets).
+    `refdigest` = referral-company roles that missed the title gate but look relevant
+    (ref_digest_ok) - e.g. 'Nvlink QA Engineer' - for the Telegram referral digest."""
     raw=[j for j in raw if j["region"] not in C.DROP_REGIONS and j.get("active",True)]
     keep=[]
     for j in raw:
@@ -784,6 +864,9 @@ def select(raw, reg, filtered=None, qa=None, giant=None):
         c=classify(j)
         if not c:
             tl=(j.get("title") or "").lower()
+            if (refdigest is not None and company_is(j.get("company"), C.REFERRAL_COMPANIES)
+                    and ref_digest_ok(tl, j.get("desc") or "")):
+                refdigest.append(_bucket(j, "ref-digest"))   # still bucketed below as before
             # QA-ish titles miss the dev gate -> send to the QA-bucket (not the review-bucket).
             if qa is not None and is_qa(tl):
                 qa.append(_bucket(j,"qa:not-dev-title")); continue
@@ -948,6 +1031,64 @@ def send_alerts(rows, reg=None, path=None):
               "(check TELEGRAM_TOKEN / TELEGRAM_CHAT_ID secrets)" % streak)
         raise SystemExit(1)
     return delivered
+
+REF_DIGEST_MAX = 12     # roles per digest message (Telegram's 4096-char cap); the rest roll to the next run
+REF_DIGEST_DAYS = 120   # a digested URL is remembered this long
+REF_DIGEST_CHARS = 3800 # message budget under Telegram's 4096-char cap (margin for the footer)
+
+def send_ref_digest(items, reg):
+    """ONE Telegram message per run listing NEW referral-company roles that missed the title gate
+    (select(..., refdigest=...)) - Ron's call #10, 2026-09-24: they used to sit silently in the
+    buckets (the Nvlink QA miss). reg['ref_digest'] = {key: date first digested}, keyed by URL
+    AND by company|title|region (the same role copied by LinkedIn/BuiltIn is one line). Keys are
+    marked only after the message was delivered or permanently rejected, so a failed send is
+    retried next run; more than REF_DIGEST_MAX new roles roll over to the next run's digest.
+    Returns roles delivered. Never raises."""
+    if os.environ.get("JOBSCAN_NO_ALERT"):
+        print("(ref digest suppressed via JOBSCAN_NO_ALERT)"); return 0
+    try:
+        state = reg.get("ref_digest")
+        if not isinstance(state, dict): state = reg["ref_digest"] = {}
+        cutoff = (_today() - datetime.timedelta(days=REF_DIGEST_DAYS)).isoformat()
+        for u in [u for u, d in state.items() if not isinstance(d, str) or d < cutoff]:
+            del state[u]
+        def _keys(it):
+            t = digest_title_key(it.get("company"), it.get("role"))
+            ks = [(it.get("url") or "").strip(), "t:%s|%s" % (t, it.get("region") or ""), "t:%s|*" % t]
+            # every copy MARKS the region-less key, but only an Unknown-region copy (a '2 Locations'
+            # placeholder) is BLOCKED by it: per-site reqs with one title stay separate lines
+            return ks, (ks if (it.get("region") or "Unknown") == "Unknown" else ks[:2])
+        new = []; run = set()
+        for it in sorted(items, key=lambda it: (it.get("region") or "Unknown") == "Unknown"):   # Unknown last
+            ks, check = _keys(it)
+            if not ks[0] or any(k in state or k in run for k in check): continue
+            run.update(ks); new.append(it)
+        if not new:
+            print("ref digest: nothing new"); return 0
+        import notify
+        if not notify.configured():
+            print("ref digest: no channel configured - %d role(s) wait for the next run" % len(new)); return 0
+        lines = ["\U0001F514 JobScan referral digest: %d new role%s at your referral companies that the title "
+                 "filter doesn't cover - worth a look:" % (len(new), "" if len(new) == 1 else "s")]
+        send = []; total = len(lines[0])
+        for it in new[:REF_DIGEST_MAX]:
+            ln = "• %s — %s [%s]\n%s" % ((it.get("company") or "")[:30], (it.get("role") or "")[:70],
+                                         it.get("region") or "?", (it.get("url") or "")[:400])
+            if send and total + 1 + len(ln) > REF_DIGEST_CHARS:
+                break                                  # Telegram's 4096 cap: the rest go next run
+            send.append(it); lines.append(ln); total += 1 + len(ln)
+        rest = len(new) - len(send)
+        if rest: lines.append("+%d more in the next run's digest" % rest)
+        ok = notify._send("\n".join(lines))     # True sent / False retry later / None rejected
+        if ok is False:
+            print("ref digest: delivery failed - %d role(s) retried next run" % len(send)); return 0
+        for it in send:
+            for k in _keys(it)[0]: state[k] = TODAY
+        print("ref digest: %s %d role(s)%s" % ("sent" if ok else "REJECTED by the channel (marked, not retried):",
+                                               len(send), (", %d wait for the next run" % rest) if rest else ""))
+        return len(send) if ok else 0
+    except Exception as e:
+        print("ref digest err:", e); return 0
 
 # ---------------- main (LOCAL: writes Desktop tracker) ----------------
 def main():

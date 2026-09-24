@@ -2,7 +2,8 @@ name: JobScan
 
 on:
   schedule:
-    - cron: "0 */2 * * *"   # every 2 hours (UTC). GitHub may delay under load.
+    - cron: "23 */2 * * *"  # every 2 hours (UTC), off the top of the hour: GitHub delays/drops
+                            # :00 schedules most under load (measured median gap 4.8h at :00)
   workflow_dispatch: {}      # lets you run it manually from the Actions tab
   push:                      # a curation edit reaches the page right away: rebuild only (no scan, no alerts)
     branches: [main]
