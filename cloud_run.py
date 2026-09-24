@@ -73,6 +73,8 @@ a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 .toppick{background:#14432a;color:#7cf0a8;font-weight:700}.wtailor{background:#3a331a;color:#ffd98f}
 .unread{background:#2a2f3a;color:#9aa6bb}
 .tready{background:#123a3a;color:#7fe9d6;font-weight:700}
+.imp{background:#5a1a1a;color:#ffd0d0;font-weight:800;border:1px solid #ff6b6b}
+tr.improw td{background:#1f1416}
 .v-yes{background:#1c3a2a;color:#8ff0b8}.v-reach{background:#3a331a;color:#ffd98f}.v-no{background:#3a1d1d;color:#ff9e9e}
 .jbf{background:#20344a;color:#8fc7ff}
 tr.filtered td{opacity:.45}
@@ -151,7 +153,7 @@ function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function getNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u])||"";}
 function setNote(u,v){try{localStorage.setItem("nt:"+u,v);}catch(e){}}
-function pills(j){let s="";if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function pills(j){let s="";if(j.important)s+='<span class="pill imp" title="'+esc(j.important)+'">📌 IMPORTANT</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
@@ -195,12 +197,13 @@ function render(){
     const s=getSt(j.url);
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!dt||j.date===dt)&&rgOk(j,rg)
-      &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"));
+      &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"))
+      ||(!!j.important&&(!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!hd||(s!=="Sent"&&s!=="Skip")));
   });
-  rows.sort((a,b)=>{let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}return (x>y?1:x<y?-1:0)*sortDir;});
+  rows.sort((a,b)=>{if(!!a.important!==!!b.important)return a.important?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
   el("b").innerHTML=rows.map(j=>{const s=getSt(j.url);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
-    return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'?'filtered':''}">
+    return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'&&!j.important?'filtered':''} ${j.important?'improw':''}">
     <td class="muted">${esc(fmtD(j.date))}</td>
     <td>${mmeter(j)}</td>
     <td>${vpill(j)}</td>
@@ -493,6 +496,7 @@ def apply_curation(alljobs, cur=None):
     jobify, jcanon = _norm_map(cur.get("jobify"))
     rescued, rcanon = _norm_map(cur.get("rescued"))
     tready, _ = _norm_map(cur.get("tailor_ready"))   # roles Claude has triaged + picked a base CV for (badge 🎯)
+    important, icanon = _norm_map(cur.get("important"))   # Ron's pinned roles (📌 badge, top of page, never dropped)
     statuses = _norm_values(cur.get("statuses"))
     divergent_verdicts(verdicts, jobify, rescued)
     have = {_nu(r.get("url")) for r in alljobs}
@@ -524,6 +528,18 @@ def apply_curation(alljobs, cur=None):
                 "tailor": False, "unread": False, "alert": False, "src": src,
                 "verdict": vd.get("v", ""), "vwhy": vd.get("why", ""), "vbasis": vd.get("basis") or "title",
                 tag: True})
+    for k, v in important.items():
+        # a pinned role missing from the page is injected even over a NO / region (Ron chose to act on it)
+        if k in have or not isinstance(v, dict) or _not_a_job(k): continue
+        have.add(k)
+        vd = verdicts.get(k) if isinstance(verdicts.get(k), dict) else {}
+        alljobs.append({
+            "date": v.get("date") or J.TODAY, "region": v.get("region") or "Unknown", "fit": 5,
+            "match": vd.get("score") if vd.get("score") is not None else 60,
+            "company": v.get("company", ""), "role": v.get("role", ""), "loc": v.get("loc", ""),
+            "url": icanon.get(k, k), "cv": v.get("cv", ""), "ref": bool(v.get("ref")), "giant": bool(v.get("giant")),
+            "tailor": False, "unread": False, "alert": False, "src": "important",
+            "verdict": vd.get("v", ""), "vwhy": vd.get("why", ""), "vbasis": vd.get("basis") or ""})
     if skipped_no:
         print("curation: %d jobify/rescued role(s) not injected - NO in verdicts" % skipped_no)
     if skipped_rg:
@@ -546,6 +562,9 @@ def apply_curation(alljobs, cur=None):
             # an injected role with no cv in its entry (or an old row) gets the title-based pick
             try: r["cv"] = pick_cv(r.get("role") or "", "") or ""
             except Exception: pass
+        im = important.get(k)
+        if isinstance(im, dict):
+            r["important"] = im.get("note") or "important"
         tr = tready.get(k)
         if isinstance(tr, dict):
             r["tailor_ready"] = True; r["tready_base"] = tr.get("base", "")
@@ -617,7 +636,7 @@ def recheck_rules(alljobs, skip_keys, statuses):
     kept, moved = [], []
     for r in alljobs:
         k = _nu(r.get("url"))
-        if (k in skip_keys or r.get("verdict") or r.get("tailor_ready")
+        if (k in skip_keys or r.get("verdict") or r.get("tailor_ready") or r.get("important")
                 or r.get("src") in ("jobify", "bucket") or (statuses.get(k) or "New") != "New"):
             kept.append(r); continue
         why = rule_fail(r)
@@ -635,7 +654,7 @@ def cap_rows(alljobs, statuses, cap=CAP):
     Returns (rows, n_evicted)."""
     if len(alljobs) <= cap: return alljobs, 0
     def protected(r):
-        return ((r.get("verdict") or "").upper() in ("YES", "REACH") or bool(r.get("tailor_ready"))
+        return ((r.get("verdict") or "").upper() in ("YES", "REACH") or bool(r.get("tailor_ready")) or bool(r.get("important"))
                 or (statuses.get(_nu(r.get("url"))) or "New") != "New")
     unprot = [i for i, r in enumerate(alljobs) if not protected(r)]
     n = min(len(alljobs) - cap, len(unprot))
@@ -743,7 +762,7 @@ def main(argv=None):
     # (the page's 'hide sent/skip' toggle can still hide it).
     n0 = len(alljobs)
     alljobs = [r for r in alljobs
-               if _kept_by_status(r, statuses)
+               if _kept_by_status(r, statuses) or r.get("important")
                or not (_is_no(r) or _dead(r) or _not_a_job(r.get("url")))]
     moved = []
     if not rebuild:   # rules only change with code, and the buckets are only rewritten by a scan
