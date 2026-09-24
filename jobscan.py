@@ -15,14 +15,27 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import config as C
 try:
     import sources_ext as X
-    _EXT_FNS = [("ethosia",X.src_ethosia),("dialog",X.src_dialog),("nisha",X.src_nisha),
-        ("gotfriends",X.src_gotfriends),("builtin",X.src_builtin),("linkedin",X.src_linkedin),
-        ("alljobs",X.src_alljobs),   # cps+techjob disabled 2026-09-23: broken links (techjob API has no job URL; cps pages are JS-gated/expired) + no JD
-        ("comeet",X.src_comeet),("workday",X.src_workday),("apple",X.src_apple),("camtek",X.src_camtek),
-        ("lever",X.src_lever),
-        # scrape adapters added 2026-09-23 (career-site scrapers):
-        ("qualityai",X.src_qualityai),("lemonade",X.src_lemonade),("moonactive",X.src_moonactive),
-        ("hibob",X.src_hibob),("kaltura",X.src_kaltura),("verbit",X.src_verbit)]
+    # (name, function) - looked up one by one, so a single missing/renamed adapter is skipped
+    # with a warning instead of an AttributeError that silently disabled EVERY external source.
+    _EXT_NAMES = [("ethosia","src_ethosia"),("dialog","src_dialog"),("nisha","src_nisha"),
+        ("gotfriends","src_gotfriends"),("builtin","src_builtin"),("linkedin","src_linkedin"),
+        ("alljobs","src_alljobs"),   # cps+techjob disabled 2026-09-23: broken links + no JD
+        ("comeet","src_comeet"),("workday","src_workday"),("apple","src_apple"),("camtek","src_camtek"),
+        ("lever","src_lever"),       # incl. Mobileye on Lever's EU host
+        # career-site scrapers (2026-09-23); verbit retired 2026-09-24 (no Israel jobs)
+        ("qualityai","src_qualityai"),("lemonade","src_lemonade"),("hibob","src_hibob"),("kaltura","src_kaltura"),
+        ("ashby","src_ashby"),       # Moon Active + monday.com (replaces src_moonactive)
+        # giant company sites (2026-09-24, audit): Qualcomm+Microsoft, Oracle+Dell, Wix+SanDisk, ...
+        ("eightfold","src_eightfold"),("oracle_hcm","src_oracle_hcm"),("smartrecruiters","src_smartrecruiters"),
+        ("google","src_google"),("checkpoint","src_checkpoint"),("meta","src_meta"),
+        ("booking","src_booking"),("sap","src_sap")]
+    _EXT_FNS = []
+    for _n, _f in _EXT_NAMES:
+        _fn = getattr(X, _f, None)
+        if _fn is None:
+            print("sources_ext: adapter %s missing - skipped" % _f)
+        else:
+            _EXT_FNS.append((_n, _fn))
 except Exception as _e:
     _EXT_FNS = []; print("sources_ext load err:", _e)
 
