@@ -716,6 +716,18 @@ def test_collapse_dups_stable_across_runs_and_regions():
     assert CR.collapse_dups(rows, {})[1] == 0
 
 
+def test_outsourcing_client_link():
+    """'direct company ↗' (Ron 2026-09-25): an outsourced row gets the end client's own posting link."""
+    import cloud_run as CR
+    rows = [{"url": "https://www.alljobs.co.il/x/1", "company": "ALLSTARSIT", "role": "r"},
+            {"url": "https://www.alljobs.co.il/x/2", "company": "ALLSTARSIT", "role": "r", "client_url": "stale"}]
+    cur = {"outsourcing": {"companies": {"allstarsit": "contractor"},
+                           "client_links": {"https://www.alljobs.co.il/x/1/": {"client": "Rafael", "url": "https://career.rafael.co.il/job/1"}}}}
+    CR.apply_curation(rows, cur)
+    assert rows[0]["client_url"] == "https://career.rafael.co.il/job/1" and rows[0]["client_name"] == "Rafael"
+    assert "client_url" not in rows[1] and rows[1].get("outsrc") == "contractor"
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):

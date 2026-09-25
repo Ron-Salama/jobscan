@@ -221,7 +221,7 @@ function render(){
     <td class="muted">${esc(j.cv)}</td>
     <td class="muted">${esc(j.src)}</td>
     <td><select class="st" data-v="${s}" data-u="${esc(j.url)}" onchange="stChange(this)">${opts}</select></td>
-    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}${j.orig?'<br><a href="'+esc(j.orig)+'" target="_blank" rel="noopener" title="the same job on the employer&#39;s own site - apply here">company ↗</a>':''}${j.srcurl&&j.srcurl!==j.orig?'<br><a href="'+esc(j.srcurl)+'" target="_blank" rel="noopener" title="the original job-board posting Jobify copied">source ↗</a>':''}${(j.dups||[]).map(d=>'<br><a href="'+esc(d.url)+'" target="_blank" rel="noopener" title="the same job, also listed on '+esc(d.src||'another board')+'">'+esc(d.src||'also')+' ↗</a>').join('')}</td>
+    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}${j.client_url?'<br><a href="'+esc(j.client_url)+'" target="_blank" rel="noopener" title="the end client'+(j.client_name?' ('+esc(j.client_name)+')':'')+' posts this role itself - apply direct, skipping the outsourcing company">direct company ↗</a>':''}${j.orig?'<br><a href="'+esc(j.orig)+'" target="_blank" rel="noopener" title="the same job on the employer&#39;s own site - apply here">company ↗</a>':''}${j.srcurl&&j.srcurl!==j.orig?'<br><a href="'+esc(j.srcurl)+'" target="_blank" rel="noopener" title="the original job-board posting Jobify copied">source ↗</a>':''}${(j.dups||[]).map(d=>'<br><a href="'+esc(d.url)+'" target="_blank" rel="noopener" title="the same job, also listed on '+esc(d.src||'another board')+'">'+esc(d.src||'also')+' ↗</a>').join('')}</td>
     <td><input class="note${rowNote(j)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(rowNote(j))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
@@ -553,6 +553,8 @@ def apply_curation(alljobs, cur=None):
     osrc_co = [(re.compile(r"(?<!\w)" + re.escape(w.strip().lower()) + r"(?!\w)"), n)
                for w, n in (osrc.get("companies") or {}).items() if w and w.strip()]
     osrc_url = {_nu(u): n for u, n in (osrc.get("urls") or {}).items()}
+    # the END CLIENT's own posting of an outsourced role ('direct company ↗' link, Ron 2026-09-25)
+    osrc_links = {_nu(u): v for u, v in (osrc.get("client_links") or {}).items() if isinstance(v, dict) and v.get("url")}
     divergent_verdicts(verdicts, jobify, rescued)
     have = ({_nu(r.get("url")) for r in alljobs}
             | {_nu(d.get("url")) for r in alljobs for d in (r.get("dups") or []) if isinstance(d, dict)})
@@ -656,6 +658,9 @@ def apply_curation(alljobs, cur=None):
         on = osrc_url.get(k) or next((n for rx, n in osrc_co if rx.search(names)), None)
         if on: r["outsrc"] = on
         else: r.pop("outsrc", None)
+        cl = osrc_links.get(k)
+        if cl: r["client_url"] = cl["url"]; r["client_name"] = cl.get("client", "")
+        else: r.pop("client_url", None); r.pop("client_name", None)
     return cur
 
 # ---------------- page-row housekeeping ----------------
