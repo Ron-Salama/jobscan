@@ -8359,7 +8359,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2541
+"last": 2538
 },
 "experis": {
 "max": 600,
@@ -8367,7 +8367,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 302
+"last": 0
 },
 "greenhouse": {
 "max": 296,
@@ -8395,7 +8395,7 @@
 },
 "builtin": {
 "max": 48,
-"last": 43
+"last": 40
 },
 "linkedin": {
 "max": 609,
@@ -8403,7 +8403,7 @@
 },
 "alljobs": {
 "max": 681,
-"last": 672
+"last": 675
 },
 "comeet": {
 "max": 272,
@@ -8427,7 +8427,7 @@
 },
 "qualityai": {
 "max": 66,
-"last": 65
+"last": 63
 },
 "lemonade": {
 "max": 16,
@@ -8444,7 +8444,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 9
+"zero_runs": 10
 },
 "ashby": {
 "max": 47,
@@ -8464,7 +8464,7 @@
 },
 "google": {
 "max": 107,
-"last": 105
+"last": 106
 },
 "checkpoint": {
 "max": 103,
@@ -8487,13 +8487,14 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-25T08:24+03:00",
+"last_scan": "2026-09-25T15:18+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
 "day": "2026-09-25",
 "keys": [
-"kaltura:never"
+"kaltura:never",
+"drushim:dark"
 ]
 },
 "ref_digest": {
