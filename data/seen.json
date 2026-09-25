@@ -8354,6 +8354,27 @@
 "u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8783757",
 "src": "alljobs",
 "city": "נתניה חדרה פרדס חנה כרכור קיסריה חיפה"
+},
+"hiremetech:149007198": {
+"t": "Junior Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25",
+"dup_of": "https://hiremetech.com/job/149014224"
+},
+"hiremetech:148103544": {
+"t": "Graduate Frontend / Full Stack Software Engineer – UpNEXT Pr",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25",
+"dup_of": "https://hiremetech.com/job/148437258"
+},
+"hiremetech:148103473": {
+"t": "Graduate Backend Software Engineer- UpNEXT Program Kfar Sab",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25",
+"dup_of": "https://hiremetech.com/job/148435480"
 }
 },
 "source_stats": {

@@ -578,6 +578,72 @@ def test_outsourcing_tag():
     assert "outsrc" not in rows[4]                      # a stale tag is cleared
 
 
+def test_hiremetech_abroad_feed_rows_rechecked():
+    """2026-09-25: hiremetech's search feed placed Israeli jobs abroad ('Gurugram, India'), so the
+    region filter dropped a real Shfela junior role. The job's own record now decides."""
+    feed = {"jobs": [
+        {"id": 1, "title": "Junior Software Developer", "location": {"basic": {"display_name": "Gurugram, India"}}},
+        {"id": 2, "title": "Junior Backend Developer", "location": {"basic": {"display_name": "Bangalore, India"}}},
+        {"id": 3, "title": "Junior QA Engineer", "location": {"basic": {"display_name": "Haifa, Israel"}}}],
+        "pagination": {"has_more": False}}
+    detail = {"1": {"job": {"location": {"basic": {"country": "Israel", "display_name": "Israel", "city": None}}}},
+              "2": {"job": {"location": {"basic": {"country": "India", "display_name": "Bangalore, India"}}}}}
+    calls = []
+    def fake_get_json(url, headers=None):
+        calls.append(url)
+        return feed if "/api/jobs/search" in url else detail[url.rstrip("/").split("/")[-1]]
+    orig = J.get_json; J.get_json = fake_get_json
+    try:
+        rows = {r["sid"]: J.normalize(r) for r in J.src_hiremetech()}
+    finally:
+        J.get_json = orig
+    assert rows["1"]["region"] == "Unknown"          # its record says Israel -> kept (was dropped as Abroad)
+    assert rows["2"]["region"] == "Abroad"           # really abroad -> still dropped
+    assert rows["3"]["region"] == "North"            # an Israeli place is never re-checked
+    assert sum("/api/jobs/search" not in u for u in calls) == 2
+
+
+def test_linkedin_qa_lane_not_starved():
+    """2026-09-25: one shared 600-card cap was filled by the developer lane on every run, so the
+    QA / automation / C# / embedded lane never ran and none of its cards got a JD read."""
+    import time, requests
+    import sources_ext as X
+    def cards(sids):
+        return "".join('<li><div class="base-card" data-entity-urn="urn:li:jobPosting:%d">'
+                       '<h3 class="base-search-card__title">Engineer %d</h3>'
+                       '<h4 class="base-search-card__subtitle">Co</h4></div></li>' % (s, s) for s in sids)
+    dev = list(range(1000000, 1000700))                   # 700 cards: more than a lane's budget
+    qa = list(range(2000000, 2000060)) + dev[:10]         # 60 of its own + 10 the developer lane has
+    feed = [3000000, 3000001, 3000002]
+    windows = set()
+    class R:
+        def __init__(self, text): self.status_code, self.text = 200, text
+    def fake_get(self, url, params=None, **kw):
+        if "jobPosting/" in url:
+            return R('<div class="show-more-less-html__markup">JD</div><ul><li class="description__job-criteria-item">'
+                     '<h3>Seniority level</h3><span>Entry level</span></li></ul>')
+        p = params or {}
+        start = int(p.get("start", 0))
+        if p.get("f_C"): pool = feed
+        else:
+            windows.add(p.get("f_TPR"))
+            pool = qa if "qa automation" in p.get("keywords", "") else dev
+        return R(cards(pool[start:start + 10]))
+    orig_get, orig_sleep = requests.Session.get, time.sleep
+    requests.Session.get, time.sleep = fake_get, (lambda s: None)
+    try:
+        rows = X.src_linkedin()
+    finally:
+        requests.Session.get, time.sleep = orig_get, orig_sleep
+    sids = {int(r["sid"]) for r in rows}
+    assert set(qa) <= sids                                 # every QA-lane card is collected
+    assert len(sids & set(dev)) == 500                     # the developer lane keeps its own budget
+    read = [int(r["sid"]) for r in rows if r["desc"]]
+    assert len(read) == 110                                # MAX_DETAIL, dealt round-robin...
+    assert len([s for s in read if 2000000 <= s < 2000060]) >= 30   # ...so the QA lane gets its share
+    assert windows == {"r172800"}                          # past 48h, not a week
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):

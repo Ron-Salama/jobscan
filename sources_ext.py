@@ -930,9 +930,11 @@ def src_linkedin():
     """LinkedIn guest jobs API (UNOFFICIAL, ToS-grey, rate-limited).
     2026-09-24 rewrite: the old version read only page 1 (~10 cards) of 5 narrow keywords,
     never fetched the JD, and tagged 'graduate' titles as student. Now: Ron's own boolean
-    searches, entry-level (f_E=2), past week (f_TPR=r604800), newest first (sortBy=DD),
-    paginated until empty; JD + LinkedIn's 'Seniority level' fetched for the newest
-    MAX_DETAIL postings. Backs off on 429 and keeps whatever it has. Never raises."""
+    searches, entry-level (f_E=2), newest first (sortBy=DD), paginated until empty; JD +
+    LinkedIn's 'Seniority level' fetched for the newest MAX_DETAIL postings. 2026-09-25: past 48h
+    (was a week), each query with its own card budget and a round-robin share of the JD reads
+    (the developer lane used to starve the QA lane). Backs off on 429 and keeps whatever it has.
+    Never raises."""
     import re, time, html as _html, requests, urllib.parse
     from bs4 import BeautifulSoup
 
@@ -958,9 +960,17 @@ def src_linkedin():
         '("qa automation" OR "automation engineer" OR "test automation" OR "test engineer" '
         'OR embedded OR firmware OR "c#" OR ".net" OR validation OR "integration engineer")',
     ]
-    MAX_PAGES = 60          # the guest API returns 10 cards per call -> up to 600 per query
-    MAX_TOTAL = 600
-    MAX_DETAIL = 80         # newest-first, so these are the freshest postings
+    # 2026-09-25: every query has its OWN card budget. With one shared MAX_TOTAL=600 the developer
+    # lane filled it alone on every run (source_stats last=604), so the QA / automation / C# /
+    # embedded lane - Ron's core - never ran (~200 unique entry-level roles a week unseen). The
+    # window is 48h, not a week: scans run several times a day (worst measured gap ~7h), so two
+    # days covers the gaps with margin and keeps each lane far below its budget.
+    WINDOW = "r172800"      # f_TPR in seconds: past 48h
+    MAX_PAGES = 50          # per keyword query: 10 cards per call -> up to 500 each (dev lane, 48h: ~370)
+    FEED_PAGES = 5          # a company feed (all levels, no date filter) is small
+    MAX_TOTAL = 1200        # global safety net only, no longer shared between the queries
+    MAX_DETAIL = 110        # JD + seniority reads per run, dealt round-robin across the queries
+    FEED_DETAIL = 15        # ...of which at most this many for a company feed
     SENIOR = ("senior", "sr.", "sr ", "lead", "principal", "team lead", "manager", "head of",
               "director", "experienced")
     SENIOR_WORDS = r"\b(architects?|experts?|staff|vp|chief)\b"   # word-bound: not 'Architecture'/'Expertise'/'Staffing'
@@ -1004,15 +1014,18 @@ def src_linkedin():
         return "RATE_LIMITED"
 
     out, seen = [], set()
+    lane_of = []                # parallel to out: (query index, rank within that query, newest = 0)
     try:
         sess = requests.Session()
     except Exception:
         return out
 
-    for q in QUERIES:
-        base = (dict({"location": "Israel", "sortBy": "DD"}, **q) if isinstance(q, dict) else
-                {"keywords": q, "location": "Israel", "f_E": "2", "f_TPR": "r604800", "sortBy": "DD"})
-        for page in range(MAX_PAGES if not isinstance(q, dict) else 5):
+    for qi, q in enumerate(QUERIES):
+        feed = isinstance(q, dict)
+        base = (dict({"location": "Israel", "sortBy": "DD"}, **q) if feed else
+                {"keywords": q, "location": "Israel", "f_E": "2", "f_TPR": WINDOW, "sortBy": "DD"})
+        got = 0
+        for page in range(FEED_PAGES if feed else MAX_PAGES):
             if len(out) >= MAX_TOTAL:
                 break
             r = get(sess, SEARCH, dict(base, start=str(page * 10)))
@@ -1049,19 +1062,25 @@ def src_linkedin():
                     "level": title_level(title), "years_min": None, "years_max": None,
                     "tech": tech_of(title), "desc": "", "active": True,
                 })
+                lane_of.append((qi, got)); got += 1
             if not cards or new_here == 0:
                 break                                   # end of results for this query
             time.sleep(1.3)
 
-    # JD + LinkedIn's own seniority field for the newest postings
-    details = 0
-    for row in out:
+    # JD + LinkedIn's own seniority field, newest first, dealt ROUND-ROBIN across the queries: in
+    # plain list order the developer lane used the whole budget and no QA-lane card was ever read.
+    order = sorted(range(len(out)), key=lambda i: (lane_of[i][1], lane_of[i][0]))
+    details, per_q = 0, {}
+    for i in order:
         if details >= MAX_DETAIL:
             break
+        qi, row = lane_of[i][0], out[i]
+        if isinstance(QUERIES[qi], dict) and per_q.get(qi, 0) >= FEED_DETAIL:
+            continue
         r = get(sess, DETAIL % row["sid"])
         if r == "RATE_LIMITED":
             break                                        # keep titles-only for the rest
-        details += 1
+        details += 1; per_q[qi] = per_q.get(qi, 0) + 1
         if r is None:
             continue
         try:

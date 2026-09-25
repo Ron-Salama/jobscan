@@ -160,6 +160,8 @@ def job(source, sid, title, company="", city="", url="", level="", years_min=Non
             "desc":desc or "","active":active,"region":region_of(city)}
 
 # ---------------- sources (v1: open APIs) ----------------
+HMT_ABROAD_RECHECK = 40   # max per-run detail lookups for rows the search feed places abroad
+
 def src_hiremetech():
     out=[]
     for page in range(1,28):
@@ -175,6 +177,19 @@ def src_hiremetech():
                 _txt(j.get("requirements"))+" "+_txt(j.get("description")), j.get("is_active",True)))
         if not (d.get("pagination",{}) or {}).get("has_more"): break
         time.sleep(0.15)
+    # hiremetech's SEARCH feed mis-geocodes some Israeli jobs (2026-09-25: a Shfela 'Junior Software
+    # Developer' as "Gurugram, India", ERGO NEXT's Kfar Saba grad roles as "Munich, Germany"), and the
+    # region filter then dropped them as abroad. The job's own record (/api/jobs/{id}) has the right
+    # place, so every would-be-abroad row (a handful per run) is re-checked there before it's dropped.
+    rechecked=0
+    for r in out:
+        if region_of(r["city"])!="Abroad" or rechecked>=HMT_ABROAD_RECHECK: continue
+        rechecked+=1
+        try: d=(get_json("https://hiremetech.com/api/jobs/%s"%r["sid"]) or {}).get("job") or {}
+        except Exception: continue
+        b=(d.get("location") or {}).get("basic") if isinstance(d.get("location"),dict) else None
+        if isinstance(b,dict) and "israel" in ("%s %s"%(b.get("country") or "",b.get("display_name") or "")).lower():
+            r["city"]=b.get("display_name") or "Israel"; r["region"]=region_of(r["city"])
     return out
 
 def _co(j):
