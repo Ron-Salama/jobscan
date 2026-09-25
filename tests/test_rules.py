@@ -644,6 +644,78 @@ def test_linkedin_qa_lane_not_starved():
     assert windows == {"r172800"}                          # past 48h, not a week
 
 
+def test_collapse_dups_board_copies():
+    """Ron 2026-09-25: NVIDIA 'Nvlink QA Engineer' showed 3 times (Workday + hiremetech + BuiltIn).
+    Board copies fold into one row; the pinned/Sent row keeps; its status is never lost."""
+    import cloud_run as CR
+    wd = "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Nvlink-QA-Engineer_JR2025743"
+    rows = [
+        {"url": "https://hiremetech.com/job/148838268", "company": "NVIDIA", "role": "Nvlink QA Engineer", "src": "hiremetech",
+         "region": "North", "verdict": "YES", "match": 78, "tailor_ready": True, "tready_base": "x"},
+        {"url": wd, "company": "NVIDIA", "role": "Nvlink QA Engineer", "src": "workday", "region": "North",
+         "important": "apply via referral", "verdict": "YES", "match": 78},
+        {"url": "https://builtin.com/job/nvlink-qa-engineer/11316867", "company": "NVIDIA", "role": "Nvlink QA Engineer",
+         "src": "builtin", "region": "Center", "verdict": "YES"},
+        {"url": "https://hiremetech.com/job/1", "company": "(masked)", "role": "Nvlink QA Engineer", "src": "hiremetech"},
+    ]
+    out, n = CR.collapse_dups(rows, {})
+    assert n == 3 and len(out) == 1                    # 'Nvlink' is distinctive, so the masked copy joins too
+    keep = out[0]
+    assert keep["url"] == wd                           # the pinned employer posting keeps
+    assert keep["tailor_ready"] and keep["important"]  # flags carried over from the merged copies
+    assert {d["src"] for d in keep["dups"]} == {"hiremetech", "builtin"}
+
+
+def test_collapse_dups_keeps_separate_openings_and_marks():
+    """Two openings on the employer's own site stay separate; a Sent board copy wins the keep;
+    generic 2-word titles and masked companies are never merged."""
+    import cloud_run as CR
+    a1 = "https://www.amazon.jobs/en/jobs/10386987/2026-graduate-software-dev-engineer"
+    a2 = "https://www.amazon.jobs/en/jobs/10491309/2026-graduate-software-dev-engineer"
+    jb = "https://jobify360.co.il/jobs/2747378-jk"
+    rows = [
+        {"url": a1, "company": "Amazon", "role": "2026 Graduate Software Dev Engineer", "src": "amazon", "region": "North"},
+        {"url": a2, "company": "Amazon", "role": "2026 Graduate Software Dev Engineer", "src": "amazon", "region": "Center"},
+        {"url": jb, "company": "Amazon", "role": "2026 Graduate Software Dev Engineer", "src": "jobify", "region": "Center", "orig": a2},
+        {"url": "https://www.linkedin.com/jobs/view/1", "company": "Acme", "role": "Software Engineer", "src": "linkedin"},
+        {"url": "https://www.linkedin.com/jobs/view/2", "company": "Acme", "role": "Software Engineer", "src": "linkedin"},
+        {"url": "https://www.linkedin.com/jobs/view/9", "company": "HIS", "role": "Junior Full Stack Engineer", "src": "linkedin"},
+        {"url": "https://hiremetech.com/job/7", "company": "(masked)", "role": "Junior Full Stack Engineer", "src": "hiremetech"},
+        {"url": "https://hiremetech.com/job/8", "company": "(masked)", "role": "Junior Full Stack Engineer", "src": "hiremetech"},
+    ]
+    out, n = CR.collapse_dups(rows, {jb: "Sent"})
+    assert n == 1 and len(out) == 7                    # generic masked titles never join HIS's row
+    urls = {r["url"] for r in out}
+    assert a1 in urls and jb in urls and a2 not in urls   # the Sent Jobify copy keeps; it absorbs its own opening
+    kj = [r for r in out if r["url"] == jb][0]
+    assert kj["orig"] == jb or kj["dups"][0]["url"] == a2
+
+
+def test_collapse_dups_stable_across_runs_and_regions():
+    """Reviewer bugs (2026-09-25): run 2 must not merge the second employer opening; a Skip on a
+    board copy must not hide the pinned row; Haifa + Petah Tikva postings stay two rows."""
+    import cloud_run as CR
+    a1 = "https://www.amazon.jobs/en/jobs/10386987/x"; a2 = "https://www.amazon.jobs/en/jobs/10491309/x"
+    jb = "https://jobify360.co.il/jobs/2747378-jk"
+    rows = [{"url": a1, "company": "Amazon", "role": "2026 Graduate Software Dev Engineer", "region": "North"},
+            {"url": a2, "company": "Amazon", "role": "2026 Graduate Software Dev Engineer", "region": "Center"},
+            {"url": jb, "company": "Amazon", "role": "2026 Graduate Software Dev Engineer", "region": "Center", "orig": a2}]
+    st = {jb: "Sent"}
+    out1, _ = CR.collapse_dups(rows, st)
+    out2, n2 = CR.collapse_dups([dict(r) for r in out1], st)
+    assert n2 == 0 and len(out2) == 2                    # idempotent: a1 stays its own row
+    wd = "https://nvidia.wd5.myworkdayjobs.com/x/job/Israel-Yokneam/Networking-QA_JR2025751"
+    hm = "https://hiremetech.com/job/148336333"
+    rows = [{"url": wd, "company": "NVIDIA", "role": "Networking QA and Automation Engineer", "region": "North", "important": "pin"},
+            {"url": hm, "company": "(masked)", "role": "Networking QA and Automation Engineer", "region": "North"}]
+    out, n = CR.collapse_dups(rows, {hm: "Skip"})
+    assert n == 1 and out[0]["url"] == wd and CR._row_status(out[0], {hm: "Skip"}) == "New"
+    assert CR._row_status(out[0], {hm: "Sent"}) == "Sent" and CR._kept_by_status(out[0], {hm: "Sent"})
+    rows = [{"url": "https://www.linkedin.com/jobs/view/1", "company": "Mobileye", "role": "Linux Integration Engineer OS team", "region": "Center"},
+            {"url": "https://www.linkedin.com/jobs/view/2", "company": "Mobileye", "role": "Linux Integration Engineer OS team", "region": "North"}]
+    assert CR.collapse_dups(rows, {})[1] == 0
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):
