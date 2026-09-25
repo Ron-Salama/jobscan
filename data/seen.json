@@ -8573,12 +8573,48 @@
 "u": "https://www.linkedin.com/jobs/view/4441096576",
 "src": "linkedin",
 "city": "migdal haemeq north district"
+},
+"hiremetech:147579624": {
+"t": "Developer - Test Automation S 4A",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"|developer test automation s 4a||6aabb9ec9ab5": {
+"seen": "2026-09-25",
+"u": "https://hiremetech.com/job/147579624",
+"src": "hiremetech",
+"city": ""
+},
+"hiremetech:144175710": {
+"t": "Developer - Application Development S 4A",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"|developer application development s 4a||6aabb9ec9ab5": {
+"seen": "2026-09-25",
+"u": "https://hiremetech.com/job/144175710",
+"src": "hiremetech",
+"city": ""
+},
+"linkedin:4395490122": {
+"t": "Firmware Engineer – Ethernet Switching",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"nvidia|firmware engineer ethernet switching|North": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4395490122",
+"src": "linkedin",
+"city": "yokneam ilit north district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2519
+"last": 2520
 },
 "experis": {
 "max": 600,
@@ -8618,11 +8654,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 437
+"last": 440
 },
 "alljobs": {
 "max": 681,
-"last": 674
+"last": 673
 },
 "comeet": {
 "max": 272,
@@ -8663,7 +8699,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 13
+"zero_runs": 14
 },
 "ashby": {
 "max": 47,
@@ -8675,7 +8711,7 @@
 },
 "oracle_hcm": {
 "max": 45,
-"last": 41
+"last": 42
 },
 "smartrecruiters": {
 "max": 42,
@@ -8706,7 +8742,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-25T20:39+03:00",
+"last_scan": "2026-09-25T22:21+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
