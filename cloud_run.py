@@ -115,6 +115,7 @@ input.note.has{border-color:#3a7d52}
     <label><input type="checkbox" id="treadyonly"> 🎯 tailor-ready</label>
     <label><input type="checkbox" id="jobifyonly"> Jobify</label>
     <label><input type="checkbox" id="hidedone" checked> hide sent/skip</label>
+    <label title="hide roles from outsourcing / manpower contractors (the 😈 tag)"><input type="checkbox" id="hideos"> hide 😈 outsourcing</label>
     <button type="button" id="expBtn" class="tbtn" title="Download your applied/status marks (this browser) as a file">⬇ export status</button>
     <label class="tbtn" title="Load a status file exported from another device">⬆ import status<input type="file" id="impFile" accept="application/json" hidden></label>
   </div>
@@ -197,13 +198,13 @@ function ntChange(inp){setNote(inp.dataset.u, inp.value);inp.classList.toggle("h
 window.ntChange=ntChange;
 function render(){
   const q=el("q").value.toLowerCase(),dt=el("date").value,rg=el("region").value,mf=+el("fit").value,
-        st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,
+        st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,ho=el("hideos").checked,
         vd=el("verdict").value,jo=el("jobifyonly").checked,tp=el("toponly").checked,tr=el("treadyonly").checked;
   let rows=JOBS.filter(j=>{
     const s=rowSt(j);
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!dt||j.date===dt)&&rgOk(j,rg)
-      &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"))
+      &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"))&&(!ho||!j.outsrc)
       ||(!!j.important&&(!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!hd||(s!=="Sent"&&s!=="Skip")));
   });
   rows.sort((a,b)=>{if(!!a.important!==!!b.important)return a.important?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}else if(sortK==="pay"){x=a.paylo||0;y=b.paylo||0;}return (x>y?1:x<y?-1:0)*sortDir;});
@@ -225,7 +226,7 @@ function render(){
     <td><input class="note${rowNote(j)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(rowNote(j))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
-["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","treadyonly","jobifyonly","hidedone"].forEach(id=>el(id).addEventListener("input",render));
+["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","treadyonly","jobifyonly","hidedone","hideos"].forEach(id=>el(id).addEventListener("input",render));
 el("expBtn").onclick=exportStatuses;
 el("impFile").onchange=e=>{if(e.target.files[0]){importStatuses(e.target.files[0]); e.target.value="";}};
 render();
