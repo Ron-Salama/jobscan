@@ -151,6 +151,11 @@ function mmeter(j){const m=mval(j);
 const rgOk=(j,rg)=>!rg||(rg==="North+Unknown"?(j.region==="North"||j.region==="Unknown"):j.region===rg);
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"New";}
+// a merged row: its own mark wins (even an explicit "New"); a board copy only passes on Sent/Interview, never Skip
+function ownSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"";}
+function rowSt(j){const s=ownSt(j.url);if(s)return s;for(const d of (j.dups||[])){const x=ownSt(d.url);if(x==="Sent"||x==="Interview")return x;}return "New";}
+function ownNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u]!=null)?NOTES[u]:null;}
+function rowNote(j){const n=ownNote(j.url);if(n!==null)return n;for(const d of (j.dups||[])){const x=ownNote(d.url);if(x)return x;}return "";}
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function getNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u])||"";}
 function setNote(u,v){try{localStorage.setItem("nt:"+u,v);}catch(e){}}
@@ -195,7 +200,7 @@ function render(){
         st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,
         vd=el("verdict").value,jo=el("jobifyonly").checked,tp=el("toponly").checked,tr=el("treadyonly").checked;
   let rows=JOBS.filter(j=>{
-    const s=getSt(j.url);
+    const s=rowSt(j);
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!dt||j.date===dt)&&rgOk(j,rg)
       &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"))
@@ -203,7 +208,7 @@ function render(){
   });
   rows.sort((a,b)=>{if(!!a.important!==!!b.important)return a.important?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}else if(sortK==="pay"){x=a.paylo||0;y=b.paylo||0;}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
-  el("b").innerHTML=rows.map(j=>{const s=getSt(j.url);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
+  el("b").innerHTML=rows.map(j=>{const s=rowSt(j);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
     return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'&&!j.important?'filtered':''} ${j.important?'improw':''}">
     <td class="muted">${esc(fmtD(j.date))}</td>
     <td>${mmeter(j)}</td>
@@ -216,8 +221,8 @@ function render(){
     <td class="muted">${esc(j.cv)}</td>
     <td class="muted">${esc(j.src)}</td>
     <td><select class="st" data-v="${s}" data-u="${esc(j.url)}" onchange="stChange(this)">${opts}</select></td>
-    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}${j.orig?'<br><a href="'+esc(j.orig)+'" target="_blank" rel="noopener" title="the same job on the employer&#39;s own site - apply here">company ↗</a>':''}${j.srcurl&&j.srcurl!==j.orig?'<br><a href="'+esc(j.srcurl)+'" target="_blank" rel="noopener" title="the original job-board posting Jobify copied">source ↗</a>':''}</td>
-    <td><input class="note${getNote(j.url)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(getNote(j.url))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
+    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}${j.orig?'<br><a href="'+esc(j.orig)+'" target="_blank" rel="noopener" title="the same job on the employer&#39;s own site - apply here">company ↗</a>':''}${j.srcurl&&j.srcurl!==j.orig?'<br><a href="'+esc(j.srcurl)+'" target="_blank" rel="noopener" title="the original job-board posting Jobify copied">source ↗</a>':''}${(j.dups||[]).map(d=>'<br><a href="'+esc(d.url)+'" target="_blank" rel="noopener" title="the same job, also listed on '+esc(d.src||'another board')+'">'+esc(d.src||'also')+' ↗</a>').join('')}</td>
+    <td><input class="note${rowNote(j)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(rowNote(j))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
 }
 document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
 ["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","treadyonly","jobifyonly","hidedone"].forEach(id=>el(id).addEventListener("input",render));
@@ -337,9 +342,19 @@ def est_pay(company, role, region):
     except Exception:
         return None
 
+def _row_status(r, statuses):
+    """A row's status: its own mark, else a Sent/Interview mark saved under one of its merged board
+    copies (r['dups']). A Skip on a copy is NOT inherited - it usually just hid that duplicate."""
+    own = statuses.get(_nu(r.get("url"))) or "New"
+    if own != "New": return own
+    for d in r.get("dups") or []:
+        s = statuses.get(_nu(d.get("url"))) if isinstance(d, dict) else None
+        if s in KEEP_STATUSES: return s
+    return own
+
 def _kept_by_status(r, statuses):
     """Ron applied (Sent) or is interviewing: the row stays whatever the verdict/host says."""
-    return statuses.get(_nu(r.get("url"))) in KEEP_STATUSES
+    return _row_status(r, statuses) in KEEP_STATUSES
 
 # ---------------- company helpers ----------------
 def _company_match(company, words):
@@ -539,7 +554,8 @@ def apply_curation(alljobs, cur=None):
                for w, n in (osrc.get("companies") or {}).items() if w and w.strip()]
     osrc_url = {_nu(u): n for u, n in (osrc.get("urls") or {}).items()}
     divergent_verdicts(verdicts, jobify, rescued)
-    have = {_nu(r.get("url")) for r in alljobs}
+    have = ({_nu(r.get("url")) for r in alljobs}
+            | {_nu(d.get("url")) for r in alljobs for d in (r.get("dups") or []) if isinstance(d, dict)})
     # roles not on the tracker but in an injected map -> add them.
     #   jobify: from Ron's Jobify feed | bucket: rescued by Claude from the review bucket
     # The verdicts map is consulted FIRST: a NO there is a tombstone, so the role is not
@@ -611,7 +627,8 @@ def apply_curation(alljobs, cur=None):
             # an injected role with no cv in its entry (or an old row) gets the title-based pick
             try: r["cv"] = pick_cv(r.get("role") or "", "") or ""
             except Exception: pass
-        im = important.get(k)
+        dkeys = [_nu(d.get("url")) for d in (r.get("dups") or []) if isinstance(d, dict)]
+        im = important.get(k) or next((important[x] for x in dkeys if isinstance(important.get(x), dict)), None)
         if isinstance(im, dict):
             r["important"] = im.get("note") or "important"
         # estimated pay on YES rows (Ron 2026-09-24); cleared if a row stops being a YES
@@ -619,7 +636,7 @@ def apply_curation(alljobs, cur=None):
         if (r.get("verdict") or "").upper() == "YES":
             ep = est_pay(r.get("company"), r.get("role"), r.get("region"))
             if ep: r["pay"], r["paylo"], r["paytip"] = "₪%d-%dk" % (ep[0], ep[1]), ep[0], ep[2]
-        tr = tready.get(k)
+        tr = tready.get(k) or next((tready[x] for x in dkeys if isinstance(tready.get(x), dict)), None)
         if isinstance(tr, dict):
             r["tailor_ready"] = True; r["tready_base"] = tr.get("base", "")
             emp = tr.get("emp", "")
@@ -695,7 +712,7 @@ def recheck_rules(alljobs, skip_keys, statuses):
     for r in alljobs:
         k = _nu(r.get("url"))
         if (k in skip_keys or r.get("verdict") or r.get("tailor_ready") or r.get("important")
-                or r.get("src") in ("jobify", "bucket") or (statuses.get(k) or "New") != "New"):
+                or r.get("src") in ("jobify", "bucket") or _row_status(r, statuses) != "New"):
             kept.append(r); continue
         why = rule_fail(r)
         if not why:
@@ -705,6 +722,123 @@ def recheck_rules(alljobs, skip_keys, statuses):
                       "src": r.get("src", ""), "desc": ""})
     return kept, moved
 
+# ---------------- cross-board duplicate collapse (Ron 2026-09-25: 'NVIDIA Nvlink QA appears 3+ times') ----------------
+# Job BOARDS re-list an employer's posting (hiremetech, LinkedIn, BuiltIn, Jobify...). A board copy of a
+# named company's role is folded into one row, and its link kept in r["dups"]. Two postings on the employer's
+# OWN site/ATS (Workday, Comeet, amazon.jobs...) are separate openings and are never merged with each other.
+_BOARD_HOSTS = ("hiremetech.com", "linkedin.com", "builtin.com", "jobify360.co.il", "alljobs.co.il", "drushim.co.il",
+                "dialog.co.il", "ethosia.co.il", "nisha.co.il", "experis.co.il", "gotfriends.co.il", "jobmaster.co.il",
+                "indeed.com", "glassdoor.com", "jobnet.co.il")
+_CO_NOISE = re.compile(r"\b(ltd|inc|corp|corporation|limited|israel|technologies|technology|systems|group|co|the|בע\"?מ)\b")
+_MIN_TITLE_WORDS = 3   # 'Software Engineer' is too generic to prove two rows are the same job
+# a masked board row joins a named company's role only if the title has a word NOT in this generic list
+# ('Nvlink', 'Networking', 'UpNEXT'...): 'Junior Full Stack Engineer' could be any employer
+_GENERIC_TITLE = set("""junior senior jr sr lead principal staff software engineer engineers developer developers dev full
+ stack fullstack backend back frontend front end web qa automation test tester testing level entry graduate grad new
+ college student intern and the of for with in to a an i ii iii iv team program programme group embedded devops data ai
+ ml python java net dotnet node react angular golang go rust c cpp mobile ios android cloud platform infrastructure
+ experienced expert specialist associate manager analyst system systems application applications product products
+ solutions solution integration validation verification core""".split())
+
+def _distinctive(t):
+    return any(len(w) >= 4 and w.isalpha() and w not in _GENERIC_TITLE for w in t.split())
+
+def _is_board(u):
+    try: host = urlparse(u or "").netloc.lower().split(":")[0]
+    except Exception: return False
+    return any(host == h or host.endswith("." + h) for h in _BOARD_HOSTS)
+
+def _dup_title(t):
+    return " ".join(re.sub(r"[^\w]+", " ", (t or "").lower()).split())
+
+def _dup_co(c):
+    c = (c or "").strip()
+    if c in ("", "(masked)"): return ""
+    return " ".join(re.sub(r"[^\w]+", " ", _CO_NOISE.sub(" ", c.lower())).split())
+
+def _dup_rank(r, statuses):
+    st = _row_status(r, statuses)
+    return (bool(r.get("important")), st in KEEP_STATUSES, bool(r.get("tailor_ready")), bool(_employer_urls(r)),
+            _VRANK.get((r.get("verdict") or "").upper(), 0), r.get("match") or 0, str(r.get("date") or ""))
+
+def _row_urls(r):
+    return ({_nu(r.get("url"))} | {_nu(d.get("url")) for d in (r.get("dups") or []) if isinstance(d, dict)}) - {""}
+
+def _employer_urls(r):
+    """The employer-site postings a row stands for (its own url, or one it absorbed in an earlier run)."""
+    return {u for u in _row_urls(r) if not _is_board(u)}
+
+def _points_to(r):
+    return {_nu(r.get("orig")), _nu(r.get("srcurl"))} - {""}
+
+_DUP_REGIONS = ("North", "Center", "South", "Jerusalem", "Abroad")
+def _regions_ok(a, b):
+    """Haifa and Petah Tikva postings of one title stay two rows (the region filter must still find both)."""
+    ra, rb = a.get("region"), b.get("region")
+    return not (ra in _DUP_REGIONS and rb in _DUP_REGIONS and ra != rb)
+
+def _absorb(keep, gone):
+    """Fold row `gone` into row `keep`: keep its link (and its own dups), carry over every flag."""
+    seen = {_nu(keep.get("url"))} | {_nu(d.get("url")) for d in keep.get("dups") or []}
+    dups = list(keep.get("dups") or [])
+    for d in [{"url": gone.get("url"), "src": gone.get("src") or "", "region": gone.get("region") or ""}] + list(gone.get("dups") or []):
+        k = _nu(d.get("url"))
+        if k and k not in seen: seen.add(k); dups.append(d)
+    keep["dups"] = dups
+    if not _dup_co(keep.get("company")) and _dup_co(gone.get("company")):
+        keep["company"] = gone["company"]   # a masked board copy that keeps (e.g. it holds the 'Sent' mark) gets the real name
+    if gone.get("important") and not keep.get("important"): keep["important"] = gone["important"]
+    if gone.get("tailor_ready") and not keep.get("tailor_ready"):
+        keep["tailor_ready"] = True; keep["tready_base"] = gone.get("tready_base", "")
+    for f in ("ref", "giant"):
+        keep[f] = bool(keep.get(f)) or bool(gone.get(f))
+    if gone.get("outsrc") and not keep.get("outsrc"): keep["outsrc"] = gone["outsrc"]
+    if not keep.get("verdict") and gone.get("verdict"):
+        for f in ("verdict", "vwhy", "vbasis", "match", "pay", "paylo", "paytip"):
+            if gone.get(f) is not None: keep[f] = gone[f]
+    if not _is_board(gone.get("url")) and not keep.get("orig"):
+        keep["orig"] = gone.get("url")    # the employer's own posting -> 'company ↗' link
+    if (keep.get("region") in ("", "Unknown", None)) and gone.get("region"): keep["region"] = gone["region"]
+
+def collapse_dups(rows, statuses):
+    """Merge job-board copies of the same named-company role into one row (links kept in r['dups']).
+    A masked board row joins a named group only when its title has a distinctive (non-generic) word and
+    exactly one named company has that title. Rows on the employer's own site are never merged with each other.
+    The page reads a merged row's status/notes from all its links, so a 'Sent' mark is never hidden.
+    Returns (rows, n_merged)."""
+    groups, by_title = {}, {}
+    for i, r in enumerate(rows):
+        co, t = _dup_co(r.get("company")), _dup_title(r.get("role"))
+        if co and len(t.split()) >= _MIN_TITLE_WORDS:
+            groups.setdefault((co, t), []).append(i); by_title.setdefault(t, set()).add(co)
+    for i, r in enumerate(rows):
+        t = _dup_title(r.get("role"))
+        if (not _dup_co(r.get("company")) and _is_board(r.get("url")) and _distinctive(t)
+                and len(by_title.get(t, ())) == 1):
+            groups[(next(iter(by_title[t])), t)].append(i)
+    gone = set()
+    for idxs in groups.values():
+        rest = list(dict.fromkeys(idxs))
+        emp = set().union(*(_employer_urls(rows[i]) for i in rest)) if rest else set()
+        while len(rest) > 1:
+            keep = max(rest, key=lambda i: _dup_rank(rows[i], statuses)); rest.remove(keep)
+            # copies that traced to the keeper's own opening go first
+            rest.sort(key=lambda i: not (_points_to(rows[i]) & _row_urls(rows[keep])))
+            left = []
+            for i in rest:
+                k, g = rows[keep], rows[i]
+                ek, eg = _employer_urls(k), _employer_urls(g)
+                # 2 employer openings never merge; the region check only splits two BOARD listings - a board's
+                # region is often a guess, so a board copy follows the employer posting's region
+                ok = not (ek and eg) and (ek or eg or _regions_ok(k, g))
+                gp, kp = _points_to(g) & emp, _points_to(k) & emp
+                if ok and gp and not (gp & _row_urls(k)): ok = False              # g traced to another opening
+                if ok and kp and _employer_urls(g) and not (kp & _employer_urls(g)): ok = False
+                if ok: _absorb(k, g); gone.add(i)
+                else: left.append(i)
+            rest = left
+    return [r for i, r in enumerate(rows) if i not in gone], len(gone)
+
 def cap_rows(alljobs, statuses, cap=CAP):
     """Trim the page to `cap` rows AFTER curation (BUG 19). Never evicts a YES/REACH row, a
     tailor-ready row or a row Ron has marked (any status but New); evicts unjudged rows,
@@ -713,7 +847,7 @@ def cap_rows(alljobs, statuses, cap=CAP):
     if len(alljobs) <= cap: return alljobs, 0
     def protected(r):
         return ((r.get("verdict") or "").upper() in ("YES", "REACH") or bool(r.get("tailor_ready")) or bool(r.get("important"))
-                or (statuses.get(_nu(r.get("url"))) or "New") != "New")
+                or _row_status(r, statuses) != "New")
     unprot = [i for i, r in enumerate(alljobs) if not protected(r)]
     n = min(len(alljobs) - cap, len(unprot))
     # oldest pull date first; within a date the row further down the list (older) goes first
@@ -778,7 +912,8 @@ def write_buckets(bucket, qa_bucket, giant_bucket, page_rows):
     """review / QA / giant bucket JSONs. Giant: every giant role, uncapped (BUG 17). Review: rows
     already on the page and giant rows already in the giant bucket are dropped, URLs deduped,
     THEN capped. QA: on-page + dedup, then capped."""
-    on_page = {_nu(r.get("url")) for r in page_rows} - {""}
+    on_page = ({_nu(r.get("url")) for r in page_rows}
+               | {_nu(d.get("url")) for r in page_rows for d in (r.get("dups") or [])}) - {""}
     g, _ = finish_bucket(giant_bucket, key=lambda b: _GPRI.get((b.get("reason") or "").split(":")[-1], 3))
     in_giant = {_nu(b.get("url")) for b in g["roles"]} - {""}
     rv, precap = finish_bucket(bucket, key=_review_key, cap=BUCKET_CAP,
@@ -826,9 +961,10 @@ def main(argv=None):
     if not rebuild:   # rules only change with code, and the buckets are only rewritten by a scan
         alljobs, moved = recheck_rules(alljobs, new_keys, statuses)
         bucket = moved + bucket
+    alljobs, merged = collapse_dups(alljobs, statuses)
     alljobs, evicted = cap_rows(alljobs, statuses)
-    print("page: %d rows (dropped %d NO/dead-host/non-job, %d rule-changed -> review bucket, %d evicted by CAP=%d)"
-          % (len(alljobs), n0 - len(alljobs) - len(moved) - evicted, len(moved), evicted, CAP))
+    print("page: %d rows (dropped %d NO/dead-host/non-job, %d rule-changed -> review bucket, %d board copies merged, %d evicted by CAP=%d)"
+          % (len(alljobs), n0 - len(alljobs) - len(moved) - merged - evicted, len(moved), merged, evicted, CAP))
     J.atomic_write(JOBS_JSON, json.dumps(alljobs, ensure_ascii=False))
     if not rebuild:
         # invisible buckets: filtered/uncertain roles + their JD text, for on-demand review
@@ -842,7 +978,8 @@ def main(argv=None):
             vmap, _ = _norm_map(cur.get("verdicts"), _VRANK_VERDICTS)
             judged = ({k for k, v in vmap.items() if _is_no(v)}
                       | {k for k, s in statuses.items() if s not in ("", "New")}
-                      | {_nu(r.get("url")) for r in alljobs}) - {""}
+                      | {_nu(r.get("url")) for r in alljobs}
+                      | {_nu(d.get("url")) for r in alljobs for d in (r.get("dups") or [])}) - {""}
             tkey = lambda b: J.digest_title_key(b.get("company"), b.get("role"))
             # same role under another URL: this run's copies of a judged URL, rows on the page
             # (a BuiltIn / '/en-US/' copy of a Workday req) and NO verdicts that carry company+role
