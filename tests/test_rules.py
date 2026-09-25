@@ -559,6 +559,25 @@ def test_est_pay_tiers():
     assert CR.est_pay("(masked)", "Software Engineer", "Center")[:2] == (16, 21)
     assert CR.est_pay("Startica", "Prompt Engineer", "North")[:2] == (18, 22)       # high-tech +AI -North
 
+def test_outsourcing_tag():
+    """😈 outsourcing tag (Ron 2026-09-25): curation.json["outsourcing"] companies match as whole
+    words (Hebrew too), per-URL entries tag masked rows, and a normal company stays untagged."""
+    import cloud_run as CR
+    rows = [{"url": "https://x.example/1", "company": "קורן טק טכנולוגיות", "role": "r"},
+            {"url": "https://x.example/2", "company": "Business Wellness Ltd", "role": "r"},
+            {"url": "https://x.example/3", "company": "(masked)", "role": "r"},
+            {"url": "https://x.example/4", "company": "Ness Technologies", "role": "r", "outsrc": "stale"},
+            {"url": "https://x.example/5", "company": "KLA", "role": "r", "outsrc": "stale"}]
+    cur = {"outsourcing": {"companies": {"קורן טק": "Korentec", "ness": "Ness"},
+                           "urls": {"https://x.example/3/": "masked Korentec seat"}}}
+    CR.apply_curation(rows, cur)
+    assert rows[0].get("outsrc") == "Korentec"
+    assert "outsrc" not in rows[1]                      # 'ness' must not match 'business'/'wellness'
+    assert rows[2].get("outsrc") == "masked Korentec seat"
+    assert rows[3].get("outsrc") == "Ness"
+    assert "outsrc" not in rows[4]                      # a stale tag is cleared
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in sorted(globals().items()):

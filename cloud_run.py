@@ -73,6 +73,7 @@ a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 .toppick{background:#14432a;color:#7cf0a8;font-weight:700}.wtailor{background:#3a331a;color:#ffd98f}
 .unread{background:#2a2f3a;color:#9aa6bb}
 .tready{background:#123a3a;color:#7fe9d6;font-weight:700}
+.outsrc{background:#3a1a3a;color:#ffb3ff;font-weight:700;border:1px solid #b04ab0}
 .imp{background:#5a1a1a;color:#ffd0d0;font-weight:800;border:1px solid #ff6b6b}
 tr.improw td{background:#1f1416}
 .v-yes{background:#1c3a2a;color:#8ff0b8}.v-reach{background:#3a331a;color:#ffd98f}.v-no{background:#3a1d1d;color:#ff9e9e}
@@ -153,7 +154,7 @@ function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function getNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u])||"";}
 function setNote(u,v){try{localStorage.setItem("nt:"+u,v);}catch(e){}}
-function pills(j){let s="";if(j.important)s+='<span class="pill imp" title="'+esc(j.important)+'">📌 IMPORTANT</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function pills(j){let s="";if(j.important)s+='<span class="pill imp" title="'+esc(j.important)+'">📌 IMPORTANT</span> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">😈 outsourcing</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
@@ -530,6 +531,13 @@ def apply_curation(alljobs, cur=None):
     important, icanon = _norm_map(cur.get("important"))   # Ron's pinned roles (📌 badge, top of page, never dropped)
     origin, _ = _norm_map(cur.get("origin"))   # aggregator (Jobify) row -> real employer + original / company-site links
     statuses = _norm_values(cur.get("statuses"))
+    # outsourcing / manpower-contractor employers (😈 tag, Ron 2026-09-25): the contractor stays the
+    # employer of record, so client-level work comes with contractor pay + name. Recruitment agencies
+    # (the client hires you directly) are NOT listed. Names match as whole words ('ness' != 'business').
+    osrc = cur.get("outsourcing") if isinstance(cur.get("outsourcing"), dict) else {}
+    osrc_co = [(re.compile(r"(?<!\w)" + re.escape(w.strip().lower()) + r"(?!\w)"), n)
+               for w, n in (osrc.get("companies") or {}).items() if w and w.strip()]
+    osrc_url = {_nu(u): n for u, n in (osrc.get("urls") or {}).items()}
     divergent_verdicts(verdicts, jobify, rescued)
     have = {_nu(r.get("url")) for r in alljobs}
     # roles not on the tracker but in an injected map -> add them.
@@ -627,6 +635,10 @@ def apply_curation(alljobs, cur=None):
         co = r.get("company") or ""
         r["ref"] = bool(r.get("ref")) or _company_match(co, C.REFERRAL_COMPANIES)
         r["giant"] = r["ref"] or bool(r.get("giant")) or _company_match(co, C.GIANTS)
+        names = " | ".join(x for x in (co, r.get("company_listed") or "") if x).lower()
+        on = osrc_url.get(k) or next((n for rx, n in osrc_co if rx.search(names)), None)
+        if on: r["outsrc"] = on
+        else: r.pop("outsrc", None)
     return cur
 
 # ---------------- page-row housekeeping ----------------
