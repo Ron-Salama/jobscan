@@ -8536,7 +8536,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2521
+"last": 2519
 },
 "experis": {
 "max": 600,
@@ -8576,11 +8576,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 407
+"last": 411
 },
 "alljobs": {
 "max": 681,
-"last": 675
+"last": 674
 },
 "comeet": {
 "max": 272,
@@ -8621,7 +8621,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 11
+"zero_runs": 12
 },
 "ashby": {
 "max": 47,
@@ -8633,7 +8633,7 @@
 },
 "oracle_hcm": {
 "max": 45,
-"last": 42
+"last": 9
 },
 "smartrecruiters": {
 "max": 42,
@@ -8664,14 +8664,15 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-25T19:05+03:00",
+"last_scan": "2026-09-25T19:29+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
 "day": "2026-09-25",
 "keys": [
 "kaltura:never",
-"drushim:dark"
+"drushim:dark",
+"oracle_hcm:partial"
 ]
 },
 "ref_digest": {
