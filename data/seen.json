@@ -8375,12 +8375,168 @@
 "tailor": false,
 "seen": "2026-09-25",
 "dup_of": "https://hiremetech.com/job/148435480"
+},
+"|software developer||44faa915f7ff": {
+"seen": "2026-09-25",
+"u": "https://hiremetech.com/job/149007198",
+"src": "hiremetech",
+"city": ""
+},
+"|graduate frontend full stack software engineer upnext program kfar saba central district 08 27 2026||3d3e20ef76b9": {
+"seen": "2026-09-25",
+"u": "https://hiremetech.com/job/148103544",
+"src": "hiremetech",
+"city": ""
+},
+"|graduate backend software engineer upnext program kfar saba central district 08 27 2026||8bf4a62b7585": {
+"seen": "2026-09-25",
+"u": "https://hiremetech.com/job/148103473",
+"src": "hiremetech",
+"city": ""
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|6323ec6f8cb6": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"hiremetech:149014224": {
+"t": "Junior Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"|software developer||a30cc2affed5": {
+"seen": "2026-09-25",
+"u": "https://hiremetech.com/job/149014224",
+"src": "hiremetech",
+"city": ""
+},
+"linkedin:4470980998": {
+"t": "SharePoint Front-End Developer / Implementer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"unilink|sharepoint front end developer implementer|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4470980998",
+"src": "linkedin",
+"city": "yavne center district"
+},
+"linkedin:4450107856": {
+"t": "Software Engineer (Identity & Reputation)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"appdome|software engineer|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4450107856",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4471468145": {
+"t": "Dynamics 365 Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"comblack|dynamics 365 developer|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4471468145",
+"src": "linkedin",
+"city": "center district"
+},
+"linkedin:4462822985": {
+"t": "Algorithm Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"ge healthcare|algorithm software engineer|North": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4462822985",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4435116425": {
+"t": "Software Engineer- C++",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"ge healthcare|software engineer cpp|North": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4435116425",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4461125400": {
+"t": "Silicon Automation Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"google|silicon automation engineer|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4461125400",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4470155136": {
+"t": "Hardware and Firmware Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"dormotech|hardware and firmware engineer|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4470155136",
+"src": "linkedin",
+"city": "raanana center district"
+},
+"linkedin:4464507479": {
+"t": "Automotive Setups Integration Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"gentex corporation|automotive setups integration engineer|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4464507479",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4459210635": {
+"t": "Test and Product Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-25"
+},
+"ethosia|test and product engineer|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4459210635",
+"src": "linkedin",
+"city": "hod hasharon center district"
+},
+"linkedin:4471188706": {
+"t": "הנדסאי אלק' ואינטגרציה",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-25"
+},
+"yael korentec technologies|הנדסאי אלק ואינטגרציה|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4471188706",
+"src": "linkedin",
+"city": "yehud monosson center district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2538
+"last": 2521
 },
 "experis": {
 "max": 600,
@@ -8388,7 +8544,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 0
+"last": 295
 },
 "greenhouse": {
 "max": 296,
@@ -8416,11 +8572,11 @@
 },
 "builtin": {
 "max": 48,
-"last": 40
+"last": 41
 },
 "linkedin": {
 "max": 609,
-"last": 604
+"last": 407
 },
 "alljobs": {
 "max": 681,
@@ -8465,7 +8621,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 10
+"zero_runs": 11
 },
 "ashby": {
 "max": 47,
@@ -8473,7 +8629,7 @@
 },
 "eightfold": {
 "max": 54,
-"last": 53
+"last": 54
 },
 "oracle_hcm": {
 "max": 45,
@@ -8485,7 +8641,7 @@
 },
 "google": {
 "max": 107,
-"last": 106
+"last": 105
 },
 "checkpoint": {
 "max": 103,
@@ -8508,7 +8664,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-25T15:18+03:00",
+"last_scan": "2026-09-25T19:05+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
