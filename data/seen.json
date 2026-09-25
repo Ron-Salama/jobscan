@@ -8531,6 +8531,48 @@
 "u": "https://www.linkedin.com/jobs/view/4471188706",
 "src": "linkedin",
 "city": "yehud monosson center district"
+},
+"linkedin:4462877990": {
+"t": "Embedded SW Engineer, Annapurna Labs",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"amazon web services|embedded sw engineer annapurna labs|Center": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4462877990",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4460750525": {
+"t": "Systems Integration Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"kla|integration engineer|North": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4460758474",
+"src": "linkedin",
+"city": "migdal haemeq north district"
+},
+"linkedin:4460758474": {
+"t": "Systems Integration Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"linkedin:4441096576": {
+"t": "OMD Final Integration Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-25"
+},
+"kla|omd final integration engineer|North": {
+"seen": "2026-09-25",
+"u": "https://www.linkedin.com/jobs/view/4441096576",
+"src": "linkedin",
+"city": "migdal haemeq north district"
 }
 },
 "source_stats": {
@@ -8572,11 +8614,11 @@
 },
 "builtin": {
 "max": 48,
-"last": 41
+"last": 40
 },
 "linkedin": {
 "max": 609,
-"last": 411
+"last": 437
 },
 "alljobs": {
 "max": 681,
@@ -8621,7 +8663,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 12
+"zero_runs": 13
 },
 "ashby": {
 "max": 47,
@@ -8633,7 +8675,7 @@
 },
 "oracle_hcm": {
 "max": 45,
-"last": 9
+"last": 41
 },
 "smartrecruiters": {
 "max": 42,
@@ -8664,7 +8706,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-25T19:29+03:00",
+"last_scan": "2026-09-25T20:39+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
