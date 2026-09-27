@@ -74,6 +74,7 @@ a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 .unread{background:#2a2f3a;color:#9aa6bb}
 .tready{background:#123a3a;color:#7fe9d6;font-weight:700}
 .outsrc{background:#3a1a3a;color:#ffb3ff;font-weight:700;border:1px solid #b04ab0}
+.trkq{background:#3a2a10;color:#ffcf7a;border:1px solid #a8742a}.trkt{background:#16303a;color:#9fdcf0;border:1px solid #3b7f96}.trks{background:#1b3320;color:#a6e3b0;border:1px solid #3f8a4f}
 .imp{background:#5a1a1a;color:#ffd0d0;font-weight:800;border:1px solid #ff6b6b}
 tr.improw td{background:#1f1416}
 .v-yes{background:#1c3a2a;color:#8ff0b8}.v-reach{background:#3a331a;color:#ffd98f}.v-no{background:#3a1d1d;color:#ff9e9e}
@@ -160,7 +161,7 @@ function rowNote(j){const n=ownNote(j.url);if(n!==null)return n;for(const d of (
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function getNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u])||"";}
 function setNote(u,v){try{localStorage.setItem("nt:"+u,v);}catch(e){}}
-function pills(j){let s="";if(j.important)s+='<span class="pill imp" title="'+esc(j.important)+'">📌 IMPORTANT</span> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">😈 outsourcing</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function pills(j){let s="";if(j.important)s+='<span class="pill imp" title="'+esc(j.important)+'">📌 IMPORTANT</span> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">😈 outsourcing</span> ';if(j.track==="qa-manual")s+='<span class="pill trkq" title="Tester seat (mostly manual testing, degree not required): tester pay - the lowest band">🧪 tester pay</span> ';else if(j.track==="test-eng")s+='<span class="pill trkt" title="Test / validation / automation engineering where you write code: close to SWE pay">🧰 test-eng pay</span> ';else if(j.track==="swe")s+='<span class="pill trks" title="Software development role: SWE-with-a-degree pay">💻 SWE pay</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
@@ -317,12 +318,34 @@ _PAY_ROLE = [("test", re.compile(r"\bqa\b|test|automation|validation|verificatio
              ("game", re.compile(r"\bgame|unity|unreal|משחק")),
              ("embedded", re.compile(r"embedded|firmware|c\+\+|\brt\b|real.?time|low.?level|משובצ|קושחה")),
              ("ai", re.compile(r"\bai\b|\bml\b|llm|genai|machine learning|prompt|בינה"))]
-_PAY_ADJ = {"test": -1, "game": -3, "embedded": 1, "ai": 1}
+_PAY_ADJ = {"test": -1, "game": -3, "embedded": 1, "ai": 1, "manual tester": -6}
 
-def est_pay(company, role, region):
+# Pay track of a rated role (Ron 2026-09-27: "QA pay or SWE-with-a-degree pay?"). A judge sets it
+# per role from the JD (curation 'track'); older rows get it from the title + the verdict text.
+PAY_TRACKS = ("swe", "test-eng", "qa-manual")
+_TRK_MANUAL = re.compile(r"manual|ידני|בודק|בודקת|\btester\b", re.I)
+_TRK_MANUAL_WHY = re.compile(r"(mostly|mainly|primarily|largely|heavily)[^.]{0,25}manual|manual[^.]{0,20}"
+                             r"(testing|tests|qa) (seat|role|job)|manual tester|בדיקות ידניות", re.I)
+_TRK_TEST = re.compile(r"\bqa\b|\btest|sdet|automation (engineer|developer|dev)|validation|verification|v&v"
+                       r"|בדיק|אוטומציה|ולידציה|וריפיקציה", re.I)
+_TRK_DEV = re.compile(r"full.?stack|back.?end|front.?end", re.I)
+
+def pay_track(role, why=""):
+    """'qa-manual' (a tester seat - the pay floor), 'test-eng' (test/validation/automation engineering,
+    near SWE pay) or 'swe'. Never raises."""
+    try:
+        t = role or ""
+        if _TRK_DEV.search(t): return "swe"
+        if _TRK_MANUAL.search(t) or (_TRK_TEST.search(t) and _TRK_MANUAL_WHY.search(why or "")): return "qa-manual"
+        return "test-eng" if _TRK_TEST.search(t) else "swe"
+    except Exception:
+        return "swe"
+
+def est_pay(company, role, region, track=None):
     """Rough junior monthly gross range for a row: (lo, hi, tooltip) - employer tier
     (config.PAY_TIERS) + role adjustment + a North discount outside the big-tech/defense tiers.
-    An estimate from 2026 salary surveys, never the employer's number. Never raises."""
+    A 'qa-manual' track (tester seat) sits well below the engineer band. An estimate from
+    2026 salary surveys, never the employer's number. Never raises."""
     try:
         co = (company or "").strip(); tl = (role or "").lower()
         m = lambda names: _company_match(co, names)
@@ -333,7 +356,12 @@ def est_pay(company, role, region):
         elif m(C.PAY_TRADITIONAL): tier = "traditional"
         else: tier = "hightech"
         lo, hi = C.PAY_TIERS[tier]
-        kind = next((k for k, rx in _PAY_ROLE if rx.search(tl)), "")
+        if track == "qa-manual":
+            kind = "manual tester"
+        elif track == "swe":
+            kind = next((k for k, rx in _PAY_ROLE if k != "test" and rx.search(tl)), "")
+        else:
+            kind = next((k for k, rx in _PAY_ROLE if rx.search(tl)), "")
         adj = _PAY_ADJ.get(kind, 0)
         if region == "North" and tier in ("hightech", "traditional", "unknown"): adj -= 1
         lo, hi = max(12, lo + adj), max(13, hi + adj)
@@ -634,10 +662,16 @@ def apply_curation(alljobs, cur=None):
         im = important.get(k) or next((important[x] for x in dkeys if isinstance(important.get(x), dict)), None)
         if isinstance(im, dict):
             r["important"] = im.get("note") or "important"
+        # pay track on YES/REACH rows (Ron 2026-09-27): the judge's per-role call, else inferred
+        rated = (r.get("verdict") or "").upper() in ("YES", "REACH")
+        src = next((mp.get(k) for mp in (verdicts, rescued, jobify) if isinstance(mp.get(k), dict)), {})
+        trk = src.get("track") if src.get("track") in PAY_TRACKS else pay_track(r.get("role"), r.get("vwhy"))
+        if rated: r["track"] = trk
+        else: r.pop("track", None)
         # estimated pay on YES rows (Ron 2026-09-24); cleared if a row stops being a YES
         for f in ("pay", "paylo", "paytip"): r.pop(f, None)
         if (r.get("verdict") or "").upper() == "YES":
-            ep = est_pay(r.get("company"), r.get("role"), r.get("region"))
+            ep = est_pay(r.get("company"), r.get("role"), r.get("region"), trk)
             if ep: r["pay"], r["paylo"], r["paytip"] = "₪%d-%dk" % (ep[0], ep[1]), ep[0], ep[2]
         tr = tready.get(k) or next((tready[x] for x in dkeys if isinstance(tready.get(x), dict)), None)
         if isinstance(tr, dict):

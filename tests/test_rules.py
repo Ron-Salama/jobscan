@@ -559,6 +559,28 @@ def test_est_pay_tiers():
     assert CR.est_pay("(masked)", "Software Engineer", "Center")[:2] == (16, 21)
     assert CR.est_pay("Startica", "Prompt Engineer", "North")[:2] == (18, 22)       # high-tech +AI -North
 
+def test_pay_track_and_tester_pay():
+    """Pay-track tag (Ron 2026-09-27: 'QA pay or SWE-with-a-degree pay?'): a tester seat is priced
+    well below an engineer, a judge's explicit track wins, and dev titles never read as testing."""
+    import cloud_run as CR
+    assert CR.pay_track("בודק/ת תוכנה") == "qa-manual"
+    assert CR.pay_track("Junior QA Engineer", "The day-to-day work is mostly manual testing and logging bugs.") == "qa-manual"
+    assert CR.pay_track("Junior QA Engineer", "Builds the automation framework in Python.") == "test-eng"
+    assert CR.pay_track("Software Verification Engineer") == "test-eng"
+    assert CR.pay_track("Full Stack Developer - AI Automation") == "swe"
+    assert CR.pay_track("Embedded Software Engineer") == "swe"
+    assert CR.est_pay("Elbit Systems Israel", "Junior QA Engineer", "Center", "qa-manual")[:2] == (13, 17)
+    assert CR.est_pay("Elbit Systems Israel", "Junior QA Engineer", "Center", "test-eng")[:2] == (18, 22)
+    assert CR.est_pay("Elbit Systems Israel", "Software Engineer", "Center", "swe")[:2] == (19, 23)
+    rows = [{"url": "https://x.example/qa", "company": "Elbit Systems Israel", "role": "Junior QA Engineer", "region": "Center"},
+            {"url": "https://x.example/dev", "company": "Elbit Systems Israel", "role": "QA Automation Developer", "region": "Center"}]
+    cur = {"verdicts": {"https://x.example/qa": {"v": "YES", "score": 75, "why": "x", "track": "qa-manual"},
+                        "https://x.example/dev": {"v": "YES", "score": 75, "why": "writes the framework"}}}
+    CR.apply_curation(rows, cur)
+    assert rows[0]["track"] == "qa-manual" and rows[0]["pay"] == "₪13-17k"     # explicit judge call wins
+    assert rows[1]["track"] == "test-eng"                                       # inferred from the title
+
+
 def test_outsourcing_tag():
     """😈 outsourcing tag (Ron 2026-09-25): curation.json["outsourcing"] companies match as whole
     words (Hebrew too), per-URL entries tag masked rows, and a normal company stays untagged."""
