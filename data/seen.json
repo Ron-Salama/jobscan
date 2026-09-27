@@ -9119,12 +9119,18 @@
 "u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152031989",
 "src": "checkpoint",
 "city": "tel aviv"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|38ab23d33bea": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2516
+"last": 2517
 },
 "experis": {
 "max": 600,
@@ -9132,11 +9138,11 @@
 },
 "drushim": {
 "max": 309,
-"last": 302
+"last": 303
 },
 "greenhouse": {
 "max": 296,
-"last": 291
+"last": 292
 },
 "amazon": {
 "max": 168,
@@ -9164,7 +9170,7 @@
 },
 "linkedin": {
 "max": 609,
-"last": 248
+"last": 249
 },
 "alljobs": {
 "max": 681,
@@ -9209,7 +9215,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 24
+"zero_runs": 25
 },
 "ashby": {
 "max": 47,
@@ -9252,14 +9258,13 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-27T21:48+03:00",
+"last_scan": "2026-09-28T02:31+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
-"day": "2026-09-27",
+"day": "2026-09-28",
 "keys": [
-"kaltura:never",
-"ethosia:dark"
+"kaltura:never"
 ]
 },
 "ref_digest": {
