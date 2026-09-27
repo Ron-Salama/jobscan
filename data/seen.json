@@ -8807,12 +8807,246 @@
 "u": "https://www.linkedin.com/jobs/view/4471082777",
 "src": "linkedin",
 "city": "haifa district"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|918ce69fdafb": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|51d24f8ea17d": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|c6a2ac8f5578": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"hiremetech:149334613": {
+"t": "Junior Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"|software engineer|location not specified|ae1dde921f18": {
+"seen": "2026-09-27",
+"u": "https://hiremetech.com/job/149334613",
+"src": "hiremetech",
+"city": "location not specified"
+},
+"hiremetech:149334107": {
+"t": "Junior / Mid-level Software Engineer (Rust / C++ / GPU)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"|mid level software engineer|tirat karmel|3c6bada626a0": {
+"seen": "2026-09-27",
+"u": "https://hiremetech.com/job/149334107",
+"src": "hiremetech",
+"city": "tirat karmel"
+},
+"hiremetech:149334206": {
+"t": "JUNIOR SOFTWARE ENGINEER-Temporary position",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"|software engineer temporary position|tel aviv|b55c86b9f513": {
+"seen": "2026-09-27",
+"u": "https://hiremetech.com/job/149334206",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"linkedin:4472438395": {
+"t": "Server Data Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"similarweb|server data developer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4472438395",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4375565367": {
+"t": "Full Stack Software Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"elbit|full stack software developer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4375565367",
+"src": "linkedin",
+"city": "ramat hasharon tel aviv district"
+},
+"linkedin:4470819014": {
+"t": "Founding AI & Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"puntopa ai|founding ai software engineer|North": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4470819014",
+"src": "linkedin",
+"city": "caesarea haifa district"
+},
+"linkedin:4471091539": {
+"t": "Junior / Mid-level Software Engineer (Rust / C++ / GPU)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"regulus|mid level software engineer|North": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4471091539",
+"src": "linkedin",
+"city": "tirat karmel haifa district"
+},
+"linkedin:4470596984": {
+"t": "מפתח.ת בינה מלאכותית ואוטומציה",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"pcb technologies|מפתח ת בינה מלאכותית ואוטומציה|North": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4470596984",
+"src": "linkedin",
+"city": "migdal haemek north district"
+},
+"linkedin:4472446484": {
+"t": "AI Engineer – Next-Generation Cyber Security",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"check point software|ai engineer next generation cyber security|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4472446484",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472432672": {
+"t": "System Integrator",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"unilink|integrator|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4472432672",
+"src": "linkedin",
+"city": "center district"
+},
+"alljobs:8783611": {
+"t": "AI Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"comblack|ai engineer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8783611",
+"src": "alljobs",
+"city": "רמת גן בני ברק"
+},
+"alljobs:8834239": {
+"t": "מפתח.ת בינה מלאכותית ואוטומציה",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"|מפתח ת בינה מלאכותית ואוטומציה|מגדל העמק|0302e8e535b7": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834239",
+"src": "alljobs",
+"city": "מגדל העמק"
+},
+"alljobs:8834313": {
+"t": "לחברה ביטחונית מובילה בצפון הארץ, מפתחי אוטומציה",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"allstarsit|לחברה ביטחונית מובילה בצפון הארץ מפתחי אוטומציה|North": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834313",
+"src": "alljobs",
+"city": "חיפה כרמיאל עכו צפת נהריה"
+},
+"alljobs:8834187": {
+"t": "מפתח /ת מערכות Dynamics 365",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"comblack|מפתח ת מערכות dynamics 365|Center": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834187",
+"src": "alljobs",
+"city": "פתח תקווה"
+},
+"alljobs:8834580": {
+"t": "מפתח.ת ומיישם.ת פריורטי לחברה מובילה",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"match השמה מחברת|מפתח ת ומיישם ת פריורטי לחברה מובילה|North": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834580",
+"src": "alljobs",
+"city": "רחובות שוהם פתח תקווה מועצה אזורית עמק חפר חדרה"
+},
+"alljobs:8834474": {
+"t": "Junior DevOps Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"sqlink|devops engineer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834474",
+"src": "alljobs",
+"city": "ירושלים מעלה אדומים גבעת זאב מודיעין עילית אריאל"
+},
+"alljobs:8834006": {
+"t": "backend & DevOps Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"sqlink|backend devops engineer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834006",
+"src": "alljobs",
+"city": "יהוד מונוסון קרית אונו תל אביב יפו גבעתיים פתח תקווה"
+},
+"checkpoint:2024919": {
+"t": "AI Engineer – Next-Generation Cyber Security",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"check point|ai engineer next generation cyber security|Center": {
+"seen": "2026-09-27",
+"u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152024919",
+"src": "checkpoint",
+"city": "tel aviv"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2495
+"last": 2506
 },
 "experis": {
 "max": 600,
@@ -8820,19 +9054,19 @@
 },
 "drushim": {
 "max": 309,
-"last": 289
+"last": 300
 },
 "greenhouse": {
 "max": 296,
-"last": 288
+"last": 289
 },
 "amazon": {
 "max": 168,
-"last": 166
+"last": 167
 },
 "ethosia": {
 "max": 120,
-"last": 0
+"last": 120
 },
 "dialog": {
 "max": 201,
@@ -8848,27 +9082,27 @@
 },
 "builtin": {
 "max": 48,
-"last": 40
+"last": 41
 },
 "linkedin": {
 "max": 609,
-"last": 196
+"last": 246
 },
 "alljobs": {
 "max": 681,
-"last": 668
+"last": 672
 },
 "comeet": {
 "max": 272,
-"last": 271
+"last": 270
 },
 "workday": {
 "max": 693,
-"last": 692
+"last": 682
 },
 "apple": {
 "max": 85,
-"last": 82
+"last": 79
 },
 "camtek": {
 "max": 49,
@@ -8876,7 +9110,7 @@
 },
 "lever": {
 "max": 158,
-"last": 153
+"last": 149
 },
 "qualityai": {
 "max": 66,
@@ -8897,15 +9131,15 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 22
+"zero_runs": 23
 },
 "ashby": {
 "max": 47,
-"last": 45
+"last": 47
 },
 "eightfold": {
 "max": 55,
-"last": 55
+"last": 54
 },
 "oracle_hcm": {
 "max": 45,
@@ -8920,8 +9154,8 @@
 "last": 102
 },
 "checkpoint": {
-"max": 103,
-"last": 102
+"max": 105,
+"last": 105
 },
 "meta": {
 "max": 8,
@@ -8940,7 +9174,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-27T11:39+03:00",
+"last_scan": "2026-09-27T17:32+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
@@ -8956,6 +9190,9 @@
 "t:nvidia|fc verification engineer|*": "2026-09-24",
 "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Data-Center-Engineer--HPC-and-AI_JR2019312": "2026-09-24",
 "t:nvidia|data center engineer hpc and ai|North": "2026-09-24",
-"t:nvidia|data center engineer hpc and ai|*": "2026-09-24"
+"t:nvidia|data center engineer hpc and ai|*": "2026-09-24",
+"https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Haifa/Systems-Engineer_591563-1": "2026-09-27",
+"t:philips|systems engineer|North": "2026-09-27",
+"t:philips|systems engineer|*": "2026-09-27"
 }
 }
