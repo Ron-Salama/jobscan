@@ -9041,12 +9041,90 @@
 "u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152024919",
 "src": "checkpoint",
 "city": "tel aviv"
+},
+"similarweb|server developer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4472438395",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"hiremetech:149335495": {
+"t": "Roblox Game Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"|roblox game developer|tel aviv|d11afb5c5d60": {
+"seen": "2026-09-27",
+"u": "https://hiremetech.com/job/149335495",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149337927": {
+"t": "Junior / Mid-level Software Engineer (Rust / C++ / GPU)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"|mid level software engineer|tirat carmel|3a78b0275a42": {
+"seen": "2026-09-27",
+"u": "https://hiremetech.com/job/149337927",
+"src": "hiremetech",
+"city": "tirat carmel"
+},
+"linkedin:4470820059": {
+"t": "Roblox Game Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"nitro studios|roblox game developer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4470820059",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4461824789": {
+"t": "Linux Internals Software Engineer (Cortex)",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-27"
+},
+"palo alto networks|linux internals software engineer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4461824789",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"alljobs:8834729": {
+"t": "Full Stack Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"|full stack developer|merkaz|99dd4e582398": {
+"seen": "2026-09-27",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834729",
+"src": "alljobs",
+"city": "merkaz"
+},
+"checkpoint:2031989": {
+"t": "Software Developer - Workforce AI Security",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-27"
+},
+"check point|software developer workforce ai security|Center": {
+"seen": "2026-09-27",
+"u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152031989",
+"src": "checkpoint",
+"city": "tel aviv"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2506
+"last": 2516
 },
 "experis": {
 "max": 600,
@@ -9054,15 +9132,15 @@
 },
 "drushim": {
 "max": 309,
-"last": 300
+"last": 302
 },
 "greenhouse": {
 "max": 296,
-"last": 289
+"last": 291
 },
 "amazon": {
 "max": 168,
-"last": 167
+"last": 168
 },
 "ethosia": {
 "max": 120,
@@ -9082,19 +9160,19 @@
 },
 "builtin": {
 "max": 48,
-"last": 41
+"last": 42
 },
 "linkedin": {
 "max": 609,
-"last": 246
+"last": 248
 },
 "alljobs": {
 "max": 681,
-"last": 672
+"last": 673
 },
 "comeet": {
 "max": 272,
-"last": 270
+"last": 271
 },
 "workday": {
 "max": 693,
@@ -9131,7 +9209,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 23
+"zero_runs": 24
 },
 "ashby": {
 "max": 47,
@@ -9174,7 +9252,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-27T17:32+03:00",
+"last_scan": "2026-09-27T21:48+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
