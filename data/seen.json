@@ -9587,12 +9587,192 @@
 "u": "https://careers.quality-ai.com/job/Petach-_-Tikva-23902-Data-Scientist-GenAI/60163244/",
 "src": "qualityai",
 "city": "lod"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|4c2e3bfba6b5": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|44c4e30bb442": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"hiremetech:149397766": {
+"t": "Junior AI Solutions & Automation Builder",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|ai solutions automation builder|caesarea|38c9f43a1066": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149397766",
+"src": "hiremetech",
+"city": "caesarea"
+},
+"hiremetech:147321095": {
+"t": "Backend Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|backend engineer|tel aviv|f5534ca5b375": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/147321095",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149392905": {
+"t": "Software QA Engineer, Host BMC",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|software qa engineer host bmc|yokneam|26df2e8673fe": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149392905",
+"src": "hiremetech",
+"city": "yokneam"
+},
+"ethosia:76892": {
+"t": "AI SW Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|ai sw engineer||f7f8271317da": {
+"seen": "2026-09-28",
+"u": "https://ethosia.co.il/content/ai-sw-engineer/",
+"src": "ethosia",
+"city": ""
+},
+"ethosia:76890": {
+"t": "Signal Processing & AI Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|signal processing ai engineer||b5f32dff2dff": {
+"seen": "2026-09-28",
+"u": "https://ethosia.co.il/content/signal-processing-ai-engineer/",
+"src": "ethosia",
+"city": ""
+},
+"linkedin:4464040283": {
+"t": "Software Development Engineer, Shopping Personalization AI, ",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"amazon|software development engineer shopping personalization ai amazon stores|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4464040283",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4462900105": {
+"t": "Backend Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"lendbuzz|backend engineer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4462900105",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472439584": {
+"t": "AI Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"drs rada technologies|ai engineer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472439584",
+"src": "linkedin",
+"city": "netanya center district"
+},
+"linkedin:4471504562": {
+"t": "Junior AI Solutions & Automation Builder",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"luna media|ai solutions automation builder|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4471504562",
+"src": "linkedin",
+"city": "caesarea haifa district"
+},
+"linkedin:4395470504": {
+"t": "Software Engineer, SPE",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"nvidia|software engineer spe|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4395470504",
+"src": "linkedin",
+"city": "yokneam ilit north district"
+},
+"linkedin:4472495350": {
+"t": "22782 - Mobile Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|22782 mobile automation engineer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472495350",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472705079": {
+"t": "21121 - Test Automation and Software development",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|21121 test automation and software development|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472705079",
+"src": "linkedin",
+"city": "yokneam ilit north district"
+},
+"linkedin:4472490538": {
+"t": "20614 - Integrator",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|20614 integrator|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472490538",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4472485753": {
+"t": "20610 - Integrator",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|20610 integrator|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472485753",
+"src": "linkedin",
+"city": "haifa haifa district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2536
+"last": 2541
 },
 "experis": {
 "max": 600,
@@ -9603,8 +9783,8 @@
 "last": 309
 },
 "greenhouse": {
-"max": 296,
-"last": 296
+"max": 297,
+"last": 297
 },
 "amazon": {
 "max": 170,
@@ -9628,15 +9808,15 @@
 },
 "builtin": {
 "max": 48,
-"last": 45
+"last": 46
 },
 "linkedin": {
 "max": 609,
-"last": 403
+"last": 486
 },
 "alljobs": {
 "max": 681,
-"last": 673
+"last": 672
 },
 "comeet": {
 "max": 272,
@@ -9644,11 +9824,11 @@
 },
 "workday": {
 "max": 693,
-"last": 674
+"last": 678
 },
 "apple": {
 "max": 85,
-"last": 79
+"last": 78
 },
 "camtek": {
 "max": 49,
@@ -9656,7 +9836,7 @@
 },
 "lever": {
 "max": 158,
-"last": 149
+"last": 146
 },
 "qualityai": {
 "max": 66,
@@ -9680,12 +9860,12 @@
 "zero_runs": 27
 },
 "ashby": {
-"max": 49,
-"last": 49
+"max": 50,
+"last": 50
 },
 "eightfold": {
 "max": 55,
-"last": 52
+"last": 53
 },
 "oracle_hcm": {
 "max": 45,
@@ -9697,7 +9877,7 @@
 },
 "google": {
 "max": 107,
-"last": 99
+"last": 98
 },
 "checkpoint": {
 "max": 106,
@@ -9713,14 +9893,14 @@
 },
 "sap": {
 "max": 4,
-"last": 4
+"last": 3
 },
 "pwc": {
 "max": 15,
 "last": 15
 }
 },
-"last_scan": "2026-09-28T17:31+03:00",
+"last_scan": "2026-09-28T23:56+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
