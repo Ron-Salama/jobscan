@@ -9161,12 +9161,438 @@
 "u": "https://www.linkedin.com/jobs/view/4472436698",
 "src": "linkedin",
 "city": "rosh haayin center district"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|70c7d475bbf8": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"jfrog|is integration engineer|Center": {
+"seen": "2026-09-22",
+"u": "https://join.jfrog.com/job/?job=8156071&gh_jid=8156071",
+"src": "greenhouse:jfrog",
+"city": "tel aviv netanya"
+},
+"similarweb|backend engineer|Center": {
+"seen": "2026-09-27",
+"u": "https://www.linkedin.com/jobs/view/4472438395",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"apple|sw developer test automation infrastructure team|Center": {
+"seen": "2026-09-18",
+"u": "https://jobs.apple.com/en-il/details/200666549/sw-developer-for-test-automation-infrastructure-team",
+"src": "apple",
+"city": "herzliya"
+},
+"hiremetech:149381447": {
+"t": "Junior Data Engineer (Data Science & Snowflake)",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|data engineer|tel aviv|7643d2e9c1d4": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149381447",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149383193": {
+"t": "Android Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|android developer|tel aviv|a374b0061e02": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149383193",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149394133": {
+"t": "Junior Full Stack Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|full stack developer|ramat gan|62b9ea1c4e8f": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149394133",
+"src": "hiremetech",
+"city": "ramat gan"
+},
+"hiremetech:149393029": {
+"t": "Junior Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|automation engineer|tel aviv|43cf16e90172": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149393029",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149393028": {
+"t": "Junior Frontend Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|frontend developer|netanya|abaeb596df3d": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149393028",
+"src": "hiremetech",
+"city": "netanya"
+},
+"hiremetech:149393027": {
+"t": "Quantum Algorithms Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|quantum algorithms developer|tel aviv|0b7ab5a71c24": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149393027",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149380749": {
+"t": "Junior Software Engineer לחברת הייטק מובילה עם 1500 עובדים",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|software engineer לחברת הייטק מובילה עם 1500 עובדים|tel aviv|6d1085c2d438": {
+"seen": "2026-09-28",
+"u": "https://hiremetech.com/job/149380749",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"drushim:38505821": {
+"t": "DATA DEVELOPER",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"g stat|data developer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.drushim.co.il/job/38505821/5c94d3bd/",
+"src": "drushim",
+"city": "482 פתח תקווה petah tikva 539128 34 887762 32 084041 5"
+},
+"amazon:10561329": {
+"t": "Embedded Software Engineer - Nitro , Annapurna Labs",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"amazon|embedded software engineer nitro annapurna labs|Center": {
+"seen": "2026-09-28",
+"u": "https://www.amazon.jobs/en/jobs/10561329/embedded-software-engineer-nitro-annapurna-labs",
+"src": "amazon",
+"city": "tel aviv yafo tel aviv isr"
+},
+"builtin:11393093": {
+"t": "Infrastructure & Automation Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"gini apps|infrastructure automation engineer|North": {
+"seen": "2026-09-28",
+"u": "https://builtin.com/job/infrastructure-automation-engineer/11393093",
+"src": "builtin",
+"city": "haifa"
+},
+"builtin:10868556": {
+"t": "IS Integration Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"jfrog|is integration engineer|Unknown": {
+"seen": "2026-09-28",
+"u": "https://builtin.com/job/integration-engineer/10868556",
+"src": "builtin",
+"city": "2 locations"
+},
+"linkedin:4470868508": {
+"t": "Junior Frontend Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"equalweb|frontend developer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4470868508",
+"src": "linkedin",
+"city": "netanya center district"
+},
+"linkedin:4470835562": {
+"t": "Android Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"moveo group|android developer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4470835562",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472704669": {
+"t": "Software Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"comblack|software engineer|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472704669",
+"src": "linkedin",
+"city": "north district"
+},
+"linkedin:4462601216": {
+"t": "AI Engineer - Technical Enablement - remote/Tel-Aviv",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"micron technology|ai engineer technical enablement remote tel aviv|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4462601216",
+"src": "linkedin",
+"city": "hadera haifa district"
+},
+"linkedin:4444418507": {
+"t": "C++ Software Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"cisco|cpp software engineer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4444418507",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472458550": {
+"t": "Software Developer - Workforce AI Security",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"check point software|software developer workforce ai security|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472458550",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472491495": {
+"t": "23454 - Full Stack Developer for Lab Tools",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|23454 full stack developer lab tools|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472491495",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4472717732": {
+"t": "Junior Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"jones software|automation engineer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472717732",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472736535": {
+"t": "Treasury & Automation Analyst",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"smartrecruiters:wix:744000152182655": {
+"t": "Treasury & Automation Analyst",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"wix|treasury automation analyst|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472736535",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4468397029": {
+"t": "DevOps Engineer - Cloud Infra Team",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"wix|devops engineer cloud infra team|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4468397029",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4470836918": {
+"t": "Site Reliability Engineer (SRE)",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualigate|site reliability engineer|Unknown": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4470836918",
+"src": "linkedin",
+"city": ""
+},
+"linkedin:4472711207": {
+"t": "Network Developer (Physical Networking Operations)",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"oracle|network developer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472711207",
+"src": "linkedin",
+"city": "center district"
+},
+"linkedin:4470861246": {
+"t": "Hardware & Firmware",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"dialog|hardware firmware|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4470861246",
+"src": "linkedin",
+"city": "north district"
+},
+"linkedin:4472496363": {
+"t": "22889 - QA Automation Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|22889 qa automation engineer|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472496363",
+"src": "linkedin",
+"city": "karmiel north district"
+},
+"linkedin:4470840744": {
+"t": "Experienced Software Tester",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"bruker technologies|experienced software tester|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4470840744",
+"src": "linkedin",
+"city": "migdal haemek north district"
+},
+"linkedin:4472701266": {
+"t": "23002 - Integrator",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|23002 integrator|North": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472701266",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"alljobs:8835264": {
+"t": "מפתח /ת Full Stack & AI Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"sqlink|מפתח ת full stack ai engineer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8835264",
+"src": "alljobs",
+"city": "תל אביב יפו רמת גן גבעתיים פתח תקווה הרצליה"
+},
+"alljobs:8835530": {
+"t": "AI DevOPS Engineer 2633",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"|ai devops engineer 2633|merkaz|95c81de1dcc1": {
+"seen": "2026-09-28",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8835530",
+"src": "alljobs",
+"city": "merkaz"
+},
+"alljobs:8836042": {
+"t": "מפתח /ת Full Stack למערכות מידע",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"גב מערכות|מפתח ת full stack למערכות מידע|North": {
+"seen": "2026-09-28",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8836042",
+"src": "alljobs",
+"city": "חיפה"
+},
+"workday:/job/Israel-Yokneam/Software-QA-Engineer--Host-BMC_JR2025936": {
+"t": "Software QA Engineer, Host BMC",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"nvidia|software qa engineer host bmc|North": {
+"seen": "2026-09-28",
+"u": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Software-QA-Engineer--Host-BMC_JR2025936",
+"src": "workday",
+"city": "yokneam"
+},
+"lever:mobileye:8ad31b79-8816-4142-a677-4bea7a452328": {
+"t": "Experienced Software Engineer - Data Infrastructure",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"mobileye|experienced software engineer data infrastructure|Center": {
+"seen": "2026-09-28",
+"u": "https://jobs.eu.lever.co/mobileye/8ad31b79-8816-4142-a677-4bea7a452328",
+"src": "lever:mobileye",
+"city": "ramat gan"
+},
+"qualityai:60163244": {
+"t": "Data Scientist - GenAI",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"qualityai|data scientist genai|Center": {
+"seen": "2026-09-28",
+"u": "https://careers.quality-ai.com/job/Petach-_-Tikva-23902-Data-Scientist-GenAI/60163244/",
+"src": "qualityai",
+"city": "lod"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 0
+"last": 2536
 },
 "experis": {
 "max": 600,
@@ -9174,19 +9600,19 @@
 },
 "drushim": {
 "max": 309,
-"last": 304
+"last": 309
 },
 "greenhouse": {
 "max": 296,
-"last": 292
+"last": 296
 },
 "amazon": {
-"max": 168,
-"last": 168
+"max": 170,
+"last": 170
 },
 "ethosia": {
 "max": 120,
-"last": 0
+"last": 120
 },
 "dialog": {
 "max": 201,
@@ -9202,15 +9628,15 @@
 },
 "builtin": {
 "max": 48,
-"last": 42
+"last": 45
 },
 "linkedin": {
 "max": 609,
-"last": 231
+"last": 403
 },
 "alljobs": {
 "max": 681,
-"last": 671
+"last": 673
 },
 "comeet": {
 "max": 272,
@@ -9218,7 +9644,7 @@
 },
 "workday": {
 "max": 693,
-"last": 682
+"last": 674
 },
 "apple": {
 "max": 85,
@@ -9226,7 +9652,7 @@
 },
 "camtek": {
 "max": 49,
-"last": 30
+"last": 29
 },
 "lever": {
 "max": 158,
@@ -9234,7 +9660,7 @@
 },
 "qualityai": {
 "max": 66,
-"last": 63
+"last": 64
 },
 "lemonade": {
 "max": 16,
@@ -9251,31 +9677,31 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 26
+"zero_runs": 27
 },
 "ashby": {
-"max": 47,
-"last": 47
+"max": 49,
+"last": 49
 },
 "eightfold": {
 "max": 55,
-"last": 54
+"last": 52
 },
 "oracle_hcm": {
 "max": 45,
-"last": 42
+"last": 40
 },
 "smartrecruiters": {
 "max": 42,
-"last": 34
+"last": 33
 },
 "google": {
 "max": 107,
-"last": 102
+"last": 99
 },
 "checkpoint": {
-"max": 105,
-"last": 105
+"max": 106,
+"last": 106
 },
 "meta": {
 "max": 8,
@@ -9294,7 +9720,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-28T08:53+03:00",
+"last_scan": "2026-09-28T17:31+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
@@ -9314,6 +9740,9 @@
 "t:nvidia|data center engineer hpc and ai|*": "2026-09-24",
 "https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Haifa/Systems-Engineer_591563-1": "2026-09-27",
 "t:philips|systems engineer|North": "2026-09-27",
-"t:philips|systems engineer|*": "2026-09-27"
+"t:philips|systems engineer|*": "2026-09-27",
+"https://www.linkedin.com/jobs/view/4471386146": "2026-09-28",
+"t:philips|verification engineer|North": "2026-09-28",
+"t:philips|verification engineer|*": "2026-09-28"
 }
 }
