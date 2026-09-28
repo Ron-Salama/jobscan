@@ -64,7 +64,9 @@ DROP_REGIONS = {"South","Jerusalem","Abroad"}
 REFERRAL_COMPANIES = ["nvidia","philips","camtek","palo alto","paloalto","palo-alto","apple",
  # Ron has referrals at BOTH PwC Israel and PwC NEXT (its tech subsidiary; career site employer
  # 'DT&CS' -> 'PwC NEXT' via src_pwc, LinkedIn 'PwC | NEXT Technology Solutions') - 2026-09-24
- "pwc","pricewaterhouse","pricewaterhousecoopers","pwc next","pwcnext","next technology solutions"]
+ "pwc","pricewaterhouse","pricewaterhousecoopers","pwc next","pwcnext","next technology solutions",
+ # DRS RADA Technologies (radar, Beit She'an / Netanya) - referral added by Ron 2026-09-28
+ "drs rada","rada technologies","rada","ראדא"]
 
 # ---- estimated pay (page 'Est. pay' column, YES rows only) - Ron 2026-09-24 ----
 # Rough monthly gross ILS for a junior (0-2y), by employer tier. From 2026 salary surveys:

@@ -438,6 +438,14 @@ def test_call13_referral_covers_pwc_israel_and_pwc_next():
     assert not J.ref_digest_ok("penetration tester - jb-727")          # pentest is not his lane
 
 
+def test_drs_rada_is_a_referral_company():
+    """Ron 2026-09-28: add RADA to the referral list (whole word: 'radar' companies must not match)."""
+    for co in ("DRS RADA Technologies", "DRS RADA TECHNOLOGIES", "RADA"):
+        assert J.company_is(co, C.REFERRAL_COMPANIES), co
+    for co in ("Radar Systems Ltd", "Kela Technologies", "Arad Technologies"):
+        assert not J.company_is(co, C.REFERRAL_COMPANIES), co
+
+
 def test_review_experienced_giant_keeps_ping():
     for d in ("Requirements: 2+ years of experience in C++ and Linux-free test tools for our lab.",
               "We build C++ test tools for our lab systems; strong OOP and debugging skills are needed.",
