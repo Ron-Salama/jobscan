@@ -23,7 +23,7 @@ try:
         ("comeet","src_comeet"),("workday","src_workday"),("apple","src_apple"),("camtek","src_camtek"),
         ("lever","src_lever"),       # incl. Mobileye on Lever's EU host
         # career-site scrapers (2026-09-23); verbit retired 2026-09-24 (no Israel jobs)
-        ("qualityai","src_qualityai"),("lemonade","src_lemonade"),("hibob","src_hibob"),("kaltura","src_kaltura"),
+        ("qualityai","src_qualityai"),("lemonade","src_lemonade"),("hibob","src_hibob"),   # kaltura unplugged 2026-09-28: 0 rows for 27 runs (Ron: "Kaltura, skip")
         ("ashby","src_ashby"),       # Moon Active + monday.com (replaces src_moonactive)
         # giant company sites (2026-09-24, audit): Qualcomm+Microsoft, Oracle+Dell, Wix+SanDisk, ...
         ("eightfold","src_eightfold"),("oracle_hcm","src_oracle_hcm"),("smartrecruiters","src_smartrecruiters"),
@@ -161,13 +161,23 @@ def job(source, sid, title, company="", city="", url="", level="", years_min=Non
 
 # ---------------- sources (v1: open APIs) ----------------
 HMT_ABROAD_RECHECK = 40   # max per-run detail lookups for rows the search feed places abroad
+HMT_PAGE_TRIES = 3        # attempts per search page before the run gives up on hiremetech
+HMT_RETRY_WAIT = 5        # seconds; back-off grows 5s, 10s
 
 def src_hiremetech():
     out=[]
     for page in range(1,28):
-        try: d=get_json("https://hiremetech.com/api/jobs/search?"+urllib.parse.urlencode(
-            {"limit":100,"page":page,"job_level":"junior","sort_by":"posted_date","sort_order":"desc"}))
-        except Exception as e: print("  hiremetech pg%d err %s"%(page,e)); break
+        # 2026-09-28: one read timeout on page 1 blanked the whole source for a run (hiremetech 0 rows,
+        # "went dark"); retry a page twice with a back-off before giving up on the rest.
+        d=None
+        for attempt in range(HMT_PAGE_TRIES):
+            try:
+                d=get_json("https://hiremetech.com/api/jobs/search?"+urllib.parse.urlencode(
+                    {"limit":100,"page":page,"job_level":"junior","sort_by":"posted_date","sort_order":"desc"})); break
+            except Exception as e:
+                print("  hiremetech pg%d try %d err %s"%(page,attempt+1,e))
+                if attempt+1<HMT_PAGE_TRIES: time.sleep(HMT_RETRY_WAIT*(attempt+1))
+        if d is None: break
         for j in d.get("jobs",[]):
             loc=j.get("location",{}) or {}
             city=(loc.get("basic",{}) or {}).get("display_name","") if isinstance(loc,dict) else ""

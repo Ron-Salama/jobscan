@@ -625,6 +625,25 @@ def test_hiremetech_abroad_feed_rows_rechecked():
     assert sum("/api/jobs/search" not in u for u in calls) == 2
 
 
+def test_hiremetech_page_timeout_is_retried():
+    """2026-09-28: a single read timeout on page 1 made the whole source 'go dark' for a run."""
+    import time
+    calls = {"n": 0}
+    feed = {"jobs": [{"id": 7, "title": "Junior Software Engineer",
+                      "location": {"basic": {"display_name": "Haifa, Israel"}}}], "pagination": {"has_more": False}}
+    def flaky(url, headers=None):
+        calls["n"] += 1
+        if calls["n"] == 1: raise TimeoutError("The read operation timed out")
+        return feed
+    orig, orig_sleep = J.get_json, time.sleep
+    J.get_json, time.sleep = flaky, (lambda s: None)
+    try:
+        rows = J.src_hiremetech()
+    finally:
+        J.get_json, time.sleep = orig, orig_sleep
+    assert [r["sid"] for r in rows] == ["7"] and calls["n"] == 2
+
+
 def test_linkedin_qa_lane_not_starved():
     """2026-09-25: one shared 600-card cap was filled by the developer lane on every run, so the
     QA / automation / C# / embedded lane never ran and none of its cards got a JD read."""
