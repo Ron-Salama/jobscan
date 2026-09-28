@@ -1,13 +1,19 @@
 # JobScan — Ron's automated Israeli tech-job radar
 
-Scans ~18 Israeli job sources (open APIs + scrapers + giants' own ATS boards) every 2 hours,
-filters to junior software/dev roles in the North & Center, dedups across sources, flags
-referral companies and giants, and marks roles "worth tailoring". Sends a Telegram alert on
-new **giant/referral** roles.
+Scans 30+ Israeli job sources (open APIs, scrapers and the big companies' own ATS boards) every
+2 hours on GitHub Actions, filters to junior software/dev roles in the North & Center, dedups across
+sources, flags referral companies and giants, and publishes a live, filterable tracker on GitHub Pages.
+Sends a Telegram alert on new **giant/referral** roles.
+
+- **Rule tests:** the filtering rules are covered by a regression suite (`tests/test_rules.py`, 60+ tests)
+  that runs before every scan; a failing test stops the run.
+- **AI review step (separate from the pipeline):** Claude Code agents read each shortlisted job
+  description and score it against a profile; the verdicts are saved in `data/curation.json` and
+  overlaid on the tracker. The Actions pipeline itself calls no AI model.
 
 ## Two ways it runs
 - **Local:** `python jobscan.py` → writes `C:\Users\User\Desktop\Ron - Job Tracker (AUTO).html`.
-  Windows Task `RonJobScan` runs it every 2h (needs the PC on).
+  (The Windows Task `RonJobScan` that used to run it is disabled - the cloud run is the source of truth.)
 - **Cloud (this repo):** GitHub Actions runs `python cloud_run.py` every 2h → updates
   `data/jobs.json` + a web tracker at `docs/index.html` (served by GitHub Pages) → runs 24/7,
   no PC needed.
