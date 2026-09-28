@@ -9125,12 +9125,48 @@
 "u": "https://hiremetech.com/job/142520690",
 "src": "hiremetech",
 "city": "המרכז"
+},
+"gotfriends:155055": {
+"t": "Software Developer בחברת הייטק בתחום הסייבר ההתקפי",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"|software developer בחברת הייטק בתחום הסייבר ההתקפי|ת א והמרכז|adbf02e5ec47": {
+"seen": "2026-09-28",
+"u": "https://www.gotfriends.co.il/jobslobby/software/python-developer/155055/",
+"src": "gotfriends",
+"city": "ת א והמרכז"
+},
+"linkedin:4470834482": {
+"t": "Python Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-28"
+},
+"quantum art|python developer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4470834482",
+"src": "linkedin",
+"city": "nes ziona center district"
+},
+"linkedin:4472436698": {
+"t": "Prompt Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-28"
+},
+"shavit software|prompt engineer|Center": {
+"seen": "2026-09-28",
+"u": "https://www.linkedin.com/jobs/view/4472436698",
+"src": "linkedin",
+"city": "rosh haayin center district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2517
+"last": 0
 },
 "experis": {
 "max": 600,
@@ -9138,7 +9174,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 303
+"last": 304
 },
 "greenhouse": {
 "max": 296,
@@ -9150,7 +9186,7 @@
 },
 "ethosia": {
 "max": 120,
-"last": 120
+"last": 0
 },
 "dialog": {
 "max": 201,
@@ -9170,15 +9206,15 @@
 },
 "linkedin": {
 "max": 609,
-"last": 249
+"last": 231
 },
 "alljobs": {
 "max": 681,
-"last": 673
+"last": 671
 },
 "comeet": {
 "max": 272,
-"last": 271
+"last": 272
 },
 "workday": {
 "max": 693,
@@ -9215,7 +9251,7 @@
 "kaltura": {
 "max": 0,
 "last": 0,
-"zero_runs": 25
+"zero_runs": 26
 },
 "ashby": {
 "max": 47,
@@ -9258,13 +9294,15 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-28T02:31+03:00",
+"last_scan": "2026-09-28T08:53+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
 "day": "2026-09-28",
 "keys": [
-"kaltura:never"
+"kaltura:never",
+"hiremetech:dark",
+"ethosia:dark"
 ]
 },
 "ref_digest": {
