@@ -73,6 +73,7 @@ a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 .toppick{background:#14432a;color:#7cf0a8;font-weight:700}.wtailor{background:#3a331a;color:#ffd98f}
 .unread{background:#2a2f3a;color:#9aa6bb}
 .tready{background:#123a3a;color:#7fe9d6;font-weight:700}
+.pinb{font-size:11px;padding:0 5px;margin-left:2px;border-radius:6px;border:1px solid #555;background:transparent;color:inherit;cursor:pointer;opacity:.75}.pinb:hover{opacity:1}
 .outsrc{background:#3a1a3a;color:#ffb3ff;font-weight:700;border:1px solid #b04ab0}
 .trkq{background:#3a2a10;color:#ffcf7a;border:1px solid #a8742a}.trkt{background:#16303a;color:#9fdcf0;border:1px solid #3b7f96}.trks{background:#1b3320;color:#a6e3b0;border:1px solid #3f8a4f}
 .imp{background:#5a1a1a;color:#ffd0d0;font-weight:800;border:1px solid #ff6b6b}
@@ -161,18 +162,25 @@ function rowNote(j){const n=ownNote(j.url);if(n!==null)return n;for(const d of (
 function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
 function getNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u])||"";}
 function setNote(u,v){try{localStorage.setItem("nt:"+u,v);}catch(e){}}
-function pills(j){let s="";if(j.important)s+='<span class="pill imp" title="'+esc(j.important)+'">📌 IMPORTANT</span> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">😈 outsourcing</span> ';if(j.track==="qa-manual")s+='<span class="pill trkq" title="Tester seat (mostly manual testing, degree not required): tester pay - the lowest band">🧪 tester pay</span> ';else if(j.track==="test-eng")s+='<span class="pill trkt" title="Test / validation / automation engineering where you write code: close to SWE pay">🧰 test-eng pay</span> ';else if(j.track==="swe")s+='<span class="pill trks" title="Software development role: SWE-with-a-degree pay">💻 SWE pay</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+// 📌 pins (Ron 2026-09-28): "pin:<url>" = "1" pinned / "0" unpinned on this browser; absent = the cloud pin (curation important)
+function ownPin(u){try{const l=localStorage.getItem("pin:"+u);if(l==="1"||l==="0")return l;}catch(e){} return "";}
+function isImp(j){const p=ownPin(j.url);return p?p==="1":!!j.important;}
+function impNote(j){return j.important||"pinned by you (this browser)";}
+function pinToggle(b){const u=b.dataset.u;const j=JOBS.find(x=>x.url===u);const now=j?isImp(j):false;try{localStorage.setItem("pin:"+u,now?"0":"1");}catch(e){}render();}
+window.pinToggle=pinToggle;
+function pills(j){let s="";if(isImp(j))s+='<span class="pill imp" title="'+esc(impNote(j))+'">📌 IMPORTANT</span><button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="remove from important (this browser)">−</button> ';else s+='<button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="mark as important: pins it to the top (this browser)">+📌</button> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">😈 outsourcing</span> ';if(j.track==="qa-manual")s+='<span class="pill trkq" title="Tester seat (mostly manual testing, degree not required): tester pay - the lowest band">🧪 tester pay</span> ';else if(j.track==="test-eng")s+='<span class="pill trkt" title="Test / validation / automation engineering where you write code: close to SWE pay">🧰 test-eng pay</span> ';else if(j.track==="swe")s+='<span class="pill trks" title="Software development role: SWE-with-a-degree pay">💻 SWE pay</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
 const dcount={}; JOBS.forEach(j=>{dcount[j.date]=(dcount[j.date]||0)+1;});
 [...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=d;o.textContent=fmtD(d)+" pull ("+(dcount[d]||0)+")";el("date").appendChild(o);});
 function exportStatuses(){
-  const data={},notes={}; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(!k)continue;
+  const data={},notes={},pins={}; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(!k)continue;
     if(k.indexOf("st:")===0) data[k.slice(3)]=localStorage.getItem(k);
-    else if(k.indexOf("nt:")===0){const v=localStorage.getItem(k); if(v) notes[k.slice(3)]=v;}}
+    else if(k.indexOf("nt:")===0){const v=localStorage.getItem(k); if(v) notes[k.slice(3)]=v;}
+    else if(k.indexOf("pin:")===0) pins[k.slice(4)]=localStorage.getItem(k);}
   const n=Object.keys(data).length, m=Object.keys(notes).length;
-  const blob=new Blob([JSON.stringify({version:1,exported:new Date().toISOString(),count:n,statuses:data,notes:notes})],{type:"application/json"});
+  const blob=new Blob([JSON.stringify({version:1,exported:new Date().toISOString(),count:n,statuses:data,notes:notes,pins:pins})],{type:"application/json"});
   const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
   a.download="jobscan-status-"+new Date().toISOString().slice(0,10)+".json"; a.click();
 }
@@ -189,7 +197,11 @@ function importStatuses(file){
       const curn=localStorage.getItem("nt:"+u);
       if(curn&&curn!==v){continue;}                     // don't clobber a note already written on this device
       localStorage.setItem("nt:"+u,v); nn++;}
-    render(); alert("Imported "+n+" status marks"+(nn?" and "+nn+" notes":"")+(skip?"; kept "+skip+" you'd already set here":"")+".");
+    const pn=d.pins||{}; let np=0;
+    for(const u in pn){const v=pn[u]; if(v!=="1"&&v!=="0") continue;
+      if(localStorage.getItem("pin:"+u)!==null) continue;   // keep a pin choice already made on this device
+      localStorage.setItem("pin:"+u,v); np++;}
+    render(); alert("Imported "+n+" status marks"+(nn?" and "+nn+" notes":"")+(np?" and "+np+" pins":"")+(skip?"; kept "+skip+" you'd already set here":"")+".");
   }catch(err){alert("Import failed: "+err.message);}};
   r.readAsText(file);
 }
@@ -206,12 +218,12 @@ function render(){
     const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
     return (!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!dt||j.date===dt)&&rgOk(j,rg)
       &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"))&&(!ho||!j.outsrc)
-      ||(!!j.important&&(!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!hd||(s!=="Sent"&&s!=="Skip")));
+      ||(isImp(j)&&(!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!hd||(s!=="Sent"&&s!=="Skip")));
   });
-  rows.sort((a,b)=>{if(!!a.important!==!!b.important)return a.important?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}else if(sortK==="pay"){x=a.paylo||0;y=b.paylo||0;}return (x>y?1:x<y?-1:0)*sortDir;});
+  rows.sort((a,b)=>{const ia=isImp(a),ib=isImp(b);if(ia!==ib)return ia?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}else if(sortK==="pay"){x=a.paylo||0;y=b.paylo||0;}return (x>y?1:x<y?-1:0)*sortDir;});
   el("count").textContent=rows.length+" of "+JOBS.length+" roles";
   el("b").innerHTML=rows.map(j=>{const s=rowSt(j);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
-    return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'&&!j.important?'filtered':''} ${j.important?'improw':''}">
+    return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'&&!isImp(j)?'filtered':''} ${isImp(j)?'improw':''}">
     <td class="muted">${esc(fmtD(j.date))}</td>
     <td>${mmeter(j)}</td>
     <td>${vpill(j)}</td>
