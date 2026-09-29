@@ -9767,12 +9767,210 @@
 "u": "https://www.linkedin.com/jobs/view/4472485753",
 "src": "linkedin",
 "city": "haifa haifa district"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|0f5cec31abc6": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|af941e09e2bf": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"hiremetech:149473725": {
+"t": "Junior Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"|software engineer|tel aviv|6ba67ed4b6ea": {
+"seen": "2026-09-29",
+"u": "https://hiremetech.com/job/149473725",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149475790": {
+"t": "BI Developer - Qlik",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"|bi developer qlik|netanya|62f48ebcc438": {
+"seen": "2026-09-29",
+"u": "https://hiremetech.com/job/149475790",
+"src": "hiremetech",
+"city": "netanya"
+},
+"drushim:38564797": {
+"t": "מהנדס/ת מערכת לבדיקות ושילובים",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"דאטה וויי dataway|מהנדס ת מערכת לבדיקות ושילובים|Center": {
+"seen": "2026-09-29",
+"u": "https://www.drushim.co.il/job/38564797/1278a48f/",
+"src": "drushim",
+"city": "433 באר יעקב beer yaakov 539421 34 83904 31 943507 16"
+},
+"greenhouse:taboola:8230021": {
+"t": "Junior Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"linkedin:4473097140": {
+"t": "Junior Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"taboola|software engineer|Center": {
+"seen": "2026-09-29",
+"u": "https://www.taboola.com/careers/job/8230021?gh_jid=8230021",
+"src": "greenhouse:taboola",
+"city": "tel aviv"
+},
+"builtin:11413632": {
+"t": "Applied AI Researcher - Visual GenAI",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"linkedin:4471287378": {
+"t": "Applied AI Researcher - Visual GenAI",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"lever:mobileye:73a651f5-963c-447d-b0ae-b6c9ee06f684": {
+"t": "Applied AI Researcher - Visual GenAI",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"mobileye|applied ai researcher visual genai|Center": {
+"seen": "2026-09-29",
+"u": "https://builtin.com/job/applied-ai-researcher-visual-genai/11413632",
+"src": "builtin",
+"city": "ramat gan"
+},
+"linkedin:4471251892": {
+"t": "Experienced Software Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"jobgether|experienced software engineer|Unknown": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4471251892",
+"src": "linkedin",
+"city": ""
+},
+"linkedin:4471276925": {
+"t": "Backend Software Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"check point software|backend software developer|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4471276925",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4473070903": {
+"t": "Junior AI Solutions & Automation Builder",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"yarden abramovich hr consulting|ai solutions automation builder|North": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4473070903",
+"src": "linkedin",
+"city": "north district"
+},
+"alljobs:8836534": {
+"t": "מפתח /ת CRM Dynamics",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"startica|מפתח ת crm dynamics|Center": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8836534",
+"src": "alljobs",
+"city": "תל אביב יפו רמת גן פתח תקווה ראש העין הרצליה"
+},
+"alljobs:8836409": {
+"t": "DevOps Engineer מנוסה לחברת הייטק גדולה בצפון!",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"גב מערכות|devops engineer מנוסה לחברת הייטק גדולה בצפון|North": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8836409",
+"src": "alljobs",
+"city": "חדרה חיפה כרמיאל"
+},
+"alljobs:8836286": {
+"t": "מפתח /ת DevOps",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"קבוצת aman|מפתח ת devops|Center": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8836286",
+"src": "alljobs",
+"city": "ביתר עילית ירושלים מעלה אדומים מודיעין מכבים רעות"
+},
+"workday:/job/Israel-Haifa/AI-Tools-and-Cloud-Software-Developer_JR0286561": {
+"t": "AI Tools and Cloud Software Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"intel|ai tools and cloud software developer|North": {
+"seen": "2026-09-29",
+"u": "https://intel.wd1.myworkdayjobs.com/External/job/Israel-Haifa/AI-Tools-and-Cloud-Software-Developer_JR0286561",
+"src": "workday",
+"city": "haifa"
+},
+"apple:200686105": {
+"t": "SRE-DevOps Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"apple|sre devops engineer|Center": {
+"seen": "2026-09-29",
+"u": "https://jobs.apple.com/en-il/details/200686105/sre-devops-engineer",
+"src": "apple",
+"city": "herzliya"
+},
+"checkpoint:2353160": {
+"t": "Backend Software Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"check point|backend software developer|Center": {
+"seen": "2026-09-29",
+"u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152353160",
+"src": "checkpoint",
+"city": "tel aviv"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2542
+"last": 2534
 },
 "experis": {
 "max": 600,
@@ -9780,15 +9978,15 @@
 },
 "drushim": {
 "max": 309,
-"last": 309
+"last": 275
 },
 "greenhouse": {
-"max": 297,
-"last": 297
+"max": 299,
+"last": 299
 },
 "amazon": {
 "max": 170,
-"last": 170
+"last": 167
 },
 "ethosia": {
 "max": 120,
@@ -9812,11 +10010,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 489
+"last": 491
 },
 "alljobs": {
 "max": 681,
-"last": 673
+"last": 672
 },
 "comeet": {
 "max": 272,
@@ -9824,11 +10022,11 @@
 },
 "workday": {
 "max": 693,
-"last": 680
+"last": 675
 },
 "apple": {
 "max": 85,
-"last": 78
+"last": 77
 },
 "camtek": {
 "max": 49,
@@ -9836,11 +10034,11 @@
 },
 "lever": {
 "max": 158,
-"last": 146
+"last": 150
 },
 "qualityai": {
 "max": 66,
-"last": 64
+"last": 65
 },
 "lemonade": {
 "max": 16,
@@ -9869,7 +10067,7 @@
 },
 "oracle_hcm": {
 "max": 45,
-"last": 40
+"last": 41
 },
 "smartrecruiters": {
 "max": 42,
@@ -9877,7 +10075,7 @@
 },
 "google": {
 "max": 107,
-"last": 98
+"last": 99
 },
 "checkpoint": {
 "max": 106,
@@ -9900,7 +10098,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-29T05:24+03:00",
+"last_scan": "2026-09-29T12:03+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
