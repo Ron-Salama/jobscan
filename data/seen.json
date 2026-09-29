@@ -10241,12 +10241,90 @@
 "u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152373990",
 "src": "checkpoint",
 "city": "tel aviv"
+},
+"|software engineer|tel aviv|0d1e13d060ed": {
+"seen": "2026-09-29",
+"u": "https://hiremetech.com/job/149473725",
+"src": "hiremetech",
+"city": "tel aviv"
+},
+"hiremetech:149508398": {
+"t": "AI-Native Full Stack Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"|ai native full stack developer|yokneam|2d66581c459e": {
+"seen": "2026-09-30",
+"u": "https://hiremetech.com/job/149508398",
+"src": "hiremetech",
+"city": "yokneam"
+},
+"linkedin:4471275251": {
+"t": "Full Stack Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"blue water shield|full stack engineer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4471275251",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4471738045": {
+"t": "Full Stack & AI Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"sqlink group|full stack ai engineer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4471738045",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4471385474": {
+"t": "Python Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"sharpies pro|python developer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4471385474",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4472700260": {
+"t": "23761 - AI Vibe Coding Engineer / GenAI Prototyping Develope",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"qualityai|23761 ai vibe coding engineer genai prototyping developer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4472700260",
+"src": "linkedin",
+"city": "rishon lezion center district"
+},
+"linkedin:4471736704": {
+"t": "Android Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"grubhub|android developer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4471736704",
+"src": "linkedin",
+"city": "tel aviv district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2560
+"last": 2565
 },
 "experis": {
 "max": 600,
@@ -10254,11 +10332,11 @@
 },
 "drushim": {
 "max": 309,
-"last": 295
+"last": 294
 },
 "greenhouse": {
 "max": 301,
-"last": 301
+"last": 300
 },
 "amazon": {
 "max": 170,
@@ -10286,11 +10364,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 516
+"last": 421
 },
 "alljobs": {
 "max": 681,
-"last": 673
+"last": 667
 },
 "comeet": {
 "max": 276,
@@ -10298,7 +10376,7 @@
 },
 "workday": {
 "max": 693,
-"last": 675
+"last": 677
 },
 "apple": {
 "max": 85,
@@ -10343,7 +10421,7 @@
 },
 "oracle_hcm": {
 "max": 45,
-"last": 41
+"last": 39
 },
 "smartrecruiters": {
 "max": 42,
@@ -10355,7 +10433,7 @@
 },
 "checkpoint": {
 "max": 106,
-"last": 104
+"last": 106
 },
 "meta": {
 "max": 8,
@@ -10374,7 +10452,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-29T19:54+03:00",
+"last_scan": "2026-09-30T01:43+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
