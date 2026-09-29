@@ -80,6 +80,7 @@ a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
 tr.improw td{background:#1f1416}
 .v-yes{background:#1c3a2a;color:#8ff0b8}.v-reach{background:#3a331a;color:#ffd98f}.v-no{background:#3a1d1d;color:#ff9e9e}
 .jbf{background:#20344a;color:#8fc7ff}
+.gptrev{background:#263447;color:#b9dcff}
 tr.filtered td{opacity:.45}
 .n{background:#1c3a2a;color:#8ff0b8}.c{background:#2a2340;color:#c4b0ff}
 .u{background:transparent;color:#9aa6bb;border:1px dashed #4a5366}
@@ -168,7 +169,7 @@ function isImp(j){const p=ownPin(j.url);return p?p==="1":!!j.important;}
 function impNote(j){return j.important||"pinned by you (this browser)";}
 function pinToggle(b){const u=b.dataset.u;const j=JOBS.find(x=>x.url===u);const now=j?isImp(j):false;try{localStorage.setItem("pin:"+u,now?"0":"1");}catch(e){}render();}
 window.pinToggle=pinToggle;
-function pills(j){let s="";if(isImp(j))s+='<span class="pill imp" title="'+esc(impNote(j))+'">📌 IMPORTANT</span><button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="remove from important (this browser)">−</button> ';else s+='<button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="mark as important: pins it to the top (this browser)">+📌</button> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">😈 outsourcing</span> ';if(j.track==="qa-manual")s+='<span class="pill trkq" title="Tester seat (mostly manual testing, degree not required): tester pay - the lowest band">🧪 tester pay</span> ';else if(j.track==="test-eng")s+='<span class="pill trkt" title="Test / validation / automation engineering where you write code: close to SWE pay">🧰 test-eng pay</span> ';else if(j.track==="swe")s+='<span class="pill trks" title="Software development role: SWE-with-a-degree pay">💻 SWE pay</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function pills(j){let s="";if(isImp(j))s+='<span class="pill imp" title="'+esc(impNote(j))+'">📌 IMPORTANT</span><button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="remove from important (this browser)">−</button> ';else s+='<button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="mark as important: pins it to the top (this browser)">+📌</button> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">😈 outsourcing</span> ';if(j.track==="qa-manual")s+='<span class="pill trkq" title="Tester seat (mostly manual testing, degree not required): tester pay - the lowest band">🧪 tester pay</span> ';else if(j.track==="test-eng")s+='<span class="pill trkt" title="Test / validation / automation engineering where you write code: close to SWE pay">🧰 test-eng pay</span> ';else if(j.track==="swe")s+='<span class="pill trks" title="Software development role: SWE-with-a-degree pay">💻 SWE pay</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.gpt_reviewed)s+='<span class="pill gptrev">GPT reviewed</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
 function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
 // populate the pull/date dropdown
 const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
@@ -587,6 +588,7 @@ def apply_curation(alljobs, cur=None):
     important, icanon = _norm_map(cur.get("important"))   # Ron's pinned roles (📌 badge, top of page, never dropped)
     origin, _ = _norm_map(cur.get("origin"))   # aggregator (Jobify) row -> real employer + original / company-site links
     statuses = _norm_values(cur.get("statuses"))
+    gpt_reviewed = _norm_values(cur.get("gpt_reviewed"))
     # outsourcing / manpower-contractor employers (😈 tag, Ron 2026-09-25): the contractor stays the
     # employer of record, so client-level work comes with contractor pay + name. Recruitment agencies
     # (the client hires you directly) are NOT listed. Names match as whole words ('ness' != 'business').
@@ -671,6 +673,7 @@ def apply_curation(alljobs, cur=None):
             try: r["cv"] = pick_cv(r.get("role") or "", "") or ""
             except Exception: pass
         dkeys = [_nu(d.get("url")) for d in (r.get("dups") or []) if isinstance(d, dict)]
+        r["gpt_reviewed"] = bool(gpt_reviewed.get(k) or any(gpt_reviewed.get(x) for x in dkeys))
         im = important.get(k) or next((important[x] for x in dkeys if isinstance(important.get(x), dict)), None)
         if isinstance(im, dict):
             r["important"] = im.get("note") or "important"
