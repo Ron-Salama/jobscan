@@ -9965,12 +9965,288 @@
 "u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152353160",
 "src": "checkpoint",
 "city": "tel aviv"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|e4f55fa7a1c7": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"hiremetech:145596237": {
+"t": "BI Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"|bi developer|netanya|b1b3a5146f69": {
+"seen": "2026-09-29",
+"u": "https://hiremetech.com/job/145596237",
+"src": "hiremetech",
+"city": "netanya"
+},
+"drushim:38570611": {
+"t": "דרוש.ה מפתח POWER BI",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"blue premium|דרוש ה מפתח power bi|Center": {
+"seen": "2026-09-29",
+"u": "https://www.drushim.co.il/job/38570611/94e8fbc2/",
+"src": "drushim",
+"city": "371 חולון holon 539086 34 787384 32 015833 3"
+},
+"drushim:38556665": {
+"t": "מפתח/ת Data מנוסה | ETL/ELT ו-SQL",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"רזאל מערכות|מפתח ת data מנוסה etl elt ו sql|Center": {
+"seen": "2026-09-29",
+"u": "https://www.drushim.co.il/job/38556665/5d72d2af/",
+"src": "drushim",
+"city": "482 פתח תקווה petah tikva 539128 34 887762 32 084041 5"
+},
+"linkedin:4471904232": {
+"t": "AI-Native Full Stack Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"arad technologies|ai native full stack developer|North": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4471904232",
+"src": "linkedin",
+"city": "yoqneam illit north district"
+},
+"linkedin:4471723583": {
+"t": "Angular Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"sqlink group|angular developer|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4471723583",
+"src": "linkedin",
+"city": "rishon lezion center district"
+},
+"linkedin:4428613419": {
+"t": "Algorithm Software Engineer- Medical Imaging",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"ge healthcare|algorithm software engineer medical imaging|North": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4428613419",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4471298573": {
+"t": "Experienced Python & Embedded Linux Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"tondo|experienced python embedded linux engineer|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4471298573",
+"src": "linkedin",
+"city": "or yehuda tel aviv district"
+},
+"linkedin:4473232195": {
+"t": "Junior Software Engineer - Career Path for Natural Sciences ",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"infinitylabs r d|software engineer career path natural sciences graduates|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4473232195",
+"src": "linkedin",
+"city": "ramat gan tel aviv district"
+},
+"linkedin:4471701597": {
+"t": "C/C++ Developer  - SMB Security team",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"check point software|c cpp developer smb security team|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4473246596",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4473246596": {
+"t": "C/C++ Developer - SMB Security team",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"linkedin:4473233224": {
+"t": "Junior Software Engineer - Entry Level Career Path (Haifa & ",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"infinitylabs r d|software engineer entry level career path|North": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4473233224",
+"src": "linkedin",
+"city": "haifa district"
+},
+"linkedin:4473227219": {
+"t": "DevOps & Cloud Engineer - Entry Level Career Path",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"infinitylabs r d|devops cloud engineer entry level career path|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4473227219",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4473231209": {
+"t": "AI and Machine Learning Engineer - Entry Level Career Path f",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"infinitylabs r d|ai and machine learning engineer entry level career path stem graduates|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4473231209",
+"src": "linkedin",
+"city": "ramat gan tel aviv district"
+},
+"linkedin:4471721235": {
+"t": "Software QA",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"alma lasers|software qa|North": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4471721235",
+"src": "linkedin",
+"city": "caesarea haifa district"
+},
+"linkedin:4442346369": {
+"t": "Integrator",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"kla|integrator|Center": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4442346369",
+"src": "linkedin",
+"city": "center district"
+},
+"linkedin:4453101966": {
+"t": "IC Test Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"nuvoton technology|ic test engineer|North": {
+"seen": "2026-09-29",
+"u": "https://www.linkedin.com/jobs/view/4453101966",
+"src": "linkedin",
+"city": "migdal haemek north district"
+},
+"alljobs:8837270": {
+"t": "AI ML Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"experis software|ai ml engineer|Center": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8837270",
+"src": "alljobs",
+"city": "lod"
+},
+"alljobs:8837202": {
+"t": "GTM AI Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"|gtm ai engineer|tel aviv yafo|3e352e530023": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8837202",
+"src": "alljobs",
+"city": "tel aviv yafo"
+},
+"alljobs:8836881": {
+"t": "AI Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"|ai engineer|herzliya|68b40b845fca": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8836881",
+"src": "alljobs",
+"city": "herzliya"
+},
+"alljobs:8836917": {
+"t": "Research Tools Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"|research tools developer|herzliya|22b4b07f108e": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8836917",
+"src": "alljobs",
+"city": "herzliya"
+},
+"alljobs:8837204": {
+"t": "מהנדס /ת DevOps",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"svt|מהנדס ת devops|North": {
+"seen": "2026-09-29",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8837204",
+"src": "alljobs",
+"city": "הרצליה נתניה חדרה יקנעם חיפה"
+},
+"google:128904644666499782": {
+"t": "Software Engineer III, AIX Inputs",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-29"
+},
+"google|software engineer iii aix inputs|North": {
+"seen": "2026-09-29",
+"u": "https://www.google.com/about/careers/applications/jobs/results/128904644666499782-software-engineer-iii-aix-inputs",
+"src": "google",
+"city": "haifa"
+},
+"checkpoint:2373990": {
+"t": "C/C++ Developer - SMB Security team",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-29"
+},
+"check point|c cpp developer smb security team|Center": {
+"seen": "2026-09-29",
+"u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152373990",
+"src": "checkpoint",
+"city": "tel aviv"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2534
+"last": 2555
 },
 "experis": {
 "max": 600,
@@ -9978,23 +10254,23 @@
 },
 "drushim": {
 "max": 309,
-"last": 275
+"last": 295
 },
 "greenhouse": {
-"max": 299,
-"last": 299
+"max": 301,
+"last": 301
 },
 "amazon": {
 "max": 170,
-"last": 167
+"last": 166
 },
 "ethosia": {
 "max": 120,
 "last": 120
 },
 "dialog": {
-"max": 201,
-"last": 201
+"max": 202,
+"last": 202
 },
 "nisha": {
 "max": 55,
@@ -10006,27 +10282,27 @@
 },
 "builtin": {
 "max": 48,
-"last": 46
+"last": 43
 },
 "linkedin": {
 "max": 609,
-"last": 491
+"last": 510
 },
 "alljobs": {
 "max": 681,
-"last": 672
+"last": 613
 },
 "comeet": {
-"max": 272,
-"last": 272
+"max": 276,
+"last": 276
 },
 "workday": {
 "max": 693,
-"last": 675
+"last": 676
 },
 "apple": {
 "max": 85,
-"last": 77
+"last": 78
 },
 "camtek": {
 "max": 49,
@@ -10034,7 +10310,7 @@
 },
 "lever": {
 "max": 158,
-"last": 150
+"last": 152
 },
 "qualityai": {
 "max": 66,
@@ -10075,7 +10351,7 @@
 },
 "google": {
 "max": 107,
-"last": 99
+"last": 100
 },
 "checkpoint": {
 "max": 106,
@@ -10098,7 +10374,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-29T12:03+03:00",
+"last_scan": "2026-09-29T18:20+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
