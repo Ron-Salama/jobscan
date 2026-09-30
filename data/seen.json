@@ -10355,12 +10355,336 @@
 "u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8837424",
 "src": "alljobs",
 "city": "pardes hanna karkur binyamina giv at ada caesarea haifa"
+},
+"|embedded software engineer robotics platforms|kibbutz yizre el|f502cfa05319": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142710329",
+"src": "hiremetech",
+"city": "kibbutz yizre el"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|4c2e3bfba6b5": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|f9b2c71be881": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"|מפתח ת bi עבור חברה ביטחונית באזור הצפון|הצפון|56a4da2ea920": {
+"seen": "2026-09-21",
+"u": "https://hiremetech.com/job/140200619",
+"src": "hiremetech",
+"city": "הצפון"
+},
+"amazon web services|software development engineer elastic block storage server durability engine|Center": {
+"seen": "2026-09-18",
+"u": "https://www.linkedin.com/jobs/view/4455903010",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"hiremetech:149612890": {
+"t": "דרוש/ה Data Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"|דרוש ה data engineer|הרצליה|486be438bade": {
+"seen": "2026-09-30",
+"u": "https://hiremetech.com/job/149612890",
+"src": "hiremetech",
+"city": "הרצליה"
+},
+"hiremetech:149617968": {
+"t": "Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"|software engineer|haifa|cb9871cb4e58": {
+"seen": "2026-09-30",
+"u": "https://hiremetech.com/job/149617968",
+"src": "hiremetech",
+"city": "haifa"
+},
+"drushim:38579408": {
+"t": "Junior DevOps / AI  Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"אזטק|devops ai engineer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.drushim.co.il/job/38579408/616c616f/",
+"src": "drushim",
+"city": "482 פתח תקווה petah tikva 539128 34 887762 32 084041 5"
+},
+"drushim:38578667": {
+"t": "מהנדס/ת תוכנה – Embedded / Low-Level",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"viewpoint|מהנדס ת תוכנה embedded low level|Center": {
+"seen": "2026-09-30",
+"u": "https://www.drushim.co.il/job/38578667/3ee45495/",
+"src": "drushim",
+"city": "371 חולון holon 539086 34 787384 32 015833 3"
+},
+"builtin:11437034": {
+"t": "Embedded Integrator",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"lever:mobileye:3d960f95-4021-413a-b81c-46dde8329a2d": {
+"t": "Embedded Integrator",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"mobileye|embedded integrator|Center": {
+"seen": "2026-09-30",
+"u": "https://builtin.com/job/embedded-integrator/11437034",
+"src": "builtin",
+"city": "petah tikva"
+},
+"linkedin:4473718332": {
+"t": "Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"adte|developer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4473718332",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4472178123": {
+"t": "Data Engineer – Applied ML",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"similarweb|data engineer applied ml|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4472178123",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472150848": {
+"t": "Embedded Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"johnson johnson medtech|embedded software engineer|North": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4472150848",
+"src": "linkedin",
+"city": "haifa district"
+},
+"linkedin:4473733940": {
+"t": "BI Developer (1007297)",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"elad software|bi developer|North": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4473733940",
+"src": "linkedin",
+"city": "north district"
+},
+"linkedin:4463501967": {
+"t": "Software Engineer III, Technical Infrastructure",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"google|software engineer iii technical infrastructure|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4463501967",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4455788770": {
+"t": "System Software Development Engineer, System SW group",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"amazon web services|software development engineer sw group|North": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4455788770",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4448510157": {
+"t": "Junior Embedded Software Engineer robotics platforms- Tempor",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"maytronics|embedded software engineer robotics platforms temporary|North": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4448510157",
+"src": "linkedin",
+"city": "yizra el north district"
+},
+"linkedin:4473724881": {
+"t": "DevOps Automation & Infrastructure as Code Specialist",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"e2e solutions il|devops automation infrastructure as code specialist|North": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4473724881",
+"src": "linkedin",
+"city": "haifa district"
+},
+"linkedin:4472132978": {
+"t": "Integration & Test Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"controp precision technologies|integration test engineer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4472132978",
+"src": "linkedin",
+"city": "kfar saba center district"
+},
+"linkedin:4472136806": {
+"t": "ATE Design Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"sqlink group|ate design engineer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4472136806",
+"src": "linkedin",
+"city": "beer yaakov center district"
+},
+"alljobs:8838031": {
+"t": "DevOps",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"sqlink|devops|Center": {
+"seen": "2026-09-30",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8838031",
+"src": "alljobs",
+"city": "קרית אונו תל אביב יפו פתח תקווה בני ברק רמת השרון"
+},
+"alljobs:8674747": {
+"t": "לחברה גדולה ומובילה דרוש /ה Full Stack Developer (Angular + ",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"חברה חסויה|לחברה גדולה ומובילה דרוש ה full stack developer|Center": {
+"seen": "2026-09-30",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8674747",
+"src": "alljobs",
+"city": "ראשון לציון תל אביב יפו רמת גן פתח תקווה הרצליה"
+},
+"alljobs:8650920": {
+"t": "דרוש /ה: מפתח /ת Full Stack & Mobile (חיפה /קריות)",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"חברה חסויה|דרוש ה מפתח ת full stack mobile|North": {
+"seen": "2026-09-30",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8650920",
+"src": "alljobs",
+"city": "חיפה קרית ביאליק"
+},
+"alljobs:8837854": {
+"t": "מהנדס /ת תוכנה - Embedded /Low-Level",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"וויופוינט השמות|מהנדס ת תוכנה embedded low level|Center": {
+"seen": "2026-09-30",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8837854",
+"src": "alljobs",
+"city": "רחובות נס ציונה ראשון לציון חולון תל אביב יפו"
+},
+"workday:/job/Israel-Yokneam/Software-QA-Engineer_JR2016538-1": {
+"t": "Software QA Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"nvidia|software qa engineer|North": {
+"seen": "2026-09-30",
+"u": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Software-QA-Engineer_JR2016538-1",
+"src": "workday",
+"city": "yokneam"
+},
+"workday:/job/Israel-Yokneam/Software-Engineer---Python--C----Video-Algorithms_JR2026084-9": {
+"t": "Software Engineer - Python, C++, Video Algorithms",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"nvidia|software engineer python cpp video algorithms|North": {
+"seen": "2026-09-30",
+"u": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Yokneam/Software-Engineer---Python--C----Video-Algorithms_JR2026084-9",
+"src": "workday",
+"city": "yokneam"
+},
+"qualityai:60256244": {
+"t": "System Engineer / Test Engineer - Helmet Mounted Systems (HM",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"qualityai|engineer test engineer helmet mounted|North": {
+"seen": "2026-09-30",
+"u": "https://careers.quality-ai.com/job/Petach-_-Tikva-23511-System-Engineer-Test-Engineer-Helmet-Mounted-Systems-%28HMS%29/60256244/",
+"src": "qualityai",
+"city": "haifa"
+},
+"eightfold:qualcomm:446720796942": {
+"t": "AI Software Embedded Engineer - Hod Hasharon",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-09-30"
+},
+"qualcomm|ai software embedded engineer hod hasharon|Center": {
+"seen": "2026-09-30",
+"u": "https://careers.qualcomm.com/careers/job/446720796942",
+"src": "eightfold:qualcomm",
+"city": "hod hasharon"
+},
+"eightfold:qualcomm:446721002753": {
+"t": "Firmware Engineer – 5G Modem - Hod HaSharon",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"qualcomm|firmware engineer 5g modem hod hasharon|Center": {
+"seen": "2026-09-30",
+"u": "https://careers.qualcomm.com/careers/job/446721002753",
+"src": "eightfold:qualcomm",
+"city": "hod hasharon"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2519
+"last": 2534
 },
 "experis": {
 "max": 600,
@@ -10368,15 +10692,15 @@
 },
 "drushim": {
 "max": 309,
-"last": 296
+"last": 292
 },
 "greenhouse": {
 "max": 301,
-"last": 300
+"last": 301
 },
 "amazon": {
 "max": 170,
-"last": 165
+"last": 163
 },
 "ethosia": {
 "max": 120,
@@ -10396,23 +10720,23 @@
 },
 "builtin": {
 "max": 48,
-"last": 42
+"last": 45
 },
 "linkedin": {
 "max": 609,
-"last": 431
+"last": 466
 },
 "alljobs": {
 "max": 681,
 "last": 672
 },
 "comeet": {
-"max": 276,
-"last": 276
+"max": 278,
+"last": 278
 },
 "workday": {
 "max": 693,
-"last": 678
+"last": 677
 },
 "apple": {
 "max": 85,
@@ -10424,15 +10748,15 @@
 },
 "lever": {
 "max": 158,
-"last": 152
+"last": 158
 },
 "qualityai": {
 "max": 66,
-"last": 65
+"last": 64
 },
 "lemonade": {
 "max": 16,
-"last": 16
+"last": 15
 },
 "moonactive": {
 "max": 11,
@@ -10440,7 +10764,7 @@
 },
 "hibob": {
 "max": 12,
-"last": 12
+"last": 11
 },
 "kaltura": {
 "max": 0,
@@ -10448,8 +10772,8 @@
 "zero_runs": 27
 },
 "ashby": {
-"max": 50,
-"last": 50
+"max": 52,
+"last": 52
 },
 "eightfold": {
 "max": 55,
@@ -10465,11 +10789,11 @@
 },
 "google": {
 "max": 107,
-"last": 100
+"last": 103
 },
 "checkpoint": {
-"max": 106,
-"last": 106
+"max": 107,
+"last": 107
 },
 "meta": {
 "max": 8,
@@ -10481,14 +10805,14 @@
 },
 "sap": {
 "max": 4,
-"last": 0
+"last": 3
 },
 "pwc": {
 "max": 15,
 "last": 15
 }
 },
-"last_scan": "2026-09-30T09:04+03:00",
+"last_scan": "2026-09-30T16:07+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
