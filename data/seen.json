@@ -10319,12 +10319,48 @@
 "u": "https://www.linkedin.com/jobs/view/4471736704",
 "src": "linkedin",
 "city": "tel aviv district"
+},
+"drushim:38573898": {
+"t": "מתכנת בוגר מצטיין של אוניברסיטה או מכללה",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"נגבסופט תוכנה|מתכנת בוגר מצטיין של אוניברסיטה או מכללה|Center": {
+"seen": "2026-09-30",
+"u": "https://www.drushim.co.il/job/38573898/78da7f20/",
+"src": "drushim",
+"city": "429 מודיעין מכבים רעות modiin maccabim reut 539082 35 010397 31 890267 8"
+},
+"linkedin:4471278258": {
+"t": "Backend & DevOps Engineer – AI/LLM",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"blackedge|backend devops engineer ai llm|Center": {
+"seen": "2026-09-30",
+"u": "https://www.linkedin.com/jobs/view/4471278258",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"alljobs:8837424": {
+"t": "software engineer - ROS 2 C ++ / Python",
+"lane": "review",
+"tailor": false,
+"seen": "2026-09-30"
+},
+"ריקרוטיקס בע מ|software engineer ros 2 c python|North": {
+"seen": "2026-09-30",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8837424",
+"src": "alljobs",
+"city": "pardes hanna karkur binyamina giv at ada caesarea haifa"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2565
+"last": 2519
 },
 "experis": {
 "max": 600,
@@ -10332,7 +10368,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 294
+"last": 296
 },
 "greenhouse": {
 "max": 301,
@@ -10364,11 +10400,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 421
+"last": 431
 },
 "alljobs": {
 "max": 681,
-"last": 667
+"last": 672
 },
 "comeet": {
 "max": 276,
@@ -10376,7 +10412,7 @@
 },
 "workday": {
 "max": 693,
-"last": 677
+"last": 678
 },
 "apple": {
 "max": 85,
@@ -10445,14 +10481,14 @@
 },
 "sap": {
 "max": 4,
-"last": 3
+"last": 0
 },
 "pwc": {
 "max": 15,
 "last": 15
 }
 },
-"last_scan": "2026-09-30T01:43+03:00",
+"last_scan": "2026-09-30T09:04+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
