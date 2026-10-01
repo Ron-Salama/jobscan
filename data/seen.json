@@ -10834,7 +10834,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2540
+"last": 2548
 },
 "experis": {
 "max": 600,
@@ -10846,7 +10846,7 @@
 },
 "greenhouse": {
 "max": 301,
-"last": 300
+"last": 299
 },
 "amazon": {
 "max": 170,
@@ -10870,11 +10870,11 @@
 },
 "builtin": {
 "max": 48,
-"last": 47
+"last": 44
 },
 "linkedin": {
 "max": 609,
-"last": 432
+"last": 0
 },
 "alljobs": {
 "max": 681,
@@ -10886,7 +10886,7 @@
 },
 "workday": {
 "max": 693,
-"last": 677
+"last": 676
 },
 "apple": {
 "max": 85,
@@ -10902,7 +10902,7 @@
 },
 "qualityai": {
 "max": 66,
-"last": 64
+"last": 51
 },
 "lemonade": {
 "max": 16,
@@ -10927,7 +10927,7 @@
 },
 "eightfold": {
 "max": 55,
-"last": 54
+"last": 52
 },
 "oracle_hcm": {
 "max": 45,
@@ -10939,7 +10939,7 @@
 },
 "google": {
 "max": 107,
-"last": 104
+"last": 103
 },
 "checkpoint": {
 "max": 109,
@@ -10962,15 +10962,13 @@
 "last": 15
 }
 },
-"last_scan": "2026-09-30T22:48+03:00",
+"last_scan": "2026-10-01T03:14+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
-"day": "2026-09-28",
+"day": "2026-10-01",
 "keys": [
-"kaltura:never",
-"hiremetech:dark",
-"ethosia:dark"
+"linkedin:dark"
 ]
 },
 "ref_digest": {
