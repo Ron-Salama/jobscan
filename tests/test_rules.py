@@ -32,6 +32,12 @@ def test_region_hebrew_north():
     assert J.region_of("Binyamina") == "North"
 
 
+def test_region_kinneret_is_north():
+    # 2026-10-01: hiremetech/Lever give Parallel Wireless's office as bare "Kinneret" (no country)
+    assert J.region_of("Kinneret") == "North"
+    assert J.region_of("כנרת") == "North"
+
+
 def test_region_multi_part_any_north_wins():
     assert J.region_of("שפלה, חיפה והצפון, באר שבע והדרום") == "North"
     assert J.region_of("Ramat Gan; Haifa") == "North"

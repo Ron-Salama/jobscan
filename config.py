@@ -15,6 +15,7 @@ NORTH = {"haifa","krayot","kiryat ata","kiryat bialik","kiryat motzkin","kiryat 
  "afula","tiberias","akko","acre","nahariya","nesher","tirat carmel","caesarea","hadera",
  "pardes hanna","zichron","zikhron","sarid","beit shean","bet shean","tefen","migdal tefen",
  "tamra","sakhnin","nof hagalil","kiryat shmona","maalot","shlomi","yavne'el","gush segev",
+ "kinneret","כנרת",   # added 2026-10-01: Parallel Wireless "Kinneret" office was read as Center
  # added 2026-09-24 (audit BUG 10): places + district names that fell through to Center
  "misgav","binyamina","or akiva","rosh pina","rosh pinna","tivon","kiryat tivon","safed","tzfat",
  "zefat","north district","northern district","northern","haifa district","galilee","atlit",
