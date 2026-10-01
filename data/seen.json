@@ -11063,12 +11063,18 @@
 "u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8838963",
 "src": "alljobs",
 "city": "כרמיאל"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|6d36c0bf532d": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2533
+"last": 2540
 },
 "experis": {
 "max": 600,
@@ -11080,11 +11086,11 @@
 },
 "greenhouse": {
 "max": 301,
-"last": 292
+"last": 291
 },
 "amazon": {
 "max": 170,
-"last": 162
+"last": 161
 },
 "ethosia": {
 "max": 120,
@@ -11112,7 +11118,7 @@
 },
 "alljobs": {
 "max": 681,
-"last": 671
+"last": 675
 },
 "comeet": {
 "max": 281,
@@ -11161,7 +11167,7 @@
 },
 "eightfold": {
 "max": 55,
-"last": 54
+"last": 55
 },
 "oracle_hcm": {
 "max": 45,
@@ -11169,7 +11175,7 @@
 },
 "smartrecruiters": {
 "max": 42,
-"last": 35
+"last": 36
 },
 "google": {
 "max": 107,
@@ -11196,7 +11202,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-01T16:00+03:00",
+"last_scan": "2026-10-01T16:53+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
