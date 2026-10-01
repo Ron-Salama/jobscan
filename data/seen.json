@@ -11069,12 +11069,270 @@
 "u": "https://hiremetech.com/job/142520690",
 "src": "hiremetech",
 "city": "המרכז"
+},
+"amazon:10567265": {
+"t": " Embedded Software Engineer, Annapurna",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-01"
+},
+"amazon|embedded software engineer annapurna|Center": {
+"seen": "2026-10-01",
+"u": "https://www.amazon.jobs/en/jobs/10566946/embedded-software-engineer-annapurna",
+"src": "amazon",
+"city": "tel aviv yafo tel aviv isr"
+},
+"amazon:10566946": {
+"t": " Embedded Software Engineer, Annapurna",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-01"
+},
+"ethosia:76909": {
+"t": "AI Python Developer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"|ai python developer||1f2a9f1817c8": {
+"seen": "2026-10-01",
+"u": "https://ethosia.co.il/content/ai-python-developer/",
+"src": "ethosia",
+"city": ""
+},
+"linkedin:4455935508": {
+"t": "2026 Graduate Software Dev Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|2026 graduate software dev engineer|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455935508",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4455918855": {
+"t": "Software Development Engineer, Prime Video Sports",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-01"
+},
+"prime video amazon mgm studios|software development engineer prime video sports|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455918855",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4450238112": {
+"t": "AI Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"deloitte|ai software engineer|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4450238112",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4455907127": {
+"t": "Software Developer Engineer, AWS Transform",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|software developer engineer aws transform|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455907127",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4455912602": {
+"t": "Software Development Engineer, AWS Agentic AI",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|software development engineer aws agentic ai|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455905865",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4455905865": {
+"t": "Software Development Engineer, AWS Agentic AI",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"linkedin:4455915351": {
+"t": "Embedded Software Engineer - Networking drivers, ENA team",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|embedded software engineer networking drivers ena team|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455915351",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4465096641": {
+"t": "Software Engineer - Linux kernel, EFA",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|software engineer linux kernel efa|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4465096641",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4455798569": {
+"t": "Software Development Engineer , Annapurna Labs",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|software development engineer annapurna labs|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455798569",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4455904921": {
+"t": "Chip Validation Software Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|chip validation software engineer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455904921",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4455909834": {
+"t": "SW Engineer - Virtual Platforms",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|sw engineer virtual platforms|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455909834",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4455912167": {
+"t": "Embedded Software Engineer, AWS Annapurna Labs",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|embedded software engineer aws annapurna labs|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455922054",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4474505261": {
+"t": "AI Algorithm Developer — Point of Care Ultrasound",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"ge healthcare|ai algorithm developer point of care ultrasound|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4474505261",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4455904938": {
+"t": "Embedded Software Engineer, Annapurna Labs",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|embedded software engineer annapurna labs|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455904938",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4465095653": {
+"t": "Software Engineer in Test , Graviton Team",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|software engineer in test graviton team|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4465095653",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4455938126": {
+"t": "Software Automation Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|software automation engineer|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455938126",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4455922054": {
+"t": "Embedded Software Engineer, AWS Annapurna Labs",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"linkedin:4464118134": {
+"t": "Junior Automation Engineer - North",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"parallel wireless|automation engineer north|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4464118134",
+"src": "linkedin",
+"city": "kinneret kvutza north district"
+},
+"linkedin:4455780939": {
+"t": "System Integration and manufacturing Engineer, Annapurna Lab",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-01"
+},
+"amazon web services|integration and manufacturing engineer annapurna labs|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455780939",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"linkedin:4453419569": {
+"t": "מהנדס.ת אינטגרציה",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"elbit|מהנדס ת אינטגרציה|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4453419569",
+"src": "linkedin",
+"city": "yoqneam illit north district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2540
+"last": 2552
 },
 "experis": {
 "max": 600,
@@ -11082,15 +11340,15 @@
 },
 "drushim": {
 "max": 309,
-"last": 286
+"last": 52
 },
 "greenhouse": {
 "max": 301,
-"last": 291
+"last": 286
 },
 "amazon": {
 "max": 170,
-"last": 161
+"last": 163
 },
 "ethosia": {
 "max": 120,
@@ -11114,11 +11372,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 381
+"last": 573
 },
 "alljobs": {
 "max": 681,
-"last": 675
+"last": 674
 },
 "comeet": {
 "max": 281,
@@ -11126,7 +11384,7 @@
 },
 "workday": {
 "max": 693,
-"last": 674
+"last": 671
 },
 "apple": {
 "max": 85,
@@ -11138,7 +11396,7 @@
 },
 "lever": {
 "max": 158,
-"last": 154
+"last": 155
 },
 "qualityai": {
 "max": 66,
@@ -11166,8 +11424,8 @@
 "last": 54
 },
 "eightfold": {
-"max": 55,
-"last": 55
+"max": 56,
+"last": 56
 },
 "oracle_hcm": {
 "max": 45,
@@ -11179,7 +11437,7 @@
 },
 "google": {
 "max": 107,
-"last": 104
+"last": 102
 },
 "checkpoint": {
 "max": 109,
@@ -11202,13 +11460,14 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-01T16:53+03:00",
+"last_scan": "2026-10-01T22:57+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
 "day": "2026-10-01",
 "keys": [
-"linkedin:dark"
+"linkedin:dark",
+"drushim:partial"
 ]
 },
 "ref_digest": {
