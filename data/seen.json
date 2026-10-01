@@ -10829,12 +10829,30 @@
 "u": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000152708619",
 "src": "checkpoint",
 "city": "tel aviv"
+},
+"|data engineer לארגון ציבורי באזור המרכז|המרכז|3b528de7f1e4": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/142520690",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"camtek:24.725": {
+"t": "R&D Lab Integrator",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-01"
+},
+"camtek|r d lab integrator|North": {
+"seen": "2026-10-01",
+"u": "https://www.camtek.com/careers/open-positions/24.725/",
+"src": "camtek",
+"city": "migdal haemek"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2548
+"last": 2514
 },
 "experis": {
 "max": 600,
@@ -10842,11 +10860,11 @@
 },
 "drushim": {
 "max": 309,
-"last": 292
+"last": 293
 },
 "greenhouse": {
 "max": 301,
-"last": 299
+"last": 298
 },
 "amazon": {
 "max": 170,
@@ -10874,11 +10892,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 0
+"last": 421
 },
 "alljobs": {
 "max": 681,
-"last": 670
+"last": 667
 },
 "comeet": {
 "max": 279,
@@ -10886,7 +10904,7 @@
 },
 "workday": {
 "max": 693,
-"last": 676
+"last": 675
 },
 "apple": {
 "max": 85,
@@ -10902,7 +10920,7 @@
 },
 "qualityai": {
 "max": 66,
-"last": 51
+"last": 64
 },
 "lemonade": {
 "max": 16,
@@ -10927,7 +10945,7 @@
 },
 "eightfold": {
 "max": 55,
-"last": 52
+"last": 53
 },
 "oracle_hcm": {
 "max": 45,
@@ -10939,7 +10957,7 @@
 },
 "google": {
 "max": 107,
-"last": 103
+"last": 101
 },
 "checkpoint": {
 "max": 109,
@@ -10962,7 +10980,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-01T03:14+03:00",
+"last_scan": "2026-10-01T09:29+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
@@ -10983,6 +11001,9 @@
 "t:philips|systems engineer|*": "2026-09-27",
 "https://www.linkedin.com/jobs/view/4471386146": "2026-09-28",
 "t:philips|verification engineer|North": "2026-09-28",
-"t:philips|verification engineer|*": "2026-09-28"
+"t:philips|verification engineer|*": "2026-09-28",
+"https://www.camtek.com/careers/open-positions/16.37E/": "2026-10-01",
+"t:camtek|motion platforms system engineer|North": "2026-10-01",
+"t:camtek|motion platforms system engineer|*": "2026-10-01"
 }
 }
