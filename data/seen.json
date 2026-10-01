@@ -10847,12 +10847,228 @@
 "u": "https://www.camtek.com/careers/open-positions/24.725/",
 "src": "camtek",
 "city": "migdal haemek"
+},
+"|data engineer עבור ארגון טכנולוגי באזור המרכז|המרכז|09b4ed3e4e1b": {
+"seen": "2026-09-18",
+"u": "https://hiremetech.com/job/140568085",
+"src": "hiremetech",
+"city": "המרכז"
+},
+"hiremetech:149718479": {
+"t": "Software Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"|software engineer|rehovot|f6fc82c711a6": {
+"seen": "2026-10-01",
+"u": "https://hiremetech.com/job/149718479",
+"src": "hiremetech",
+"city": "rehovot"
+},
+"hiremetech:148018378": {
+"t": "AI Tools and Cloud Software Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"|ai tools and cloud software developer|haifa|5e1e64653ce1": {
+"seen": "2026-10-01",
+"u": "https://hiremetech.com/job/148018378",
+"src": "hiremetech",
+"city": "haifa"
+},
+"drushim:38442304": {
+"t": "Junior Salesforce Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"one|salesforce developer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.drushim.co.il/job/38442304/42a39b0d/",
+"src": "drushim",
+"city": "482 פתח תקווה petah tikva 539128 34 887762 32 084041 5"
+},
+"linkedin:4455799034": {
+"t": "2026 Graduate Software Dev Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|2026 graduate software dev engineer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455799034",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4474186129": {
+"t": "Full Stack Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"comblack|full stack engineer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4474186129",
+"src": "linkedin",
+"city": "center district"
+},
+"linkedin:4472546169": {
+"t": "Software Engineer III, Database Migration, Cloud",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"google:136560172616032966": {
+"t": "Software Engineer III, Database Migration, Cloud",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"google|software engineer iii database migration cloud|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4472546169",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4472138765": {
+"t": "Backend Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"sqlink group|backend developer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4472138765",
+"src": "linkedin",
+"city": "yehud monosson center district"
+},
+"linkedin:4472930067": {
+"t": "AI Python Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-01"
+},
+"hillcrest labs acquired by ceva|ai python developer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4472930067",
+"src": "linkedin",
+"city": "raanana center district"
+},
+"linkedin:4472512310": {
+"t": "Software Engineer - Customer Solutions",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"twine security|software engineer customer solutions|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4472512310",
+"src": "linkedin",
+"city": "tel aviv district"
+},
+"linkedin:4474185372": {
+"t": "AI Python Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-01"
+},
+"ceva inc|ai python developer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4474185372",
+"src": "linkedin",
+"city": "raanana center district"
+},
+"linkedin:4443256915": {
+"t": "Production Service Developer 2",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"oracle|production service developer 2|Unknown": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4443256915",
+"src": "linkedin",
+"city": ""
+},
+"linkedin:4472547501": {
+"t": "Embedded Software Engineer",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"maytronics|embedded software engineer|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4472547501",
+"src": "linkedin",
+"city": "yizra el north district"
+},
+"linkedin:4474169994": {
+"t": "ATE Database, BI & Infrastructure Engineer",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"drs rada technologies|ate database bi infrastructure engineer|Center": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4474169994",
+"src": "linkedin",
+"city": "netanya center district"
+},
+"linkedin:4472518188": {
+"t": "Test Automation Engineer - Multiple locations",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"allpha innovation|test automation engineer multiple locations|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4472518188",
+"src": "linkedin",
+"city": "north district"
+},
+"linkedin:4455901294": {
+"t": "Software Embedded Engineer, Nitro team",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"amazon web services|software embedded engineer nitro team|North": {
+"seen": "2026-10-01",
+"u": "https://www.linkedin.com/jobs/view/4455901294",
+"src": "linkedin",
+"city": "haifa haifa district"
+},
+"alljobs:8823656": {
+"t": "מפתח /ת salesforce - משרה התחלתית!",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"וואן שילוב מערכות בע מ|מפתח ת salesforce משרה התחלתית|Center": {
+"seen": "2026-10-01",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8823656",
+"src": "alljobs",
+"city": "פתח תקווה"
+},
+"alljobs:8838963": {
+"t": "מהנדס.ת תוכנה RT Embedded",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-01"
+},
+"|מהנדס ת תוכנה rt embedded|כרמיאל|c86ee4413794": {
+"seen": "2026-10-01",
+"u": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8838963",
+"src": "alljobs",
+"city": "כרמיאל"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2514
+"last": 2533
 },
 "experis": {
 "max": 600,
@@ -10860,15 +11076,15 @@
 },
 "drushim": {
 "max": 309,
-"last": 293
+"last": 286
 },
 "greenhouse": {
 "max": 301,
-"last": 298
+"last": 292
 },
 "amazon": {
 "max": 170,
-"last": 163
+"last": 162
 },
 "ethosia": {
 "max": 120,
@@ -10888,27 +11104,27 @@
 },
 "builtin": {
 "max": 48,
-"last": 44
+"last": 41
 },
 "linkedin": {
 "max": 609,
-"last": 421
+"last": 381
 },
 "alljobs": {
 "max": 681,
-"last": 667
+"last": 671
 },
 "comeet": {
-"max": 279,
-"last": 279
+"max": 281,
+"last": 281
 },
 "workday": {
 "max": 693,
-"last": 675
+"last": 674
 },
 "apple": {
 "max": 85,
-"last": 78
+"last": 77
 },
 "camtek": {
 "max": 49,
@@ -10916,11 +11132,11 @@
 },
 "lever": {
 "max": 158,
-"last": 157
+"last": 154
 },
 "qualityai": {
 "max": 66,
-"last": 64
+"last": 62
 },
 "lemonade": {
 "max": 16,
@@ -10940,12 +11156,12 @@
 "zero_runs": 27
 },
 "ashby": {
-"max": 53,
-"last": 53
+"max": 54,
+"last": 54
 },
 "eightfold": {
 "max": 55,
-"last": 53
+"last": 54
 },
 "oracle_hcm": {
 "max": 45,
@@ -10953,11 +11169,11 @@
 },
 "smartrecruiters": {
 "max": 42,
-"last": 33
+"last": 35
 },
 "google": {
 "max": 107,
-"last": 101
+"last": 104
 },
 "checkpoint": {
 "max": 109,
@@ -10980,7 +11196,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-01T09:29+03:00",
+"last_scan": "2026-10-01T16:00+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
