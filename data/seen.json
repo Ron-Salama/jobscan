@@ -11327,12 +11327,24 @@
 "u": "https://www.linkedin.com/jobs/view/4453419569",
 "src": "linkedin",
 "city": "yoqneam illit north district"
+},
+"linkedin:4472829781": {
+"t": "V&V Test Technician",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-02"
+},
+"nextpower|v v test technician|North": {
+"seen": "2026-10-02",
+"u": "https://www.linkedin.com/jobs/view/4472829781",
+"src": "linkedin",
+"city": "ahihud north district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2552
+"last": 2559
 },
 "experis": {
 "max": 600,
@@ -11340,7 +11352,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 52
+"last": 50
 },
 "greenhouse": {
 "max": 301,
@@ -11372,11 +11384,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 573
+"last": 568
 },
 "alljobs": {
 "max": 681,
-"last": 674
+"last": 673
 },
 "comeet": {
 "max": 281,
@@ -11384,7 +11396,7 @@
 },
 "workday": {
 "max": 693,
-"last": 671
+"last": 669
 },
 "apple": {
 "max": 85,
@@ -11400,7 +11412,7 @@
 },
 "qualityai": {
 "max": 66,
-"last": 62
+"last": 57
 },
 "lemonade": {
 "max": 16,
@@ -11429,7 +11441,7 @@
 },
 "oracle_hcm": {
 "max": 45,
-"last": 39
+"last": 40
 },
 "smartrecruiters": {
 "max": 42,
@@ -11460,13 +11472,12 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-01T22:57+03:00",
+"last_scan": "2026-10-02T03:16+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
-"day": "2026-10-01",
+"day": "2026-10-02",
 "keys": [
-"linkedin:dark",
 "drushim:partial"
 ]
 },
