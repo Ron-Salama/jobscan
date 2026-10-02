@@ -1649,6 +1649,8 @@ def src_comeet():
         ("Innoviz",            "52.004", "25495012A0104C012A0104C6FCBA40"),
         ("Gett",               "A0.002", "A2288A232A014432A28814432A"),
         ("Allot",              "C4.009", "4C917ED1CB699217ED04C92B11217F2B11"),
+        # added 2026-10-02 (Ron saw a LinkedIn ad; $12B data-security co., R&D in Tel Aviv):
+        ("Cyera",              "17.008", "7182A90154871823783FD838C031A802378"),
         # Moovit removed 2026-09-24: its board returns 200 with an empty list (stale token).
     ]
     GIANT_BOARDS = {"Samsung R&D Israel", "Fiverr"}   # no per-company cap for giants
