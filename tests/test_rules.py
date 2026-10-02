@@ -771,6 +771,18 @@ def test_collapse_dups_stable_across_runs_and_regions():
     assert CR.collapse_dups(rows, {})[1] == 0
 
 
+def test_unpin_clears_important():
+    """2026-10-02: removing a URL from curation["important"] must clear the 📌 on a row that
+    kept it from the previous jobs.json (3 closed NVIDIA pins stayed pinned and never dropped)."""
+    import cloud_run as CR
+    rows = [{"url": "https://x.example/old", "company": "NVIDIA", "role": "r", "important": "stale pin note"},
+            {"url": "https://x.example/kept", "company": "NVIDIA", "role": "r"}]
+    cur = {"important": {"https://x.example/kept": {"note": "apply via referral", "company": "NVIDIA", "role": "r"}}}
+    CR.apply_curation(rows, cur)
+    assert "important" not in rows[0]
+    assert rows[1]["important"] == "apply via referral"
+
+
 def test_outsourcing_client_link():
     """'direct company ↗' (Ron 2026-09-25): an outsourced row gets the end client's own posting link."""
     import cloud_run as CR

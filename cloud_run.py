@@ -677,6 +677,8 @@ def apply_curation(alljobs, cur=None):
         im = important.get(k) or next((important[x] for x in dkeys if isinstance(important.get(x), dict)), None)
         if isinstance(im, dict):
             r["important"] = im.get("note") or "important"
+        else:   # unpinned in curation -> clear the flag carried over from the last jobs.json (2026-10-02)
+            r.pop("important", None)
         # pay track on YES/REACH rows (Ron 2026-09-27): the judge's per-role call, else inferred
         rated = (r.get("verdict") or "").upper() in ("YES", "REACH")
         src = next((mp.get(k) for mp in (verdicts, rescued, jobify) if isinstance(mp.get(k), dict)), {})
