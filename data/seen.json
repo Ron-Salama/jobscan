@@ -11344,7 +11344,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2559
+"last": 2558
 },
 "experis": {
 "max": 600,
@@ -11352,7 +11352,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 50
+"last": 47
 },
 "greenhouse": {
 "max": 301,
@@ -11384,11 +11384,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 568
+"last": 520
 },
 "alljobs": {
 "max": 681,
-"last": 673
+"last": 675
 },
 "comeet": {
 "max": 281,
@@ -11412,7 +11412,7 @@
 },
 "qualityai": {
 "max": 66,
-"last": 57
+"last": 62
 },
 "lemonade": {
 "max": 16,
@@ -11472,7 +11472,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-02T03:16+03:00",
+"last_scan": "2026-10-02T09:12+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
