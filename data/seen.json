@@ -11392,7 +11392,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2559
+"last": 2497
 },
 "experis": {
 "max": 600,
@@ -11432,11 +11432,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 457
+"last": 451
 },
 "alljobs": {
 "max": 681,
-"last": 670
+"last": 676
 },
 "comeet": {
 "max": 306,
@@ -11520,7 +11520,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-03T03:10+03:00",
+"last_scan": "2026-10-03T08:47+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
