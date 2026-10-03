@@ -11423,12 +11423,48 @@
 "u": "https://www.linkedin.com/jobs/view/4474301260",
 "src": "linkedin",
 "city": "tel aviv yafo tel aviv district"
+},
+"amazon:10568459": {
+"t": "Software Dev Engineer I, Annapurna Labs",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-03"
+},
+"amazon|software dev engineer i annapurna labs|North": {
+"seen": "2026-10-03",
+"u": "https://www.amazon.jobs/en/jobs/10568459/software-dev-engineer-i-annapurna-labs",
+"src": "amazon",
+"city": "haifa haifa isr"
+},
+"linkedin:4457052201": {
+"t": "Intermediate Software Engineer, Security Factory: Vulnerabil",
+"lane": "review",
+"tailor": false,
+"seen": "2026-10-03"
+},
+"gitlab|intermediate software engineer security factory vulnerability management|Unknown": {
+"seen": "2026-10-03",
+"u": "https://www.linkedin.com/jobs/view/4457052201",
+"src": "linkedin",
+"city": ""
+},
+"linkedin:4461604427": {
+"t": "AI Engineer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-03"
+},
+"skai|ai engineer|Center": {
+"seen": "2026-10-03",
+"u": "https://www.linkedin.com/jobs/view/4461604427",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2491
+"last": 2488
 },
 "experis": {
 "max": 600,
@@ -11436,7 +11472,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 271
+"last": 270
 },
 "greenhouse": {
 "max": 301,
@@ -11444,11 +11480,11 @@
 },
 "amazon": {
 "max": 170,
-"last": 163
+"last": 164
 },
 "ethosia": {
 "max": 120,
-"last": 0
+"last": 120
 },
 "dialog": {
 "max": 202,
@@ -11464,15 +11500,15 @@
 },
 "builtin": {
 "max": 48,
-"last": 41
+"last": 40
 },
 "linkedin": {
 "max": 609,
-"last": 304
+"last": 204
 },
 "alljobs": {
 "max": 681,
-"last": 623
+"last": 672
 },
 "comeet": {
 "max": 306,
@@ -11556,7 +11592,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-03T15:08+03:00",
+"last_scan": "2026-10-03T19:49+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
