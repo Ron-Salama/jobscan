@@ -11392,7 +11392,7 @@
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2556
+"last": 2559
 },
 "experis": {
 "max": 600,
@@ -11400,7 +11400,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 280
+"last": 278
 },
 "greenhouse": {
 "max": 301,
@@ -11428,11 +11428,11 @@
 },
 "builtin": {
 "max": 48,
-"last": 42
+"last": 41
 },
 "linkedin": {
 "max": 609,
-"last": 456
+"last": 457
 },
 "alljobs": {
 "max": 681,
@@ -11444,7 +11444,7 @@
 },
 "workday": {
 "max": 693,
-"last": 669
+"last": 670
 },
 "apple": {
 "max": 85,
@@ -11485,7 +11485,7 @@
 },
 "eightfold": {
 "max": 56,
-"last": 56
+"last": 55
 },
 "oracle_hcm": {
 "max": 45,
@@ -11520,7 +11520,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-02T22:43+03:00",
+"last_scan": "2026-10-03T03:10+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
