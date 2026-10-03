@@ -11472,11 +11472,11 @@
 },
 "drushim": {
 "max": 309,
-"last": 270
+"last": 271
 },
 "greenhouse": {
 "max": 301,
-"last": 287
+"last": 286
 },
 "amazon": {
 "max": 170,
@@ -11504,11 +11504,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 204
+"last": 181
 },
 "alljobs": {
 "max": 681,
-"last": 672
+"last": 624
 },
 "comeet": {
 "max": 306,
@@ -11528,7 +11528,7 @@
 },
 "lever": {
 "max": 158,
-"last": 155
+"last": 154
 },
 "qualityai": {
 "max": 66,
@@ -11561,7 +11561,7 @@
 },
 "oracle_hcm": {
 "max": 45,
-"last": 40
+"last": 38
 },
 "smartrecruiters": {
 "max": 42,
@@ -11592,13 +11592,13 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-03T19:49+03:00",
+"last_scan": "2026-10-04T00:49+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
-"day": "2026-10-03",
+"day": "2026-10-04",
 "keys": [
-"ethosia:dark"
+"linkedin:partial"
 ]
 },
 "ref_digest": {
