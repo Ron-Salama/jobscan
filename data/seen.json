@@ -11387,12 +11387,48 @@
 "u": "https://www.linkedin.com/jobs/view/4465840342",
 "src": "linkedin",
 "city": "haifa haifa district"
+},
+"linkedin:4472922581": {
+"t": "iOS Developer",
+"lane": "apply",
+"tailor": false,
+"seen": "2026-10-03"
+},
+"moveo group|ios developer|Center": {
+"seen": "2026-10-03",
+"u": "https://www.linkedin.com/jobs/view/4472922581",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4471210219": {
+"t": "AI SW Engineer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-03"
+},
+"ethosia|ai sw engineer|Center": {
+"seen": "2026-10-03",
+"u": "https://www.linkedin.com/jobs/view/4471210219",
+"src": "linkedin",
+"city": "herzliya tel aviv district"
+},
+"linkedin:4474301260": {
+"t": "Business Intelligence Developer",
+"lane": "reach",
+"tailor": true,
+"seen": "2026-10-03"
+},
+"thelotter|business intelligence developer|Center": {
+"seen": "2026-10-03",
+"u": "https://www.linkedin.com/jobs/view/4474301260",
+"src": "linkedin",
+"city": "tel aviv yafo tel aviv district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2497
+"last": 2491
 },
 "experis": {
 "max": 600,
@@ -11400,7 +11436,7 @@
 },
 "drushim": {
 "max": 309,
-"last": 278
+"last": 271
 },
 "greenhouse": {
 "max": 301,
@@ -11412,7 +11448,7 @@
 },
 "ethosia": {
 "max": 120,
-"last": 120
+"last": 0
 },
 "dialog": {
 "max": 202,
@@ -11432,11 +11468,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 451
+"last": 304
 },
 "alljobs": {
 "max": 681,
-"last": 676
+"last": 623
 },
 "comeet": {
 "max": 306,
@@ -11444,7 +11480,7 @@
 },
 "workday": {
 "max": 693,
-"last": 670
+"last": 669
 },
 "apple": {
 "max": 85,
@@ -11520,13 +11556,13 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-03T08:47+03:00",
+"last_scan": "2026-10-03T15:08+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
-"day": "2026-10-02",
+"day": "2026-10-03",
 "keys": [
-"drushim:partial"
+"ethosia:dark"
 ]
 },
 "ref_digest": {
