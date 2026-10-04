@@ -128,5 +128,6 @@ Set it for any local run.
 - Generated files: `docs/index.html` and `docs/snapshot/jobs.json` come from `tools/build_snapshot.py`.
   Its whitelist (`KEEP`) and self-check are the privacy boundary: add a field to `KEEP` only if it
   carries no personal state, and never publish a page whose self-check failed.
-- `snapshot_blocklist.txt` (personal, gitignored: employers left out of the snapshot) and the
+- `snapshot_blocklist.txt` and `snapshot_unrated.txt` (personal, gitignored: employers left out of
+  the snapshot, and employers listed without verdict or score) and the
   production `data/` files. Never commit, print or quote either.

@@ -16,7 +16,7 @@ skeptic sub-agents) · CLAUDE.md agent context
 
 ![JobScan tracker: a sanitized snapshot of the production page](docs/screenshot.png)
 
-<sub>A sanitized snapshot of the production tracker (`docs/index.html`, 477 roles on 2026-10-04): the
+<sub>A sanitized snapshot of the production tracker (`docs/index.html`, 499 roles on 2026-10-04): the
 real listings with the verdicts and scores from the AI review step. My application statuses, notes,
 pay estimates, CV labels and verdict reasons are removed. Built by `tools/build_snapshot.py`.</sub>
 
@@ -47,9 +47,10 @@ lowest-priority rows.
   title gate, senior / student / DevOps-ML detection.
 - **Output:** one static, filterable HTML tracker page; Telegram alerts for new roles at large
   employers and referral companies; a source-health alarm when a source goes dark. The page in
-  `docs/` is a sanitized snapshot of the production page: 477 of its 500 rows (rows that only my
+  `docs/` is a sanitized snapshot of the production page: 499 of its 519 rows (rows that only my
   own status marks or pins kept on the page, and roles at employers on a local blocklist, are left
-  out), with the listings, verdicts, scores and verdict basis, and none of the personal fields.
+  out; a few roles I'm actively in touch about appear as plain listings without a score), with the
+  listings, verdicts, scores and verdict basis, and none of the personal fields.
 - **AI review step, outside the pipeline:** 4,059 verdicts so far (2,784 made from the full JD),
   from several passes: Claude Code agent passes, and one GPT-run review of about 1,280 bucket
   roles, mostly from titles, which Claude agents partly re-checked. Since 2026-10-01, Claude Code

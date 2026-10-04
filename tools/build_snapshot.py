@@ -44,6 +44,9 @@ import cloud_run as CR   # importing has no side effects beyond utf-8 stdout
 # Hebrew name may carry up to two prefix letters (ו ה ב ל מ ש כ) but no Hebrew letter after it.
 # Without the file the build stops, unless --no-blocklist says that is intended.
 BLOCKLIST_FILE = os.path.join(ROOT, "snapshot_blocklist.txt")
+# A second local, gitignored list: employers whose rows ARE published, but as plain listings with no
+# verdict, score or rescued flag (same file format). Missing file = nothing unrated.
+UNRATED_FILE = os.path.join(ROOT, "snapshot_unrated.txt")
 _HE = chr(0x590) + "-" + chr(0x5FF)   # the Hebrew Unicode block, as a regex class range
 
 
@@ -286,6 +289,8 @@ def main(argv=None):
     ap.add_argument("--blocklist", default=os.environ.get("JOBSCAN_SNAPSHOT_BLOCKLIST") or BLOCKLIST_FILE,
                     help="local file of employers to leave out (default: snapshot_blocklist.txt, gitignored)")
     ap.add_argument("--no-blocklist", action="store_true", help="build without a blocklist file")
+    ap.add_argument("--unrated", default=os.environ.get("JOBSCAN_SNAPSHOT_UNRATED") or UNRATED_FILE,
+                    help="local file of employers published without verdict/score (default: snapshot_unrated.txt)")
     a = ap.parse_args(argv)
     block = near_rx = None
     if not a.no_blocklist:
@@ -315,6 +320,14 @@ def main(argv=None):
     for r in kept:                       # a name inside a longer word: kept, but worth a look
         m = near_rx.search(row_text(r, maps)) if near_rx else None
         if m: print("   check by hand (substring only, kept): %s | %s | %r" % (r.get("company"), r.get("role"), m.group(0)))
+
+    unrate = load_blocklist(a.unrated)[0] if os.path.isfile(a.unrated) else None
+    n_unrated = 0
+    for i, r in enumerate(kept):
+        if unrate and unrate.search(row_text(r, maps)):
+            kept[i] = {k: v for k, v in r.items() if k not in ("verdict", "vbasis", "match", "rescued")}
+            n_unrated += 1
+    if unrate: print("published %d row(s) as plain listings (no verdict or score)" % n_unrated)
 
     out_rows = [clean_row(r) for r in kept]
     html = build_html(out_rows, date)
