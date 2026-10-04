@@ -1,0 +1,95 @@
+name: JobScan
+
+on:
+  schedule:
+    - cron: "23 */8 * * *"  # every 8 hours (UTC): the repo is private now, so Actions minutes are
+                            # capped (2,000/month free); a scan takes ~20 min. Off the top of the hour
+                            # because GitHub delays/drops :00 schedules most under load.
+  workflow_dispatch: {}      # lets you run it manually from the Actions tab
+  push:                      # a curation edit reaches the page right away: rebuild only (no scan, no alerts)
+    branches: [main]
+    paths: ["data/curation.json"]
+
+permissions:
+  contents: write            # allow committing data/ + docs/ back
+
+concurrency:
+  group: jobscan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    # The public code snapshot carries this exact file. A scan there would scrape and commit job data
+    # publicly, so the job runs only in a PRIVATE repo (the production deployment) and is skipped in
+    # the public one. Scheduled runs carry the repository payload too, so this works for every trigger.
+    if: github.event.repository.private == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main          # a queued run must build on the LATEST main, not its stale trigger commit
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Rule regression tests
+        run: if [ -d tests ]; then python -m pytest -q tests; fi
+      - name: Run scan
+        id: scan             # outputs.alert_fail == '1' -> alerts undelivered 3 runs in a row (see last steps)
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            # curation.json changed: re-apply it to the existing jobs.json + rebuild the page
+            JOBSCAN_NO_ALERT=1 python cloud_run.py --rebuild-only
+          else
+            python cloud_run.py
+          fi
+      - name: Commit results
+        # default condition: publish only when the scan step succeeded. Alert-delivery failures no
+        # longer fail the scan step (cloud_run exits 0 and sets alert_fail); the job is failed by the
+        # 'Fail on undelivered alerts' step AFTER this commit, so data still publishes in that case,
+        # while a crashed/half-written scan does not.
+        run: |
+          git config user.name "jobscan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data docs
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then kind="rebuild"; else kind="scan"; fi
+          git commit -m "$kind $(date -u +%FT%TZ)" || echo "no changes to commit"
+          # Reconcile with anything pushed while this run was scanning. merge -X ours
+          # keeps THIS scan's regenerated data/docs on any conflict, while still pulling
+          # in non-conflicting changes (e.g. curation.json). Retry the push a few times
+          # so an overlapping manual push can never make a scan fail to publish - and if
+          # every attempt fails, FAIL the job so the Telegram failure alert below fires
+          # (seen.json was not published, so the next run would re-alert the same roles).
+          pushed=0
+          for i in 1 2 3 4 5; do
+            git fetch origin main || true
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; }
+            if git push origin HEAD:main; then pushed=1; break; fi
+            echo "push retry $i"; sleep 5
+          done
+          if [ "$pushed" != "1" ]; then
+            echo "::error::push failed after 5 attempts - results were NOT published"
+            exit 1
+          fi
+      - name: Fail on undelivered alerts
+        # cloud_run exits 0 when giant/referral alerts failed 3 runs in a row, so the commit above
+        # still publishes seen.json + the retry queue; the job is failed HERE, after publishing,
+        # so the Telegram failure alert below still fires.
+        if: steps.scan.outputs.alert_fail == '1'
+        run: |
+          echo "::error::JobScan: giant/referral alerts undelivered 3+ runs in a row (check TELEGRAM_TOKEN / TELEGRAM_CHAT_ID secrets)"
+          exit 1
+      - name: Alert on run failure
+        if: failure()
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -n "$TELEGRAM_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            curl -s "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+              --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+              --data-urlencode "text=⚠️ JobScan run failed (run ${GITHUB_RUN_ID}) — scan did not publish. Check the Actions tab." || true
+          fi

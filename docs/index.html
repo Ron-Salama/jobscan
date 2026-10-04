@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>JobScan — Demo (sample data)</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{font:14px/1.5 system-ui,Segoe UI,Arial,sans-serif;margin:0;background:#0f1115;color:#e7e9ee}
+header{padding:12px 16px;background:#161a22;border-bottom:1px solid #262c38;position:sticky;top:0;z-index:5}
+h1{font-size:17px;margin:0 0 6px}
+.meta{color:#96a0b5;font-size:12px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px;align-items:center}
+.controls input[type=text],.controls select{background:#0f1115;color:#e7e9ee;border:1px solid #2b3240;border-radius:8px;padding:6px 9px;font-size:13px}
+.controls label{display:flex;align-items:center;gap:5px;color:#c3cad8;font-size:12px}
+main{padding:10px 12px}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid #20262f;vertical-align:top}
+th{color:#96a0b5;font-size:11px;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;position:sticky;top:0;background:#161a22}
+tr:hover td{background:#151a22}
+tr.done td{opacity:.4}
+a{color:#7db4ff;text-decoration:none}a:hover{text-decoration:underline}
+.pill{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:600;white-space:nowrap}
+.ref{background:#3a1d2b;color:#ff9ec4}.giant{background:#20344a;color:#8fc7ff}.tailor{background:#3a331a;color:#ffd98f}
+.toppick{background:#14432a;color:#7cf0a8;font-weight:700}.wtailor{background:#3a331a;color:#ffd98f}
+.unread{background:#2a2f3a;color:#9aa6bb}
+.tready{background:#123a3a;color:#7fe9d6;font-weight:700}
+.pinb{font-size:11px;padding:0 5px;margin-left:2px;border-radius:6px;border:1px solid #555;background:transparent;color:inherit;cursor:pointer;opacity:.75}.pinb:hover{opacity:1}
+.outsrc{background:#3a1a3a;color:#ffb3ff;font-weight:700;border:1px solid #b04ab0}
+.trkq{background:#3a2a10;color:#ffcf7a;border:1px solid #a8742a}.trkt{background:#16303a;color:#9fdcf0;border:1px solid #3b7f96}.trks{background:#1b3320;color:#a6e3b0;border:1px solid #3f8a4f}
+.imp{background:#5a1a1a;color:#ffd0d0;font-weight:800;border:1px solid #ff6b6b}
+tr.improw td{background:#1f1416}
+.v-yes{background:#1c3a2a;color:#8ff0b8}.v-reach{background:#3a331a;color:#ffd98f}.v-no{background:#3a1d1d;color:#ff9e9e}
+.jbf{background:#20344a;color:#8fc7ff}
+.gptrev{background:#263447;color:#b9dcff}
+tr.filtered td{opacity:.45}
+.n{background:#1c3a2a;color:#8ff0b8}.c{background:#2a2340;color:#c4b0ff}
+.u{background:transparent;color:#9aa6bb;border:1px dashed #4a5366}
+.stale{color:#ff6b6b;font-weight:700}
+.fit5{color:#8ff0b8;font-weight:700}.fit4{color:#c9e69a}.fit3{color:#e6c78a}
+.mwrap{display:flex;align-items:center;gap:6px;min-width:92px}
+.mbar{flex:1;height:7px;border-radius:4px;background:#20262f;overflow:hidden}
+.mfill{height:100%;border-radius:4px}
+.mnum{font-variant-numeric:tabular-nums;font-weight:700;font-size:12px;width:26px;text-align:right}
+.tbtn{background:#20344a;color:#8fc7ff;border:1px solid #2b3240;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer}
+.tbtn:hover{background:#274058}
+.muted{color:#8792a6;font-size:12px}
+select.st{background:#0f1115;color:#e7e9ee;border:1px solid #2b3240;border-radius:6px;padding:3px 5px;font-size:12px}
+select.st[data-v="Sent"]{border-color:#3a7d52;color:#8ff0b8}
+select.st[data-v="Interview"]{border-color:#7d6a2a;color:#ffd98f}
+select.st[data-v="Skip"]{border-color:#5a2a2a;color:#ff9e9e}
+input.note{background:#0f1115;color:#e7e9ee;border:1px solid #2b3240;border-radius:6px;padding:3px 6px;font-size:12px;width:150px}
+input.note:focus{border-color:#4a7bb5;outline:none;width:230px}
+input.note::placeholder{color:#5a6474}
+input.note.has{border-color:#3a7d52}
+.demo{margin:0 0 8px;padding:7px 11px;border:1px solid #a8742a;border-radius:8px;background:#2b2310;color:#ffd98f;font-size:12.5px}.demo b{color:#ffe7b0}th[data-k="pay"],#b td:nth-child(4){display:none}
+</style></head><body>
+<header>
+  <div class="demo"><b>Demo &mdash; sample data.</b> 36 real public listings from scans between 2026-09-23 and 2026-10-04. Verdicts, scores and reasons are illustrative, written for a fictional profile (a junior C#/Python developer in central Israel, not the author). No statuses, notes or pay data. The production tracker is private.</div>
+  <h1>🎯 JobScan <span class="meta" id="updated"></span> <span class="meta" id="lastscan"></span></h1>
+  <div class="meta" id="count"></div>
+  <div class="controls">
+    <input type="text" id="q" placeholder="search company / role…" size="20">
+    <select id="date"><option value="">all pulls</option></select>
+    <select id="region"><option value="">all regions</option><option>North</option><option value="North+Unknown">North + Unknown</option><option>Center</option><option>Unknown</option></select>
+    <select id="fit"><option value="0">match ≥ any</option><option value="85">match ≥ 85</option><option value="70">match ≥ 70</option><option value="55">match ≥ 55</option></select>
+    <select id="verdict"><option value="">any verdict</option><option>YES</option><option>REACH</option><option value="_none">unrated</option></select>
+    <select id="status"><option value="">any status</option><option>New</option><option>Sent</option><option>Interview</option><option>Skip</option></select>
+    <label><input type="checkbox" id="refonly"> 🔔 referral</label>
+    <label><input type="checkbox" id="toponly"> 🏆 top picks</label>
+    <label><input type="checkbox" id="tailoronly"> ✎ worth tailoring</label>
+    <label><input type="checkbox" id="treadyonly"> 🎯 tailor-ready</label>
+    <label><input type="checkbox" id="jobifyonly"> Jobify</label>
+    <label><input type="checkbox" id="hidedone" checked> hide sent/skip</label>
+    <label title="hide roles from outsourcing / manpower contractors (the outsourcing tag)"><input type="checkbox" id="hideos"> hide outsourcing</label>
+    <button type="button" id="expBtn" class="tbtn" title="Download your applied/status marks (this browser) as a file">⬇ export status</button>
+    <label class="tbtn" title="Load a status file exported from another device">⬆ import status<input type="file" id="impFile" accept="application/json" hidden></label>
+  </div>
+</header>
+<main><table id="t"><thead><tr>
+<th data-k="date">Pull</th><th data-k="match">Match</th><th data-k="verdict">Verdict</th><th data-k="pay" title="Rough junior monthly gross estimate (YES roles) - not an offer">Est. pay</th><th data-k="region">Region</th>
+<th data-k="flags">Flags</th><th data-k="company">Company</th><th data-k="role">Role</th>
+<th data-k="cv">CV</th><th data-k="src">Src</th><th>Status</th><th>Open</th><th>Notes</th>
+</tr></thead><tbody id="b"></tbody></table></main>
+<script>
+const JOBS = [{"date": "2026-10-04", "region": "Center", "fit": 4, "company": "(masked)", "role": "Junior Software Engineer", "loc": "Holon, Israel", "url": "https://hiremetech.com/job/150021111", "cv": "general", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "hiremetech", "gpt_reviewed": false}, {"date": "2026-10-04", "region": "North", "fit": 3, "company": "abra", "role": "C++ Engineer", "loc": "North District, Israel", "url": "https://www.linkedin.com/jobs/view/4475363852", "cv": "general", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "gpt_reviewed": false}, {"date": "2026-10-04", "region": "North", "fit": 3, "company": "Polytex Technologies", "role": "DevOps Engineer", "loc": "Caesarea, Haifa District, Israel", "url": "https://www.linkedin.com/jobs/view/4473474269", "cv": "general", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "REACH", "vwhy": "DevOps title: capped at REACH by the profile-gap rule unless it is a pure junior opening. Caesarea, North.", "vbasis": "", "match": 50, "gpt_reviewed": false}, {"date": "2026-10-04", "region": "Center", "fit": 4, "company": "NVIDIA", "role": "Software Engineer, NVLink", "loc": "Raanana", "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Israel-Raanana/Software-Engineer--NVLink_JR2025935", "cv": "general", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "workday", "gpt_reviewed": false}, {"date": "2026-10-04", "region": "Center", "fit": 4, "company": "Check Point", "role": "Software Developer - VPN Core Team", "loc": "Tel Aviv", "url": "https://jobs.smartrecruiters.com/CheckPointSoftwareTechnologies2/744000153366859", "cv": "general", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "checkpoint", "gpt_reviewed": false}, {"date": "2026-10-04", "region": "Center", "fit": 3, "company": "comblack", "role": "Generative AI Engineer", "loc": "Tel Aviv-Yafo, Tel Aviv District, Israel", "url": "https://www.linkedin.com/jobs/view/4475375241", "cv": "ai", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "gpt_reviewed": false}, {"date": "2026-10-03", "region": "Center", "fit": 3, "company": "Skai", "role": "AI Engineer", "loc": "Tel Aviv-Yafo, Tel Aviv District, Israel", "url": "https://www.linkedin.com/jobs/view/4461604427", "cv": "ai", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "gpt_reviewed": false}, {"date": "2026-10-01", "region": "North", "fit": 5, "company": "Parallel Wireless", "role": "Junior Automation Engineer - North", "loc": "Kinneret Kvutza, North District, Israel", "url": "https://www.linkedin.com/jobs/view/4464118134", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "YES", "vwhy": "Junior automation engineer: the level fits and Python scripting is a strength. Kinneret, North.", "vbasis": "", "match": 80, "gpt_reviewed": false}, {"date": "2026-10-01", "region": "Center", "fit": 3, "company": "Dot Compliance", "role": "Software Engineer", "loc": "Rehovot, Israel", "url": "https://hiremetech.com/job/149718479", "cv": "general", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "hiremetech", "verdict": "YES", "vwhy": "Software engineer with no level in the title, so the years decide. Rehovot, Center.", "vbasis": "", "match": 70, "gpt_reviewed": false}, {"date": "2026-10-01", "region": "Center", "fit": 3, "company": "SQLink Group", "role": "Backend Developer", "loc": "Yehud Monosson, Center District, Israel", "url": "https://www.linkedin.com/jobs/view/4472138765", "cv": "backend", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "gpt_reviewed": false}, {"date": "2026-09-30", "region": "North", "fit": 3, "company": "Companytech", "role": "מפתח/ת C#/.NET — מערכות תוכנה-חומרה", "loc": "Misgav Regional Council, North District, Israel", "url": "https://www.linkedin.com/jobs/view/4472618667", "cv": "backend", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "YES", "vwhy": "C#/.NET development: the profile's core professional stack. Misgav, North.", "vbasis": "", "match": 90, "gpt_reviewed": false}, {"date": "2026-09-30", "region": "North", "fit": 3, "company": "Adenocyte", "role": "Software Engineer", "loc": "Haifa, Israel", "url": "https://hiremetech.com/job/149617968", "cv": "general", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "hiremetech", "verdict": "YES", "vwhy": "General software engineer title with no level stated, so check the years in the JD. Haifa, North.", "vbasis": "", "match": 72, "gpt_reviewed": false}, {"date": "2026-09-30", "region": "Center", "fit": 4, "company": "Mobileye", "role": "Embedded Integrator", "loc": "Petah Tikva", "url": "https://builtin.com/job/embedded-integrator/11437034", "cv": "test-integration", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "builtin+lever:mobileye", "verdict": "REACH", "vwhy": "Integration work suits the profile's test/integration skills; the embedded side is the gap. Petah Tikva, Center.", "vbasis": "", "match": 60, "gpt_reviewed": false}, {"date": "2026-09-30", "region": "Center", "fit": 3, "company": "CONTROP Precision Technologies Ltd.", "role": "Integration & Test Engineer", "loc": "Kfar Saba, Center District, Israel", "url": "https://www.linkedin.com/jobs/view/4472132978", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "REACH", "vwhy": "Integration and test of electro-optical systems at a defense company. The profile's Python test automation overlaps; the hardware bring-up side is a gap. Kfar Saba, Center.", "vbasis": "", "match": 56, "gpt_reviewed": false}, {"date": "2026-09-29", "region": "Center", "fit": 3, "company": "דאטה וויי - Dataway", "role": "מהנדס/ת מערכת לבדיקות ושילובים", "loc": "Beer Yaakov", "url": "https://www.drushim.co.il/job/38564797/1278a48f/", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "drushim", "verdict": "YES", "vwhy": "Systems test and integration engineer: matches the profile's test-automation experience. Beer Yaakov, Center.", "vbasis": "", "match": 78, "gpt_reviewed": false}, {"date": "2026-09-29", "region": "Center", "fit": 4, "company": "taboola", "role": "Junior Software Engineer", "loc": "Tel Aviv, Israel", "url": "https://www.taboola.com/careers/job/8230021?gh_jid=8230021", "cv": "general", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "greenhouse:taboola+linkedin", "verdict": "YES", "vwhy": "Junior software engineer at a product company: the level matches and the stack is general. Tel Aviv, Center.", "vbasis": "", "match": 82, "gpt_reviewed": false}, {"date": "2026-09-29", "region": "North", "fit": 4, "company": "Intel", "role": "AI Tools and Cloud Software Developer", "loc": "Haifa", "url": "https://intel.wd1.myworkdayjobs.com/External/job/Israel-Haifa/AI-Tools-and-Cloud-Software-Developer_JR0286561", "cv": "ai", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "workday", "verdict": "YES", "vwhy": "AI tooling and cloud software at a large employer. The profile's Python and LLM side projects are a direct match. Haifa, North.", "vbasis": "", "match": 86, "gpt_reviewed": false}, {"date": "2026-09-28", "region": "Center", "fit": 4, "company": "Equalweb", "role": "Junior Frontend Developer", "loc": "Netanya, Israel", "url": "https://hiremetech.com/job/149393028", "cv": "backend", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "hiremetech", "verdict": "REACH", "vwhy": "Frontend only. The profile's web work is project-level, not professional. Netanya, Center.", "vbasis": "", "match": 58, "gpt_reviewed": false}, {"date": "2026-09-28", "region": "Center", "fit": 4, "company": "Mobileye", "role": "Experienced Software Engineer - Data Infrastructure", "loc": "Ramat Gan, Israel", "url": "https://jobs.eu.lever.co/mobileye/8ad31b79-8816-4142-a677-4bea7a452328", "cv": "general", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "lever:mobileye", "verdict": "REACH", "vwhy": "'Experienced' title: the rules cap it at REACH until the JD's years are read. Ramat Gan, Center.", "vbasis": "", "match": 47, "gpt_reviewed": false}, {"date": "2026-09-28", "region": "Center", "fit": 3, "company": "Quantum Art", "role": "Python Developer", "loc": "Nes Ziona, Center District, Israel", "url": "https://www.linkedin.com/jobs/view/4470834482", "cv": "general", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "YES", "vwhy": "Python developer: the profile's strongest project language. Nes Ziona, Center.", "vbasis": "", "match": 76, "gpt_reviewed": false}, {"date": "2026-09-28", "region": "Center", "fit": 3, "company": "Shavit Software", "role": "Prompt Engineer", "loc": "Rosh HaAyin, Center District, Israel", "url": "https://www.linkedin.com/jobs/view/4472436698", "cv": "ai", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "YES", "vwhy": "Prompt engineering: the profile's LLM projects are the match. Rosh HaAyin, Center.", "vbasis": "", "match": 72, "gpt_reviewed": false}, {"date": "2026-09-28", "region": "North", "fit": 5, "company": "Luna Media", "role": "Junior AI Solutions & Automation Builder", "loc": "Caesarea, Haifa District, Israel", "url": "https://www.linkedin.com/jobs/view/4471504562", "cv": "ai", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "YES", "vwhy": "Junior AI-automation builder: the level fits, and the profile's Python and LLM projects are the overlap. Check how much is no-code tooling. Caesarea, North (acceptable).", "vbasis": "", "match": 74, "gpt_reviewed": false}, {"date": "2026-09-27", "region": "North", "fit": 5, "company": "Regulus", "role": "Junior / Mid-level Software Engineer (Rust / C++ / GPU)", "loc": "Tirat Carmel, Israel", "url": "https://hiremetech.com/job/149337927", "cv": "general", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "hiremetech", "verdict": "REACH", "vwhy": "Rust / C++ / GPU is outside the profile, and the junior-to-mid level keeps it a reach. Tirat Carmel, North.", "vbasis": "", "match": 48, "gpt_reviewed": false}, {"date": "2026-09-27", "region": "North", "fit": 3, "company": "ALLSTARSIT", "role": "לחברה ביטחונית מובילה בצפון הארץ, מפתחי אוטומציה", "loc": "חיפה, כרמיאל, עכו, צפת, נהריה", "url": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8834313", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "alljobs", "verdict": "YES", "vwhy": "Automation developers for a defense company, hired through a contractor. Matches the test-automation lane. Haifa / Karmiel, North.", "vbasis": "", "match": 74, "gpt_reviewed": false}, {"date": "2026-09-26", "region": "Center", "fit": 3, "company": "Real Time Group - Software Solutions", "role": "Software Engineer in Test", "loc": "Yehud Monosson, Center District, Israel", "url": "https://www.linkedin.com/jobs/view/4470574185", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "linkedin", "verdict": "YES", "vwhy": "Software engineer in test: the profile's test-automation strength. Yehud, Center.", "vbasis": "", "match": 75, "gpt_reviewed": false}, {"date": "2026-09-24", "region": "North", "fit": 4, "company": "Amazon", "role": "Embedded Software Engineer", "loc": "Haifa, Haifa, ISR", "url": "https://www.amazon.jobs/en/jobs/10458621/embedded-software-engineer", "cv": "embedded", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "amazon", "verdict": "REACH", "vwhy": "Embedded C/C++ work. The profile's C# and Python are adjacent, but low-level C++ is a gap. Haifa, North.", "vbasis": "", "match": 52, "gpt_reviewed": false}, {"date": "2026-09-24", "region": "North", "fit": 4, "company": "Google", "role": "Software Engineer III, Infrastructure", "loc": "Haifa District, Israel", "url": "https://www.linkedin.com/jobs/view/4460295307", "cv": "general", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "google+linkedin", "verdict": "REACH", "vwhy": "The 'III' level suggests more than entry-level experience, and the focus is infrastructure. Haifa District, North.", "vbasis": "", "match": 46, "gpt_reviewed": false}, {"date": "2026-09-24", "region": "North", "fit": 3, "company": "וואן טכנולוגיות", "role": "דרוש /ה Full Stack Developer - AI Automation | בצפון הארץ", "loc": "חיפה, כרמיאל, נהריה, קרית שמונה", "url": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8806306", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "alljobs", "verdict": "YES", "vwhy": "Full stack with AI automation. The profile's Python and LLM projects fit. Haifa / Karmiel, North.", "vbasis": "", "match": 74, "gpt_reviewed": false}, {"date": "2026-09-24", "region": "North", "fit": 3, "company": "(masked)", "role": "RT Embedded Software Developer", "loc": "Karmiel", "url": "https://www.alljobs.co.il/Search/UploadSingle.aspx?JobID=8792514", "cv": "embedded", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "alljobs", "verdict": "REACH", "vwhy": "Real-time embedded development in C is outside the profile's C#/Python core. Karmiel, North.", "vbasis": "", "match": 55, "gpt_reviewed": false}, {"date": "2026-09-24", "region": "Center", "fit": 4, "company": "monday.com", "role": "AI Engineer (render.ai)", "loc": "Tel Aviv (Remote)", "url": "https://jobs.ashbyhq.com/monday.com/077675a8-bfb6-47f4-a466-347561c26258", "cv": "ai", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "ashby:monday.com", "verdict": "REACH", "vwhy": "AI engineering at a product company. The profile's LLM work is project-level, so it is a stretch. Tel Aviv, Center.", "vbasis": "", "match": 64, "gpt_reviewed": false}, {"date": "2026-09-24", "region": "Center", "fit": 4, "company": "Qualcomm", "role": "DevOps Engineer Kfar Netter, Israel", "loc": "Kfar Netter", "url": "https://careers.qualcomm.com/careers/job/446718912075", "cv": "general", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "eightfold:qualcomm", "verdict": "REACH", "vwhy": "DevOps title: capped at REACH by the profile-gap rule. Kfar Netter, Center.", "vbasis": "", "match": 48, "gpt_reviewed": false}, {"date": "2026-09-24", "region": "Center", "fit": 4, "company": "Microsoft", "role": "Software Engineer - WSSI Team (Windows Silicon System Integration)", "loc": "Herzliya", "url": "https://apply.careers.microsoft.com/careers/job/1970393556957101", "cv": "test-integration", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "eightfold:microsoft", "verdict": "REACH", "vwhy": "Windows silicon system integration: systems-level work beyond the profile's application-level C#. Herzliya, Center.", "vbasis": "", "match": 62, "gpt_reviewed": false}, {"date": "2026-09-23", "region": "North", "fit": 3, "company": "QualityAI", "role": "Test Automation and Software development", "loc": "Yokneam", "url": "https://careers.quality-ai.com/job/Petach-_-Tikva-21121-Test-Automation-and-Software-development/51227644/", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "qualityai", "verdict": "YES", "vwhy": "Test automation plus software development: fits the profile's Python test automation and C# experience. Yokneam, North.", "vbasis": "", "match": 76, "gpt_reviewed": false}, {"date": "2026-09-23", "region": "North", "fit": 3, "company": "QualityAI", "role": "QA Automation Engineer", "loc": "Karmiel", "url": "https://careers.quality-ai.com/job/Petach-_-Tikva-22889-QA-Automation-Engineer/57030344/", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "qualityai", "verdict": "REACH", "vwhy": "QA automation, but the title reads like a QA seat; check how much of the work is manual testing. Karmiel, North.", "vbasis": "", "match": 60, "gpt_reviewed": false}, {"date": "2026-09-23", "region": "North", "fit": 3, "company": "(masked)", "role": "Test & Automation Engineer - Electro-Optics Department", "loc": "Yokneam, Israel", "url": "https://hiremetech.com/job/141138439", "cv": "test-integration", "ref": false, "giant": false, "tailor": false, "unread": false, "alert": false, "src": "hiremetech", "verdict": "YES", "vwhy": "Test and automation engineering: the profile's Python test automation is the overlap. Employer masked by the board. Yokneam, North.", "vbasis": "", "match": 78, "gpt_reviewed": false}, {"date": "2026-09-23", "region": "Center", "fit": 4, "company": "Samsung Research and Development Center Israel", "role": "Firmware Verification Engineer- Sub Contractor", "loc": "Tel Aviv-Yafo", "url": "https://www.comeet.com/jobs/samsung/D4.005/firmware-verification-engineer--sub-contractor/AB.D6B", "cv": "test-integration", "ref": false, "giant": true, "tailor": false, "unread": false, "alert": false, "src": "comeet", "verdict": "REACH", "vwhy": "Firmware verification as a subcontractor seat: C/firmware is adjacent, not core. Tel Aviv, Center.", "vbasis": "", "match": 55, "gpt_reviewed": false}];
+const STATUSES = {};  /* the owner's applied/skip marks (global default; a local change overrides) */
+const NOTES = {};  /* per-role free-text notes (global default; a local edit overrides) */
+const SCAN = {};  /* last real scan: {iso, label} in Israel time (a --rebuild-only run keeps it) */
+document.getElementById("updated").textContent = "· updated 2026-10-04 (demo snapshot)";
+let sortK="match", sortDir=-1;
+const el=id=>document.getElementById(id);
+function scanAge(){const e=el("lastscan");if(!SCAN||!SCAN.iso){e.textContent="";return;}
+  const t=Date.parse(SCAN.iso);e.title="last scan "+(SCAN.label||SCAN.iso);
+  if(isNaN(t)){e.textContent="· last scan "+(SCAN.label||SCAN.iso);return;}
+  const h=Math.max(0,(Date.now()-t)/3.6e6);e.textContent="· last scan "+(h<1?"<1":Math.floor(h))+" h ago";
+  e.classList.toggle("stale",h>6);}
+scanAge();setInterval(scanAge,60000);
+/* unrated rows (no judged match score) get a capped ESTIMATE from the rule fit, so they never
+   outrank judged YES roles; the meter is greyed with a '~' so it can't pass for a real score.
+   The 'match >=' filter applies to judged rows only (an estimate is not a match); unrated rows
+   are isolated with the 'unrated' verdict option instead. */
+const rated=j=>j.match!=null;
+const mval=j=>rated(j)?j.match:Math.min(j.fit?Math.round(j.fit*18):50,65);
+const tpk=j=>j.verdict==="YES"&&mval(j)>=90;const wt=j=>j.verdict==="YES"&&mval(j)<90;
+function mmeter(j){const m=mval(j);
+  if(!rated(j))return '<div class="mwrap" title="unrated — estimate from the rule fit, not a judged match"><div class="mbar"><div class="mfill" style="width:'+m+'%;background:#4a5366"></div></div><span class="mnum" style="color:#8792a6">~'+m+'</span></div>';
+  const c=m>=70?'#8ff0b8':m>=45?'#ffd98f':'#ff9e9e';return '<div class="mwrap"><div class="mbar"><div class="mfill" style="width:'+m+'%;background:'+c+'"></div></div><span class="mnum" style="color:'+c+'">'+m+'</span></div>';}
+const rgOk=(j,rg)=>!rg||(rg==="North+Unknown"?(j.region==="North"||j.region==="Unknown"):j.region===rg);
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function getSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"New";}
+// a merged row: its own mark wins (even an explicit "New"); a board copy only passes on Sent/Interview, never Skip
+function ownSt(u){try{const l=localStorage.getItem("st:"+u);if(l)return l;}catch(e){} return (STATUSES&&STATUSES[u])||"";}
+function rowSt(j){const s=ownSt(j.url);if(s)return s;for(const d of (j.dups||[])){const x=ownSt(d.url);if(x==="Sent"||x==="Interview")return x;}return "New";}
+function ownNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u]!=null)?NOTES[u]:null;}
+function rowNote(j){const n=ownNote(j.url);if(n!==null)return n;for(const d of (j.dups||[])){const x=ownNote(d.url);if(x)return x;}return "";}
+function setSt(u,v){try{localStorage.setItem("st:"+u,v);}catch(e){}}
+function getNote(u){try{const l=localStorage.getItem("nt:"+u);if(l!==null)return l;}catch(e){} return (NOTES&&NOTES[u])||"";}
+function setNote(u,v){try{localStorage.setItem("nt:"+u,v);}catch(e){}}
+// 📌 pins (owner request 2026-09-28): "pin:<url>" = "1" pinned / "0" unpinned on this browser; absent = the cloud pin (curation important)
+function ownPin(u){try{const l=localStorage.getItem("pin:"+u);if(l==="1"||l==="0")return l;}catch(e){} return "";}
+function isImp(j){const p=ownPin(j.url);return p?p==="1":!!j.important;}
+function impNote(j){return j.important||"pinned by you (this browser)";}
+function pinToggle(b){const u=b.dataset.u;const j=JOBS.find(x=>x.url===u);const now=j?isImp(j):false;try{localStorage.setItem("pin:"+u,now?"0":"1");}catch(e){}render();}
+window.pinToggle=pinToggle;
+function pills(j){let s="";if(isImp(j))s+='<span class="pill imp" title="'+esc(impNote(j))+'">📌 IMPORTANT</span><button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="remove from important (this browser)">−</button> ';else s+='<button type="button" class="pinb" data-u="'+esc(j.url)+'" onclick="pinToggle(this)" title="mark as important: pins it to the top (this browser)">+📌</button> ';if(j.outsrc)s+='<span class="pill outsrc" title="'+esc(j.outsrc)+'">outsourcing</span> ';if(j.track==="qa-manual")s+='<span class="pill trkq" title="Tester seat (mostly manual testing, degree not required): tester pay - the lowest band">🧪 tester pay</span> ';else if(j.track==="test-eng")s+='<span class="pill trkt" title="Test / validation / automation engineering where you write code: close to SWE pay">🧰 test-eng pay</span> ';else if(j.track==="swe")s+='<span class="pill trks" title="Software development role: SWE-with-a-degree pay">💻 SWE pay</span> ';if(tpk(j))s+='<span class="pill toppick">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class="pill wtailor">✎ worth tailoring</span> ';if(j.tailor_ready)s+='<span class="pill tready" title="triaged - ready to tailor (base: '+esc(j.tready_base||'')+')">🎯 tailor-ready</span> ';if(j.jobify)s+='<span class="pill jbf">Jobify</span> ';if(j.rescued)s+='<span class="pill jbf" title="rescued from the review bucket">🪣bucket</span> ';if(j.gpt_reviewed)s+='<span class="pill gptrev">GPT reviewed</span> ';if(j.ref)s+='<span class="pill ref">🔔REF</span> ';if(j.giant)s+='<span class="pill giant">★giant</span> ';if(j.unread)s+='<span class="pill unread">·unread</span> ';return s;}
+function vpill(j){const v=j.verdict||"";if(!v)return '<span class="muted">–</span>';const cls=v==="YES"?"v-yes":v==="REACH"?"v-reach":"v-no";const b=j.vbasis==="jd"?" ✓":j.vbasis==="title"?" ·":"";const tip=(j.vwhy||"")+(j.vbasis?" ["+(j.vbasis==="jd"?"read the JD":"title only — JD hidden")+"]":"");return '<span class="pill '+cls+'" title="'+esc(tip)+'">'+v+b+'</span>';}
+// populate the pull/date dropdown
+const fmtD=d=>{if(!d||d.indexOf("-")<0)return d||"";const p=d.split("-");return p[2]+"/"+p[1]+"/"+p[0];};
+const dcount={}; JOBS.forEach(j=>{dcount[j.date]=(dcount[j.date]||0)+1;});
+[...new Set(JOBS.map(j=>j.date))].sort().reverse().forEach(d=>{const o=document.createElement("option");o.value=d;o.textContent=fmtD(d)+" pull ("+(dcount[d]||0)+")";el("date").appendChild(o);});
+function exportStatuses(){
+  const data={},notes={},pins={}; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i); if(!k)continue;
+    if(k.indexOf("st:")===0) data[k.slice(3)]=localStorage.getItem(k);
+    else if(k.indexOf("nt:")===0){const v=localStorage.getItem(k); if(v) notes[k.slice(3)]=v;}
+    else if(k.indexOf("pin:")===0) pins[k.slice(4)]=localStorage.getItem(k);}
+  const n=Object.keys(data).length, m=Object.keys(notes).length;
+  const blob=new Blob([JSON.stringify({version:1,exported:new Date().toISOString(),count:n,statuses:data,notes:notes,pins:pins})],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="jobscan-status-"+new Date().toISOString().slice(0,10)+".json"; a.click();
+}
+function importStatuses(file){
+  const r=new FileReader();
+  r.onload=e=>{try{
+    const d=JSON.parse(e.target.result); const st=d.statuses||d.by_url||d; let n=0,skip=0;
+    for(const u in st){const v=st[u]; if(!v) continue;
+      const cur=localStorage.getItem("st:"+u);
+      if(cur&&cur!=="New"&&cur!==v){skip++;continue;}   // don't overwrite an existing decision on this device
+      if(v!=="New"){localStorage.setItem("st:"+u,v); n++;}}
+    const nt=d.notes||{}; let nn=0;
+    for(const u in nt){const v=nt[u]; if(!v) continue;
+      const curn=localStorage.getItem("nt:"+u);
+      if(curn&&curn!==v){continue;}                     // don't clobber a note already written on this device
+      localStorage.setItem("nt:"+u,v); nn++;}
+    const pn=d.pins||{}; let np=0;
+    for(const u in pn){const v=pn[u]; if(v!=="1"&&v!=="0") continue;
+      if(localStorage.getItem("pin:"+u)!==null) continue;   // keep a pin choice already made on this device
+      localStorage.setItem("pin:"+u,v); np++;}
+    render(); alert("Imported "+n+" status marks"+(nn?" and "+nn+" notes":"")+(np?" and "+np+" pins":"")+(skip?"; kept "+skip+" you'd already set here":"")+".");
+  }catch(err){alert("Import failed: "+err.message);}};
+  r.readAsText(file);
+}
+function stChange(sel){setSt(sel.dataset.u, sel.value);render();}
+window.stChange=stChange;
+function ntChange(inp){setNote(inp.dataset.u, inp.value);inp.classList.toggle("has",!!inp.value);}
+window.ntChange=ntChange;
+function render(){
+  const q=el("q").value.toLowerCase(),dt=el("date").value,rg=el("region").value,mf=+el("fit").value,
+        st=el("status").value,ro=el("refonly").checked,to=el("tailoronly").checked,hd=el("hidedone").checked,ho=el("hideos").checked,
+        vd=el("verdict").value,jo=el("jobifyonly").checked,tp=el("toponly").checked,tr=el("treadyonly").checked;
+  let rows=JOBS.filter(j=>{
+    const s=rowSt(j);
+    const vmatch = !vd || (vd==="_none" ? !j.verdict : j.verdict===vd);
+    return (!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!dt||j.date===dt)&&rgOk(j,rg)
+      &&(!rated(j)||mval(j)>=mf)&&vmatch&&(!jo||j.jobify)&&(!st||s===st)&&(!ro||j.ref)&&(!to||wt(j))&&(!tp||tpk(j))&&(!tr||j.tailor_ready)&&(!hd||(s!=="Sent"&&s!=="Skip"))&&(!ho||!j.outsrc)
+      ||(isImp(j)&&(!q||((j.company||"")+" "+(j.role||"")).toLowerCase().includes(q))&&(!hd||(s!=="Sent"&&s!=="Skip")));
+  });
+  rows.sort((a,b)=>{const ia=isImp(a),ib=isImp(b);if(ia!==ib)return ia?-1:1;let x=a[sortK],y=b[sortK];if(sortK==="flags"){x=(a.ref?2:0)+(a.giant?1:0);y=(b.ref?2:0)+(b.giant?1:0);}else if(sortK==="match"){x=mval(a);y=mval(b);}else if(sortK==="pay"){x=a.paylo||0;y=b.paylo||0;}return (x>y?1:x<y?-1:0)*sortDir;});
+  el("count").textContent=rows.length+" of "+JOBS.length+" roles";
+  el("b").innerHTML=rows.map(j=>{const s=rowSt(j);const opts=["New","Sent","Interview","Skip"].map(o=>`<option${o===s?" selected":""}>${o}</option>`).join("");
+    return `<tr class="${(s==='Sent'||s==='Skip')?'done':''} ${j.verdict==='NO'&&!isImp(j)?'filtered':''} ${isImp(j)?'improw':''}">
+    <td class="muted">${esc(fmtD(j.date))}</td>
+    <td>${mmeter(j)}</td>
+    <td>${vpill(j)}</td>
+    <td class="muted" title="${esc(j.paytip||'')}">${esc(j.pay||'')}</td>
+    <td><span class="pill ${j.region==='North'?'n':j.region==='Unknown'?'u':'c'}">${esc(j.region)}</span></td>
+    <td>${pills(j)}</td>
+    <td>${esc(j.company)}${j.company_listed?' <span class="muted" title="listed on Jobify as: '+esc(j.company_listed)+'">(via Jobify)</span>':''}</td>
+    <td>${esc(j.role)}${j.loc?' <span class="muted">· '+esc(j.loc)+'</span>':''}</td>
+    <td class="muted">${esc(j.cv)}</td>
+    <td class="muted">${esc(j.src)}</td>
+    <td><select class="st" data-v="${s}" data-u="${esc(j.url)}" onchange="stChange(this)">${opts}</select></td>
+    <td>${j.url?'<a href="'+esc(j.url)+'" target="_blank" rel="noopener">open ↗</a>':''}${j.client_url?'<br><a href="'+esc(j.client_url)+'" target="_blank" rel="noopener" title="the end client'+(j.client_name?' ('+esc(j.client_name)+')':'')+' posts this role itself - apply direct, skipping the outsourcing company">direct company ↗</a>':''}${j.orig?'<br><a href="'+esc(j.orig)+'" target="_blank" rel="noopener" title="the same job on the employer&#39;s own site - apply here">company ↗</a>':''}${j.srcurl&&j.srcurl!==j.orig?'<br><a href="'+esc(j.srcurl)+'" target="_blank" rel="noopener" title="the original job-board posting Jobify copied">source ↗</a>':''}${(j.dups||[]).map(d=>'<br><a href="'+esc(d.url)+'" target="_blank" rel="noopener" title="the same job, also listed on '+esc(d.src||'another board')+'">'+esc(d.src||'also')+' ↗</a>').join('')}</td>
+    <td><input class="note${rowNote(j)?' has':''}" type="text" data-u="${esc(j.url)}" value="${esc(rowNote(j))}" placeholder="notes…" oninput="ntChange(this)"></td></tr>`;}).join("");
+}
+document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;render();});
+["q","date","region","fit","verdict","status","refonly","toponly","tailoronly","treadyonly","jobifyonly","hidedone","hideos"].forEach(id=>el(id).addEventListener("input",render));
+el("expBtn").onclick=exportStatuses;
+el("impFile").onchange=e=>{if(e.target.files[0]){importStatuses(e.target.files[0]); e.target.value="";}};
+render();
+</script></body></html>

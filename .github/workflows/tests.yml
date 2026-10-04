@@ -1,0 +1,22 @@
+name: tests
+
+# The 64 network-free rule regression tests (tests/test_rules.py). The production scan workflow
+# (scan.yml) runs the same suite before every scan and stops the scan if one fails.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Rule regression tests
+        run: python -m pytest -q tests
