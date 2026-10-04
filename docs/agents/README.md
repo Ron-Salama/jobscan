@@ -78,8 +78,9 @@ and most of them predate this judge -> skeptic flow:
 2,784 verdicts were made from the full JD and 1,275 from the title only (1,147 of those are in
 the GPT batch). The page marks which basis each verdict had.
 
-The demo page in this repo uses 29 short, hand-written verdicts for the fictional profile. They
-illustrate the fields; they are not output of these specs.
+The tracker snapshot in `docs/` shows the production verdicts (YES / REACH), their scores and
+basis, without the written reasons; NO verdicts are not on the page. `profile.example.md` is a
+fictional example of the profile format, not the profile those verdicts were made for.
 
 ## What is not in this repo
 

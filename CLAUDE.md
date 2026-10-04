@@ -7,8 +7,9 @@ Context for AI coding agents (Claude Code) working in this repo. Read it before 
 JobScan scans about 30 Israeli job sources, filters them with deterministic rules to junior
 software roles in the target regions, deduplicates across sources, and publishes a static
 tracker page. In production it runs on GitHub Actions in a private repo. This repo is the
-public code snapshot of that deployment: personal values in `config.py` are placeholders and
-there is no `data/` directory.
+public code snapshot of that deployment: personal values in `config.py` are placeholders,
+there is no `data/` directory, and `docs/` holds a sanitized snapshot of the production tracker
+page built by `tools/build_snapshot.py`.
 
 ## Architecture map
 
@@ -31,7 +32,7 @@ notify.py                       Telegram Bot API / CallMeBot sends; reports deli
 | `notify.py` | Alert delivery. Secrets come from env (`TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID`) or a local, gitignored `notify_config.py`. |
 | `tests/test_rules.py` | 64 network-free regression tests. |
 | `docs/agents/` | Specs for the Claude Code judge and skeptic review step (outside the pipeline). |
-| `tools/` | Local helpers (Telegram setup, local runner, `build_demo.py` for the demo page). |
+| `tools/` | Local helpers (Telegram setup, local runner, `build_snapshot.py` for the sanitized tracker snapshot). |
 
 **Canonical row shape** (what an adapter returns; `jobscan.job()` builds it, `normalize()` fills
 gaps): `source, sid, title, company, city, url, level, years_min, years_max, tech, desc, active`.
@@ -68,9 +69,10 @@ replaced by `src_ashby`) and are not registered; leave them unregistered unless 
 ```bash
 python tests/test_rules.py              # all 64 tests, no pytest needed; exit code 1 on a failure
 python -m pytest -q tests               # the same suite, as CI runs it
-python tools/build_demo.py              # rebuild docs/index.html (the demo) from docs/demo/*.json
+python tools/build_snapshot.py --jobs J --curation C   # sanitized snapshot -> docs/index.html + docs/snapshot/jobs.json
 
-# Full scan: network, about 20 minutes. Writes data/ and OVERWRITES docs/index.html (the demo).
+# Full scan: network, about 20 minutes. Writes data/ and OVERWRITES docs/index.html (the snapshot;
+# `git checkout docs/index.html` restores it - never commit a page built by cloud_run.py here).
 JOBSCAN_NO_ALERT=1 python cloud_run.py              # PowerShell: $env:JOBSCAN_NO_ALERT=1; python cloud_run.py
 python cloud_run.py --rebuild-only                  # no network: re-apply data/curation.json, rebuild the page
 ```
@@ -123,4 +125,8 @@ Set it for any local run.
 - The private-repo guard and the commit/push retry loop in `.github/workflows/scan.yml`.
 - `config.REFERRAL_COMPANIES`, `config.CV` and the `config.PAY_*` table beyond placeholders: the real
   values are private.
-- Generated files: `docs/index.html` comes from `tools/build_demo.py` in this repo.
+- Generated files: `docs/index.html` and `docs/snapshot/jobs.json` come from `tools/build_snapshot.py`.
+  Its whitelist (`KEEP`) and self-check are the privacy boundary: add a field to `KEEP` only if it
+  carries no personal state, and never publish a page whose self-check failed.
+- `snapshot_blocklist.txt` (personal, gitignored: employers left out of the snapshot) and the
+  production `data/` files. Never commit, print or quote either.

@@ -1,5 +1,7 @@
 # secrets — NEVER commit
 notify_config.py
+# personal: employers left out of the public snapshot (tools/build_snapshot.py)
+snapshot_blocklist.txt
 
 # local-only state (cloud uses data/seen.json instead)
 /seen.json

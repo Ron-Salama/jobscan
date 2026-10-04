@@ -7,10 +7,18 @@ criteria, made the rule decisions, and checked the agents' work against reality.
 
 [![tests](https://github.com/Ron-Salama/jobscan/actions/workflows/tests.yml/badge.svg)](https://github.com/Ron-Salama/jobscan/actions/workflows/tests.yml)
 
-![JobScan tracker, demo page with sample data](docs/screenshot.png)
+**Stack:** Python · data pipeline over REST/JSON APIs, ATS platforms and HTML scrapers · bilingual
+(English + Hebrew) rule engine · GitHub Actions CI/CD with regression tests gating every run ·
+monitoring and alerting (source-health alarm, Telegram) · Claude Code multi-agent review (judge +
+skeptic sub-agents) · CLAUDE.md agent context
 
-<sub>The demo page (`docs/index.html`): real public listings, with illustrative verdicts written for a
-fictional profile that is not mine. The production tracker and its data are private.</sub>
+**Live tracker snapshot:** [ron-salama.github.io/jobscan](https://ron-salama.github.io/jobscan/)
+
+![JobScan tracker: a sanitized snapshot of the production page](docs/screenshot.png)
+
+<sub>A sanitized snapshot of the production tracker (`docs/index.html`, 477 roles on 2026-10-04): the
+real listings with the verdicts and scores from the AI review step. My application statuses, notes,
+pay estimates, CV labels and verdict reasons are removed. Built by `tools/build_snapshot.py`.</sub>
 
 ## What it does
 
@@ -38,7 +46,10 @@ lowest-priority rows.
   years parsed from the JD ("0-3 years" counts as 0, "advantage" years are ignored), a developer
   title gate, senior / student / DevOps-ML detection.
 - **Output:** one static, filterable HTML tracker page; Telegram alerts for new roles at large
-  employers and referral companies; a source-health alarm when a source goes dark.
+  employers and referral companies; a source-health alarm when a source goes dark. The page in
+  `docs/` is a sanitized snapshot of the production page: 477 of its 500 rows (rows that only my
+  own status marks or pins kept on the page, and roles at employers on a local blocklist, are left
+  out), with the listings, verdicts, scores and verdict basis, and none of the personal fields.
 - **AI review step, outside the pipeline:** 4,059 verdicts so far (2,784 made from the full JD),
   from several passes: Claude Code agent passes, and one GPT-run review of about 1,280 bucket
   roles, mostly from titles, which Claude agents partly re-checked. Since 2026-10-01, Claude Code
@@ -164,8 +175,9 @@ sources/              29 adapters in 28 modules, one per source (25 run in produ
 sources_ext.py        compatibility shim (re-exports sources/)
 tests/test_rules.py   64 network-free regression tests
 docs/agents/          judge and skeptic specs, example profile, how the review step works
-docs/index.html       demo tracker built from docs/demo/ by tools/build_demo.py
-tools/                Telegram setup, local runner, demo builder
+docs/index.html       tracker snapshot: the production page minus personal fields (tools/build_snapshot.py)
+docs/snapshot/        the snapshot's rows as JSON
+tools/                Telegram setup, local runner, snapshot builder
 .github/workflows/    tests.yml (CI); scan.yml (production scan, runs only in a private repo)
 CLAUDE.md             context file for AI coding agents
 ```
@@ -177,9 +189,12 @@ pip install -r requirements.txt
 python tests/test_rules.py                       # the 64 tests, no network (or: python -m pytest -q tests)
 JOBSCAN_NO_ALERT=1 python cloud_run.py           # full scan, about 20 min; writes data/ and docs/index.html
 python cloud_run.py --rebuild-only               # no network: re-apply data/curation.json, rebuild the page
-python tools/build_demo.py                       # restore the demo page
+python tools/build_snapshot.py                   # sanitized snapshot of data/ -> docs/index.html + docs/snapshot/
 ```
 
+A scan or rebuild overwrites the snapshot in `docs/index.html` with the full page
+(`git checkout docs/index.html` restores it). `build_snapshot.py` reads an optional local list of
+employers to leave out (`snapshot_blocklist.txt`, gitignored); without one, pass `--no-blocklist`.
 On PowerShell, set the variable first: `$env:JOBSCAN_NO_ALERT=1`. For alerts, copy
 `notify_config.example.py` to `notify_config.py` (gitignored) or set `TELEGRAM_TOKEN` and
 `TELEGRAM_CHAT_ID`. To deploy it yourself, use a **private** repo (`scan.yml` skips public ones,
@@ -193,20 +208,19 @@ private-repo guard working.
 
 ## About this repo
 
-This is a code-only public snapshot of a private production deployment. The private repo has
+This is a public snapshot of a private production deployment: the code, plus one sanitized
+snapshot of the tracker page. The private repo has
 about 290 commits, roughly half of them automated scan commits, and it holds my personal
 job-search data (application statuses, notes, verdict reasons), which is why it is private.
 
 In this snapshot, the referral-company list, the pay-estimate table and the CV labels in
-`config.py` are placeholders; the referral and pay tests pin their own made-up values; test
-fixtures that came from my own tracker use made-up companies and example URLs; and the page in
-`docs/` shows sample data. Comments that described my private search, local file paths and the
-page title were neutralized, the giants list was reordered alphabetically, the page's
-outsourcing tag is plain text, the stale `jobscan.py` module docstring was rewritten, and
-`scan.yml` gained the private-repo guard. Apart from that, it is the production code as of 2026-10-04, plus
-one refactor not yet deployed there: the adapters, until now a single 7,180-line
-`sources_ext.py`, are split into the `sources/` package with their function bodies unchanged
-(the shim keeps the old imports working).
+`config.py` are placeholders, test fixtures that came from my own tracker use made-up companies,
+and comments that described my private search were neutralized. The page in `docs/` is a sanitized
+snapshot of the production tracker: `tools/build_snapshot.py` keeps the listings, verdicts, scores
+and verdict basis, and removes statuses, notes, pay estimates, CV labels, pins, referral and
+outsourcing tags and the written verdict reasons. Otherwise this is the production code as of
+2026-10-04, including the split of the adapters (until then one 7,180-line `sources_ext.py`) into
+the `sources/` package with their function bodies unchanged; a shim keeps the old imports working.
 
 Most of the code was written by Claude Code agents. I owned the requirements and acceptance
 checks, the rule decisions, the reviews, and noticing the errors above, or ordering the audit
