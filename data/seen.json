@@ -11459,12 +11459,24 @@
 "u": "https://www.linkedin.com/jobs/view/4461604427",
 "src": "linkedin",
 "city": "tel aviv yafo tel aviv district"
+},
+"linkedin:4475353431": {
+"t": "Software Dev Engineer I, Annapurna Labs",
+"lane": "reach",
+"tailor": false,
+"seen": "2026-10-04"
+},
+"amazon web services|software dev engineer i annapurna labs|North": {
+"seen": "2026-10-04",
+"u": "https://www.linkedin.com/jobs/view/4475353431",
+"src": "linkedin",
+"city": "haifa haifa district"
 }
 },
 "source_stats": {
 "hiremetech": {
 "max": 2581,
-"last": 2488
+"last": 2485
 },
 "experis": {
 "max": 600,
@@ -11504,11 +11516,11 @@
 },
 "linkedin": {
 "max": 609,
-"last": 181
+"last": 175
 },
 "alljobs": {
 "max": 681,
-"last": 624
+"last": 672
 },
 "comeet": {
 "max": 306,
@@ -11592,7 +11604,7 @@
 "last": 15
 }
 },
-"last_scan": "2026-10-04T00:49+03:00",
+"last_scan": "2026-10-04T04:59+03:00",
 "alert_queue": [],
 "alert_fail_streak": 0,
 "source_alerts_sent": {
