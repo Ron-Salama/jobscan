@@ -12,11 +12,11 @@ criteria, made the rule decisions, and checked the agents' work against reality.
 monitoring and alerting (source-health alarm, Telegram) · Claude Code multi-agent review (judge +
 skeptic sub-agents) · CLAUDE.md agent context
 
-**Live tracker snapshot:** [ron-salama.github.io/jobscan](https://ron-salama.github.io/jobscan/)
+**Live tracker:** [ron-salama.github.io/jobscan](https://ron-salama.github.io/jobscan/) (refreshed automatically after every cloud scan)
 
-![JobScan tracker: a sanitized snapshot of the production page](docs/screenshot.png)
+![JobScan tracker: the public view of the production page](docs/screenshot.png)
 
-<sub>A sanitized snapshot of the production tracker (`docs/index.html`, 499 roles on 2026-10-04): the
+<sub>The public view of the production tracker (`docs/index.html`, 499 roles on 2026-10-04), rebuilt and pushed here by the private deployment after every run: the
 real listings with the verdicts and scores from the AI review step. My application statuses, notes,
 pay estimates, CV labels and verdict reasons are removed. Built by `tools/build_snapshot.py`.</sub>
 
@@ -47,7 +47,7 @@ lowest-priority rows.
   title gate, senior / student / DevOps-ML detection.
 - **Output:** one static, filterable HTML tracker page; Telegram alerts for new roles at large
   employers and referral companies; a source-health alarm when a source goes dark. The page in
-  `docs/` is a sanitized snapshot of the production page: 499 of its 519 rows (rows that only my
+  `docs/` is the public view of the production page: 499 of its 519 rows (rows that only my
   own status marks or pins kept on the page, and roles at employers on a local blocklist, are left
   out; a few roles I'm actively in touch about appear as plain listings without a score), with the
   listings, verdicts, scores and verdict basis, and none of the personal fields.
@@ -176,9 +176,9 @@ sources/              29 adapters in 28 modules, one per source (25 run in produ
 sources_ext.py        compatibility shim (re-exports sources/)
 tests/test_rules.py   64 network-free regression tests
 docs/agents/          judge and skeptic specs, example profile, how the review step works
-docs/index.html       tracker snapshot: the production page minus personal fields (tools/build_snapshot.py)
-docs/snapshot/        the snapshot's rows as JSON
-tools/                Telegram setup, local runner, snapshot builder
+docs/index.html       live public view: the production page minus personal fields (tools/build_snapshot.py)
+docs/snapshot/        the public view's rows as JSON
+tools/                Telegram setup, local runner, public-view builder
 .github/workflows/    tests.yml (CI); scan.yml (production scan, runs only in a private repo)
 CLAUDE.md             context file for AI coding agents
 ```
@@ -209,8 +209,8 @@ private-repo guard working.
 
 ## About this repo
 
-This is a public snapshot of a private production deployment: the code, plus one sanitized
-snapshot of the tracker page. The private repo has
+This is the public code of a private production deployment, plus a live, sanitized view of the
+tracker page that the private deployment rebuilds and pushes here after every scan. The private repo has
 about 290 commits, roughly half of them automated scan commits, and it holds my personal
 job-search data (application statuses, notes, verdict reasons), which is why it is private.
 
