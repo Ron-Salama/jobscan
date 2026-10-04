@@ -29,6 +29,7 @@ status / referral / tailor-ready / outsourcing filters, pins and status export /
 non-KEEP field, a NO verdict, a blocklisted name or a non-empty STATUSES / NOTES constant would
 be published. No network; the input files are only read.
 """
+import datetime
 import argparse, contextlib, io, json, os, re, shutil, sys, tempfile
 from collections import Counter
 
@@ -68,59 +69,51 @@ def load_blocklist(path):
 
 # The only row fields that are published. Everything else on a production row is dropped.
 KEEP = ("date", "region", "fit", "match", "verdict", "vbasis", "company", "company_listed", "role", "loc",
-        "url", "src", "giant", "jobify", "rescued", "gpt_reviewed", "unread", "orig", "srcurl", "dups")
-FLAGS = ("giant", "jobify", "rescued", "gpt_reviewed", "unread")   # published only when true
+        "url", "src", "giant", "jobify", "rescued", "gpt_reviewed", "unread", "orig", "srcurl", "dups",
+        "cv", "important", "noscore")
+FLAGS = ("giant", "jobify", "rescued", "gpt_reviewed", "unread", "noscore")   # published only when true
+# The production CV column holds the owner's CV file names; publish only the generic profile kind.
+CV_KIND = {"hardware_test_integration": "test-integration", "hardware & test": "test-integration",
+           "backend_fullstack": "backend", "backend & full-stack": "backend",
+           "software_ai": "ai", "software & ai": "ai", "firmware_embedded": "embedded",
+           "firmware & embedded": "embedded", "c_systems": "c-systems", "c & low-level": "c-systems",
+           "gametech_technicalart": "gametech"}
 
 BANNER_CSS = (".snap{margin:0 0 8px;padding:7px 11px;border:1px solid #2f5d86;border-radius:8px;"
               "background:#122235;color:#cfe3ff;font-size:12.5px}.snap b{color:#eaf3ff}")
-BANNER = ('<div class="snap"><b>Snapshot of the production tracker, %s: %d roles.</b> Personal application '
-          'statuses, notes, pay estimates and reasons are removed; verdicts and scores come from the AI '
-          'review step.</div>')
+BANNER = ('<div class="snap"><b>Live public view of the production tracker</b>, refreshed automatically '
+          'after each cloud scan. Last update: %s, %d roles. The owner\'s application statuses, notes, pay '
+          'estimates and verdict reasons are not published; statuses, notes and pins you set here stay in '
+          'your own browser.</div>')
 # the snapshot's pills: verdict-derived top pick, provenance and the giant flag (no pins, pay track,
 # outsourcing, tailor or referral pills)
-PILLS = ("function pills(j){let s=\"\";if(tpk(j))s+='<span class=\"pill toppick\">🏆 TOP PICK</span> ';"
+PILLS = ("function pills(j){let s=\"\";if(isImp(j))s+='<span class=\"pill imp\" title=\"'+esc(impNote(j))+'\">📌 IMPORTANT</span>"
+         "<button type=\"button\" class=\"pinb\" data-u=\"'+esc(j.url)+'\" onclick=\"pinToggle(this)\" title=\"remove from important (this browser)\">−</button> ';"
+         "else s+='<button type=\"button\" class=\"pinb\" data-u=\"'+esc(j.url)+'\" onclick=\"pinToggle(this)\" title=\"mark as important: pins it to the top (this browser)\">+📌</button> ';"
+         "if(tpk(j))s+='<span class=\"pill toppick\">🏆 TOP PICK</span> ';else if(wt(j))s+='<span class=\"pill wtailor\">✎ worth tailoring</span> ';"
          "if(j.jobify)s+='<span class=\"pill jbf\">Jobify</span> ';"
          "if(j.rescued)s+='<span class=\"pill jbf\" title=\"rescued from the review bucket by the AI review step\">rescued</span> ';"
          "if(j.gpt_reviewed)s+='<span class=\"pill gptrev\">GPT reviewed</span> ';"
          "if(j.giant)s+='<span class=\"pill giant\">★giant</span> ';"
          "if(j.unread)s+='<span class=\"pill unread\">·unread</span> ';return s;}")
+MMETER = ("function mmeter(j){if(j.noscore)return '<span class=\"mnum\" style=\"color:#8792a6\" "
+          "title=\"not scored in the public view\">—</span>';const m=mval(j);")
 HIDDEN = '<input type="checkbox" id="%s" hidden>'   # render() still reads these ids
 # (old, new) edits on the built page; each `old` must occur exactly once
 PAGE_EDITS = [
-    ("<title>JobScan — Job Radar</title>", "<title>JobScan — Tracker snapshot</title>"),
+    ("<title>JobScan — Job Radar</title>", "<title>JobScan — Live tracker</title>"),
     ("</style>", BANNER_CSS + "\n</style>"),
-    ('<select id="status"><option value="">any status</option><option>New</option><option>Sent</option>'
-     '<option>Interview</option><option>Skip</option></select>', '<select id="status" hidden><option value=""></option></select>'),
-    ('<label><input type="checkbox" id="refonly"> 🔔 referral</label>', HIDDEN % "refonly"),
-    ('<label><input type="checkbox" id="tailoronly"> ✎ worth tailoring</label>', HIDDEN % "tailoronly"),
-    ('<label><input type="checkbox" id="treadyonly"> 🎯 tailor-ready</label>', HIDDEN % "treadyonly"),
-    ('<label><input type="checkbox" id="hidedone" checked> hide sent/skip</label>', HIDDEN % "hidedone"),
-    ('<label title="hide roles from outsourcing / manpower contractors (the outsourcing tag)">'
-     '<input type="checkbox" id="hideos"> hide outsourcing</label>', HIDDEN % "hideos"),
-    ('\n    <button type="button" id="expBtn" class="tbtn" title="Download your applied/status marks (this browser) '
-     'as a file">⬇ export status</button>', ""),
-    ('\n    <label class="tbtn" title="Load a status file exported from another device">⬆ import status'
-     '<input type="file" id="impFile" accept="application/json" hidden></label>', ""),
     ('<th data-k="pay" title="Rough junior monthly gross estimate (YES roles) - not an offer">Est. pay</th>', ""),
-    ('<th data-k="cv">CV</th>', ""),
-    ("<th>Status</th>", ""),
-    ("<th>Notes</th>", ""),
     ("\n    <td class=\"muted\" title=\"${esc(j.paytip||'')}\">${esc(j.pay||'')}</td>", ""),
-    ("\n    <td class=\"muted\">${esc(j.cv)}</td>", ""),
-    ('\n    <td><select class="st" data-v="${s}" data-u="${esc(j.url)}" onchange="stChange(this)">${opts}</select></td>', ""),
-    ("\n    <td><input class=\"note${rowNote(j)?' has':''}\" type=\"text\" data-u=\"${esc(j.url)}\" "
-     "value=\"${esc(rowNote(j))}\" placeholder=\"notes…\" oninput=\"ntChange(this)\"></td></tr>", "</tr>"),
     ("const STATUSES = {};  /* the owner's applied/skip marks (global default; a local change overrides) */",
-     "const STATUSES = {};  /* empty in the public snapshot */"),
+     "const STATUSES = {};  /* empty in the public view: your marks live in this browser only */"),
     ("const NOTES = {};  /* per-role free-text notes (global default; a local edit overrides) */",
-     "const NOTES = {};  /* empty in the public snapshot */"),
-    ('el("expBtn").onclick=exportStatuses;\n', ""),
-    ('el("impFile").onchange=e=>{if(e.target.files[0]){importStatuses(e.target.files[0]); e.target.value="";}};\n', ""),
+     "const NOTES = {};  /* empty in the public view: your notes live in this browser only */"),
+    ("function mmeter(j){const m=mval(j);", MMETER),
 ]
 # (pattern, replacement) edits; each pattern must match exactly once
 PAGE_RX = [
     (re.compile(r"^function pills\(j\)\{.*\}$", re.M), PILLS),
-    (re.compile(r"^function exportStatuses\(\)\{.*?^  r\.readAsText\(file\);\n\}\n", re.M | re.S), ""),
 ]
 
 _SALARY = re.compile(r"\d[\d,.]*\s*[-–]\s*\d[\d,.]*\s*(₪|ש\"?ח|ils|nis)?", re.I)
@@ -180,6 +173,10 @@ def clean_row(r):
     if dups: out["dups"] = sorted(dups, key=lambda d: d["url"])
     out["loc"] = tidy_loc(r.get("loc"))
     if not out["loc"]: del out["loc"]
+    kind = CV_KIND.get(str(r.get("cv") or "").strip().lower())
+    if kind: out["cv"] = kind
+    else: out.pop("cv", None)
+    if not r.get("noscore"): out.pop("important", None)
     out["role"] = (r.get("role") or "").strip() or "(title not captured)"
     return out
 
@@ -231,7 +228,7 @@ def build_html(rows, date):
     saved = CR.DOCS, CR.INDEX_HTML
     try:
         CR.DOCS, CR.INDEX_HTML = tmp, os.path.join(tmp, "index.html")
-        CR.build_page(rows, "%s (snapshot)" % date, {"statuses": {}, "notes": {}}, None)
+        CR.build_page(rows, date, {"statuses": {}, "notes": {}}, None)
         with open(CR.INDEX_HTML, encoding="utf-8") as f:
             html = f.read()
     finally:
@@ -263,6 +260,10 @@ def self_check(rows, html, block):
         problems.append("a fit value that could encode a referral")
     if any(CR._is_board(r.get("url")) and any(not CR._is_board(d.get("url")) for d in r.get("dups") or [])
            for r in rows): problems.append("a job-board main link while an employer posting is in dups")
+    if any(r.get("important") and not r.get("noscore") for r in rows): problems.append("a pin outside the unrated list")
+    if any(r.get("important") not in (None, "Pinned") for r in rows): problems.append("a pin carrying a note")
+    if any("cv" in r and r["cv"] not in set(CV_KIND.values()) for r in rows):
+        problems.append("a CV label that is not a generic kind")
     for const in ("const STATUSES = {};", "const NOTES = {};"):
         if html.count(const) != 1: problems.append("%s missing" % const)
     if problems:
@@ -300,7 +301,7 @@ def main(argv=None):
         block, near_rx, n_block = load_blocklist(a.blocklist)
         print("blocklist: %d name(s) from %s" % (n_block, _rel(a.blocklist)))
     rows, cur = _load(a.jobs, list), _load(a.curation, dict)
-    date = a.date or max((str(r.get("date") or "") for r in rows if isinstance(r, dict)), default="") or CR.J.TODAY
+    date = a.date or datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     n_in = len(rows)
 
     rows, merged, evicted = page_rows(rows, cur)
@@ -325,7 +326,10 @@ def main(argv=None):
     n_unrated = 0
     for i, r in enumerate(kept):
         if unrate and unrate.search(row_text(r, maps)):
-            kept[i] = {k: v for k, v in r.items() if k not in ("verdict", "vbasis", "match", "rescued")}
+            kept[i] = {k: v for k, v in r.items()
+                       if k not in ("verdict", "vbasis", "match", "rescued", "fit", "important")}
+            kept[i]["noscore"] = True
+            if r.get("important"): kept[i]["important"] = "Pinned"
             n_unrated += 1
     if unrate: print("published %d row(s) as plain listings (no verdict or score)" % n_unrated)
 
